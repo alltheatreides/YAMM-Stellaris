@@ -1,0 +1,303 @@
+random_list = {
+	name = "rl_ff_jovian_ice_moons"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_exo_moons"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_habitable_planets"
+	planets = {
+		"pc_desert"
+		"pc_tropical"
+		"pc_savannah"
+	}
+}
+random_list = {
+	name = "rl_ff_temperate_habitable_planets"
+	planets = {
+		"pc_ocean"
+		"pc_continental"
+		"pc_arid"
+		"pc_alpine"
+	}
+}
+random_list = {
+	name = "rl_ff_cool_habitable_planets"
+	planets = {
+		"pc_arctic"
+		"pc_tundra"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_planets"
+	planets = {
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_temperate_planets"
+	planets = {
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_greenhouse_planets"
+	planets = {
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+	}
+}
+random_list = {
+	name = "rl_ff_semi-cool_planets"
+	planets = {
+		"pc_frozen"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_gas_giants"
+	planets = {
+		"pc_gas_giant"
+		"pc_gas_giant"
+	}
+}
+random_list = {
+	name = "rl_ff_gas_giants"
+	planets = {
+		"pc_gas_giant"
+		"pc_gas_giant"
+		"pc_gas_giant"
+		"pc_gas_giant"
+		"pc_gas_giant"
+	}
+}
+random_list = {
+	name = "rl_ff_cold_moon_gas_giants"
+	planets = {
+		"pc_gas_giant"
+		"pc_gas_giant"
+	}
+}
+random_list = {
+	name = "rl_ff_ice_giants"
+	planets = {
+		"pc_gas_giant"
+		"pc_gas_giant"
+		"pc_gas_giant"
+		"pc_gas_giant"
+		"pc_gas_giant"
+	}
+}
+random_list = {
+	name = "rl_ff_hot_planets"
+	planets = {
+		"pc_barren"
+		"pc_toxic"
+		"pc_toxic"
+	}
+}
+random_list = {
+	name = "rl_ff_jovian_accretion_moons"
+	planets = {
+		"pc_molten"
+		"pc_molten"
+	}
+}
+random_list = {
+	name = "rl_ff_ice_giant_accretion_moons"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_ice_giant_accretion_moons"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_jovian_warm_moons"
+	planets = {
+		"pc_toxic"
+		"pc_toxic"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_jovian_temperate_moons"
+	planets = {
+		"pc_toxic"
+		"pc_toxic"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_jovian_cool_moons"
+	planets = {
+		"pc_toxic"
+		"pc_toxic"
+		"pc_frozen"
+		"pc_barren"
+		"pc_barren_cold"
+	}
+}
+random_list = {
+	name = "rl_ff_warm_jovian_nonhabitable_moons"
+	planets = {
+		"pc_molten"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_terrestrial_moons"
+	planets = {
+		"pc_barren"
+		"pc_barren"
+		"pc_barren"
+		"pc_barren_cold"
+		"pc_barren_cold"
+	}
+}
+random_list = {
+	name = "rl_ff_cool_planets"
+	planets = {
+		"pc_toxic"
+		"pc_barren"
+		"pc_frozen"
+		"pc_barren_cold"
+	}
+}
+random_list = {
+	name = "rl_ff_cold_planets"
+	planets = {
+		"pc_barren"
+		"pc_barren_cold"
+	}
+}
+random_list = {
+	name = "rl_ff_puff_moons"
+	planets = {
+		"pc_molten"
+		"pc_toxic"
+	}
+}
+random_list = {
+	name = "rl_ff_giant_moons"
+	planets = {
+		"pc_toxic"
+		"pc_barren"
+		"pc_frozen"
+		"pc_barren_cold"
+		"pc_frozen"
+		"pc_barren_cold"
+	}
+}
+random_list = {
+	name = "rl_ff_giant_cold_moons"
+	planets = {
+		"pc_barren_cold"
+		"pc_barren_cold"
+		"pc_barren_cold"
+		"pc_barren_cold"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_frosty_terrestrial"
+	planets = {
+		"pc_barren_cold"
+		"pc_barren_cold"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_giant_accreting_warm_moons"
+	planets = {
+		"pc_molten"
+		"pc_molten"
+		"pc_molten"
+		"pc_molten"
+		"pc_barren"
+	}
+}
+random_list = {
+	name = "rl_ff_neutron_star_planets"
+	planets = {
+		"pc_barren"
+		"pc_barren"
+		"pc_barren"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_toxic"
+		"pc_gas_giant"
+		"pc_gas_giant"
+	}
+}
+random_list = {
+	name = "rl_ff_kuiper_planets"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_kuiper_objects"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}
+random_list = {
+	name = "rl_ff_exo_kuiper_planets"
+	planets = {
+		"pc_frozen"
+		"pc_frozen"
+		"pc_frozen"
+	}
+}

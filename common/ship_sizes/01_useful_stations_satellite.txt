@@ -1,0 +1,30 @@
+military_station_xs_satellite = {
+	
+	max_speed = 0
+	acceleration = 0
+	rotation_speed = 0
+	combat_rotation_speed = 25
+	
+	modifier = {
+		ship_evasion_mult = -1
+		ship_armor_add = 35
+		ship_shield_hp_add = 1500
+		ship_shield_regen_add = 18.0
+		ship_upkeep_mult = -0.10
+	}
+	max_hitpoints = 1000
+	size_multiplier = 1
+	fleet_slot_size = 2
+	
+	section_slots = {"hull" = { locator = "custom_01"}}
+	
+	is_designable = yes
+	num_target_locators = 0
+	is_space_station = yes
+	
+	enable_default_design = yes	
+	prerequisites = { "tech_military_station_xs_satellite" }
+	class = shipclass_military_station
+	required_component_set = "military_station_xs_satellite_components"
+	build_block_radius = 25
+}

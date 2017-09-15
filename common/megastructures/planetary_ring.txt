@@ -1,0 +1,220 @@
+planet_ring_0 = {
+	entity = ""
+	construction_entity = "planetary_ring_game_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	#entity_offset = { x = 0 z = 0 }
+	build_time = 2700
+	build_cost = {
+		minerals = 10000
+		influence = 150
+	}
+	construction_blocks_others = no
+
+	# prerequisites = {
+		# "tech_mega_engineering"
+	# }
+	
+	potential = {
+		has_ascension_perk = "ap_voidborn"
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				#can_build_megastructure_on_planet = yes
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_ringworld_tech
+					is_planet_class = pc_ringworld_seam
+					is_planet_class = pc_ringworld_habitable_damaged
+					is_planet_class = pc_ringworld_tech_damaged
+					is_planet_class = pc_ringworld_seam_damaged
+					solar_system = {
+						has_star_flag = ring_world_built
+					}
+					
+					#all of these checks ensure that you don't double up on megastructures, and you don't get a the weird situation
+					#of being able to build it around a proper ring world
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_orbital_station"
+				has_orbital_station = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+			}
+
+ 			# balance for habitats
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	
+	on_build_complete = {
+		spawn_planet = {
+			class = "pc_planetary_ring"
+			location = fromfrom.planet
+			orbit_location = yes
+			orbit_angle_offset = 0
+			orbit_distance_offset = 0
+			size = 16
+			has_ring = no
+			
+			init_effect = {
+				set_name = "HABITAT_PLANET_NAME"
+				#This checks to see if the planet is a gas giant and uses a larger ringworld mesh if it is
+				if = {
+					limit = {
+						fromfrom.planet = { 
+							NOR = { is_planet_class = pc_gas_giant
+									is_planet_class = pc_gas_giant_habitable }
+						}
+					}
+					set_planet_flag = "regular_ring"
+					set_planet_entity = {
+					entity = "planetary_ring_game_entity"
+					graphical_culture = fromfrom
+					}
+					else = {
+						set_planet_entity = {
+						entity = "big_planetary_ring_game_entity"
+						graphical_culture = fromfrom
+						}
+					}
+				}
+				surveyed = {
+					set_surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				while = {
+					limit = {
+						any_tile = { has_blocker = yes }
+					}
+					random_tile = {
+						limit = { has_blocker = yes }
+						remove_blocker = yes
+					}
+				}
+				copy_orbital_tile = fromfrom.planet
+				set_planet_flag = habitat
+				set_planet_flag = megastructure
+			}
+		}
+		fromfrom.planet = {
+			set_planet_flag = has_megastructure
+		}
+		remove_megastructure = fromfrom
+		from = { country_event =  { id = utopia.61 } }
+	}
+}
+
+planet_ring_1 = {
+	entity = ""
+	construction_entity = "planetary_double_ring_game_entity"
+	portrait = "GFX_megastructure_construction_background"
+	
+	place_entity_on_planet_plane = yes
+	#entity_offset = { x = 0 y = 0 }
+	build_time = 2700
+	build_cost = {
+		minerals = 8000
+		influence = 100
+	}
+	construction_blocks_others = no
+	
+	prerequisites = {
+		"tech_planet_ring_engineering"
+	}
+	
+	potential = {
+		has_ascension_perk = "ap_voidborn"
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_planetary_ringworld"
+				is_planet_class = pc_planetary_ring
+			}
+			
+			custom_tooltip = {
+				fail_text = "planet_ring_already_upgraded"
+				NOT = { has_planet_flag = planet_ring_upgraded }
+			}
+		}
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	
+	on_build_complete = {
+		fromfrom.planet = {
+			if = {
+				limit = {
+					has_planet_flag = "regular_ring"
+				}
+				set_planet_entity = {
+				entity = "planetary_double_ring_game_entity"
+				graphical_culture = fromfrom
+				}
+				else = {
+					set_planet_entity = {
+					entity = "big_planetary_double_ring_game_entity"
+					graphical_culture = fromfrom
+					}
+				}
+			}
+		}
+		
+		fromfrom.planet = {
+			change_planet_size = 9
+			set_planet_flag = planet_ring_upgraded
+		}
+		remove_megastructure = fromfrom
+	}
+	
+}

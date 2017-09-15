@@ -1,0 +1,513 @@
+namespace = colony
+
+planet_event = {
+	id = colony.90001
+	title = "colony.90001.name"
+	desc = "colony.90001.desc"
+	picture = GFX_evt_city_ruins
+	show_sound = event_ship_bridge
+	location = ROOT
+
+	is_triggered_only = yes
+	
+	option = {
+		name = colony.90001.a
+		custom_tooltip = colony.90001.a.tooltip
+		
+		enable_special_project = {
+			name = "ABANDON_PLANET_EVACUATE"
+			location = this
+			owner = root
+		}
+	}
+		
+	option = {
+		name = colony.90001.b
+		custom_tooltip = colony.90001.b.tooltip
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_pacifist } }
+			NOT = { owner = { has_ethic = ethic_fanatic_pacifist } }
+			NOT = { owner = { has_ethic = ethic_authoritarian } }
+			NOT = { owner = { has_ethic = ethic_fanatic_authoritarian } }
+			OR = {
+				owner = { has_ethic = ethic_militarist }
+				owner = { has_ethic = ethic_fanatic_militarist }
+			}
+		}
+		
+		enable_special_project = {
+			name = "ABANDON_PLANET_ELIMINATE"
+			location = this
+			owner = root
+		}
+	}
+		
+	option = {
+		name = colony.90001.c
+		custom_tooltip = colony.90001.c.tooltip
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_pacifist } }
+			NOT = { owner = { has_ethic = ethic_fanatic_pacifist } }
+			OR = {
+				owner = { has_ethic = ethic_fanatic_authoritarian }
+				owner = { has_ethic = ethic_authoritarian }
+			}
+		}
+		
+		enable_special_project = {
+			name = "ABANDON_PLANET_ELIMINATE"
+			location = this
+			owner = root
+		}
+	}
+	
+	option = {
+		name = colony.90001.d
+		custom_tooltip = colony.90001.d.tooltip
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_pacifist } }
+			NOT = { owner = { has_ethic = ethic_fanatic_pacifist } }
+			OR = {
+				owner = { has_ethic = ethic_materialist }
+				owner = { has_ethic = ethic_fanatic_materialist }
+				owner = { has_ascension_perk = ap_world_shaper }
+			}
+		}
+		
+		enable_special_project = {
+			name = "ABANDON_PLANET_DISASTER"
+			location = this
+			owner = root
+		}
+	}
+	
+	option = {
+		name = colony.90001.f
+		custom_tooltip = colony.90001.f.tooltip
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_pacifist } }
+			NOT = { owner = { has_ethic = ethic_fanatic_pacifist } }
+			owner = { has_ethic = ethic_fanatic_xenophobe }
+			owner = { has_civic = civic_fanatic_purifiers }
+		}
+		
+		enable_special_project = {
+			name = "ABANDON_PLANET_NUKE"
+			location = this
+			owner = root
+		}
+	}
+	
+	option = {
+		name = colony.90001.g
+		custom_tooltip = colony.90001.g.tooltip
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_pacifist } }
+			NOT = { owner = { has_ethic = ethic_fanatic_pacifist } }
+			OR = {
+				owner = { has_ethic = ethic_fanatic_spiritualist }
+				owner = { has_ethic = ethic_spiritualist }
+			}
+		}
+		
+		enable_special_project = {
+			name = "ABANDON_PLANET_CURSE"
+			location = this
+			owner = root
+		}
+	}
+	
+	option = {
+		name = colony.90001.e
+		custom_tooltip = colony.90001.e.tooltip
+		add_
+		remove_planet_flag = decomissioning_planet 
+		remove_modifier = condemed_colony
+		add_influence = 150 * edict_influence_cost
+	}
+}
+
+planet_event = {
+	id = colony.90002
+	title = "colony.90002.name"
+	desc = "colony.90002.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = ROOT
+
+	is_triggered_only = yes
+	
+	immediate = {	
+		owner = {
+			if = { 
+				limit = {
+					NOT = {
+						OR = {
+							has_ethic = ethic_fanatic_authoritarian
+							has_ethic = ethic_authoritarian
+						}
+					}
+					OR = {
+						has_authority = auth_democratic
+						has_authority = auth_oligarchic
+					}
+				} 
+				add_modifier = {
+					modifier = exterminated_colony
+					days = 3650
+				}
+				else = {
+					if = { 
+						limit = {
+							NOT = {
+								OR = {
+									has_ethic = ethic_fanatic_authoritarian
+									has_ethic = ethic_authoritarian
+								}
+							}
+						} 
+						add_modifier = {
+							modifier = exterminated_colony
+							days = 1095
+						}
+					}
+				}
+			}
+		}
+		
+		every_tile = {
+			if = {
+				limit = {
+					has_blocker = no
+					has_building = yes
+				}
+				set_blocker = tb_city_ruins
+			}
+			
+			if = {
+				limit = {
+					has_pop = yes
+				}
+				kill_pop = yes
+				set_blocker = tb_city_ruins
+			}
+		}		
+		
+		add_modifier = {
+			modifier = planetary_genocide
+			days = 730
+		}
+	}
+	
+	option = {
+		name = TERRIBLE
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_authoritarian } }
+			NOT = { owner = { has_ethic = ethic_fanatic_authoritarian } }
+		}
+	}
+	
+	option = {
+		name = EXCELLENT
+		
+		trigger = {
+			OR = {
+				owner = { has_ethic = ethic_authoritarian } }
+				owner = { has_ethic = ethic_fanatic_authoritarian } }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = colony.90003
+	title = "colony.90003.name"
+	desc = "colony.90003.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_ship_thrusters
+	location = ROOT
+
+	is_triggered_only = yes
+	
+	immediate = {	
+		owner = {
+			if = { 
+				limit = {
+					NOT = {
+						OR = {
+							has_ethic = ethic_fanatic_authoritarian
+							has_ethic = ethic_authoritarian
+						}
+					}
+				} 
+				add_modifier = {
+					modifier = abandoned_colony
+					days = 365
+				}
+			}
+		}	
+
+		every_tile = {			
+			if = {
+				limit = {
+					has_pop = yes
+				}
+				kill_pop = yes
+			}
+		}
+	}
+	
+	option = {
+		name = UNFORTUNATE
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_authoritarian } }
+			NOT = { owner = { has_ethic = ethic_fanatic_authoritarian } }
+		}
+	}
+	
+	option = {
+		name = EXCELLENT
+		
+		trigger = {
+			OR = {
+				owner = { has_ethic = ethic_authoritarian } }
+				owner = { has_ethic = ethic_fanatic_authoritarian } }			
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = colony.90004
+	title = "colony.90004.name"
+	desc = "colony.90004.desc"
+	picture = GFX_evt_nuclear_explosion
+	show_sound = event_super_explosion
+	location = ROOT
+
+	is_triggered_only = yes
+	
+	immediate = {	
+		owner = {
+			if = { 
+				add_modifier = {
+					modifier = colony_catasrophe
+					days = 365
+				}
+			}
+		}	
+
+		every_tile = {
+			if = {
+				limit = {
+					has_blocker = no
+					has_building = yes
+				}
+				set_blocker = tb_city_ruins
+			}
+			
+			if = {
+				limit = {
+					has_pop = yes
+					has_blocker = no
+				}
+				set_blocker = tb_city_ruins
+			}
+			
+			if = {
+				limit = {
+					has_pop = yes
+				}
+				kill_pop = yes
+			}
+			
+			random_list = {
+				65 = {  }
+				10 = { set_blocker = tb_active_volcano }
+				10 = { set_blocker = tb_deep_sinkhole }
+				15 = { set_blocker = tb_mountain_range }
+			}
+		}
+		
+		add_modifier = {
+			modifier = planetary_catasrophe
+			days = 730
+		}
+	}
+	
+	option = {
+		name = UNFORTUNATE
+	}
+}
+
+planet_event = {
+	id = colony.90005
+	title = "colony.90005.name"
+	desc = "colony.90005.desc"
+	picture = GFX_evt_orbital_bombardment
+	show_sound = event_air_raid_siren
+	location = ROOT
+
+	is_triggered_only = yes
+	
+	immediate = {	
+		owner = {
+			if = { 
+				limit = {
+					NOT = {
+						OR = {
+							has_ethic = ethic_fanatic_authoritarian
+							has_ethic = ethic_authoritarian
+						}
+					}
+					OR = {
+						has_authority = auth_democratic
+						has_authority = auth_oligarchic
+					}
+				} 
+				add_modifier = {
+					modifier = exterminated_colony
+					days = 3650
+				}
+				else = {
+					if = { 
+						limit = {
+							NOT = {
+								OR = {
+									has_ethic = ethic_fanatic_authoritarian
+									has_ethic = ethic_authoritarian
+								}
+							}
+						} 
+						add_modifier = {
+							modifier = exterminated_colony
+							days = 1095
+						}
+					}
+				}
+			}
+		}
+		
+		every_tile = {
+			if = {
+				limit = {
+					has_blocker = no
+					has_building = yes
+				}
+				set_blocker = tb_city_ruins
+			}
+			
+			if = {
+				limit = {
+					has_pop = yes
+				}
+				kill_pop = yes
+				set_blocker = tb_city_ruins
+			}
+			
+			random_list = {
+				30 = {  }
+				10 = { set_blocker = tb_active_volcano }
+				20 = { set_blocker = tb_deep_sinkhole }
+				20 = { set_blocker = tb_bombarded_land }
+				20 = { set_blocker = tb_bomb_crater }
+			}
+		}
+		
+		add_modifier = {
+			modifier = planetary_catasrophe
+			days = 730
+		}
+	}
+	
+	option = {
+		name = TERRIBLE
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_authoritarian } }
+			NOT = { owner = { has_ethic = ethic_fanatic_authoritarian } }
+		}
+	}
+	
+	option = {
+		name = EXCELLENT
+		
+		trigger = {
+			OR = {
+				owner = { has_ethic = ethic_authoritarian } }
+				owner = { has_ethic = ethic_fanatic_authoritarian } }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = colony.90006
+	title = "colony.90006.name"
+	desc = "colony.90006.desc"
+	picture = GFX_evt_church_interior
+	show_sound = event_ship_thrusters
+	location = ROOT
+
+	is_triggered_only = yes
+	
+	immediate = {	
+		owner = {
+			if = { 
+				limit = {
+					NOT = {
+						OR = {
+							has_ethic = ethic_fanatic_authoritarian
+							has_ethic = ethic_authoritarian
+						}
+					}
+				} 
+				add_modifier = {
+					modifier = abandoned_colony
+					days = 365
+				}
+			}
+		}	
+
+		every_tile = {			
+			if = {
+				limit = {
+					has_pop = yes
+				}
+				kill_pop = yes
+			}
+		}
+		
+		add_modifier = {
+			modifier = planetary_curse
+			days = 730
+		}
+	}
+	
+	option = {
+		name = UNFORTUNATE
+		
+		trigger = {
+			NOT = { owner = { has_ethic = ethic_authoritarian } }
+			NOT = { owner = { has_ethic = ethic_fanatic_authoritarian } }
+		}
+	}
+	
+	option = {
+		name = EXCELLENT
+		
+		trigger = {
+			OR = {
+				owner = { has_ethic = ethic_authoritarian } }
+				owner = { has_ethic = ethic_fanatic_authoritarian } }			
+			}
+		}
+	}
+}

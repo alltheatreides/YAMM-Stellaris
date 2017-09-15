@@ -1,0 +1,384 @@
+
+namespace = SGM_SL_event
+
+#Control SL enable/disable
+#Triggered on_monthly_pulse.
+event = {
+	id = SGM_SL_event.90
+	hide_window = yes
+	is_triggered_only = yes
+		
+	immediate = {
+	
+		if={limit={any_country={has_country_edict=SL_deactivate_for_AI}}
+			set_global_flag = SL_DISABLE_FOR_AI
+		else={
+			remove_global_flag = SL_DISABLE_FOR_AI
+		}}
+	
+		every_country={
+			if={limit={			
+				is_ai=yes
+				is_at_war=yes
+				NOT={has_global_flag=SL_DISABLE_FOR_AI}
+				OR={	
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}}
+				set_country_flag=SL_ENABLE				
+			}
+			if={limit={			
+				is_ai=yes
+				has_global_flag=SL_DISABLE_FOR_AI
+				}
+				remove_country_flag=SL_ENABLE
+			}
+			if={limit={is_ai=no}
+				set_country_flag=SL_ENABLE
+			}			
+		}
+	}
+}
+
+#Remove ships that were removed from the SL fleets
+#Triggered on_yearly_pulse.
+event = {
+	id = SGM_SL_event.91
+	hide_window = yes
+	is_triggered_only = yes
+		
+	immediate = {	
+		every_country={
+			limit={is_country_type = SGM_supply_corps}				
+			every_owned_ship={
+				limit={
+					has_ship_flag=SL_ship
+					fleet={NOT={has_fleet_flag=SL_fleet}}
+				}
+				log="CleanUp: Destroying ship [Prev.GetName]-[This.GetName]"
+				reduce_hp=999999 
+			}			
+		}
+	}
+}
+
+#Remove ships that were removed from the SL fleets
+#Triggered on_yearly_pulse and on_game_start
+event = {
+	id = SGM_SL_event.92
+	hide_window = yes
+	is_triggered_only = yes
+		
+	immediate = {
+		every_country={country_event={id=SGM_SL_event.93}}
+	}
+}
+
+#Create supply corps vassal		
+country_event = {
+	id = SGM_SL_event.93
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger={
+		OR={
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+		NOT={has_country_flag=SGM_supply_corps_initialized}
+	}
+		
+	immediate = {
+
+		if={limit={NOT={has_global_flag = SGM_country_IDs_initialized}}
+			set_global_flag = SGM_country_IDs_initialized
+			
+			set_global_flag = SGM_country_ID_01_available
+			set_global_flag = SGM_country_ID_02_available
+			set_global_flag = SGM_country_ID_03_available
+			set_global_flag = SGM_country_ID_04_available
+			set_global_flag = SGM_country_ID_05_available
+			set_global_flag = SGM_country_ID_06_available
+			set_global_flag = SGM_country_ID_07_available
+			set_global_flag = SGM_country_ID_08_available
+			set_global_flag = SGM_country_ID_09_available
+			set_global_flag = SGM_country_ID_10_available
+			
+			set_global_flag = SGM_country_ID_11_available
+			set_global_flag = SGM_country_ID_12_available
+			set_global_flag = SGM_country_ID_13_available
+			set_global_flag = SGM_country_ID_14_available
+			set_global_flag = SGM_country_ID_15_available
+			set_global_flag = SGM_country_ID_16_available
+			set_global_flag = SGM_country_ID_17_available
+			set_global_flag = SGM_country_ID_18_available
+			set_global_flag = SGM_country_ID_19_available
+			set_global_flag = SGM_country_ID_20_available
+			
+			set_global_flag = SGM_country_ID_21_available
+			set_global_flag = SGM_country_ID_22_available
+			set_global_flag = SGM_country_ID_23_available
+			set_global_flag = SGM_country_ID_24_available
+			set_global_flag = SGM_country_ID_25_available
+			set_global_flag = SGM_country_ID_26_available
+			set_global_flag = SGM_country_ID_27_available
+			set_global_flag = SGM_country_ID_28_available
+			set_global_flag = SGM_country_ID_29_available
+			set_global_flag = SGM_country_ID_30_available
+			
+			set_global_flag = SGM_country_ID_31_available
+			set_global_flag = SGM_country_ID_32_available
+			set_global_flag = SGM_country_ID_33_available
+			set_global_flag = SGM_country_ID_34_available
+			set_global_flag = SGM_country_ID_35_available
+			set_global_flag = SGM_country_ID_36_available
+			set_global_flag = SGM_country_ID_37_available
+			set_global_flag = SGM_country_ID_38_available
+			set_global_flag = SGM_country_ID_39_available
+			set_global_flag = SGM_country_ID_40_available
+			
+			set_global_flag = SGM_country_ID_41_available
+			set_global_flag = SGM_country_ID_42_available
+			set_global_flag = SGM_country_ID_43_available
+			set_global_flag = SGM_country_ID_44_available
+			set_global_flag = SGM_country_ID_45_available
+			set_global_flag = SGM_country_ID_46_available
+			set_global_flag = SGM_country_ID_47_available
+			set_global_flag = SGM_country_ID_48_available
+			set_global_flag = SGM_country_ID_49_available
+			set_global_flag = SGM_country_ID_50_available
+		}		
+		
+		set_country_flag=SGM_supply_corps_initialized		
+		
+		switch = {
+			trigger = has_technology
+			tech_warp_drive_1 = {
+				create_supply_corps_with_random_ftl = yes
+				while={limit={last_created_country={NOT={has_technology=tech_warp_drive_1}}}
+					last_created_country = { destroy_country = yes }
+					create_supply_corps_with_random_ftl = yes
+				}
+				log="Created supply corps country for [This.GetName] with warpdrive"
+			}
+			tech_wormhole_generation_1 = {
+				create_supply_corps_with_random_ftl = yes
+				while={limit={last_created_country={NOT={has_technology=tech_warp_drive_1}}}
+					last_created_country = { destroy_country = yes }
+					create_supply_corps_with_random_ftl = yes
+				}
+				last_created_country = {
+					give_technology={ tech=tech_warp_drive_2 }
+					#give_technology={ tech=tech_warp_drive_3 }
+				}
+				log="Created supply corps country for [This.GetName] with warpdrive2 (wormhole)"
+			}
+			tech_hyper_drive_1 = {
+				create_supply_corps_with_random_ftl = yes
+				while={limit={last_created_country={NOT={has_technology=tech_hyper_drive_1}}}
+					last_created_country = { destroy_country = yes }
+					create_supply_corps_with_random_ftl = yes
+				}
+				log="Created supply corps country for [This.GetName] with hyperdrive"
+			}
+		}			
+		if={limit={has_technology=tech_jump_drive_1}
+			last_created_country={give_technology={tech=tech_jump_drive_1}}
+			log="Created supply corps country for [This.GetName] with jumpdrive"
+		}
+		if={limit={has_technology=tech_psi_jump_drive_1}
+			last_created_country={give_technology={tech=tech_psi_jump_drive_1}}
+			log="Created supply corps country for [This.GetName] with psijumpdrive"
+		}
+		if={limit={
+				OR={
+					is_country_type=fallen_empire
+					is_country_type=awakened_fallen_empire
+				}
+			}
+			last_created_country={
+				give_endgame_tech=yes
+			}
+		}
+		last_created_country={
+			set_subject_of={who=prev subject_type=vassal}
+			give_technology={ tech=tech_supply_ships }
+			give_spaceport_tech=yes
+		}
+				
+		switch = {
+			trigger = has_global_flag
+			SGM_country_ID_01_available={set_country_flag=SGM_success set_country_flag=SGM_country_01_flag save_global_event_target_as = SGM_country_01 remove_global_flag=SGM_country_ID_01_available last_created_country = {set_country_flag=SGM_corps_01_flag save_global_event_target_as = SGM_corps_01}}
+			SGM_country_ID_02_available={set_country_flag=SGM_success set_country_flag=SGM_country_02_flag save_global_event_target_as = SGM_country_02 remove_global_flag=SGM_country_ID_02_available last_created_country = {set_country_flag=SGM_corps_02_flag save_global_event_target_as = SGM_corps_02}}
+			SGM_country_ID_03_available={set_country_flag=SGM_success set_country_flag=SGM_country_03_flag save_global_event_target_as = SGM_country_03 remove_global_flag=SGM_country_ID_03_available last_created_country = {set_country_flag=SGM_corps_03_flag save_global_event_target_as = SGM_corps_03}}
+			SGM_country_ID_04_available={set_country_flag=SGM_success set_country_flag=SGM_country_04_flag save_global_event_target_as = SGM_country_04 remove_global_flag=SGM_country_ID_04_available last_created_country = {set_country_flag=SGM_corps_04_flag save_global_event_target_as = SGM_corps_04}}
+			SGM_country_ID_05_available={set_country_flag=SGM_success set_country_flag=SGM_country_05_flag save_global_event_target_as = SGM_country_05 remove_global_flag=SGM_country_ID_05_available last_created_country = {set_country_flag=SGM_corps_05_flag save_global_event_target_as = SGM_corps_05}}
+			SGM_country_ID_06_available={set_country_flag=SGM_success set_country_flag=SGM_country_06_flag save_global_event_target_as = SGM_country_06 remove_global_flag=SGM_country_ID_06_available last_created_country = {set_country_flag=SGM_corps_06_flag save_global_event_target_as = SGM_corps_06}}
+			SGM_country_ID_07_available={set_country_flag=SGM_success set_country_flag=SGM_country_07_flag save_global_event_target_as = SGM_country_07 remove_global_flag=SGM_country_ID_07_available last_created_country = {set_country_flag=SGM_corps_07_flag save_global_event_target_as = SGM_corps_07}}
+			SGM_country_ID_08_available={set_country_flag=SGM_success set_country_flag=SGM_country_08_flag save_global_event_target_as = SGM_country_08 remove_global_flag=SGM_country_ID_08_available last_created_country = {set_country_flag=SGM_corps_08_flag save_global_event_target_as = SGM_corps_08}}
+			SGM_country_ID_09_available={set_country_flag=SGM_success set_country_flag=SGM_country_09_flag save_global_event_target_as = SGM_country_09 remove_global_flag=SGM_country_ID_09_available last_created_country = {set_country_flag=SGM_corps_09_flag save_global_event_target_as = SGM_corps_09}}
+			SGM_country_ID_10_available={set_country_flag=SGM_success set_country_flag=SGM_country_10_flag save_global_event_target_as = SGM_country_10 remove_global_flag=SGM_country_ID_10_available last_created_country = {set_country_flag=SGM_corps_10_flag save_global_event_target_as = SGM_corps_10}}
+			                             
+			SGM_country_ID_11_available={set_country_flag=SGM_success set_country_flag=SGM_country_11_flag save_global_event_target_as = SGM_country_11 remove_global_flag=SGM_country_ID_11_available last_created_country = {set_country_flag=SGM_corps_11_flag save_global_event_target_as = SGM_corps_11}}
+			SGM_country_ID_12_available={set_country_flag=SGM_success set_country_flag=SGM_country_12_flag save_global_event_target_as = SGM_country_12 remove_global_flag=SGM_country_ID_12_available last_created_country = {set_country_flag=SGM_corps_12_flag save_global_event_target_as = SGM_corps_12}}
+			SGM_country_ID_13_available={set_country_flag=SGM_success set_country_flag=SGM_country_13_flag save_global_event_target_as = SGM_country_13 remove_global_flag=SGM_country_ID_13_available last_created_country = {set_country_flag=SGM_corps_13_flag save_global_event_target_as = SGM_corps_13}}
+			SGM_country_ID_14_available={set_country_flag=SGM_success set_country_flag=SGM_country_14_flag save_global_event_target_as = SGM_country_14 remove_global_flag=SGM_country_ID_14_available last_created_country = {set_country_flag=SGM_corps_14_flag save_global_event_target_as = SGM_corps_14}}
+			SGM_country_ID_15_available={set_country_flag=SGM_success set_country_flag=SGM_country_15_flag save_global_event_target_as = SGM_country_15 remove_global_flag=SGM_country_ID_15_available last_created_country = {set_country_flag=SGM_corps_15_flag save_global_event_target_as = SGM_corps_15}}
+			SGM_country_ID_16_available={set_country_flag=SGM_success set_country_flag=SGM_country_16_flag save_global_event_target_as = SGM_country_16 remove_global_flag=SGM_country_ID_16_available last_created_country = {set_country_flag=SGM_corps_16_flag save_global_event_target_as = SGM_corps_16}}
+			SGM_country_ID_17_available={set_country_flag=SGM_success set_country_flag=SGM_country_17_flag save_global_event_target_as = SGM_country_17 remove_global_flag=SGM_country_ID_17_available last_created_country = {set_country_flag=SGM_corps_17_flag save_global_event_target_as = SGM_corps_17}}
+			SGM_country_ID_18_available={set_country_flag=SGM_success set_country_flag=SGM_country_18_flag save_global_event_target_as = SGM_country_18 remove_global_flag=SGM_country_ID_18_available last_created_country = {set_country_flag=SGM_corps_18_flag save_global_event_target_as = SGM_corps_18}}
+			SGM_country_ID_19_available={set_country_flag=SGM_success set_country_flag=SGM_country_19_flag save_global_event_target_as = SGM_country_19 remove_global_flag=SGM_country_ID_19_available last_created_country = {set_country_flag=SGM_corps_19_flag save_global_event_target_as = SGM_corps_19}}
+			SGM_country_ID_20_available={set_country_flag=SGM_success set_country_flag=SGM_country_20_flag save_global_event_target_as = SGM_country_20 remove_global_flag=SGM_country_ID_20_available last_created_country = {set_country_flag=SGM_corps_20_flag save_global_event_target_as = SGM_corps_20}}
+			                             
+			SGM_country_ID_21_available={set_country_flag=SGM_success set_country_flag=SGM_country_21_flag save_global_event_target_as = SGM_country_21 remove_global_flag=SGM_country_ID_21_available last_created_country = {set_country_flag=SGM_corps_21_flag save_global_event_target_as = SGM_corps_21}}
+			SGM_country_ID_22_available={set_country_flag=SGM_success set_country_flag=SGM_country_22_flag save_global_event_target_as = SGM_country_22 remove_global_flag=SGM_country_ID_22_available last_created_country = {set_country_flag=SGM_corps_22_flag save_global_event_target_as = SGM_corps_22}}
+			SGM_country_ID_23_available={set_country_flag=SGM_success set_country_flag=SGM_country_23_flag save_global_event_target_as = SGM_country_23 remove_global_flag=SGM_country_ID_23_available last_created_country = {set_country_flag=SGM_corps_23_flag save_global_event_target_as = SGM_corps_23}}
+			SGM_country_ID_24_available={set_country_flag=SGM_success set_country_flag=SGM_country_24_flag save_global_event_target_as = SGM_country_24 remove_global_flag=SGM_country_ID_24_available last_created_country = {set_country_flag=SGM_corps_24_flag save_global_event_target_as = SGM_corps_24}}
+			SGM_country_ID_25_available={set_country_flag=SGM_success set_country_flag=SGM_country_25_flag save_global_event_target_as = SGM_country_25 remove_global_flag=SGM_country_ID_25_available last_created_country = {set_country_flag=SGM_corps_25_flag save_global_event_target_as = SGM_corps_25}}
+			SGM_country_ID_26_available={set_country_flag=SGM_success set_country_flag=SGM_country_26_flag save_global_event_target_as = SGM_country_26 remove_global_flag=SGM_country_ID_26_available last_created_country = {set_country_flag=SGM_corps_26_flag save_global_event_target_as = SGM_corps_26}}
+			SGM_country_ID_27_available={set_country_flag=SGM_success set_country_flag=SGM_country_27_flag save_global_event_target_as = SGM_country_27 remove_global_flag=SGM_country_ID_27_available last_created_country = {set_country_flag=SGM_corps_27_flag save_global_event_target_as = SGM_corps_27}}
+			SGM_country_ID_28_available={set_country_flag=SGM_success set_country_flag=SGM_country_28_flag save_global_event_target_as = SGM_country_28 remove_global_flag=SGM_country_ID_28_available last_created_country = {set_country_flag=SGM_corps_28_flag save_global_event_target_as = SGM_corps_28}}
+			SGM_country_ID_29_available={set_country_flag=SGM_success set_country_flag=SGM_country_29_flag save_global_event_target_as = SGM_country_29 remove_global_flag=SGM_country_ID_29_available last_created_country = {set_country_flag=SGM_corps_29_flag save_global_event_target_as = SGM_corps_29}}
+			SGM_country_ID_30_available={set_country_flag=SGM_success set_country_flag=SGM_country_30_flag save_global_event_target_as = SGM_country_30 remove_global_flag=SGM_country_ID_30_available last_created_country = {set_country_flag=SGM_corps_30_flag save_global_event_target_as = SGM_corps_30}}
+			                             
+			SGM_country_ID_31_available={set_country_flag=SGM_success set_country_flag=SGM_country_31_flag save_global_event_target_as = SGM_country_31 remove_global_flag=SGM_country_ID_31_available last_created_country = {set_country_flag=SGM_corps_31_flag save_global_event_target_as = SGM_corps_31}}
+			SGM_country_ID_32_available={set_country_flag=SGM_success set_country_flag=SGM_country_32_flag save_global_event_target_as = SGM_country_32 remove_global_flag=SGM_country_ID_32_available last_created_country = {set_country_flag=SGM_corps_32_flag save_global_event_target_as = SGM_corps_32}}
+			SGM_country_ID_33_available={set_country_flag=SGM_success set_country_flag=SGM_country_33_flag save_global_event_target_as = SGM_country_33 remove_global_flag=SGM_country_ID_33_available last_created_country = {set_country_flag=SGM_corps_33_flag save_global_event_target_as = SGM_corps_33}}
+			SGM_country_ID_34_available={set_country_flag=SGM_success set_country_flag=SGM_country_34_flag save_global_event_target_as = SGM_country_34 remove_global_flag=SGM_country_ID_34_available last_created_country = {set_country_flag=SGM_corps_34_flag save_global_event_target_as = SGM_corps_34}}
+			SGM_country_ID_35_available={set_country_flag=SGM_success set_country_flag=SGM_country_35_flag save_global_event_target_as = SGM_country_35 remove_global_flag=SGM_country_ID_35_available last_created_country = {set_country_flag=SGM_corps_35_flag save_global_event_target_as = SGM_corps_35}}
+			SGM_country_ID_36_available={set_country_flag=SGM_success set_country_flag=SGM_country_36_flag save_global_event_target_as = SGM_country_36 remove_global_flag=SGM_country_ID_36_available last_created_country = {set_country_flag=SGM_corps_36_flag save_global_event_target_as = SGM_corps_36}}
+			SGM_country_ID_37_available={set_country_flag=SGM_success set_country_flag=SGM_country_37_flag save_global_event_target_as = SGM_country_37 remove_global_flag=SGM_country_ID_37_available last_created_country = {set_country_flag=SGM_corps_37_flag save_global_event_target_as = SGM_corps_37}}
+			SGM_country_ID_38_available={set_country_flag=SGM_success set_country_flag=SGM_country_38_flag save_global_event_target_as = SGM_country_38 remove_global_flag=SGM_country_ID_38_available last_created_country = {set_country_flag=SGM_corps_38_flag save_global_event_target_as = SGM_corps_38}}
+			SGM_country_ID_39_available={set_country_flag=SGM_success set_country_flag=SGM_country_39_flag save_global_event_target_as = SGM_country_39 remove_global_flag=SGM_country_ID_39_available last_created_country = {set_country_flag=SGM_corps_39_flag save_global_event_target_as = SGM_corps_39}}
+			SGM_country_ID_40_available={set_country_flag=SGM_success set_country_flag=SGM_country_40_flag save_global_event_target_as = SGM_country_40 remove_global_flag=SGM_country_ID_40_available last_created_country = {set_country_flag=SGM_corps_40_flag save_global_event_target_as = SGM_corps_40}}
+			                             
+			SGM_country_ID_41_available={set_country_flag=SGM_success set_country_flag=SGM_country_41_flag save_global_event_target_as = SGM_country_41 remove_global_flag=SGM_country_ID_41_available last_created_country = {set_country_flag=SGM_corps_41_flag save_global_event_target_as = SGM_corps_41}}
+			SGM_country_ID_42_available={set_country_flag=SGM_success set_country_flag=SGM_country_42_flag save_global_event_target_as = SGM_country_42 remove_global_flag=SGM_country_ID_42_available last_created_country = {set_country_flag=SGM_corps_42_flag save_global_event_target_as = SGM_corps_42}}
+			SGM_country_ID_43_available={set_country_flag=SGM_success set_country_flag=SGM_country_43_flag save_global_event_target_as = SGM_country_43 remove_global_flag=SGM_country_ID_43_available last_created_country = {set_country_flag=SGM_corps_43_flag save_global_event_target_as = SGM_corps_43}}
+			SGM_country_ID_44_available={set_country_flag=SGM_success set_country_flag=SGM_country_44_flag save_global_event_target_as = SGM_country_44 remove_global_flag=SGM_country_ID_44_available last_created_country = {set_country_flag=SGM_corps_44_flag save_global_event_target_as = SGM_corps_44}}
+			SGM_country_ID_45_available={set_country_flag=SGM_success set_country_flag=SGM_country_45_flag save_global_event_target_as = SGM_country_45 remove_global_flag=SGM_country_ID_45_available last_created_country = {set_country_flag=SGM_corps_45_flag save_global_event_target_as = SGM_corps_45}}
+			SGM_country_ID_46_available={set_country_flag=SGM_success set_country_flag=SGM_country_46_flag save_global_event_target_as = SGM_country_46 remove_global_flag=SGM_country_ID_46_available last_created_country = {set_country_flag=SGM_corps_46_flag save_global_event_target_as = SGM_corps_46}}
+			SGM_country_ID_47_available={set_country_flag=SGM_success set_country_flag=SGM_country_47_flag save_global_event_target_as = SGM_country_47 remove_global_flag=SGM_country_ID_47_available last_created_country = {set_country_flag=SGM_corps_47_flag save_global_event_target_as = SGM_corps_47}}
+			SGM_country_ID_48_available={set_country_flag=SGM_success set_country_flag=SGM_country_48_flag save_global_event_target_as = SGM_country_48 remove_global_flag=SGM_country_ID_48_available last_created_country = {set_country_flag=SGM_corps_48_flag save_global_event_target_as = SGM_corps_48}}
+			SGM_country_ID_49_available={set_country_flag=SGM_success set_country_flag=SGM_country_49_flag save_global_event_target_as = SGM_country_49 remove_global_flag=SGM_country_ID_49_available last_created_country = {set_country_flag=SGM_corps_49_flag save_global_event_target_as = SGM_corps_49}}
+			SGM_country_ID_50_available={set_country_flag=SGM_success set_country_flag=SGM_country_50_flag save_global_event_target_as = SGM_country_50 remove_global_flag=SGM_country_ID_50_available last_created_country = {set_country_flag=SGM_corps_50_flag save_global_event_target_as = SGM_corps_50}}
+		}
+		if={limit={NOT={has_country_flag=SGM_success}}
+			log="ERROR: No country ID given for [This.GetName]"
+		}
+		remove_country_flag=SGM_success
+	}		
+}
+
+# A planets controller becomes a country not the same as the owner.
+# Root = Planet
+# From = Planet Owner
+# FromFrom = Planet Controller (the one occupying)
+planet_event = {
+    id = SGM_SL_event.80
+    hide_window = yes
+    is_triggered_only = yes	
+
+	immediate = {
+		#MARKER:SUPPLY_LINE_NUMBER
+		if={limit={has_planet_flag=SL_01_base} remove_planet_flag=SL_01_base from={remove_country_flag=SL_01_base_fixed}}
+		if={limit={has_planet_flag=SL_02_base} remove_planet_flag=SL_02_base from={remove_country_flag=SL_02_base_fixed}}
+		if={limit={has_planet_flag=SL_03_base} remove_planet_flag=SL_03_base from={remove_country_flag=SL_03_base_fixed}}
+		if={limit={has_planet_flag=SL_04_base} remove_planet_flag=SL_04_base from={remove_country_flag=SL_04_base_fixed}}
+		if={limit={has_planet_flag=SL_05_base} remove_planet_flag=SL_05_base from={remove_country_flag=SL_05_base_fixed}}
+		if={limit={has_planet_flag=SL_06_base} remove_planet_flag=SL_06_base from={remove_country_flag=SL_06_base_fixed}}
+		if={limit={has_planet_flag=SL_07_base} remove_planet_flag=SL_07_base from={remove_country_flag=SL_07_base_fixed}}
+		if={limit={has_planet_flag=SL_08_base} remove_planet_flag=SL_08_base from={remove_country_flag=SL_08_base_fixed}}
+		if={limit={has_planet_flag=SL_09_base} remove_planet_flag=SL_09_base from={remove_country_flag=SL_09_base_fixed}}
+		if={limit={has_planet_flag=SL_10_base} remove_planet_flag=SL_10_base from={remove_country_flag=SL_10_base_fixed}}
+	}
+}	
+
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+country_event = {
+    id = SGM_SL_event.81
+    hide_window = yes
+    is_triggered_only = yes	
+
+	trigger={
+		is_country_type = default		
+	}
+	
+	immediate = {
+		SGM_country2corps=yes
+		give_same_tech=yes
+	}
+}
+
+#This = destroyed country
+#From = optional, destroyer (country)
+#on_country_destroyed
+country_event = {
+    id = SGM_SL_event.82
+    hide_window = yes
+    is_triggered_only = yes	
+	
+	immediate = {
+		switch = {
+			trigger = has_country_flag
+			SGM_country_01_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_01={destroy_country=yes} set_global_flag=SGM_country_ID_01_available}
+			SGM_country_02_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_02={destroy_country=yes} set_global_flag=SGM_country_ID_02_available}
+			SGM_country_03_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_03={destroy_country=yes} set_global_flag=SGM_country_ID_03_available}
+			SGM_country_04_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_04={destroy_country=yes} set_global_flag=SGM_country_ID_04_available}
+			SGM_country_05_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_05={destroy_country=yes} set_global_flag=SGM_country_ID_05_available}
+			SGM_country_06_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_06={destroy_country=yes} set_global_flag=SGM_country_ID_06_available}
+			SGM_country_07_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_07={destroy_country=yes} set_global_flag=SGM_country_ID_07_available}
+			SGM_country_08_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_08={destroy_country=yes} set_global_flag=SGM_country_ID_08_available}
+			SGM_country_09_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_09={destroy_country=yes} set_global_flag=SGM_country_ID_09_available}
+			SGM_country_10_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_10={destroy_country=yes} set_global_flag=SGM_country_ID_10_available}
+
+			SGM_country_11_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_11={destroy_country=yes} set_global_flag=SGM_country_ID_11_available}
+			SGM_country_12_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_12={destroy_country=yes} set_global_flag=SGM_country_ID_12_available}
+			SGM_country_13_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_13={destroy_country=yes} set_global_flag=SGM_country_ID_13_available}
+			SGM_country_14_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_14={destroy_country=yes} set_global_flag=SGM_country_ID_14_available}
+			SGM_country_15_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_15={destroy_country=yes} set_global_flag=SGM_country_ID_15_available}
+			SGM_country_16_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_16={destroy_country=yes} set_global_flag=SGM_country_ID_16_available}
+			SGM_country_17_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_17={destroy_country=yes} set_global_flag=SGM_country_ID_17_available}
+			SGM_country_18_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_18={destroy_country=yes} set_global_flag=SGM_country_ID_18_available}
+			SGM_country_19_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_19={destroy_country=yes} set_global_flag=SGM_country_ID_19_available}
+			SGM_country_20_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_20={destroy_country=yes} set_global_flag=SGM_country_ID_20_available}
+  
+			SGM_country_21_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_21={destroy_country=yes} set_global_flag=SGM_country_ID_21_available}
+			SGM_country_22_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_22={destroy_country=yes} set_global_flag=SGM_country_ID_22_available}
+			SGM_country_23_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_23={destroy_country=yes} set_global_flag=SGM_country_ID_23_available}
+			SGM_country_24_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_24={destroy_country=yes} set_global_flag=SGM_country_ID_24_available}
+			SGM_country_25_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_25={destroy_country=yes} set_global_flag=SGM_country_ID_25_available}
+			SGM_country_26_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_26={destroy_country=yes} set_global_flag=SGM_country_ID_26_available}
+			SGM_country_27_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_27={destroy_country=yes} set_global_flag=SGM_country_ID_27_available}
+			SGM_country_28_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_28={destroy_country=yes} set_global_flag=SGM_country_ID_28_available}
+			SGM_country_29_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_29={destroy_country=yes} set_global_flag=SGM_country_ID_29_available}
+			SGM_country_30_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_30={destroy_country=yes} set_global_flag=SGM_country_ID_30_available}
+ 
+			SGM_country_31_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_31={destroy_country=yes} set_global_flag=SGM_country_ID_31_available}
+			SGM_country_32_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_32={destroy_country=yes} set_global_flag=SGM_country_ID_32_available}
+			SGM_country_33_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_33={destroy_country=yes} set_global_flag=SGM_country_ID_33_available}
+			SGM_country_34_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_34={destroy_country=yes} set_global_flag=SGM_country_ID_34_available}
+			SGM_country_35_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_35={destroy_country=yes} set_global_flag=SGM_country_ID_35_available}
+			SGM_country_36_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_36={destroy_country=yes} set_global_flag=SGM_country_ID_36_available}
+			SGM_country_37_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_37={destroy_country=yes} set_global_flag=SGM_country_ID_37_available}
+			SGM_country_38_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_38={destroy_country=yes} set_global_flag=SGM_country_ID_38_available}
+			SGM_country_39_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_39={destroy_country=yes} set_global_flag=SGM_country_ID_39_available}
+			SGM_country_40_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_40={destroy_country=yes} set_global_flag=SGM_country_ID_40_available}
+ 
+			SGM_country_41_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_41={destroy_country=yes} set_global_flag=SGM_country_ID_41_available}
+			SGM_country_42_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_42={destroy_country=yes} set_global_flag=SGM_country_ID_42_available}
+			SGM_country_43_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_43={destroy_country=yes} set_global_flag=SGM_country_ID_43_available}
+			SGM_country_44_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_44={destroy_country=yes} set_global_flag=SGM_country_ID_44_available}
+			SGM_country_45_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_45={destroy_country=yes} set_global_flag=SGM_country_ID_45_available}
+			SGM_country_46_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_46={destroy_country=yes} set_global_flag=SGM_country_ID_46_available}
+			SGM_country_47_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_47={destroy_country=yes} set_global_flag=SGM_country_ID_47_available}
+			SGM_country_48_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_48={destroy_country=yes} set_global_flag=SGM_country_ID_48_available}
+			SGM_country_49_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_49={destroy_country=yes} set_global_flag=SGM_country_ID_49_available}
+			SGM_country_50_flag={log="SGM_SL: Destroying country [This.GetName] and its Supply Corps]" event_target:SGM_corps_50={destroy_country=yes} set_global_flag=SGM_country_ID_50_available}
+		}		
+	}
+}
+

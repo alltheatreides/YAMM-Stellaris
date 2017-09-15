@@ -1,0 +1,554 @@
+# Icons set here are the ones show in the actual slot.
+
+#############
+# THRUSTERS #
+#############
+
+@power_corvette1 = -5 
+@cost_corvette1 = 8
+@power_corvette2 = -6
+@cost_corvette2 = 9
+@power_corvette3 = -8 
+@cost_corvette3 = 10
+@power_corvette4 = -10
+@cost_corvette4 = 11
+
+@power_destroyer1 = -6 
+@cost_destroyer1 = 18
+@power_destroyer2 = -7.5
+@cost_destroyer2 = 20
+@power_destroyer3 = -8.5 
+@cost_destroyer3 = 21
+@power_destroyer4 = -10
+@cost_destroyer4 = 22
+
+@power_cruiser1 = -26 
+@cost_cruiser1 = 44
+@power_cruiser2 = -30
+@cost_cruiser2 = 52
+@power_cruiser3 = -32 
+@cost_cruiser3 = 60
+@power_cruiser4 = -34
+@cost_cruiser4 = 68
+
+@power_battleship1 = -52
+@cost_battleship1 = 88
+@power_battleship2 = -60
+@cost_battleship2 = 104
+@power_battleship3 = -64 
+@cost_battleship3 = 120
+@power_battleship4 = -68
+@cost_battleship4 = 136
+	
+	
+###### 
+#
+# Civilian Ships
+#
+######
+
+
+utility_component_template = {
+	key = "SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = -5
+	cost = 5
+	
+	modifier = {
+	}
+		
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_scout_probe }
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = -10
+	cost = 10
+	modifier = {
+		ship_speed_mult = 0.20
+		ship_combat_speed_mult = 0.20
+		ship_evasion_add = 3
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_scout_probe }
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -15
+	cost = 15
+	modifier = {
+		ship_speed_mult = 0.40
+		ship_combat_speed_mult = 0.40
+		ship_evasion_add = 6
+	}
+
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_scout_probe }
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -20
+	cost = 20
+	modifier = {
+		ship_speed_mult = 0.60
+		ship_combat_speed_mult = 0.60
+		ship_evasion_add = 9
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport shipclass_scout_probe }
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+	
+###### 
+#
+# Military Ships
+#
+######
+
+utility_component_template = {
+	
+	key = "SHIP_THRUSTER_CORVETTE_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1	
+	power = @power_corvette1
+	cost = @cost_corvette1
+	
+	modifier = {		
+		
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup }
+	component_set = "thruster_components"	
+	upgrades_to = "SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_DESTROYER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @power_destroyer1
+	cost = @cost_destroyer1
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_CRUISER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @power_cruiser1
+	cost = @cost_cruiser1
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	component_set = "thruster_components"	
+	upgrades_to = "SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_BATTLESHIP_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @power_battleship1
+	cost = @cost_battleship1
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+#############
+#
+# LVL 2
+#
+#############
+
+
+utility_component_template = {
+	
+	key = "SHIP_THRUSTER_CORVETTE_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1	
+	power = @power_corvette2
+	cost = @cost_corvette2
+	
+	modifier = {
+		ship_speed_mult = 0.20
+		ship_combat_speed_mult = 0.20
+		ship_evasion_add = 4
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup }
+	component_set = "thruster_components"	
+	upgrades_to = "SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_DESTROYER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @power_destroyer2
+	cost = @cost_destroyer2
+	
+	modifier = {
+		ship_speed_mult = 0.20
+		ship_combat_speed_mult = 0.20
+		ship_evasion_add = 2
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_CRUISER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @power_cruiser2
+	cost = @cost_cruiser2
+	
+	modifier = {
+		ship_speed_mult = 0.20
+		ship_combat_speed_mult = 0.20
+		ship_evasion_add = 1
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	component_set = "thruster_components"	
+	upgrades_to = "SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_BATTLESHIP_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @power_battleship2
+	cost = @cost_battleship2
+	
+	modifier = {
+		ship_speed_mult = 0.20
+		ship_combat_speed_mult = 0.20
+		ship_evasion_add = 0.5
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+
+#############
+#
+# LVL 3
+#
+#############
+
+
+utility_component_template = {
+	
+	key = "SHIP_THRUSTER_CORVETTE_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1	
+	power = @power_corvette3
+	cost = @cost_corvette3
+	
+	modifier = {
+		ship_speed_mult = 0.40
+		ship_combat_speed_mult = 0.40
+		ship_evasion_add = 6
+	}
+		
+	prerequisites = { "tech_thrusters_3" }
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup }
+	component_set = "thruster_components"	
+	upgrades_to = "SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_DESTROYER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @power_destroyer3
+	cost = @cost_destroyer3
+	
+	modifier = {
+		ship_speed_mult = 0.40
+		ship_combat_speed_mult = 0.40
+		ship_evasion_add = 3
+	}
+		
+	prerequisites = { "tech_thrusters_3" }
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_CRUISER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @power_cruiser3
+	cost = @cost_cruiser3
+	
+	modifier = {
+		ship_speed_mult = 0.40
+		ship_combat_speed_mult = 0.40
+		ship_evasion_add = 1.5
+	}
+		
+	prerequisites = { "tech_thrusters_3" }
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	component_set = "thruster_components"	
+	upgrades_to = "SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_BATTLESHIP_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @power_battleship3
+	cost = @cost_battleship3
+	
+	modifier = {
+		ship_speed_mult = 0.40
+		ship_combat_speed_mult = 0.40
+		ship_evasion_add = 0.75
+	}
+		
+	prerequisites = { "tech_thrusters_3" }
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	component_set = "thruster_components"
+	upgrades_to = "SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+
+#############
+#
+# LVL 4
+#
+#############
+
+
+utility_component_template = {
+	
+	key = "SHIP_THRUSTER_CORVETTE_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1	
+	power = @power_corvette4
+	cost = @cost_corvette4
+	
+	modifier = {
+		ship_speed_mult = 0.60
+		ship_combat_speed_mult = 0.60
+		ship_evasion_add = 10
+	}
+		
+	prerequisites = { "tech_thrusters_4" }
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup }
+	component_set = "thruster_components"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_DESTROYER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @power_destroyer4
+	cost = @cost_destroyer4
+	
+	modifier = {
+		ship_speed_mult = 0.60
+		ship_combat_speed_mult = 0.60
+		ship_evasion_add = 5
+	}
+		
+	prerequisites = { "tech_thrusters_4" }
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	component_set = "thruster_components"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_CRUISER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @power_cruiser4
+	cost = @cost_cruiser4
+	
+	modifier = {
+		ship_speed_mult = 0.60
+		ship_combat_speed_mult = 0.60
+		ship_evasion_add = 2.5
+	}
+		
+	prerequisites = { "tech_thrusters_4" }
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	component_set = "thruster_components"	
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+
+	key = "SHIP_THRUSTER_BATTLESHIP_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @power_battleship4
+	cost = @cost_battleship4
+	
+	modifier = {
+		ship_speed_mult = 0.60
+		ship_combat_speed_mult = 0.60
+		ship_evasion_add = 1.25
+	}
+		
+	prerequisites = { "tech_thrusters_4" }
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	component_set = "thruster_components"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+

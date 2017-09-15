@@ -1,0 +1,371 @@
+# CoFH - Stellar Expansion
+# Countermeasure Events
+# Author: King Lemming
+
+namespace = cofh_se
+
+################################################################################
+# SWARM
+################################################################################
+
+country_event = {
+	id = cofh_se.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { is_country_type = swarm }
+		is_country_type = default
+		NOT = { has_country_flag = swarm_engaged }
+	}
+
+	immediate = {
+		set_country_flag = swarm_engaged
+		country_event = { id = cofh_se.101 days = 30 }
+	}
+}
+
+country_event = {
+	id = cofh_se.101
+	title = cofh_se.101.name
+	desc = cofh_se.101.desc
+	picture = GFX_evt_fleet_evil
+	show_sound = event_laboratory_sound
+
+	is_triggered_only = yes
+
+	option = {
+		name = cofh_se.101.a
+		capital_scope = {
+			enable_special_project = {
+				name = "COFH_SE_INVESTIGATE_SWARM"
+				location = this
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.105
+	hide_window = yes
+ 	is_triggered_only = yes
+
+	trigger = {
+		exists = FROM
+		is_country_type = default
+		FROM = { is_country_type = swarm }
+		NOT = { has_technology = tech_cofh_se_anti_swarm }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_tech_option = tech_cofh_se_anti_swarm
+			}
+			add_tech_progress = {
+				tech = tech_cofh_se_anti_swarm
+				progress = 0.03
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.110
+	title = cofh_se.110.name
+	desc = cofh_se.110.desc
+	picture = GFX_evt_society_research
+	show_sound = event_alien_nature
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_cofh_se_anti_swarm
+		add_tech_progress = {
+			tech = tech_cofh_se_anti_swarm
+			progress = 0.25
+		}
+	}
+}
+
+################################################################################
+# EXTRADIMENSIONAL
+################################################################################
+
+country_event = {
+	id = cofh_se.200
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = {
+			OR = {
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+				is_country_type = extradimensional_3
+			}
+		}
+		is_country_type = default
+		NOT = { has_country_flag = exd_engaged }
+	}
+
+	immediate = {
+		set_country_flag = exd_engaged
+		country_event = { id = cofh_se.201 days = 30 }
+	}
+}
+
+country_event = {
+	id = cofh_se.201
+	title = cofh_se.201.name
+	desc = cofh_se.201.desc
+	picture = GFX_evt_fleet_evil
+	show_sound = event_laboratory_sound
+
+	is_triggered_only = yes
+
+	option = {
+		name = cofh_se.201.a
+		capital_scope = {
+			enable_special_project = {
+				name = "COFH_SE_INVESTIGATE_EXD"
+				location = this
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.205
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = FROM
+		is_country_type = default
+		FROM = {
+			OR = {
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+				is_country_type = extradimensional_3
+			}
+		}
+		NOT = { has_technology = tech_cofh_se_anti_exd }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_tech_option = tech_cofh_se_anti_exd
+			}
+			add_tech_progress = {
+				tech = tech_cofh_se_anti_exd
+				progress = 0.03
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.210
+	title = cofh_se.210.name
+	desc = cofh_se.210.desc
+	picture = GFX_evt_physics_research
+	show_sound = event_ex_started
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_cofh_se_anti_exd
+		add_tech_progress = {
+			tech = tech_cofh_se_anti_exd
+			progress = 0.25
+		}
+	}
+}
+
+################################################################################
+# AI UPRISING
+################################################################################
+
+country_event = {
+	id = cofh_se.300
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { is_country_type = ai_empire }
+		is_country_type = default
+		NOT = { has_country_flag = ai_engaged }
+	}
+
+	immediate = {
+		set_country_flag = ai_engaged
+		country_event = { id = cofh_se.301 days = 30 }
+	}
+}
+
+country_event = {
+	id = cofh_se.301
+	title = cofh_se.301.name
+	desc = cofh_se.301.desc
+	picture = GFX_evt_fleet_evil
+	show_sound = event_laboratory_sound
+
+	is_triggered_only = yes
+
+	option = {
+		name = cofh_se.301.a
+		capital_scope = {
+			enable_special_project = {
+				name = "COFH_SE_INVESTIGATE_AI"
+				location = this
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.305
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = FROM
+		is_country_type = default
+		FROM = { is_country_type = ai_empire }
+		NOT = { has_technology = tech_cofh_se_anti_ai_empire }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_tech_option = tech_cofh_se_anti_ai_empire
+			}
+			add_tech_progress = {
+				tech = tech_cofh_se_anti_ai_empire
+				progress = 0.03
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.310
+	title = cofh_se.310.name
+	desc = cofh_se.310.desc
+	picture = GFX_evt_sentient_AI
+	show_sound = event_ai_started
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_cofh_se_anti_ai_empire
+		add_tech_progress = {
+			tech = tech_cofh_se_anti_ai_empire
+			progress = 0.25
+		}
+	}
+}
+
+################################################################################
+# FALLEN EMPIRE
+################################################################################
+
+country_event = {
+	id = cofh_se.400
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = {
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+		is_country_type = default
+		NOT = { has_country_flag = fallen_empire_engaged }
+	}
+
+	immediate = {
+		set_country_flag = fallen_empire_engaged
+		country_event = { id = cofh_se.401 days = 30 }
+	}
+}
+
+country_event = {
+	id = cofh_se.401
+	title = cofh_se.401.name
+	desc = cofh_se.401.desc
+	picture = GFX_evt_fleet_neutral
+	show_sound = event_laboratory_sound
+
+	is_triggered_only = yes
+
+	option = {
+		name = cofh_se.401.a
+		capital_scope = {
+			enable_special_project = {
+				name = "COFH_SE_INVESTIGATE_FE"
+				location = this
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.405
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = FROM
+		is_country_type = default
+		FROM = {
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+		NOT = { has_technology = tech_cofh_se_anti_fallen_empire }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_tech_option = tech_cofh_se_anti_fallen_empire
+			}
+			add_tech_progress = {
+				tech = tech_cofh_se_anti_fallen_empire
+				progress = 0.03
+			}
+		}
+	}
+}
+
+country_event = {
+	id = cofh_se.410
+	title = cofh_se.410.name
+	desc = cofh_se.410.desc
+	picture = GFX_evt_fallen_empire_awakes
+	show_sound = event_laboratory_sound
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		add_research_option = tech_cofh_se_anti_fallen_empire
+		add_tech_progress = {
+			tech = tech_cofh_se_anti_fallen_empire
+			progress = 0.25
+		}
+	}
+}

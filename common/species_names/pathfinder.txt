@@ -1,0 +1,644 @@
+# Generated species derive their names from here
+# Rule of thumb: at least one of each culture for each species, except mammalian and humanoid which gets at least ~4 per each
+
+### MAMMALIANS
+
+MAM = {
+	urala = {
+		name = Uralan
+		plural = Uralans
+		home_planet = Urala
+		home_system = "Res Mutri"
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	zulto-ekx = {
+		name = Es
+		plural = Es
+		home_planet = Zulto-Ekx
+		home_system = Giki-Ekx
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	rattsnohla = {
+		name = Rattid
+		plural = Rattids
+		home_planet = "Ratt Snohla"
+		home_system = Rurre
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	zavnorke = {
+		name = Norkean
+		plural = Norkeans
+		home_planet = Zav'norke
+		home_system = Arkohzi
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	horta = {
+		name = Hortean
+		plural = Horteans
+		home_planet = Horta
+		home_system = Navnus
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	shissea = {
+		name = Is'ssean
+		plural = Is'sseans
+		home_planet = Shissea
+		home_system = Zimvendol
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	vorgithar = {
+		name = Githarite
+		plural = Githarites
+		home_planet = "Vor Githar"
+		home_system = "Shol Githar"
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	yerken = {
+		name = "Yer Kennish"
+		plural = "Yer Kennish"
+		home_planet = "Yer Ken"
+		home_system = Ganogiglu
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	calmas = {
+		name = Calmassian
+		plural = Calmassians
+		home_planet = Calmas
+		home_system = Koghros
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	zalluhhonlao = {
+		name = Zall
+		plural = Zall
+		home_planet = Zalluhhonlao
+		home_system = Sovurdo
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	jewelofthesky = {
+		name = Thevebror
+		plural = Thevebror
+		home_planet = "Jewel of the Sky"
+		home_system = "Cavern of Life"
+		name_list = "media_pathfinder_gnome"
+	}
+	krass = {
+		name = Krassite
+		plural = Krassites
+		home_planet = Krass
+		home_system = "Cabent Qupne"
+		name_list = "media_pathfinder_gnome"
+	}
+	wuhcharnam = {
+		name = Charnamese
+		plural = Charnamese
+		home_planet = Wuh'Charnam
+		home_system = Wuh'Enzu
+		name_list = "media_pathfinder_gnome"
+	}
+	gansarlam = {
+		name = Gansarian
+		plural = Gansarians
+		home_planet = Gansarlam
+		home_system = Annelmi
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### FUNGOID
+
+FUN = {
+	duvla = {
+		name = Duvloid
+		plural = Duvloids
+		home_planet = Duvla
+		home_system = Gurko 
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	hugnpparehra = {
+		name = Rehite
+		plural = Rehites
+		home_planet = "Hugnppa Rehra"
+		home_system = "Zelpa Ublo" 
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	gadmole = {
+		name = Vokbi
+		plural = Vokbis
+		home_planet = "Gad Mole"
+		home_system = "Gek Elto" 
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	atra = {
+		name = Atrian
+		plural = Atrians
+		home_planet = Atra
+		home_system = "Sni Netlu" 
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	densaagra = {
+		name = Wah
+		plural = Wah
+		home_planet = "Den Saagra"
+		home_system = Vadmimren
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	valulhru = {
+		name = Va'url
+		plural = Va'url
+		home_planet = Val-Ulhru
+		home_system = Omeerliesave
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	yarriejil = {
+		name = Yarrean
+		plural = Yarreans
+		home_planet = Yarriejil
+		home_system = "Huhhen Kru"
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	githeal = {
+		name = Githoid
+		plural = Githoids
+		home_planet = Githeal
+		home_system = Shalneker
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	eclipra = {
+		name = Ecliprian
+		plural = Ecliprians
+		home_planet = Eclipra
+		home_system = Fecuth
+		name_list = "media_pathfinder_gnome"
+	}
+	sogebush = {
+		name = Sogite
+		plural = Sogites
+		home_planet = Sogebush
+		home_system = Vomlush
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### ARTHROPOID
+
+ART = {
+	nappo = {
+		name = Nappoid
+		plural = Nappoids
+		home_planet = Nappo
+		home_system = P're
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	galla = {
+		name = Gallan
+		plural = Gallans
+		home_planet = Galla
+		home_system = Galla
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	rek = {
+		name = Rekite
+		plural = Rekites
+		home_planet = Rek
+		home_system = Dak
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	jiemvo = {
+		name = Jiemvoid
+		plural = Jiemvoids
+		home_planet = Jiemvo
+		home_system = Shognis
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	leiremmene = {
+		name = Leiremmian
+		plural = Leiremmians
+		home_planet = Leiremmene
+		home_system = Weissorni
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	honjub = {
+		name = Ved'Tengjub
+		plural = Ved'Tengjub
+		home_planet = Hon-Jub
+		home_system = Zum-Jub
+		name_list = "media_pathfinder_gnome"
+	}
+	tolfiang = {
+		name = Tolfoid
+		plural = Tolfoids
+		home_planet = Tolfiang
+		home_system = Lersasen
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### REPTILIAN
+
+REP = {
+	tivneb = {
+		name = Kugge  
+		plural = Kugge
+		home_planet = Tivneb
+		home_system = Tivneb'Gitt
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	rulpa = {
+		name = Rullian  
+		plural = Rullians
+		home_planet = Rulpa
+		home_system = Nerpa
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	snohahra = {
+		name = Haiite  
+		plural = Haiites
+		home_planet = "Sno Hahra"
+		home_system = "Sno Kagu"
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	ivlukugnuglesosni = {
+		name = So'Snian  
+		plural = So'Snians
+		home_planet = "Ivlu-Kugnogle So'Sni"
+		home_system = Ah'Elpo
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	neltourka = {
+		name = N'Urkan
+		plural = N'Urkans
+		home_planet = "Nelto Urka"
+		home_system = Halgitlu
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	majasisan = {
+		name = Essanid
+		plural = Essanids
+		home_planet = "Majas Isan"
+		home_system = "Majas Hasan"
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	dulair = {
+		name = Tan-Gre
+		plural = Tan-Gre
+		home_planet = Dulair
+		home_system = Dallu
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	togin = {
+		name = Toginish
+		plural = Toginish
+		home_planet = Togin
+		home_system = Thiellmila
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	zaye = {
+		name = Zayean
+		plural = Zayeans
+		home_planet = Zaye
+		home_system = Zes
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	vrattzam = {
+		name = "Vratt Zamite"
+		plural = "Vratt Zamites"
+		home_planet = "Vratt Zam"
+		home_system = Grazick
+		name_list = "media_pathfinder_gnome"
+	}
+	shubag = {
+		name = Shubagian
+		plural = Shubagians
+		home_planet = Shubag
+		home_system = Nimanzub
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### AVIAN 
+
+AVI = {
+	hulbu = {
+		name = Hulbish 
+		plural = Hulbish
+		home_planet = Hulbu
+		home_system = Mox-Kus
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	sekdozev = {
+		name = Sekdese 
+		plural = Sekdese
+		home_planet = Sekdo-Zev
+		home_system = Snuppa-Zev
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	dorsilpa = {
+		name = Dorsilan 
+		plural = Dorsilans
+		home_planet = Dorsilpa
+		home_system = Ukkella
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	ugaol = {
+		name = Koshris 
+		plural = Koshris
+		home_planet = Ugaol
+		home_system = Theesec'naron
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	inasiogrem = {
+		name = Siogremi 
+		plural = Siogremis
+		home_planet = Ina-Siogrem
+		home_system = Wihham
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	ludivel = {
+		name = Ludivellan 
+		plural = Ludivellans
+		home_planet = Ludivel
+		home_system = Hondrar
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	shimmeringoflight = {
+		name = Mebladi 
+		plural = Mebladi
+		home_planet = "Shimmering of Light"
+		home_system = "Iron Dwelling"
+		name_list = "media_pathfinder_gnome"
+	}
+	ope = {
+		name = Opid 
+		plural = Opids
+		home_planet = Ope
+		home_system = Shmes
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### MOLLUSCOID
+
+MOL = {
+	vuogorik = {
+		name = Tolga
+		plural = Tolgas
+		home_planet = "Vuogo Rik"
+		home_system = U'Dorka
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	ekdi = {
+		name = Ekdian
+		plural = Ekdians
+		home_planet = Ekdi
+		home_system = Megge
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	hurbo = {
+		name = Hurroid
+		plural = Hurroids
+		home_planet = Hurbo
+		home_system = Napo
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	aelshis = {
+		name = "Ael Kellu"
+		plural = "Ael Kellu"
+		home_planet = "Ael Shis"
+		home_system = Shin
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	tagarmon = {
+		name = Hedi
+		plural = Hedis
+		home_planet = Tagar-Mon
+		home_system = Egamih-Mon
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	domaghrosiess = {
+		name = Domaghrossese
+		plural = Domaghrossese
+		home_planet = Domaghrosiess
+		home_system = Domaghrosiess
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	wallo = {
+		name = Walloid
+		plural = Walloids
+		home_planet = Wallo
+		home_system = Keshehem
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	zenilmud = {
+		name = Demliath
+		plural = Demliath
+		home_planet = "Zen Ilmud"
+		home_system = Shibenden
+		name_list = "media_pathfinder_gnome"
+	}
+	evlun = {
+		name = Evlunoid
+		plural = Evlunoids
+		home_planet = Evlun
+		home_system = Muveg
+		name_list = "media_pathfinder_gnome"
+	}
+	hatshibenden = {
+		name = Hashtian
+		plural = Hashtians
+		home_planet = Hat-Shibenden
+		home_system = Qriod
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### PLANTOID
+
+PLANT = {
+	holihevnix = {
+		name = Hevnicoid
+		plural = Hevnicoids
+		home_planet = Holi-Hevnix
+		home_system = Rilgi
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	hulla = {
+		name = Hullian
+		plural = Hullians
+		home_planet = Hulla
+		home_system = Gublu
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	rotlo = {
+		name = R'ottese
+		plural = R'ottese
+		home_planet = R'otlo
+		home_system = Iv'lu
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	joguzhoh = {
+		name = Joguzoid
+		plural = Joguzoids
+		home_planet = "Jogu Zhoh"
+		home_system = Fiasul
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	tunnas = {
+		name = Tunnasid
+		plural = Tunnasids
+		home_planet = Tunnas
+		home_system = Ihadivelval
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	illenjugli = {
+		name = Irdralyen
+		plural = Irdralyen
+		home_planet = "Illen Jugli"
+		home_system = Lemmoh
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	vomvesome = {
+		name = Vosmian
+		plural = Vosmians
+		home_planet = "Vom Vesome"
+		home_system = Vesome
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	acenel = {
+		name = Acenelan
+		plural = Acenelans
+		home_planet = Acenel
+		home_system = Acaunelear
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	qriod = {
+		name = Qrioid
+		plural = Qrioids
+		home_planet = Qriod
+		home_system = "Course of the Stars"
+		name_list = "media_pathfinder_gnome"
+	}
+	zurgin = {
+		name = Zurginnian
+		plural = Zurginnians
+		home_planet = "Zur Gin"
+		home_system = Saduh
+		name_list = "media_pathfinder_gnome"
+	}
+	ovecomag = {
+		name = Ovecomian
+		plural = Ovecomians
+		home_planet = Ovecomag
+		home_system = Ovecomag
+		name_list = "media_pathfinder_gnome"
+	}
+}
+
+### HUMANOIDS
+
+HUM = {
+	snegik = {
+		name = A'Tad
+		plural = A'Tad
+		home_planet = "Sne Gik"
+		home_system = Zigs'Nis
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	daksnugga = {
+		name = Sneg
+		plural = Snegs
+		home_planet = "Dak Snugga"
+		home_system = Snugga
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	avatro = {
+		name = Avatrian
+		plural = Avatrians
+		home_planet = Avatro
+		home_system = Romzu
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	ovle = {
+		name = Valan
+		plural = Valans
+		home_planet = Ovle
+		home_system = Vule
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	ternkurbo = {
+		name = Kurbish
+		plural = Kurbish
+		home_planet = "Tern Kurbo"
+		home_system = Za'Siltiern
+		name_list = "cybrxkhan_pathfinder_kobold"
+	}
+	hausethatar = {
+		name = Haussite
+		plural = Haussites
+		home_planet = Haus-Ethatar
+		home_system = Haus-Ullarol
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	yohlaim = {
+		name = Ken'Ivu
+		plural = Ken'Ivu
+		home_planet = Yohlaim
+		home_system = Fidohunni
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	vannuh = {
+		name = "Vah Wiss"
+		plural = "Vah Wiss"
+		home_planet = Vannuh
+		home_system = Noholman
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	yiyal = {
+		name = Yiyalese
+		plural = Yiyalese
+		home_planet = Yiyal
+		home_system = Eelioghae
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	thusshio = {
+		name = "Thus Audaran"
+		plural = "Thus Audarans"
+		home_planet = "Thus Shio"
+		home_system = Aelsuni
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	tasadres = {
+		name = Tasadrian
+		plural = Tasadrians
+		home_planet = Tasadres
+		home_system = Nearressun
+		name_list = "cybrxkhan_pathfinder_elvish"
+	}
+	tedfuorna = {
+		name = Bruan
+		plural = Bruan
+		home_planet = "Ted Fuorna"
+		home_system = "Ted Indnatro"
+		name_list = "media_pathfinder_gnome"
+	}
+	chora = {
+		name = At'Chor
+		plural = At'Chor
+		home_planet = Chora
+		home_system = Chorze
+		name_list = "media_pathfinder_gnome"
+	}
+	pambemba = {
+		name = Pambian
+		plural = Pambians
+		home_planet = Pambemba
+		home_system = Ziriru
+		name_list = "media_pathfinder_gnome"
+	}
+	honzer = {
+		name = Honzerese
+		plural = Honzerese
+		home_planet = Honzer
+		home_system = Ongnorla
+		name_list = "media_pathfinder_gnome"
+	}
+}

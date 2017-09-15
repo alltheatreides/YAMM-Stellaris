@@ -1,0 +1,12 @@
+
+SL_supply_ship_modifier = {	
+	ship_windup_mult = -0.5 				#does NOT affect wormhole opening speed (this can only be changed via defines)
+	ship_speed_mult = 0.3					#sublight speed
+	ship_combat_speed_mult = 0.3
+	#SHIP_FTL_WORMHOLE_SPEED_MULT = 0.3 	#is NOT wormhole opening speed, no idea what that does	
+}
+
+SL_weapon_repair_mod = {ship_weapon_damage = 0.075}
+SL_fresh_supplies = {ship_auto_repair_add = 0.075}
+
+

@@ -1,0 +1,55 @@
+BS_check_spawn_survivor_fleet={
+	if={limit={any_owned_fleet={has_fleet_flag = BS_survivor_fleet}}
+		random_owned_fleet={
+			limit={has_fleet_flag = BS_survivor_fleet}
+			save_event_target_as =BS_fleet
+		}				
+	else={
+		save_event_target_as=BS_victom_country
+		random_owned_planet={
+			limit={has_spaceport = yes}
+			save_event_target_as=BS_fleet_target
+		}
+		if={limit={not={exists = event_target:BS_fleet_target}}
+			random_owned_planet={
+				save_event_target_as=BS_fleet_target
+			}
+		}
+		create_fleet = {
+			name = "Battle Survivors"
+			effect = {
+				set_owner = event_target:BS_victom_country
+				set_timed_fleet_flag={flag=BS_survivor_fleet days=40}
+			}
+		}
+		last_created_fleet={
+			save_event_target_as=BS_fleet
+			set_formation_scale = 1
+			set_location = {
+				target = event_target:BS_fleet_target
+				distance = 150
+				angle = random
+			}
+			queue_actions = {
+				wait = 25
+				orbit_planet = event_target:BS_fleet_target				
+			}			
+		}
+	}}
+}
+
+BS_apply_ship_properties={
+	last_created_ship={
+		if={limit={owner={is_ai = yes}}
+			set_timed_ship_flag={flag=BS_recently_wrecked days=180}
+			if={limit={has_HP < 28000}
+				reduce_hp_percent=33
+			}
+		else={
+			set_timed_ship_flag={flag=BS_recently_wrecked days=360}
+			if={limit={has_HP < 28000}
+				reduce_hp_percent=95
+			}
+		}}
+	}
+}

@@ -1,0 +1,121 @@
+﻿l_russian:
+
+ ### RINGWORLD TYPES AND DESCRIPTIONS
+ pc_ringworld_habitable:0 "Среда Обитания Мира-Кольца"
+ pc_ringworld_tech:0 "Системы Мира-Кольца"
+ pc_ringworld_seam:0 "Коммуникации Мира-Кольца"
+ pc_ringworld_habitable_damaged:0 "Обломки Среды Обитания Мира-Кольца"
+ pc_ringworld_tech_damaged:0 "Обломки Систем Мира-Кольца"
+ pc_ringworld_seam_damaged:0 "Обломки Коммуникаций Мира-Кольца"
+ pc_ringworld_habitable_desc:0 "Завершенный сегмент мира-кольца, включающий в себя зоны искусственного проживания вдоль его внутреннего пролета, освобожденный от ограничений и суеты планетарного, сферического существования."
+ pc_ringworld_tech_desc:0 "Системный сегмент мира-кольца, отвечает за все внутренние системы и жизнеобеспечение жилых секторов."
+ pc_ringworld_seam_desc:0 "Коммуникационный сегмент мира-кольца позволяет обмениваться ресурсами между сегментами."
+ pc_ringworld_habitable_damaged_desc:0 "Среда обитания мира-кольца.\n\nСильно повреждена."
+ pc_ringworld_tech_damaged_desc:0 "Системный сегмент мира-кольца.\n\nСильно поврежден."
+ pc_ringworld_seam_damaged_desc:0 "Коммуникационный сегмент мира-кольца.\n\nСильно поврежден."
+ 
+ ### RINGWORLD TILES
+ pc_ringworld_habitable_tile:0 "Биосфера Мира-Кольца"
+ pc_ringworld_habitable_tile_desc:0 "Нетронутая искусственная экосистема поддерживаемая в идеальном состоянии внутренними системами мира-кольца."
+
+ ### RINGWORLD RESTORATION TECHS
+ tech_superstructure_theory:0 "Теория Сверхструктур"
+ tech_superstructure_theory_desc:0 "С нашими знаниями в области постройки мира-кольца мы должны быть способны чинить уже построенные, и восстанавливать поврежденные структуры, проявив немного изобретательности."
+ tech_advanced_megastructure_engineering:0 "Продвинутая Инженерия Сверхструктур"
+ tech_advanced_megastructure_engineering_desc:0 "Мир-кольцо является жемчужиной нашей империи. С нашим мастерством мы должы уметь произвести необходимые изменения в наших кольцах, чтобы добавить больше жилых областей."
+ tech_repeatable_ascension_perks:0 "Теория Вознесения"
+ tech_repeatable_ascension_perks_desc:0 "В процессе нашего стремления к Утопии для нас постепенно открываются секреты вселенской механики."
+
+ ### TECH FEATURES
+ utopia_expanded_tech_unlock_feature:0 "§HUnlocks Feature:§!"
+ utopia_expanded_tech_requires_feature:0 "§RRequires:§!"
+ utopia_expanded_repair_damaged_title:0 "$utopia_expanded_tech_unlock_feature$ Ремонт Мира-Кольца"
+ utopia_expanded_repair_damaged_desc:0 "§HRingworld Repair§!\nПозволяет восстанавливать поврежденные секторы мира-кольца."
+ utopia_expanded_advanced_ringworlds_title:0 "$utopia_expanded_tech_unlock_feature$ Продвинутая постройка мира-кольца"
+ utopia_expanded_advanced_ringworlds_desc:0 "§HRingworld Assembly Construction§!\nПозволяет добавлять среды обитания к уже построенному миру-кольцу."
+ 
+ # TIER VI TECH VERSIONS
+ new_building_autonomous_fabricators:1 "Автономная Фабрика"
+ new_building_autonomous_fabricators_desc:1 "§LBased off ancient designs, the workings of this autonomous factory complex are barely understood.§!"
+ new_building_dark_matter_power_plant:0 "Электростанция на Темной Материи"
+ new_building_dark_matter_power_plant_desc:0 "§LThrough harnessing the properties of Dark Matter, this power plant generates a staggering amount of energy.§!"
+ new_building_agri_processing_complex:0 "Агропроцессиновый Комплекс"
+ new_building_agri_processing_complex_desc:0 "§LCondensed hydroponics operated by fully autonomous systems allows vast quantities of food to be mass produced.§!"
+
+ # OTHER TEXT
+ fe_buildings_unlock_feature:0 "§HUnlocks Building:§!"
+ fe_buildings_requires_feature:0 "§RRequires:§!"
+ requires_energy_upgrade:0 "$fe_buildings_requires_feature$ Сверхохлажденные Сверхпроводники должны быть изучены."
+ requires_minerals_upgrade:0 "$fe_buildings_requires_feature$ Суперраспределительная Промышленная Автоматизация должна быть изучена."
+ requires_food_upgrade:0 "$fe_buildings_requires_feature$ Контроль Искусственной Среды должен быть изучен."
+ 
+ # TECHNOLOGIES - TIER VI POWER PLANT UPGRADE
+ tech_supercooled_energy_conduits:0 "Сверхохлажденные Сверхпроводники"
+ tech_supercooled_energy_conduits_desc:0 "Чтобы безопасно производить огромные количества энергии нам нужны проводники способные пропускать ее без потерь."
+ fe_buildings_tiervi_energy_upgrade_title:0 "$fe_buildings_unlock_feature$ Улучшение Электростанции на Темной Материи"
+ fe_buildings_tiervi_energy_upgrade_desc:0 "§HDark Matter Power Plant Upgrade§!\nЧтобы использовать Электростанцию на Темной Материи без потери эффективности, мы должны установить огромные автоматические передатчики энергии по всей колониальной электросети."
+ 
+ # TIER VI MINING NETWORK UPGRADE
+ tech_superscale_industrial_automation:0 "Суперраспределительная Промышленная Автоматизация"
+ tech_superscale_industrial_automation_desc:0 "Синхронизация цетрального ИИ, сотни андроидов рабочих, и сами производственные цепи позволят нам достич небывалых уровней эффективности."
+ fe_buildings_tiervi_minerals_upgrade_title:0 "$fe_buildings_unlock_feature$ Улучшение Автономной Фабрики"
+ fe_buildings_tiervi_minerals_upgrade_desc:0 "§HAutonomous Fabricator Upgrade§!\nАвтономные фабрики требуют очень изощренных автоматических систем, чтобы работать эффективно."
+ 
+ # TIER VI HYDROPONICS UPGRADE
+ tech_artificial_environment_control:0  "Контроль Искусственной Среды"
+ tech_artificial_environment_control_desc:0  "Используя наши знания экосистем, наши ученые верят, что смогут полностью контролировать все аспекты окружающей среды для достижения оптимальных условий для роста культур."
+ fe_buildings_tiervi_food_upgrade_title:0  "$fe_buildings_unlock_feature$ Улучшение Агропроцессингово Комплекса"
+ fe_buildings_tiervi_food_upgrade_desc:0  "§HAgri-Processing Complex Upgrade§!\nАгропроцессинговые Комплексы требуют не только автоматизации, но также идеального климатконтроля для максимизации урожая."
+ 
+ # UTOPIA EXPANDED ASCENSION PERKS
+ ap_master_of_the_heavens:0 "Хозяева Небес"
+ ap_master_of_the_heavens_desc:0 "Галактика принадлежит тому, кто заберет ее себе. С нашими технологиями мы можем формировать системы так, как считаем нужным."
+ requires_ascension_perks_4:1 "$TRIGGER_FAIL$Требуется сначала выбрать четыре других бонуса за стремление."
+ allow_advanced_ringworlds:0 "Позволяет добавлять среды обитания к уже построенному миру-кольцу."
+ 
+# UTOPIA EXPANDED MEGASTRUCTURES
+ requires_no_colonised_planets:1 "$TRIGGER_FAIL$Нельзя строить в системах с колонизированными планетами и структурами."
+ dyson_ring_1_MEGASTRUCTURE_DETAILS:1 "A §YDyson Ring§! Совмещает в себе Мир-Кольцо и Сферу Дайсона, все планеты системы уходят на материалы для постройки."
+ dyson_ring_1_CONSTRUCTION_INFO_DELAYED:1 "§EUpgrades to:\n\n$ring_world_2_intermediate$\nCost: £minerals §Y20000§! £time §H4800§!\n\n$ring_world_3_intermediate$\nCost: £minerals §Y20000§! £time §H3600§!\n\nA full Ring World consists of 4 $ring_world_3_intermediate$s, each equivalent to a size 25 Gaia world.§!"
+ dyson_ring_1:0 "Место для Кольца Дайсона"
+ dyson_ring_1_DESC:0 "Этот комплекс служит плацдармом, складом и жильем для сотен тысяч работников участвующих в строительстве Кольца Дайсона."
+ dyson_ring_2_intermediate:0 "Каркас Мира-Кольца"
+ dyson_ring_2_intermediate_DESC:0 "Этот начальный каркас окружает местное солнце, и служит основой на которой мы вскоре построим полноценные обитаемые секции."
+ dyson_ring_2:0 "Секция Каркаса Мира-Кольца"
+ dyson_ring_2_DESC:0 "Эта секция каркаса является четвертью незаконченного мира-кольца. Работа над меньшей обитаемой секцией еще не была завершена."
+ dyson_ring_3_intermediate:0 "Завершенная Секция Мира-Кольца"
+ dyson_ring_3_intermediate_DESC:0 "Полностью функционирующая обитаемая секция с активной биосферой и готовая к заселению."
+ #dyson_sphere_0_MEGASTRUCTURE_DETAILS:1 "A §Y$dyson_sphere_5$§! fully envelops a given star, converting all solar output directly to £energy  Energy Credits."
+ #dyson_sphere_0_CONSTRUCTION_INFO_DELAYED:1 "§EUpgrades to:\n\n$dyson_sphere_1$\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_2$\nProduces £energy  §G100§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_3$\nProduces £energy  §G200§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_4$\nProduces £energy  §G300§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_5$\nProduces £energy  §G400§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\nA $dyson_sphere_5$ will blot out the sun, turning all planets in the system into Barren or Frozen Worlds.§!"
+ dyson_ring_4:0 "Место для сферы Дайсона"
+ dyson_ring_4_DESC:0 "Эта строительная станция служит базой для будущего строительства сферы Дайсона."
+ dyson_ring_5:0 "Частичная сфера Дайсона"
+ dyson_ring_5_DESC:0 "Частично функционирующая сфера Дайсона имеет эффективность производства энергии, равную §Y25%§!."
+ dyson_ring_6:0 "Частичная сфера Дайсона"
+ dyson_ring_6_DESC:0 "Частично функционирующая сфера Дайсона имеет эффективность производства энергии, равную §Y50%§!."
+ dyson_ring_7:0 "Частичная сфера Дайсона"
+ dyson_ring_7_DESC:0 "Частично функционирующая сфера Дайсона имеет эффективность производства энергии, равную §Y75%§!."
+ dyson_ring_8:0 "Сфера Дайсона"
+ dyson_ring_8_DESC:0 "Полностью функционирующая сфера Дайсона имеет эффективность производства энергии, равную §G100%§!." 
+ 
+ # UTOPIA EXPANDED EVENTS
+ ue.1.name:0 "Строительство Кольца Дайсона"
+ ue.1.desc:0 "Мы наконец-то готовы начать строительсто самого амбициозного проекта наших дней - кольцо Дайсона вокруг звезды системы [From.From.GetName].\n\nОкружить звезду сферой Дайсона вырабатывающей энергию и при этом поддерживать функционирование мира-кольца с четыремя обитаемыми секциями на той же звезде - это не что иное, как чудо! Создание такого каркаса потребует колоссального количества ресурсов и материалов, так что сотни тысяч наших лучших инженеров готовы начать процесс преобразования планетарных тел системы в вещество, которое можно будет использовать для строительства."
+ ue.1.a:0 "Во истину мы являемся хозяевами небес."
+ ue.3.name:0 "Проект Кольца Дайсона"
+ ue.3.desc.a:0 "До нас дошли слухи, что [From.GetName] осуществляет проект по строительству монументального объекта в системе [dyson_ring_system.GetName]. Они намереваются построить огромное кольцо Дайсона вокруг главной звезды системы и в рамках первого этапа начали преобразовывать вещество всех близлежащих планетарных тел в первичный металлический каркас этого мегасооружения."
+ ue.3.desc.b:0 "У нас есть информация, что [From.GetName] собирается начать строительство еще одного кольца Дайсона, на этот раз в системе [dyson_ring_system.GetName]! Как и прежде, их инженеры сейчас занимаются разборкой на части планетарных тел системы, чтобы использовать эти ресурсы и материалы для строительства кольца Дайсона."
+ ue.3.a:0 "Будет ли кольцо таким же впечатляющим, как у нас?"
+ ue.3.b:0 "Впечатляющий проект... если он будет завершен когда-нибудь."
+ ue.4.name:0 "Каркас Кольца Дайсона Закончен"
+ ue.4.desc:0 "Каркас кольца Дайсона, который мы строим в системе [From.From.GetName], наконец завершен. И хотя многое еще предстоит сделать, одно уже завершение работ над этим металлическим каркасом, окружность которого составляет почти миллиард километров, должно считаться невероятным инженерным подвигом.\n\nТеперь мы готовы приступить к созданию реальных сред обитания и ядра Дайсона."
+ ue.4.a:0 "Нам предстоит много работы."
+ ue.5.name:0 "Кольцо Дайсона Закончено"
+ ue.5.desc:0 "Мы завершили работу над секторами сред обитания в кольце Дайсона, построенном нами в системе [From.From.GetName]. Наши инженеры и экологи в очередной раз добились невозможного.\n\nТеперь представители империи [Root.GetName] по праву могут считаться одними из величайших строителей в истории галактики."
+ ue.5.a:0 "Это великий день."
+ ue.6.name:0 "Панели Ядра Кольца Дайсона Установлены"
+ ue.6.desc:0 "Хотя проект еще не завершен, после установки усовершенствованных солнечных коллекторов мы уже начали пожинать плоды строительства ядра сферы Дайсона в системе [From.From.GetName].\n\nПрирост энергии будет продолжать иметь место и дальше, в конце концов выйдет на полную производственную мощность после завершения ядра.""
+ ue.6.a:0 "Отлично."
+ ue.7.name:0 "Завершено Ядро Кольца Дайсона в Системе [From.From.GetName]"
+ ue.7.desc:0 "Главная звезда системы [From.From.GetName] теперь полностью окружена ядром кольца Дайсона, которое построили [Root.GetAdj].\n\nНаши инженеры празднуют это событие как великое достижение, и для этого есть все основания. Мы добились того, о чем осмеливалась мечтать лишь горстка звездных империй в истории галактики, - полного покорения звезды."
+ ue.7.a:0 "Производство энергии на номинальном уровне."

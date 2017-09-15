@@ -1,0 +1,26 @@
+Contains parts of and modified of:
+SGM Modules
+Combat Rebalance
+Stellaris Expansion
+Balanced Starting Positions
+Expanded Colors
+Ship Numbers Rebalanced
+Advanced Ship Behavior Module
+Species Window
+Cybran Namelist
+Enhanced AI
+FLT Scout Probe
+Ground Combat Evolved
+Improved Megastructures
+LEX
+More Events
+Utopia Expanded
+Useful Stations
+Abandon Colony
+Reduce Aura Graphics
+Defines from Real Space
+misc_system initializers de Final Frontier
+More SpacePort Modules
+empire_initiliazers from Final Frontier
+Civilian Trade
+Flame's Science Tweaks

@@ -1,0 +1,23 @@
+component_set = {
+	key = "military_station_xs_satellite_components"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "military_station_xxl_citadel_snare_aura"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "military_station_xxl_citadel_auras"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1	
+}

@@ -1,0 +1,154 @@
+orbital_antimatter_collection = {
+	icon = "GFX_orbital_antimatter_collection"
+	section = "ASSEMBLYYARD_SPACEPORT_SECTION"
+	construction_days = 360
+	prerequisites = { "tech_antimatter_power" }
+	spaceport_level = 4
+	
+	cost = {
+		minerals = 300
+	}	
+
+	required_resources = {
+		minerals = 2
+	}
+	
+	produced_resources = {
+		energy = 7
+	}
+}
+
+trained_repair_crew = {
+	icon = "GFX_trained_repair_crew"
+	section = "HANGARBAY_SPACEPORT_SECTION"
+	construction_days = 540
+	prerequisites = { "tech_doctrine_trained_repair_crew" }
+	spaceport_level = 4
+	
+	cost = {
+		minerals = 400
+		energy = 100
+	}
+	
+	required_resources = {
+		minerals = 2
+	}
+	
+	station_modifier = {
+		ship_auto_repair_add = 0.05
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+		modifier = {
+			factor = 0
+			from = { NOT = { has_spaceport_module = solar_panel_network } }
+		}
+	}	
+}
+
+reinforced_plating = {
+	icon = "GFX_spaceport_module_reinforced_plating"
+	section = "ASSEMBLYYARD_SPACEPORT_SECTION"
+	construction_days = 540
+	prerequisites = { "tech_ship_armor_4" }
+	spaceport_level = 4
+	
+	cost = {
+		minerals = 1000
+	}
+	
+	required_resources = {
+		minerals = 3
+	}
+	
+	station_modifier = {
+		ship_armor_add = 75
+		ship_hitpoints_add = 13500
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+		modifier = {
+			factor = 0
+			from = { NOT = { has_spaceport_module = solar_panel_network } }
+		}
+	}	
+}
+
+battle_simulations = {
+	icon = "GFX_spaceport_module_battle_simulations"
+	section = "SCIENCE_SPACEPORT_SECTION"
+	construction_days = 540	
+	prerequisites = { tech_spaceport_battle_simulations }
+	spaceport_level = 4
+	
+	cost = {
+		minerals = 500
+		energy = 750
+	}
+	
+	required_resources = {
+		energy = 5
+	}
+	
+	station_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 0.50
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+		modifier = {
+			factor = 0
+			from = { NOT = { has_spaceport_module = solar_panel_network } }
+		}
+	}	
+}
+
+useful_automated_assembly_yards = {
+	icon = "GFX_spaceport_module_useful_automated_assembly_yard"
+	section = "ASSEMBLYYARD_SPACEPORT_SECTION"
+	construction_days = 540
+	prerequisites = { tech_useful_automated_assembly_yards }
+	spaceport_level = 6
+	
+	cost = {
+		minerals = 1000
+		energy = 1000
+	}
+	
+	required_resources = {
+		energy = 5
+		minerals = 5
+	}
+	
+	modifier = {
+		spaceport_ship_build_time_mult = -0.20
+		spaceport_ship_build_cost_mult = -0.10
+	}
+	
+	ship_modifier = {
+		ship_upkeep_mult = -0.05
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+		modifier = {
+			factor = 0
+			from = { NOT = { has_spaceport_module = solar_panel_network } }
+		}
+	}
+}

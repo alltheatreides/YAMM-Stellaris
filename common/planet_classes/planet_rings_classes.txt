@@ -1,0 +1,25 @@
+pc_planetary_ring = {
+	ringworld = yes
+	entity = "planetary_ring_game_entity"
+	entity_scale = 1 							
+	show_city = yes
+	picture = pc_ringworld
+	tile_set = pc_gaia
+	outliner_planet_type = special
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+	icon_frame = 21
+	enable_tilt = no
+	fixed_entity_scale = yes
+	atmosphere_color 		= hsv { 0.0 0.0 1.0 }		
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 0.5
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.0
+	planet_size = 25
+	star = no 									# dont want to spawn a star here
+	colonizable = yes							# gains surface with tiles of tile_set
+	ideal = yes									# gaia world status
+	starting_planet = no						# can be a starting planet 
+	orbit_lines = no							# gives orbit lines
+}

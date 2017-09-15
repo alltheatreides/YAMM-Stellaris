@@ -1,0 +1,1274 @@
+# Generated species derive their names from here
+# Rule of thumb: at least one of each culture for each species, except mammalian and humanoid which gets at least ~4 per each
+
+### MAMMALIANS
+
+MAM = {
+	krettiss = {
+		name = Krett
+		plural = Kretts
+		home_planet = Krettiss
+		home_system = "Habdid Gron"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	boorka = {
+		name = Boorkan
+		plural = Boorkans
+		home_planet = Boorka
+		home_system = Kul-Velra
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	pleer = {
+		name = Pleer
+		plural = Pleer
+		home_planet = "Vakke Wher"
+		home_system = Jiramma
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	yucran = {
+		name = Yucrani
+		plural = Yucranis
+		home_planet = Yucran
+		home_system = Broska
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	gosia = {
+		name = Gosian
+		plural = Gosians
+		home_planet = Gosia
+		home_system = "Morlou Gas"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	panachooni = {
+		name = "Pana Choonese"
+		plural = "Pana Choonese"
+		home_planet = "Pana Chooni"
+		home_system = Audon
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	tooino = {
+		name = Tooino
+		plural = Tooino
+		home_planet = Verne-Tooino
+		home_system = Kidra
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	jootpitrac = {
+		name = "Joot Pi"
+		plural = "Joot Pi"
+		home_planet = "Joot Pi-Trac"
+		home_system = Kal'dert
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	uakmaygorl = {
+		name = Naiphirx
+		plural = Naiphirx
+		home_planet = Uakmaygorl
+		home_system = Greldubb
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	jachos = {
+		name = Jachian
+		plural = Jachians
+		home_planet = Jachos
+		home_system = "Kli Ubress"
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	hicbrobbi = {
+		name = Ti-Klent
+		plural = Ti-Klent
+		home_planet = Hic-Brobbi
+		home_system = Hic-Nhannee
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	dratwyywk = {
+		name = Khunsendu
+		plural = Khunsendu
+		home_planet = Dratwyywk
+		home_system = Dreost
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	etbe = {
+		name = Etbean
+		plural = Etbeans
+		home_planet = Etbe
+		home_system = Wrowwooowin
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	drrledrr = {
+		name = Ka'edrr
+		plural = Ka'edrr
+		home_planet = Drrledrr
+		home_system = Chrarffedrr
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	attaaashk = {
+		name = Olmalgill
+		plural = Olmalgill
+		home_planet = Attaaashk
+		home_system = Hopattekkorl
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	khaccyo = {
+		name = Khaccite
+		plural = Khaccites
+		home_planet = "Khaccyo Teperrugnh"
+		home_system = Teperrugnh
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	rravva = {
+		name = Rravvian
+		plural = Rravvians
+		home_planet = Rravva
+		home_system = Adaalmegn
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	dantellel = {
+		name = Cheplick
+		plural = Cheplicks
+		home_planet = Dantellel
+		home_system = "Kraa Maddamnany"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	curseoftadra = {
+		name = Tadrian
+		plural = Tadrians
+		home_planet = "Curse of Tadra"
+		home_system = "Valley of the Damned"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	balconytothestars = {
+		name = Tremitan
+		plural = Tremitans
+		home_planet = "Balcony to the Stars"
+		home_system = "Arch of the Heavens"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	wegnoonazzy = {
+		name = Wegnoo
+		plural = Wegnoos
+		home_planet = Wegnoonazzy
+		home_system = Anirlaalral
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	braf = {
+		name = Or'f
+		plural = Or'f
+		home_planet = Braf
+		home_system = Traf
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	treasureoffelsan = {
+		name = Felsanite
+		plural = Felsanites
+		home_planet = "Treasure of Felsan"
+		home_system = Blormush
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	wuthu = {
+		name = Wuthid
+		plural = Wuthids
+		home_planet = Wuthu
+		home_system = "Dhawn Ralli"
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	saunt = {
+		name = Klann
+		plural = Klann
+		home_planet = Saunt
+		home_system = Fupps
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### FUNGOID
+
+FUN = {
+	maardergg = {
+		name = Maardoid
+		plural = Maardoids
+		home_planet = Maardergg
+		home_system = Kaxaarm 
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	cek = {
+		name = Cek
+		plural = Cek
+		home_planet = "Tuaba tess Durba"
+		home_system = "Filbu tess Jolla" 
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	alguth = {
+		name = Alguthite
+		plural = Alguthites
+		home_planet = Alguth
+		home_system = "Aogak Grin" 
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	korrda = {
+		name = Korrdian
+		plural = Korrdians
+		home_planet = Korrda
+		home_system = Mado 
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	trellia = {
+		name = Trellian
+		plural = Trellians
+		home_planet = Trellia
+		home_system = Myti 
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	dellabale = {
+		name = Kosi
+		plural = Kosis
+		home_planet = "Della Bale"
+		home_system = Bara 
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	nobmeeck = {
+		name = Noboid
+		plural = Noboids
+		home_planet = "Nob Meeck"
+		home_system = "Shoz Roo" 
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	nortux = {
+		name = Nortuxian
+		plural = Nortuxians
+		home_planet = Nortux-Riss
+		home_system = T'isiamgo 
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	okeambu = {
+		name = Okeambese
+		plural = Okeambese
+		home_planet = Okeambu
+		home_system = "Nha Gour-Sil" 
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	denkya = {
+		name = Denkyan
+		plural = Denkyans
+		home_planet = Denkya
+		home_system = Agradexx 
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	iaardarfekk = {
+		name = Darfekkoid
+		plural = Darfekkoids
+		home_planet = Iaardarfekk
+		home_system = "Ziyyrm Sturd" 
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	zherkaoa = {
+		name = Zherkoid
+		plural = Zherkoids
+		home_planet = Zherkaoa
+		home_system = Grrwaet'charrr 
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	fawunbia = {
+		name = Fawunbian
+		plural = Fawunbians
+		home_planet = Fawunbia
+		home_system = "Fraannal Urrli" 
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	ooghia = {
+		name = Ooghian
+		plural = Ooghians
+		home_planet = Ooghia
+		home_system = Bhirorrl 
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	darkvisage = {
+		name = "Dac Kama"
+		plural = "Dac Kama"
+		home_planet = "Dark Visage"
+		home_system = "Glim Erak" 
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	listyckit = {
+		name = Listican
+		plural = Listicans
+		home_planet = Listyckit
+		home_system = Trigremac 
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	zibfanks = {
+		name = Pirpul
+		plural = Pirpul
+		home_planet = "Zib Fanks"
+		home_system = Triknum
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	ertenn = {
+		name = Ertennese
+		plural = Ertennese
+		home_planet = Ertenn
+		home_system = Ribblof
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	caffjebbip = {
+		name = Jebboid
+		plural = Jebboids
+		home_planet = Caff'Jebbip
+		home_system = Sleesk
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	reweb = {
+		name = Rewebian
+		plural = Rewebians
+		home_planet = Reweb
+		home_system = Reweb
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### ARTHROPOID
+
+ART = {
+	zigg = {
+		name = Ziggoid
+		plural = Ziggoids
+		home_planet = Zigg
+		home_system = Iybuc
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	besadi = {
+		name = Besadian
+		plural = Besadians
+		home_planet = Besadi
+		home_system = "Aindum Cus Prirsi"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	gribba = {
+		name = Gribb
+		plural = Gribb
+		home_planet = Gribba
+		home_system = "Shokka Doco"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	kesterana = {
+		name = Kestoid
+		plural = Kestoids
+		home_planet = "Keste Rana"
+		home_system = Gerta
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	tevsa = {
+		name = Tevsian
+		plural = Tevsians
+		home_planet = Tevsa
+		home_system = Tevsa
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	rothrujenttettoo = {
+		name = Rothrian
+		plural = Rothrians
+		home_planet = "Rothru Jent-Tettoo"
+		home_system = Jent-Tettoo
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	lakbelbobb = {
+		name = Vraeh
+		plural = Vraeh
+		home_planet = "Lak Belbobb"
+		home_system = Qiokmeen
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	kleha = {
+		name = Moobb
+		plural = Moobb
+		home_planet = "Kle-Ha"
+		home_system = "Fis-Pahi Tu-Mebb"
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	lorgo = {
+		name = Lorgoid
+		plural = Lorgoids
+		home_planet = Lorgo
+		home_system = Addebo
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	niembeh = {
+		name = Niemboid
+		plural = Niemboids
+		home_planet = Niembeh
+		home_system = Mibamea
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	khukkrrofu = {
+		name = T'rreurti
+		plural = T'rreurti
+		home_planet = Khuk-Krrofu
+		home_system = Khuk-Stiwr
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	wrrakya = {
+		name = Wrrakian
+		plural = Wrrakians
+		home_planet = Wrrakya
+		home_system = Hrayhn-chaysa
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	gweccayycetmyrr = {
+		name = Myrroid
+		plural = Myrroids
+		home_planet = Gweccayy-Cetmyrr
+		home_system = Fraddagn
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	juvomnonges = {
+		name = Juvomese
+		plural = Juvomese
+		home_planet = Juvomnonges
+		home_system = Frunglaannill
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	taddasmark = {
+		name = Gree'Tredi
+		plural = Gree'Tredi
+		home_planet = "Tadda's Mark"
+		home_system = Gly'Chesti
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	rikaatglee = {
+		name = Glelle
+		plural = Glelle
+		home_planet = Rik'Aat'Glee
+		home_system = Kak'Glee
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	chy = {
+		name = Chyoid
+		plural = Chyoids
+		home_planet = Chy
+		home_system = Gloorphaki
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	clomfib = {
+		name = Skiggos
+		plural = Skiggos
+		home_planet = Clom-Fib
+		home_system = Kopfaum
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	eternalbastion = {
+		name = Siss
+		plural = Siss
+		home_planet = "Eternal Bastion"
+		home_system = "Tower of the Siss"
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	pilyeeg = {
+		name = Pilloid
+		plural = Pilloids
+		home_planet = Pilyeeg
+		home_system = Clud-Bels
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	losk = {
+		name = Loskoid
+		plural = Loskoids
+		home_planet = Losk
+		home_system = Anbem
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### REPTILIAN
+
+REP = {
+	ajuuk = {
+		name = Ajuuki  
+		plural = Ajuukis
+		home_planet = Ajuuk
+		home_system = "Kapo Taga"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	hilbon = {
+		name = Hilbonese  
+		plural = Hilbonese
+		home_planet = Peulb-Hilbon
+		home_system = Shorg-Nalesh
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	kossi = {
+		name = Kossite  
+		plural = Kossites
+		home_planet = Kossi
+		home_system = "Turbluh Worgra"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	ibol = {
+		name = Ibolan  
+		plural = Ibolans
+		home_planet = Ibol
+		home_system = Ullar
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	pergo = {
+		name = Pergian  
+		plural = Pergians
+		home_planet = Pergo
+		home_system = Ubin
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	samai = {
+		name = Samaiese  
+		plural = Samaiese
+		home_planet = Samai
+		home_system = Onack
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	kayria = {
+		name = Kayrian  
+		plural = Kayrians
+		home_planet = Kayria
+		home_system = F'shani 
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	grema = {
+		name = Gremite 
+		plural = Gremites
+		home_planet = Grema
+		home_system = "Dego Baaly"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	leffhouttal = {
+		name = Jhurn 
+		plural = Jhurn
+		home_planet = "Leff Houttal"
+		home_system = Pourbi
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	vraxxsas = {
+		name = Vraxx 
+		plural = Vraxx
+		home_planet = Vraxx-Sas
+		home_system = Galgathra
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	vroulgraihd = {
+		name = Vroulian 
+		plural = Vroulians
+		home_planet = Vroulgraihd
+		home_system = "Grelkoko Ruakk"
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	ningek = {
+		name = Ningekid 
+		plural = Ningekids
+		home_planet = "Ve Ningek"
+		home_system = "Vas Pipir"
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	indoukmal = {
+		name = Ukmalese 
+		plural = Ukmalese
+		home_planet = Indo-Ukmal
+		home_system = Indo-Ma
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	jirhenno = {
+		name = Jirhennian 
+		plural = Jirhennians
+		home_planet = Jirhenno
+		home_system = Vreelbi
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	iyablashchiyyn = {
+		name = "Iya Blash" 
+		plural = "Iya Blash"
+		home_planet = "Iya Blash-Chiyyn"
+		home_system = Suaatwa
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	pettemmu = {
+		name = Pettemmese 
+		plural = Pettemmese
+		home_planet = Pettemmu
+		home_system = Krresnannass
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	bogge = {
+		name = Boggi 
+		plural = Boggis
+		home_planet = Bogge
+		home_system = Dhrodaek
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	gysta = {
+		name = Gystite 
+		plural = Gystites
+		home_planet = Gysta
+		home_system = Geddoorlack
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	neverendingprosperity = {
+		name = Boggi 
+		plural = Boggis
+		home_planet = "Neverending Prosperity"
+		home_system = "Channel of Glyckadderpi"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	divineridge = {
+		name = Gla-Necki 
+		plural = Gla-Necki
+		home_planet = "Divine Ridge"
+		home_system = "Cave of the Risen"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	ikook = {
+		name = Ikoozan 
+		plural = Ikoozans
+		home_planet = Ikook
+		home_system = Edrekkik
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	giblegi = {
+		name = Giblegian
+		plural = Giblegians
+		home_planet = Giblegi
+		home_system = "Lint Jekfausk"
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	fierceguardian = {
+		name = Ziblee
+		plural = Ziblee
+		home_planet = "Fierce Guardian"
+		home_system = "Rust of the Sky"
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	garnuborr = {
+		name = Nubarrian
+		plural = Nubarrians
+		home_planet = Gar'Nuborr
+		home_system = "Buth Nuborr"
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	zibbak = {
+		name = Zibbakid
+		plural = Zibbakids
+		home_planet = Zibbak
+		home_system = Blorr
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### AVIAN 
+
+AVI = {
+	bicka = {
+		name = Bickan 
+		plural = Bickans
+		home_planet = Bicka
+		home_system = Prughi
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	iybuc = {
+		name = Iybucid 
+		plural = Iybucids
+		home_planet = Iybuc
+		home_system = "Dulla Irac"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	saibso = {
+		name = Saibso 
+		plural = Saibso
+		home_planet = Skasch
+		home_system = Kholtolb
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	mantoo = {
+		name = Mantean 
+		plural = Manteans
+		home_planet = Mantoo
+		home_system = Vannai
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	slorikata = {
+		name = "Slori Katan" 
+		plural = "Slori Katans"
+		home_planet = "Slori Kata"
+		home_system = Dampha
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	keenia = {
+		name = Keenian 
+		plural = Keenians
+		home_planet = Keenia
+		home_system = Chalni
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	delunlutaa = {
+		name = "Unlu Taa" 
+		plural = "Unlu Taa"
+		home_planet = "Del Unlu Taa"
+		home_system = Tomdos
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	grixmambell = {
+		name = Grixite 
+		plural = Grixites
+		home_planet = "Grix Mambell"
+		home_system = Kirgia
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	urca = {
+		name = Urcan 
+		plural = Urcans
+		home_planet = Urca
+		home_system = Gatti
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	burcukk = {
+		name = Shal 
+		plural = Shal
+		home_planet = Burcukk
+		home_system = Sulgackbik
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	gwensark = {
+		name = Sark 
+		plural = Sarks
+		home_planet = Gwensark
+		home_system = Ror
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	estushk = {
+		name = Estushki 
+		plural = Estushkis
+		home_planet = Estushk
+		home_system = Tvrinhyack
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	arrsaastu = {
+		name = Arrsean 
+		plural = Arrseans
+		home_planet = Arrsaastu
+		home_system = Shroolgoos
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	apramekjang = {
+		name = Janganese 
+		plural = Janganese
+		home_planet = "Apramek Jang"
+		home_system = Apramek
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	derrakkini = {
+		name = Derrakkian 
+		plural = Derrakkians
+		home_planet = Derrakkini
+		home_system = Ryrlelleek
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	lirritadam = {
+		name = "Raa Doo" 
+		plural = "Raa Doo"
+		home_planet = "Lirri Tadam"
+		home_system = Tarlackoo
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	geemni = {
+		name = Geemid 
+		plural = Geemids
+		home_planet = Geemni
+		home_system = Geemni
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	braub = {
+		name = Bru'a
+		plural = Bru'a
+		home_planet = Braub
+		home_system = Niarr
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	ziblee = {
+		name = Ziblan
+		plural = Ziblans
+		home_planet = Ziblee
+		home_system = Mogarpaff
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### MOLLUSCOID
+
+MOL = {
+	vimmas = {
+		name = Vimmoid
+		plural = Vimmoids
+		home_planet = Vimmas
+		home_system = Kengetho
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	klash = {
+		name = Klash
+		plural = Klash
+		home_planet = "Chaybor Buja"
+		home_system = "Aggas Tregg"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	wurvi = {
+		name = Wurvite
+		plural = Wurvites
+		home_planet = Wurvi
+		home_system = Seybim
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	jibbirg = {
+		name = Jibbirg
+		plural = Jibbirg
+		home_planet = Fiskhaigg
+		home_system = Blirg-Fiskhaigg
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	grogga = {
+		name = Groggan
+		plural = Groggans
+		home_planet = Grogga
+		home_system = Shumvo
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	pronda = {
+		name = Prondian
+		plural = Prondians
+		home_planet = Pronda
+		home_system = "Popa Kapo"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	vaggir = {
+		name = Vaggirese
+		plural = Vaggirese
+		home_planet = Vaggir
+		home_system = Gejalli
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	belka = {
+		name = Belkite
+		plural = Belkites
+		home_planet = Belka
+		home_system = "Qwile Arar"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	pascia = {
+		name = Pascian
+		plural = Pascians
+		home_planet = Pascia
+		home_system = Muloo
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	juunush = {
+		name = Juunites
+		plural = Juunite
+		home_planet = Juunush
+		home_system = Jialgru
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	wubb = {
+		name = Wubbian
+		plural = Wubbians
+		home_planet = Wubb
+		home_system = Ghaldeb
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	sartvusoteria = {
+		name = Kejux
+		plural = Kejux
+		home_planet = "Sart Vuso Teria"
+		home_system = Gris'Nar'Raas
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	usma = {
+		name = Usman
+		plural = Usmans
+		home_planet = Usma
+		home_system = "Di Jesriptuc"
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	libonebb = {
+		name = Dox
+		plural = Dox
+		home_planet = "Libo Nebb"
+		home_system = "Elbo Pabb"
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	soshculgikk = {
+		name = Gikkoid
+		plural = Gikkoids
+		home_planet = Soshculgikk
+		home_system = Emgill
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	uhnchivograi = {
+		name = Aylrram
+		plural = Aylrram
+		home_planet = Uhnchivograi
+		home_system = "Greov Drirrr"
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	nurrfe = {
+		name = Nurrfoid
+		plural = Nurrfoids
+		home_planet = Nurrfe
+		home_system = Nurrfe
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	lamculrukk = {
+		name = Kyytta-Achyo
+		plural = Kyytta-Achyo
+		home_planet = Lamculrukk
+		home_system = Wokkiego
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	bhaathnekaamnokk = {
+		name = Bhaathnian
+		plural = Bhaathnian
+		home_planet = Bhaathne'Kaamnokk
+		home_system = Bhaathne'Netollachi
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	wamwang = {
+		name = Wa'Wa-Krang
+		plural = Wa'Wa-Krang
+		home_planet = "Wam Wang"
+		home_system = "Gila Fadde"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	heavenstwilight = {
+		name = Felrian
+		plural = Felrians
+		home_planet = "Heaven's Twilight"
+		home_system = "Forever Warm"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	houseoffulya = {
+		name = Slu-Newem
+		plural = Slu-Newem
+		home_planet = "House of Fulya"
+		home_system = Buthuzz
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	wuttu = {
+		name = Wuttese
+		plural = Wuttese
+		home_planet = Wuttu
+		home_system = Lerpul
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	todirsh = {
+		name = Todiran
+		plural = Todirans
+		home_planet = Todirsh
+		home_system = Posbem
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### PLANTOID
+
+PLANT = {
+	fass = {
+		name = Fass
+		plural = Fass
+		home_planet = "Grarri Fass"
+		home_system = Joltee
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	lolgargg = {
+		name = Lolgaroid
+		plural = Lolgaroids
+		home_planet = Lolgargg
+		home_system = Shaggonn
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	velrakibba = {
+		name = Velrakibban
+		plural = Velrakibbans
+		home_planet = Velrakibba
+		home_system = "Rappa Boocha"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	sibbira = {
+		name = Sibbiran
+		plural = Sibbirans
+		home_planet = Sibbira
+		home_system = Grangula
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	cigazz = {
+		name = Cigazzoid
+		plural = Cigazzoids
+		home_planet = Cigazz
+		home_system = Plartuc
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	kuri = {
+		name = Kurian
+		plural = Kurians
+		home_planet = Cola-Kuri
+		home_system = Cola-Maka
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	abin = {
+		name = Abinoid
+		plural = Abinoids
+		home_planet = Abin
+		home_system = Dari
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	danhas = {
+		name = Danhasian
+		plural = Danhasians
+		home_planet = Danhas
+		home_system = Humbo'bian
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	vreknehnu = {
+		name = Vrekoid
+		plural = Vrekoids
+		home_planet = Vreknehnu
+		home_system = Brimuc
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	hikkkron = {
+		name = "Koyach Hank-Ron"
+		plural = "Koyach Hank-Ron"
+		home_planet = "Hikkk Ron"
+		home_system = Wrhiznyyygglooos
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	ahbo = {
+		name = Ahboid
+		plural = Ahboids
+		home_planet = Ahbo
+		home_system = Erf-hilbikk
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	dravvu = {
+		name = Krasstu
+		plural = Krasstu
+		home_planet = Dravvu
+		home_system = Neubhobu
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	kraneeplisfolly = {
+		name = Kraneepan
+		plural = Kraneepans
+		home_planet = "Kraneepli's Folly"
+		home_system = "Canvas of the Stars"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	dedregryk = {
+		name = Degroid
+		plural = Degroids
+		home_planet = Dedregryk
+		home_system = Gre
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	fruhwedbel = {
+		name = Pauc
+		plural = Pauc
+		home_planet = Fruh'Wedbel
+		home_system = Fruh'Nilyee
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	loenn = {
+		name = Loennoid
+		plural = Loennoids
+		home_planet = Loenn
+		home_system = Lier
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}
+
+### HUMANOIDS
+
+HUM = {
+	fesur = {
+		name = Fesur
+		plural = Fesur
+		home_planet = Shann
+		home_system = Nittann
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	cardre = {
+		name = Cardrian
+		plural = Cardrians
+		home_planet = "Vas Cardre"
+		home_system = "Vas Plig-Jonjol"
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	jurvisseg = {
+		name = Jurvish
+		plural = Jurvish
+		home_planet = Jurvisseg
+		home_system = Jurvisseg
+		name_list = "cybrxkhan_starwars_hutt"
+	}
+	draxa = {
+		name = Draxa
+		plural = Draxa
+		home_planet = Hoiine
+		home_system = M'Boly
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	bothi = {
+		name = Bothian
+		plural = Bothians
+		home_planet = "Aress Bothi"
+		home_system = "Aress Cani"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	codria = {
+		name = Codrian
+		plural = Codrians
+		home_planet = Codria
+		home_system = "Norma Jen"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	riva = {
+		name = Rivish
+		plural = Rivish
+		home_planet = Riva
+		home_system = "Tar Beni"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	aistoois = {
+		name = Aggat
+		plural = Aggat
+		home_planet = Aistoois
+		home_system = Unnen
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	uctid = {
+		name = Uctidian
+		plural = Uctidians
+		home_planet = Uctid
+		home_system = Sariium
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	arvoth = {
+		name = Arvothite
+		plural = Arvothites
+		home_planet = Arvoth
+		home_system = "Kess Mira"
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	corra = {
+		name = Corrian
+		plural = Corrians
+		home_planet = Corra
+		home_system = Paranon
+		name_list = "cybrxkhan_starwars_imperial"
+	}
+	arte = {
+		name = Artean
+		plural = Arteans
+		home_planet = Arte
+		home_system = Mudraz
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	drilyotal = {
+		name = Drilyid
+		plural = Drilyids
+		home_planet = "Drilyo Tal"
+		home_system = Boscok
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	veayir = {
+		name = Veayiran
+		plural = Veayirans
+		home_planet = Veayir
+		home_system = Ickdir
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	jharubb = {
+		name = Lo-Buh
+		plural = Lo-Buh
+		home_planet = "Jha Rubb"
+		home_system = Vaipebb
+		name_list = "cybrxkhan_starwars_mon_calamari"
+	}
+	cyjjar = {
+		name = Cyjjians
+		plural = Cyjjians
+		home_planet = Cyjjar
+		home_system = Bunlast
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	moch = {
+		name = Mochi
+		plural = Mochis
+		home_planet = "Moch Rheeoh"
+		home_system = "Rheeoh Rhew'dejusta"
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	alganhiko = {
+		name = Rhegatmu
+		plural = Rhegatmu
+		home_planet = "Algan Hiko"
+		home_system = Khavv'Algan
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	cuwayraa = {
+		name = Cuwian
+		plural = Cuwians
+		home_planet = Cuwayraa
+		home_system = Wrahbaa
+		name_list = "cybrxkhan_starwars_wookiee"
+	}
+	knecchoorat = {
+		name = Irra'Deng
+		plural = Irra'Deng
+		home_planet = "Knec Choorat"
+		home_system = Gysteeck
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	destinedsummit = {
+		name = Ikoollan
+		plural = Ikoollan
+		home_planet = "Destined Summit"
+		home_system = "Dale of the Skies"
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	nebick = {
+		name = Nebickish
+		plural = Nebickish
+		home_planet = Nebick
+		home_system = Jaril
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	ookenaa = {
+		name = Ookenian
+		plural = Ookenians
+		home_planet = Ookenaa
+		home_system = Fintaack
+		name_list = "cybrxkhan_starwars_ewok"
+	}
+	dhessbron = {
+		name = Sof
+		plural = Sof
+		home_planet = "Dhess Bron"
+		home_system = "Moosk Jofo"
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	boellad = {
+		name = Boellian
+		plural = Boellians
+		home_planet = Boellad
+		home_system = Bliant
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+	jiffer = {
+		name = Jifferese
+		plural = Jifferese
+		home_planet = Jiffer
+		home_system = Raunt
+		name_list = "cybrxkhan_starwars_gungan"
+	}
+}

@@ -1,0 +1,4204 @@
+bwm_megastructure_swap = {
+	every_system_megastructure = {
+		if = {
+			limit = {
+				OR = {
+					is_megastructure_type = habitat_0
+					is_megastructure_type = bwm_solar_envoy_project_00
+					is_megastructure_type = bwm_gravekeeper_project_00
+					is_megastructure_type = bwm_magma_diver_project_00
+					is_megastructure_type = bwm_ancient_weapon_project_00
+					# is_megastructure_type = bwm_conduit_shipyard_00
+				}
+			}
+			this.planet = {
+				if = {
+					limit = {
+						has_planet_flag = has_megastructure
+					}
+					remove_planet_flag = has_megastructure
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				is_megastructure_type = ring_world_1
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = ring_world_built
+					}
+					remove_star_flag = ring_world_built
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				is_megastructure_type = dyson_sphere_0
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = dyson_sphere_built
+					}
+					remove_star_flag = dyson_sphere_built
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				OR = {
+					is_megastructure_type = dyson_sphere_5
+					is_megastructure_type = dyson_sphere_restored
+				}
+			}
+			this.planet = {
+				save_event_target_as = bwm_megastructure_dyson_loc
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = dyson_sphere_built
+					}
+					remove_star_flag = dyson_sphere_built
+				}
+				spawn_megastructure = { 
+					type = "dyson_sphere_ruined" 
+					location = event_target:bwm_megastructure_dyson_loc
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				is_megastructure_type = spy_orb_0
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = spy_orb_built
+					}
+					remove_star_flag = spy_orb_built
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				OR = {
+					is_megastructure_type = spy_orb_4
+					is_megastructure_type = spy_orb_restored
+				}
+			}
+			this.planet = {
+				save_event_target_as = bwm_megastructure_spy_loc
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = spy_orb_built
+					}
+					remove_star_flag = spy_orb_built
+				}
+				spawn_megastructure = { 
+					type = "spy_orb_ruined" 
+					location = event_target:bwm_megastructure_spy_loc
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				is_megastructure_type = think_tank_0
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = think_tank_built
+					}
+					remove_star_flag = think_tank_built
+				}
+			}
+			this.planet = {
+				if = {
+					limit = {
+						has_planet_flag = has_megastructure
+					}
+					remove_planet_flag = has_megastructure
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				OR = {
+					is_megastructure_type = think_tank_3
+					is_megastructure_type = think_tank_4
+					is_megastructure_type = think_tank_restored
+				}
+			}
+			this.planet = {
+				if = {
+					limit = {
+						has_planet_flag = has_megastructure
+					}
+					remove_planet_flag = has_megastructure
+				}
+				save_event_target_as = bwm_megastructure_think_loc
+			}
+			prev = {
+				if = {
+					limit = {
+						has_star_flag = think_tank_built
+					}
+					remove_star_flag = think_tank_built
+				}
+				spawn_megastructure = { 
+					type = "think_tank_ruined" 
+					location = event_target:bwm_megastructure_think_loc
+				}
+			}
+			remove_megastructure = this
+		}
+	}
+}
+
+bwm_megastructure_erase = {
+	every_system_megastructure = {
+		if = {
+			limit = {
+				exists = this
+			}
+			remove_megastructure = this
+		}
+	}
+}
+
+bwm_awaken = {
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = high_awaken_chance
+			}
+		}
+		set_global_flag = high_awaken_chance
+	}
+}
+
+bwm_overdrive = {
+	if = {
+		limit = {
+			NOT = {
+				has_modifier = bwm_leviathan_cooldown
+			}
+		}
+		add_modifier = {
+			modifier = "bwm_leviathan_overdrive"
+			days = -1
+		}
+	}
+}
+
+bwm_overdrive_cd = {
+	if = {
+		limit = {
+			has_modifier = bwm_leviathan_overdrive
+		}
+		remove_modifier = "bwm_leviathan_overdrive"
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_modifier = bwm_leviathan_cooldown
+			}
+		}
+		add_modifier = {
+			modifier = "bwm_leviathan_cooldown"
+			days = 90
+		}
+	}
+}
+
+### EFFECT SNIPPETS
+
+bwm_effect_explosion_small_2 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_small_1
+		location = THIS
+		duration = 10
+			
+		use_3d_location = yes
+			
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+			
+		entity_scale_to_size = yes
+		scale = 5
+	}
+}
+
+bwm_effect_explosion_small_1 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_small
+		location = THIS
+		duration = 10
+			
+		use_3d_location = yes
+			
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+			
+		entity_scale_to_size = yes
+		scale = 1
+	}
+}
+
+bwm_effect_explosion_1 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_1_object
+		location = THIS
+		duration = 10
+			
+		use_3d_location = yes
+			
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+			
+		entity_scale_to_size = yes
+		scale = 10
+	}
+}
+
+bwm_effect_explosion_2 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_2_object
+		location = THIS
+		duration = 10
+		
+		use_3d_location = yes
+		
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+		
+		entity_scale_to_size = yes
+		scale = 10
+	}
+}
+
+bwm_effect_explosion_2_big = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_2_object
+		location = THIS
+		duration = 10
+		
+		use_3d_location = yes
+		
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+		
+		entity_scale_to_size = yes
+		scale = 100
+	}
+}
+
+bwm_effect_explosion_4 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_4_object
+			location = THIS
+			duration = 10
+				
+			use_3d_location = yes
+				
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+				
+			entity_scale_to_size = yes
+			scale = 100
+	}
+}
+
+bwm_effect_explosion_5_big = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_5_object
+		location = THIS
+		duration = 10
+		
+		use_3d_location = yes
+		
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+		
+		entity_scale_to_size = yes
+		scale = 100
+	}
+}
+
+bwm_effect_explosion_6_big = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_6_object
+		duration = 10
+		
+		location = this
+		
+		use_3d_location = yes
+		
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+		
+		entity_scale_to_size = yes
+		scale = 100
+	}
+}
+
+bwm_effect_explosion_7 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_7_object
+		location = THIS
+		duration = 10
+			
+		use_3d_location = yes
+			
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+			
+		entity_scale_to_size = yes
+		scale = 1.0
+	}
+}
+
+bwm_effect_explosion_8 = {
+	create_ambient_object = {
+		type = bwm_effect_explosion_8_object
+		location = THIS
+		duration = 10
+			
+		use_3d_location = yes
+			
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+			
+		entity_scale_to_size = yes
+		scale = 5.0
+	}
+}
+
+bwm_effect_explosion_AOE = {
+	create_ambient_object = {
+	type = bwm_effect_explosion_AOE_object
+	location = THIS
+	duration = 10
+		
+	use_3d_location = yes
+		
+	entity_offset = { min = 0 max = 0 }
+	entity_offset_angle = { min = 0 max = 0 }
+	entity_offset_height = { min = 0 max = 0 }
+		
+	entity_scale_to_size = yes
+	scale = 100
+	}
+}
+
+###bwm CONDUIT EFFECTS
+
+bwm_conduit_anchor_1 = {
+	create_fleet = {
+		name = "Eternal Holdfast"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Aten"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			set_location = {
+					target = event_target:bwm_conduit_anchor_1_spawn
+					distance = 0
+					angle = random 
+			}
+			save_event_target_as = bwm_conduit_anchor_1_locator
+		}
+	}
+}
+
+bwm_conduit_anchor_2 = {
+	create_fleet = {
+		name = "Eternal Holdfast"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Aten"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			set_location = {
+					target = event_target:bwm_conduit_anchor_2_spawn
+					distance = 0
+					angle = random 
+			}
+			save_event_target_as = bwm_conduit_anchor_2_locator
+		}
+	}
+}
+
+bwm_conduit_anchor_3 = {
+	create_fleet = {
+		name = "Eternal Holdfast"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Aten"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			set_location = {
+					target = event_target:bwm_conduit_anchor_3_spawn
+					distance = 0
+					angle = random 
+			}
+			save_event_target_as = bwm_conduit_anchor_3_locator
+		}
+	}
+}
+
+bwm_conduit_anchor_4 = {
+	create_fleet = {
+		name = "Eternal Holdfast"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Aten"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			set_location = {
+					target = event_target:bwm_conduit_anchor_4_spawn
+					distance = 0
+					angle = random 
+			}
+			save_event_target_as = bwm_conduit_anchor_4_locator
+		}
+	}
+}
+
+bwm_conduit_bulwark = {
+	create_fleet = {
+		name = "Eternal Bulwark"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Kheru'ur"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			set_location = {
+					target = event_target:bwm_conduit_eye_spawn
+					distance = 15
+					angle = 45 
+			}
+			save_event_target_as = bwm_conduit_fortress_spawn
+			fleet_event = { id = bwm_the_conduit.60 days = 30   } #  Avatar Fleet Arrives - Avatar
+			fleet_event = { id = bwm_the_conduit.61 days = 360  } #  First Fleet Arrives - Escort
+			fleet_event = { id = bwm_the_conduit.62 days = 1080 } # Second Fleet Arrives - Cruiser
+			fleet_event = { id = bwm_the_conduit.63 days = 2160 } #  Third Fleet Arrives - Titan
+			fleet_event = { id = bwm_the_conduit.61 days = 2520 } #  First Fleet Arrives - Escort
+			fleet_event = { id = bwm_the_conduit.62 days = 3240 } # Second Fleet Arrives - Cruiser
+			fleet_event = { id = bwm_the_conduit.63 days = 4320 } #  Third Fleet Arrives - Titan
+			fleet_event = { id = bwm_the_conduit.61 days = 4680 } #  First Fleet Arrives - Escort
+			fleet_event = { id = bwm_the_conduit.62 days = 5400 } # Second Fleet Arrives - Cruiser
+			fleet_event = { id = bwm_the_conduit.63 days = 6480 } #  Third Fleet Arrives - Titan
+			fleet_event = { id = bwm_the_conduit.61 days = 6840 } #  First Fleet Arrives - Escort
+			fleet_event = { id = bwm_the_conduit.62 days = 7560 } # Second Fleet Arrives - Cruiser
+			fleet_event = { id = bwm_the_conduit.63 days = 8640 } #  Third Fleet Arrives - Titan
+		}
+	}
+}
+
+bwm_conduit_fleet_1 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}	
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_fortress_spawn
+				distance = 5
+				angle = random
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			queue_actions = {
+				find_closest_planet  = {
+					trigger = {
+						id = bwm_conduit_gather.1
+						has_planet_flag = bwm_conduit_garden
+					}
+					found_planet = {
+						move_to = this
+						orbit_planet = this
+					}
+				}	
+			}
+		}
+	}
+}
+
+bwm_conduit_fleet_2 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_fortress_spawn
+				distance = 5
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			queue_actions = {
+				find_closest_planet  = {
+					trigger = {
+						id = bwm_conduit_gather.4
+						has_planet_flag = bwm_conduit_garden
+					}
+					found_planet = {
+						move_to = this
+						orbit_planet = this
+					}
+				}	
+			}
+		}
+	}
+}
+
+bwm_conduit_fleet_3 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Osiris"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_fortress_spawn
+				distance = 5
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			queue_actions = {
+				find_closest_planet  = {
+					trigger = {
+						id = bwm_conduit_gather.6
+						has_planet_flag = bwm_conduit_garden
+					}
+					found_planet = {
+						move_to = this
+						orbit_planet = this
+					}
+				}	
+			}
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_1_small = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_1_spawn
+				distance = 5
+				angle = random
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_1_big = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_1_spawn
+				distance = 5
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_2_small = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_2_spawn
+				distance = 5
+				angle = random
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_2_big = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_2_spawn
+				distance = 5
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_3_small = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_3_spawn
+				distance = 5
+				angle = random
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_3_big = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_3_spawn
+				distance = 5
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_4_small = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_4_spawn
+				distance = 5
+				angle = random
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_anchor_4_big = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}	
+			}
+			set_location = {
+				target = event_target:bwm_conduit_anchor_4_spawn
+				distance = 5
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+bwm_conduit_fleet_boss = {
+	create_fleet = {
+		name = "Eternal Vanguard"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Ulthar"
+				design = "Matet"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = {
+				target = ROOT
+				distance = 5
+				angle = random
+			}
+			set_fleet_flag = bwm_conduit_fleet
+			set_formation_scale = 3.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_fleet_roaming_1 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = {
+				target = ROOT
+				distance = 5
+				angle = random
+			}
+			set_fleet_flag = bwm_conduit_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_fleet_roaming_2 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = {
+				target = ROOT
+				distance = 5
+				angle = random
+			}
+			set_fleet_flag = bwm_conduit_fleet
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_fleet_roaming_3 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Osiris"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = {
+				target = ROOT
+				distance = 5
+				angle = random
+			}
+			set_fleet_flag = bwm_conduit_fleet
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_summon_1 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = event_target:bwm_conduit_summon
+			set_fleet_flag = bwm_conduit_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_summon_2 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Seth"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = event_target:bwm_conduit_summon
+			set_fleet_flag = bwm_conduit_fleet
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_summon_3 = {
+	create_fleet = {
+		name = "Eternal Flotilla"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Conduit"
+				design = "Osiris"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = event_target:bwm_conduit_summon
+			set_fleet_flag = bwm_conduit_fleet
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_summon_4 = {
+	create_fleet = {
+		name = "Eternal Vanguard"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_conduit_country
+			create_ship = {
+				name = "Ulthar"
+				design = "Matet"
+				graphical_culture = "fallen_empire_03"
+				prefix = no
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Conduit"
+					design = "Nephtys"
+					graphical_culture = "fallen_empire_03"
+					prefix = no
+				}
+			}
+			set_location = event_target:bwm_conduit_summon
+			set_fleet_flag = bwm_conduit_fleet
+			set_formation_scale = 3.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+bwm_conduit_owner_swap = {
+	every_fleet_in_system = {
+		if = {
+			limit = {
+				NOT = {
+					OWNER = {
+						is_country_type = bwm_conduit_guardian
+					}
+				}
+				#is_ship_class = shipclass_military
+			}
+			set_owner = event_target:bwm_conduit_country
+			set_fleet_flag = bwm_conduit_fleet
+
+			fleet_event = { id = bwm_the_conduit.57 }
+		}
+	}
+}
+
+###bwm ANCESTOR EFFECTS
+
+#bwm ancestor star spawn templates 1
+
+bwm_ancestor_infant = {
+	create_fleet = {
+		name = "Infant Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner
+			create_ship = {
+				name = "Fler"
+				design = "Alpan I"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn
+			set_fleet_flag = bwm_ancestor_infant_spawn
+			
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 360 }
+		}
+	}
+}
+
+bwm_ancestor_young = {
+	create_fleet = {
+		name = "Young Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner
+			create_ship = {
+				name = "Fler"
+				design = "Alpan II"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn
+			set_fleet_flag = bwm_ancestor_young_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 288 }
+		}
+	}
+}
+
+bwm_ancestor_adult = {
+	create_fleet = {
+		name = "Adult Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner
+			create_ship = {
+				name = "Fler"
+				design = "Alpan III"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn
+			set_fleet_flag = bwm_ancestor_adult_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 216 }
+		}
+	}
+}
+
+bwm_ancestor_elder = {
+	create_fleet = {
+		name = "Elder Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner
+			create_ship = {
+				name = "Fler"
+				design = "Alpan IV"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn
+			set_fleet_flag = bwm_ancestor_elder_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+
+			fleet_event = { id = bwm_ancestor.4 days = 144 }
+		}
+	}
+}
+
+bwm_ancestor_immortal = {
+	create_fleet = {
+		name = "Dying Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner
+			create_ship = {
+				name = "Fler"
+				design = "Alpan V"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn
+			
+			set_fleet_flag = bwm_ancestor_dying_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.9 }
+			fleet_event = { id = bwm_ancestor.4 days = 72 }
+		}
+	}
+}
+
+#bwm_ancestor star spawn templates 2
+
+bwm_ancestor_infant_1 = {
+	create_fleet = {
+		name = "Infant Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_1
+			create_ship = {
+				name = "Fler"
+				design = "Alpan I"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_1
+			set_fleet_flag = bwm_ancestor_infant_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 360 }
+		}
+	}
+}
+
+bwm_ancestor_young_1 = {
+	create_fleet = {
+		name = "Young Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_1
+			create_ship = {
+				name = "Fler"
+				design = "Alpan II"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_1
+			set_fleet_flag = bwm_ancestor_young_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 288 }
+		}
+	}
+}
+
+bwm_ancestor_adult_1 = {
+	create_fleet = {
+		name = "Adult Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_1
+			create_ship = {
+				name = "Fler"
+				design = "Alpan III"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_1
+			set_fleet_flag = bwm_ancestor_adult_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 216 }
+		}
+	}
+}
+
+bwm_ancestor_elder_1 = {
+	create_fleet = {
+		name = "Elder Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_1
+			create_ship = {
+				name = "Fler"
+				design = "Alpan IV"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_1
+			set_fleet_flag = bwm_ancestor_elder_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+
+			fleet_event = { id = bwm_ancestor.4 days = 144 }
+		}
+	}
+}
+
+bwm_ancestor_immortal_1 = {
+	create_fleet = {
+		name = "Dying Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_1
+			create_ship = {
+				name = "Fler"
+				design = "Alpan V"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_1
+			
+			set_fleet_flag = bwm_ancestor_dying_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.9 }
+			fleet_event = { id = bwm_ancestor.4 days = 72 }
+		}
+	}
+}
+
+#bwm_ancestor star spawn templates 3
+
+bwm_ancestor_infant_2 = {
+	create_fleet = {
+		name = "Infant Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_2
+			create_ship = {
+				name = "Fler"
+				design = "Alpan I"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_2
+			set_fleet_flag = bwm_ancestor_infant_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 360 }
+		}
+	}
+}
+
+bwm_ancestor_young_2 = {
+	create_fleet = {
+		name = "Young Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_2
+			create_ship = {
+				name = "Fler"
+				design = "Alpan II"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_2
+			set_fleet_flag = bwm_ancestor_young_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 288 }
+		}
+	}
+}
+
+bwm_ancestor_adult_2 = {
+	create_fleet = {
+		name = "Adult Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_2
+			create_ship = {
+				name = "Fler"
+				design = "Alpan III"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_2
+			set_fleet_flag = bwm_ancestor_adult_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 216 }
+		}
+	}
+}
+
+bwm_ancestor_elder_2 = {
+	create_fleet = {
+		name = "Elder Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_2
+			create_ship = {
+				name = "Fler"
+				design = "Alpan IV"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_2
+			set_fleet_flag = bwm_ancestor_elder_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+
+			fleet_event = { id = bwm_ancestor.4 days = 144 }
+		}
+	}
+}
+
+bwm_ancestor_immortal_2 = {
+	create_fleet = {
+		name = "Dying Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_2
+			create_ship = {
+				name = "Fler"
+				design = "Alpan V"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_2
+			
+			set_fleet_flag = bwm_ancestor_dying_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.9 }
+			fleet_event = { id = bwm_ancestor.4 days = 72 }
+		}
+	}
+}
+
+
+# ancestor star spawn templates 4
+
+bwm_ancestor_ward = {
+	create_fleet = {
+		name = "Warden of Thesan"
+		settings = {
+			spawn_debris = no
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_3
+			create_ship = {
+				name = "Capra"
+				design = "Tmia"
+				prefix = no
+			}
+			set_location = {
+					target = event_target:bwm_ancestor_spawn_3
+					distance = 20
+					angle = random
+			}
+		}
+	}
+}
+
+# ancestor star spawn templates 5
+
+bwm_ancestor_immortal_3 = {
+	create_fleet = {
+		name = "Dying Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_4
+			create_ship = {
+				name = "Fler"
+				design = "Alpan V"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_4
+			
+			set_fleet_flag = bwm_ancestor_dying_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.9 }
+			fleet_event = { id = bwm_ancestor.4 days = 72 }
+		}
+	}
+}
+
+# ancestor star spawn templates 6
+
+bwm_ancestor_infant_6 = {
+	create_fleet = {
+		name = "Infant Star Spawn"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_swarm_owner_6
+			create_ship = {
+				name = "Fler"
+				design = "Alpan I"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_spawn_6
+			set_fleet_flag = bwm_ancestor_infant_spawn
+			
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.4 days = 360 }
+		}
+	}
+}
+
+# ancestor initial spawn templates
+
+bwm_ancestor_herald_1 = {
+	create_fleet = {
+		name = "Herald of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Favi"
+				design = "Eita"
+				prefix = no
+				
+				effect = {
+					set_ship_flag = bwm_ancestor_herald_1
+				}
+			}
+			set_location = event_target:bwm_ancestor_escape
+			set_fleet_flag = bwm_ancestor_herald_1_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.10 }
+		}
+	}
+}
+
+bwm_ancestor_herald_2 = {
+	create_fleet = {
+		name = "Herald of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Favi"
+				design = "Eita"
+				prefix = no
+				
+				effect = {
+					set_ship_flag = bwm_ancestor_herald_2
+				}
+			}
+			set_location = event_target:bwm_ancestor_escape
+			set_fleet_flag = bwm_ancestor_herald_2_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.10 }
+		}
+	}
+}
+
+bwm_ancestor_herald_3 = {
+	create_fleet = {
+		name = "Herald of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Favi"
+				design = "Eita"
+				prefix = no
+				
+				effect = {
+					set_ship_flag = bwm_ancestor_herald_3
+				}
+			}
+			set_location = event_target:bwm_ancestor_escape
+			set_fleet_flag = bwm_ancestor_herald_3_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.10 }
+		}
+	}
+}
+
+bwm_ancestor_herald_4 = {
+	create_fleet = {
+		name = "Herald of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Favi"
+				design = "Eita"
+				prefix = no
+				
+				effect = {
+					set_ship_flag = bwm_ancestor_herald_4
+				}
+			}
+			set_location = event_target:bwm_ancestor_escape
+			set_fleet_flag = bwm_ancestor_herald_4_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.10 }
+		}
+	}
+}
+
+bwm_ancestor_herald_5 = {
+	create_fleet = {
+		name = "Herald of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Favi"
+				design = "Eita"
+				prefix = no
+				
+				effect = {
+					set_ship_flag = bwm_ancestor_herald_5
+				}
+			}
+			set_location = event_target:bwm_ancestor_escape
+			set_fleet_flag = bwm_ancestor_herald_5_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.10 }
+		}
+	}
+}
+
+bwm_ancestor_herald_6 = {
+	create_fleet = {
+		name = "Herald of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Favi"
+				design = "Eita"
+				prefix = no
+				
+				effect = {
+					set_ship_flag = bwm_ancestor_herald_6
+				}
+			}
+			set_location = event_target:bwm_ancestor_escape
+			set_fleet_flag = bwm_ancestor_herald_6_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range = 1000
+			set_aggro_range_measure_from = self
+			
+			fleet_event = { id = bwm_ancestor.10 }
+		}
+	}
+}
+
+bwm_ancestor_vessel_init = {
+	create_fleet = {
+		name = "Vessel of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_country
+			create_ship = {
+				name = "Fanu"
+				design = "Persipnei I"
+				prefix = no
+			}
+			set_fleet_flag = bwm_ancestor_boss_1_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 1000
+			
+			set_location = {
+			target = event_target:bwm_ancestor_escape
+			distance = 0
+			angle = random 
+			}
+			queue_actions = {
+				repeat = {
+					find_closest_system = {
+						trigger = {
+							id = bwm_ancestor_boss.roam.1a
+							NOT = {
+								OR = {
+									has_star_flag = enclave
+									has_star_flag = guardian
+									has_star_flag = bwm_ring_system
+									has_star_flag = bwm_grave_system
+									has_star_flag = bwm_garden_system
+									has_star_flag = bwm_prison_system
+									has_star_flag = bwm_gate_system
+								}
+								any_ship_in_system = {
+									OR = {
+										is_ship_size = bwm_artifact_ship
+										is_ship_size = bwm_artifact_relic_frame
+										is_ship_size = bwm_artifact_bomb_1
+										is_ship_size = bwm_artifact_bomb_2 
+										is_ship_size = bwm_titan
+										is_ship_size = bwm_grave_awakened_pc
+										is_ship_size = bwm_conduit_avatar
+										is_ship_size = bwm_ancient_weapon
+										is_ship_size = bwm_apostle_scout
+										is_ship_size = bwm_apostle_1 
+									}
+								}
+							}
+							OR = {
+								any_ship_in_system = {
+									exists = owner
+									NOT = {
+										owner = {
+											is_same_value = event_target:bwm_ancestor_country
+										}
+									}
+								}
+								AND = {
+									exists = space_owner
+									any_planet = {
+										OR = {
+											has_spaceport = yes  
+											has_observation_outpost = yes
+											has_mining_station = yes
+											has_research_station = yes 
+										}
+									}
+									NOT = {
+										space_owner = {
+											OR = {
+												is_same_value = event_target:bwm_ancestor_country
+												fleet_power > 1000000
+											}
+										}
+									}
+								}
+							}
+						}
+						found_system = {
+							move_to = this
+							
+							find_closest_planet = {
+								trigger = {
+									id = bwm_ancestor_boss.roam.1b
+									OR = {
+										is_star = yes
+										has_spaceport = yes  
+										has_observation_outpost = yes
+										has_mining_station = yes
+										has_research_station = yes
+									}
+								}
+								found_planet = {
+									move_to = this
+									wait = {
+										duration = 90
+										random = 45
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# ancestor init spawn
+
+bwm_ancestor_target = {
+	if = {
+		limit = {
+			any_country = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				exists = space_owner
+				AND = {
+					space_owner = {
+						OR = {
+							is_country_type = fallen_empire
+							is_country_type = awakened_fallen_empire
+						}
+					}
+					any_planet = {
+						is_capital = yes
+						owner = {
+							is_primitive = no
+						}
+					}
+				}
+			}
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				save_event_target_as = bwm_ancestor_escape
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					any_country = {
+						is_country_type = default
+					}
+				}
+				random_system = {
+					limit = {
+						exists = space_owner
+						AND = {
+							space_owner = {
+								is_ai = yes
+								is_country_type = default
+							}
+							any_planet = {
+								is_capital = yes
+								owner = {
+									is_primitive = no
+								}
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							is_star = yes
+						}
+						save_event_target_as = bwm_ancestor_escape
+					}
+				}
+				else = {
+					random_system = {
+						random_system_planet = {
+							limit = {
+								is_star = yes
+							}
+							save_event_target_as = bwm_ancestor_escape
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# ancestor leviathan templates
+
+bwm_ancestor_fanu_1 = {
+	create_fleet = {
+		name = "Vessel of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_evolve_owner
+			create_ship = {
+				name = "Fanu"
+				design = "Persipnei II"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_evolve_spawn
+			
+			set_fleet_flag = bwm_ancestor_boss_2_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 1000
+			
+			queue_actions = {
+				repeat = {
+					find_closest_system = {
+						trigger = {
+							id = bwm_ancestor_boss.roam.2a
+							NOT = {
+								OR = {
+									has_star_flag = enclave
+									has_star_flag = guardian
+									has_star_flag = bwm_ring_system
+									has_star_flag = bwm_grave_system
+									has_star_flag = bwm_garden_system
+									has_star_flag = bwm_prison_system
+									has_star_flag = bwm_gate_system
+								}
+								any_ship_in_system = {
+									OR = {
+										is_ship_size = bwm_artifact_ship
+										is_ship_size = bwm_artifact_relic_frame
+										is_ship_size = bwm_artifact_bomb_1
+										is_ship_size = bwm_artifact_bomb_2
+										is_ship_size = bwm_titan
+										is_ship_size = bwm_grave_awakened_pc
+										is_ship_size = bwm_conduit_avatar
+										is_ship_size = bwm_ancient_weapon
+										is_ship_size = bwm_apostle_scout
+										is_ship_size = bwm_apostle_2
+									}
+								}
+							}
+							OR = {
+								any_ship_in_system = {
+									exists = owner
+									NOT = {
+										owner = {
+											is_same_value = event_target:bwm_ancestor_country
+										}
+									}
+								}
+								AND = {
+									exists = space_owner
+									any_planet = {
+										OR = {
+											has_spaceport = yes  
+											has_observation_outpost = yes
+											has_mining_station = yes
+											has_research_station = yes 
+										}
+									}
+									NOT = {
+										space_owner = {
+											OR = {
+												is_same_value = event_target:bwm_ancestor_country
+												fleet_power > 500000
+											}
+										}
+									}
+								}
+							}
+						}
+						found_system = {
+							move_to = this
+							
+							find_closest_planet = {
+								trigger = {
+									id = bwm_ancestor_boss.roam.2b
+									OR = {
+										is_star = yes
+										has_spaceport = yes  
+										has_observation_outpost = yes
+										has_mining_station = yes
+										has_research_station = yes 
+									}
+								}
+								found_planet = {
+									move_to = this
+									wait = {
+										duration = 180
+										random = 90
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+bwm_ancestor_fanu_2 = {
+	create_fleet = {
+		name = "Vessel of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_evolve_owner
+			create_ship = {
+				name = "Fanu"
+				design = "Persipnei III"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_evolve_spawn
+			
+			set_fleet_flag = bwm_ancestor_boss_3_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 1000
+
+			queue_actions = {
+				repeat = {
+					find_closest_system = {
+						trigger = {
+							id = bwm_ancestor_boss.roam.3a
+							NOT = {
+								OR = {
+									has_star_flag = enclave
+									has_star_flag = guardian
+									has_star_flag = bwm_ring_system
+									has_star_flag = bwm_grave_system
+									has_star_flag = bwm_garden_system
+									has_star_flag = bwm_prison_system
+									has_star_flag = bwm_gate_system
+								}
+								any_ship_in_system = {
+									OR = {
+										is_ship_size = bwm_artifact_ship
+										is_ship_size = bwm_artifact_relic_frame
+										is_ship_size = bwm_artifact_bomb_1
+										is_ship_size = bwm_artifact_bomb_2
+										is_ship_size = bwm_titan
+										is_ship_size = bwm_grave_awakened_pc
+										is_ship_size = bwm_conduit_avatar
+										is_ship_size = bwm_ancient_weapon
+										is_ship_size = bwm_apostle_scout
+										is_ship_size = bwm_apostle_3 
+									}
+								}
+							}
+							OR = {
+								any_ship_in_system = {
+									exists = owner
+									NOT = {
+										owner = {
+											is_same_value = event_target:bwm_ancestor_country
+										}
+									}
+								}
+								AND = {
+									exists = space_owner
+									any_planet = {
+										OR = {
+											has_spaceport = yes  
+											has_observation_outpost = yes
+											has_mining_station = yes
+											has_research_station = yes 
+										}
+									}
+									NOT = {
+										space_owner = {
+											OR = {
+												is_same_value = event_target:bwm_ancestor_country
+												fleet_power > 500000
+											}
+										}
+									}
+								}
+							}
+						}
+						found_system = {
+							move_to = this
+							
+							find_closest_planet = {
+								trigger = {
+									id = bwm_ancestor_boss.roam.3b
+									OR = {
+										is_star = yes
+										has_spaceport = yes  
+										has_observation_outpost = yes
+										has_mining_station = yes
+										has_research_station = yes 
+									}
+								}
+								found_planet = {
+									move_to = this
+									wait = {
+										duration = 270
+										random = 135
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+bwm_ancestor_fanu_3 = {
+	create_fleet = {
+		name = "Vessel of Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_evolve_owner
+			create_ship = {
+				name = "Fanu"
+				design = "Persipnei IV"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_evolve_spawn
+			
+			set_fleet_flag = bwm_ancestor_boss_decay
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 1000
+			
+			fleet_event = { id = bwm_ancestor.4 days = 1800 }
+			
+			queue_actions = {
+				repeat = {
+					find_closest_system = {
+						trigger = {
+							id = bwm_ancestor_boss.roam.4a
+							NOT = {
+								OR = {
+									has_star_flag = enclave
+									has_star_flag = guardian
+									has_star_flag = bwm_ring_system
+									has_star_flag = bwm_grave_system
+									has_star_flag = bwm_garden_system
+									has_star_flag = bwm_prison_system
+									has_star_flag = bwm_gate_system
+								}
+								any_ship_in_system = {
+									OR = {
+										is_ship_size = bwm_artifact_ship
+										is_ship_size = bwm_artifact_relic_frame
+										is_ship_size = bwm_artifact_bomb_1
+										is_ship_size = bwm_artifact_bomb_2
+										is_ship_size = bwm_titan
+										is_ship_size = bwm_grave_awakened_pc
+										is_ship_size = bwm_conduit_avatar
+										is_ship_size = bwm_ancient_weapon
+										is_ship_size = bwm_apostle_scout
+										is_ship_size =	bwm_apostle_4
+										is_ship_size =	bwm_apostle_egg
+										is_ship_size =	bwm_apostle_child
+									} 
+								}
+							}
+							OR = {
+								any_ship_in_system = {
+									exists = owner
+									NOT = {
+										owner = {
+											is_same_value = event_target:bwm_ancestor_country
+										}
+									}
+								}
+								AND = {
+									exists = space_owner
+									any_planet = {
+										OR = {
+											has_spaceport = yes  
+											has_observation_outpost = yes
+											has_mining_station = yes
+											has_research_station = yes 
+										}
+									}
+									NOT = {
+										space_owner = {
+											OR = {
+												is_same_value = event_target:bwm_ancestor_country
+												fleet_power > 500000
+											}
+										}
+									}
+								}
+							}
+						}
+						found_system = {
+							move_to = this
+							
+							find_closest_planet = {
+								trigger = {
+									id = bwm_ancestor_boss.roam.4b
+									OR = {
+										is_star = yes
+										has_spaceport = yes  
+										has_observation_outpost = yes
+										has_mining_station = yes
+										has_research_station = yes
+									}
+								}
+								found_planet = {
+									move_to = this
+									wait = {
+										duration = 360
+										random = 180
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+bwm_ancestor_thesan_1 = {
+	create_fleet = {
+		name = "Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_evolve_owner
+			create_ship = {
+				name = "Ais"
+				design = "Tinia I"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_evolve_spawn
+			
+			set_fleet_flag = bwm_ancestor_boss_final_1_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 1000
+			
+			queue_actions = {
+				repeat = {
+					find_closest_system = {
+						trigger = {
+							id = bwm_ancestor_boss.roam.5a
+							NOT = {
+								OR = {
+									has_star_flag = enclave
+									has_star_flag = guardian
+									has_star_flag = bwm_ring_system
+									has_star_flag = bwm_grave_system
+									has_star_flag = bwm_garden_system
+									has_star_flag = bwm_prison_system
+									has_star_flag = bwm_gate_system
+								}
+								any_ship_in_system = {
+									OR = {
+										is_ship_size = bwm_artifact_ship
+										is_ship_size = bwm_artifact_relic_frame
+										is_ship_size = bwm_artifact_bomb_1
+										is_ship_size = bwm_artifact_bomb_2
+										is_ship_size = bwm_titan
+										is_ship_size = bwm_grave_awakened_pc
+										is_ship_size = bwm_conduit_avatar
+										is_ship_size = bwm_ancient_weapon
+										is_ship_size = bwm_apostle_scout
+										is_ship_size =	bwm_apostle_4
+										is_ship_size =	bwm_apostle_egg
+									} 
+								}
+							}
+							OR = {
+								any_ship_in_system = {
+									exists = owner
+									NOT = {
+										owner = {
+											is_same_value = event_target:bwm_ancestor_country
+										}
+									}
+								}
+								AND = {
+									exists = space_owner
+									any_planet = {
+										OR = {
+											has_spaceport = yes  
+											has_observation_outpost = yes
+											has_mining_station = yes
+											has_research_station = yes 
+										}
+									}
+									NOT = {
+										space_owner = {
+											OR = {
+												is_same_value = event_target:bwm_ancestor_country
+												fleet_power > 1000000
+											}
+										}
+									}
+								}
+							}
+						}
+						found_system = {
+							move_to = this
+							
+							find_closest_planet = {
+								trigger = {
+									id = bwm_ancestor_boss.roam.5b
+									OR = {
+										is_star = yes
+										has_spaceport = yes  
+										has_observation_outpost = yes
+										has_mining_station = yes
+										has_research_station = yes
+									}
+								}
+								found_planet = {
+									move_to = this
+									wait = {
+										duration = 90
+										random = 45
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+bwm_ancestor_thesan_2 = {
+	create_fleet = {
+		name = "Thesan"
+		settings = {
+			spawn_debris = no 
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:bwm_ancestor_evolve_owner
+			create_ship = {
+				name = "Ais"
+				design = "Tinia II"
+				prefix = no
+			}
+			set_location = event_target:bwm_ancestor_evolve_spawn
+			
+			set_fleet_flag = bwm_ancestor_boss_final_2_fleet
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 1000
+			
+			queue_actions = {
+				repeat = {
+					find_closest_system = {
+						trigger = {
+							id = bwm_ancestor_boss.roam.6a
+							NOT = {
+								OR = {
+									has_star_flag = enclave
+									has_star_flag = guardian
+									has_star_flag = bwm_ring_system
+									has_star_flag = bwm_grave_system
+									has_star_flag = bwm_garden_system
+									has_star_flag = bwm_prison_system
+									has_star_flag = bwm_gate_system
+								}
+								any_ship_in_system = {
+									OR = {
+										is_ship_size = bwm_artifact_ship
+										is_ship_size = bwm_artifact_relic_frame
+										is_ship_size = bwm_artifact_bomb_1
+										is_ship_size = bwm_artifact_bomb_2
+										is_ship_size = bwm_titan
+										is_ship_size = bwm_grave_awakened_pc
+										is_ship_size = bwm_conduit_avatar
+										is_ship_size = bwm_ancient_weapon
+										is_ship_size = bwm_apostle_scout
+										is_ship_size =	bwm_apostle_4
+										is_ship_size =	bwm_apostle_child
+									} 
+								}
+							}
+							OR = {
+								any_ship_in_system = {
+									exists = owner
+									NOT = {
+										owner = {
+											is_same_value = event_target:bwm_ancestor_country
+										}
+									}
+								}
+								AND = {
+									exists = space_owner
+									any_planet = {
+										OR = {
+											has_spaceport = yes  
+											has_observation_outpost = yes
+											has_mining_station = yes
+											has_research_station = yes 
+										}
+									}
+									NOT = {
+										space_owner = {
+											OR = {
+												is_same_value = event_target:bwm_ancestor_country
+												fleet_power > 1000000
+											}
+										}
+									}
+								}
+							}
+						}
+						found_system = {
+							move_to = this
+							
+							find_closest_planet = {
+								trigger = {
+									id = bwm_ancestor_boss.roam.6b
+									OR = {
+										is_star = yes
+										has_spaceport = yes  
+										has_observation_outpost = yes
+										has_mining_station = yes
+										has_research_station = yes
+									}
+								}
+								found_planet = {
+									move_to = this
+									wait = {
+										duration = 45
+										random = 25
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Doom Clock - 100 Years
+
+bwm_ancestor_seal_trigger = {
+	if = {
+		limit = {
+			has_global_flag = bwm_ancestor_system_seed
+		}
+		country_event = { id = bwm_ancestor.30 days = 36000 }
+	}
+}
+
+# pop seal chainreaction
+
+bwm_ancestor_seal_chain = {
+	every_country = {
+		if = {
+			limit = {
+				has_country_flag = bwm_ancestor_seal_destroyer
+			}
+			country_event = { id = bwm_ancestor.30 days = 1800 }
+		}
+	}
+}
+
+# Pop seals
+
+bwm_ancestor_seal_change_1 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_ancestor_seal_1
+		}
+		this = {
+			save_event_target_as = bwm_ancestor_seal_1_loc
+		}
+		create_ambient_object = {
+			type = "bwm_seal_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_1_loc
+			set_ambient_object_flag = bwm_ancestor_seal_1_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_1_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_prison_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_planet_1
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_bwm_seal
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_star
+				}
+				planet_event = { id = bwm_ancestor.21 days = 1800 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_ancestor_seal_change_2 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_ancestor_seal_2
+		}
+		this = {
+			save_event_target_as = bwm_ancestor_seal_2_loc
+		}
+		create_ambient_object = {
+			type = "bwm_seal_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_2_loc
+			set_ambient_object_flag = bwm_ancestor_seal_2_burst
+		}
+		create_ambient_object = {
+			type = bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_2_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_prison_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_planet_2
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_bwm_seal
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_star
+				}
+				planet_event = { id = bwm_ancestor.21 days = 1800 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_ancestor_seal_change_3 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_ancestor_seal_3
+		}
+		this = {
+			save_event_target_as = bwm_ancestor_seal_3_loc
+		}
+		create_ambient_object = {
+			type = "bwm_seal_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_3_loc
+			set_ambient_object_flag = bwm_ancestor_seal_3_burst
+		}
+		create_ambient_object = {
+			type = bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_3_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_prison_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_planet_3
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_bwm_seal
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_star
+				}
+				planet_event = { id = bwm_ancestor.21 days = 1800 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_ancestor_seal_change_4 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_ancestor_seal_4
+		}
+		this = {
+			save_event_target_as = bwm_ancestor_seal_4_loc
+		}
+		create_ambient_object = {
+			type = "bwm_seal_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_4_loc
+			set_ambient_object_flag = bwm_ancestor_seal_4_burst
+		}
+		create_ambient_object = {
+			type = bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_4_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_prison_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_planet_4
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_bwm_seal
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_star
+				}
+				planet_event = { id = bwm_ancestor.21 days = 1800 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_ancestor_seal_change_5 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_ancestor_seal_5
+		}
+		this = {
+			save_event_target_as = bwm_ancestor_seal_5_loc
+		}
+		create_ambient_object = {
+			type = "bwm_seal_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_5_loc
+			set_ambient_object_flag = bwm_ancestor_seal_5_burst
+		}
+		create_ambient_object = {
+			type = bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_5_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_prison_system
+			}
+			every_system_planet= {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_planet_5
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_bwm_seal
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_star
+				}
+				planet_event = { id = bwm_ancestor.21 days = 1800 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_ancestor_seal_change_6 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_ancestor_seal_6
+		}
+		this = {
+			save_event_target_as = bwm_ancestor_seal_6_loc
+		}
+		create_ambient_object = {
+			type = "bwm_seal_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_6_loc
+			set_ambient_object_flag = bwm_ancestor_seal_6_burst
+		}
+		create_ambient_object = {
+			type = bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_ancestor_seal_6_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_prison_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_planet_6
+				}
+				orbital_deposit_tile = {
+					add_deposit = d_bwm_seal
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_ancestor_prison_star
+				}
+				planet_event = { id = bwm_ancestor.21 days = 1800 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+#delete orbital station 
+
+bwm_ancestor_clear_station = {
+	if = {
+		limit = {
+			has_research_station = yes 
+		}
+		random_research_station = {
+				destroy_fleet = this
+		}
+	}
+}
+
+bwm_ancestor_delayed_conversion = {
+	this = {
+		solar_system = {
+			if = {
+				limit = {
+					NOT = {
+						any_ship_in_system = { 
+							is_ship_size = bwm_apostle_station
+						}
+					}
+				}
+				random_system_planet = {
+					limit = { is_star = yes }
+					save_event_target_as = bwm_ancestor_spawn_fix
+					create_fleet = {
+						name = "Warden of Thesan"
+						settings = {
+							spawn_debris = no
+							is_boss = yes
+						}
+						effect = {
+							set_owner = event_target:bwm_ancestor_country
+							create_ship = {
+								name = "Capra"
+								design = "Tmia"
+								prefix = no
+							}
+							set_location = {
+									target = event_target:bwm_ancestor_spawn_fix
+									distance = 20
+									angle = random
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	create_ambient_object = {
+		type = bwm_effect_explosion_6_object
+		location = THIS
+		duration = 10
+			
+		use_3d_location = yes
+			
+		entity_offset = { min = 0 max = 0 }
+		entity_offset_angle = { min = 0 max = 0 }
+		entity_offset_height = { min = 0 max = 0 }
+			
+		entity_scale_to_size = yes
+		scale = 100
+	}
+	random_list = {
+		25 = {
+			create_ambient_object = {
+			type = "small_debris_object"
+			location = THIS
+			}
+		}
+		25 = {
+			create_ambient_object = {
+			type = "medium_debris_01_object"
+			location = THIS
+			}
+		}
+		25 = {
+			create_ambient_object = {
+			type = "medium_debris_02_object"
+			location = THIS
+			}
+		}
+		25 = {
+			create_ambient_object = {
+			type = "large_debris_object"
+			location = THIS
+			}
+		}
+	}
+}
+
+bwm_ancestor_terraform = {
+	if = {
+		limit = { has_modifier = hazardous_weather }
+		remove_modifier = hazardous_weather
+	}
+	if = {
+		limit = { has_modifier = dangerous_wildlife }
+		remove_modifier = dangerous_wildlife
+	}
+	if = {
+		limit = { has_modifier = weak_magnetic_field }
+		remove_modifier = weak_magnetic_field
+	}
+	if = {
+		limit = { has_modifier = strong_magnetic_field }
+		remove_modifier = strong_magnetic_field
+	}
+	if = {
+		limit = { has_modifier = unstable_tectonics }
+		remove_modifier = unstable_tectonics
+	}
+	if = {
+		limit = { has_modifier = tidal_locked }
+		remove_modifier = tidal_locked
+	}
+	if = {
+		limit = { has_modifier = chthonian_planet }
+		remove_modifier = chthonian_planet
+	}
+	if = {
+		limit = { has_modifier = asteroid_impacts }
+		remove_modifier = asteroid_impacts
+	}
+	if = {
+		limit = { has_modifier = extensive_moon_system }
+		remove_modifier = extensive_moon_system
+	}
+	if = {
+		limit = { has_modifier = carbon_world }
+		remove_modifier = carbon_world
+	}
+	if = {
+		limit = { has_modifier = wild_storms }
+		remove_modifier = wild_storms
+	}
+	if = {
+		limit = { has_modifier = low_gravity }
+		remove_modifier = low_gravity
+	}
+	if = {
+		limit = { has_modifier = high_gravity }
+		remove_modifier = high_gravity
+	}
+	if = {
+		limit = { has_modifier = mineral_rich }
+		remove_modifier = mineral_rich
+	}
+	if = {
+		limit = { has_modifier = ultra_rich }
+		remove_modifier = ultra_rich
+	}
+	if = {
+		limit = { has_modifier = mineral_poor }
+		remove_modifier = mineral_poor
+	}
+	if = {
+		limit = { has_modifier = titanic_life }
+		remove_modifier = titanic_life
+	}
+	if = {
+		limit = { has_modifier = mineral_poor }
+		remove_modifier = mineral_poor
+	}
+	if = {
+		limit = { has_modifier = asteroid_belt }
+		remove_modifier = asteroid_belt
+	}
+	if = {
+		limit = { has_modifier = natural_beauty }
+		remove_modifier = natural_beauty
+	}
+	if = {
+		limit = { has_modifier = atmospheric_aphrodisiac }
+		remove_modifier = atmospheric_aphrodisiac
+	}
+	if = {
+		limit = { has_modifier = atmospheric_hallucinogen }
+		remove_modifier = atmospheric_hallucinogen
+	}
+	if = {
+		limit = { has_modifier = lush_planet }
+		remove_modifier = lush_planet
+	}
+	if = {
+		limit = { has_modifier = bleak_planet }
+		remove_modifier = bleak_planet
+	}
+	if = {
+		limit = { has_modifier = irradiated_planet }
+		remove_modifier = irradiated_planet
+	}
+}
+
+bwm_ancestor_chain_check = {
+	if = {
+		limit = {
+			NOT = {
+				has_event_chain = bwm_lex_ancestor_chain
+			}
+		}
+		begin_event_chain = {
+			event_chain = "bwm_lex_ancestor_chain"
+			target = this
+		}
+	}
+}
+
+# Artifact Snippets
+
+#Cipher 1 System
+
+bwm_artifact_seal_change_1_1 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_1_pillar_1
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_1_pillar_1_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_1_loc
+			set_ambient_object_flag = bwm_cipher_lock_1_pillar_1_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_1_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_1_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_1_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_1_2 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_1_pillar_2
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_1_pillar_2_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_2_loc
+			set_ambient_object_flag = bwm_cipher_lock_1_pillar_2_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_2_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_1_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_1_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_1_3 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_1_pillar_3
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_1_pillar_3_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_3_loc
+			set_ambient_object_flag = bwm_cipher_lock_1_pillar_3_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_3_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_1_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_1_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_1_4 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_1_pillar_4
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_1_pillar_4_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_4_loc
+			set_ambient_object_flag = bwm_cipher_lock_1_pillar_4_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_4_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_1_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_1_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_1_5 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_1_pillar_5
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_1_pillar_5_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_5_loc
+			set_ambient_object_flag = bwm_cipher_lock_1_pillar_5_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_5_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_1_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_1_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_1_6 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_1_pillar_6
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_1_pillar_6_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_6_loc
+			set_ambient_object_flag = bwm_cipher_lock_1_pillar_6_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_1_pillar_6_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_1_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_1_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+#Cipher 2 System
+
+bwm_artifact_seal_change_2_1 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_2_pillar_1
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_2_pillar_1_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_1_loc
+			set_ambient_object_flag = bwm_cipher_lock_2_pillar_1_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_1_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_2_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_2_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_2_2 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_2_pillar_2
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_2_pillar_2_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_2_loc
+			set_ambient_object_flag = bwm_cipher_lock_2_pillar_2_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_2_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_2_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_2_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_2_3 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_2_pillar_3
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_2_pillar_3_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_3_loc
+			set_ambient_object_flag = bwm_cipher_lock_2_pillar_3_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_3_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_2_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_2_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_2_4 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_2_pillar_4
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_2_pillar_4_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_4_loc
+			set_ambient_object_flag = bwm_cipher_lock_2_pillar_4_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_4_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_2_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_2_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_2_5 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_2_pillar_5
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_2_pillar_5_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_5_loc
+			set_ambient_object_flag = bwm_cipher_lock_2_pillar_5_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_5_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_2_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_2_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_2_6 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_2_pillar_6
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_2_pillar_6_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_6_loc
+			set_ambient_object_flag = bwm_cipher_lock_2_pillar_6_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_2_pillar_6_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_2_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_2_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+#Cipher 3 System
+
+bwm_artifact_seal_change_3_1 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_3_pillar_1
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_3_pillar_1_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_1_loc
+			set_ambient_object_flag = bwm_cipher_lock_3_pillar_1_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_1_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_3_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_3_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_3_2 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_3_pillar_2
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_3_pillar_2_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_2_loc
+			set_ambient_object_flag = bwm_cipher_lock_3_pillar_2_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_2_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_3_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_3_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_3_3 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_3_pillar_3
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_3_pillar_3_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_3_loc
+			set_ambient_object_flag = bwm_cipher_lock_3_pillar_3_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_3_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_3_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_3_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_3_4 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_3_pillar_4
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_3_pillar_4_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_4_loc
+			set_ambient_object_flag = bwm_cipher_lock_3_pillar_4_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_4_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_3_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_3_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_3_5 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_3_pillar_5
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_3_pillar_5_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_5_loc
+			set_ambient_object_flag = bwm_cipher_lock_3_pillar_5_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_5_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_3_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_3_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}
+
+bwm_artifact_seal_change_3_6 = {
+	if = {
+		limit =  {
+			has_ship_flag = bwm_cipher_lock_3_pillar_6
+		}
+		this = {
+			save_event_target_as = bwm_cipher_lock_3_pillar_6_loc
+		}
+		create_ambient_object = {
+			type = "bwm_artifact_pillar_damaged_object"
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_6_loc
+			set_ambient_object_flag = bwm_cipher_lock_3_pillar_6_burst
+		}
+		create_ambient_object = {
+			type =bwm_effect_explosion_1_object
+			duration = 10
+			
+			use_3d_location = yes
+			
+			entity_offset = { min = 0 max = 0 }
+			entity_offset_angle = { min = 0 max = 0 }
+			entity_offset_height = { min = 0 max = 0 }
+			
+			entity_scale_to_size = yes
+			scale = 10
+		}
+		last_created_ambient_object = {
+			set_location = event_target:bwm_cipher_lock_3_pillar_6_loc
+		}
+		fleet = {
+			delete_fleet = this
+		}
+		random_system = {
+			limit = {
+				has_star_flag = bwm_cipher_3_system
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = bwm_cipher_3_star
+				}
+				planet_event = { id = bwm_artifact.101 days = 60 }
+			}
+		}
+		owner = {
+			destroy_country = yes
+		}
+		break = yes
+	}
+}

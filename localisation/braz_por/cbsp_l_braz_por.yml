@@ -1,0 +1,22 @@
+﻿l_braz_por:
+  
+ SHIP_THRUSTER_CORVETTE_1:0 "Propulsores Químicos"
+ SHIP_THRUSTER_DESTROYER_1:0 "Propulsores Químicos"
+ SHIP_THRUSTER_CRUISER_1:0 "Propulsores Químicos" 
+ SHIP_THRUSTER_BATTLESHIP_1:0 "Propulsores Químicos"
+
+ SHIP_THRUSTER_CORVETTE_2:0 "Propulsores Iônicos"
+ SHIP_THRUSTER_DESTROYER_2:0 "Propulsores Iônicos"
+ SHIP_THRUSTER_CRUISER_2:0 "Propulsores Iônicos"
+ SHIP_THRUSTER_BATTLESHIP_2:0 "Propulsores Iônicos"
+ 
+ SHIP_THRUSTER_CORVETTE_3:0 "Propulsores de Plasma"
+ SHIP_THRUSTER_DESTROYER_3:0 "Propulsores de Plasma"
+ SHIP_THRUSTER_CRUISER_3:0 "Propulsores de Plasma"
+ SHIP_THRUSTER_BATTLESHIP_3:0 "Propulsores de Plasma"
+ 
+ SHIP_THRUSTER_CORVETTE_4:0 "Propulsores de Impulso"
+ SHIP_THRUSTER_DESTROYER_4:0 "Propulsores de Impulso"
+ SHIP_THRUSTER_CRUISER_4:0 "Propulsores de Impulso"
+ SHIP_THRUSTER_BATTLESHIP_4:0 "Propulsores de Impulso"
+ 

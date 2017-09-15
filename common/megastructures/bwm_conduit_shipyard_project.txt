@@ -1,0 +1,305 @@
+# @phase_0_entity_x = -15
+# @phase_0_entity_y = -5
+# @entity_x = -20
+# @entity_y = -20
+# bwm_conduit_shipyard_00 = {
+	# entity = "construction_platform_entity"
+	# construction_entity = "construction_platform_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @phase_0_entity_x y = @phase_0_entity_y }
+	# build_time = 1800
+	
+	# build_cost = {
+		# minerals = 10000
+		# influence = 300
+	# }
+
+	# maintenance = {
+		# energy = 5
+	# }
+
+	# potential = {
+		# has_ascension_perk = ap_galactic_wonders
+	# }
+	
+	# possible = {
+		# custom_tooltip = {
+			# fail_text = "requires_inside_border"
+			# is_inside_border = from
+		# }
+		# custom_tooltip = {
+			# fail_text = "requires_surveyed_system"
+			# NOT = {
+				# any_planet = {
+					# is_surveyed = {
+						# who = prev.from
+						# status = no
+					# }
+				# }
+			# }
+		# }
+		# custom_tooltip = {
+			# fail_text = "requires_no_existing_spyorb"
+			# from = {
+				# NOT = {
+					# any_owned_megastructure = {
+						# OR = {
+							# is_megastructure_type = bwm_conduit_shipyard_00
+							# is_megastructure_type = bwm_conduit_shipyard_01
+							# is_megastructure_type = bwm_conduit_shipyard_02
+							# is_megastructure_type = bwm_conduit_shipyard_03
+							# is_megastructure_type = bwm_conduit_shipyard_04
+							# is_megastructure_type = bwm_conduit_shipyard_05
+							# is_megastructure_type = bwm_conduit_shipyard_06
+							# is_megastructure_type = bwm_conduit_shipyard_07
+							# is_megastructure_type = bwm_conduit_shipyard_08
+							# is_megastructure_type = bwm_conduit_shipyard_09
+						# }
+					# }
+				# }
+			# }
+		# }
+		# custom_tooltip = {
+			# fail_text = "requires_no_existing_megastructure"
+			# NOT = { has_any_megastructure = yes }
+		# }
+	# }
+	
+	# placement_rules = {
+		# planet_possible = {
+			# custom_tooltip = {
+				# fail_text = "requires_survey_not_habitable"
+				# is_surveyed = {
+					# who = prev.from
+					# status = yes
+				# }
+				# colonizeable_planet = no
+			# }
+			# custom_tooltip = {
+				# fail_text = "requires_no_anomaly"
+				# NOT = { has_anomaly = yes }
+			# }
+			# custom_tooltip = {
+				# fail_text = "must_build_around_star"
+				# is_star = yes
+			# }
+		# }
+	# }	
+	
+	# ai_weight = {
+	# }
+	
+	# on_build_start = {}
+	# on_build_cancel = {}
+	# on_build_complete = {
+		# set_star_flag = bwm_conduit_shipyard_built
+	# }
+# }
+
+# bwm_conduit_shipyard_01 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_01_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_01_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_00
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_02 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_02_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_02_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_01
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_03 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_03_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_03_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_02
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_04 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_04_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_04_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_03
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_05 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_05_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_05_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_04
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_06 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_06_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_06_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_05
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_07 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_07_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_07_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_06
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_08 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_08_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_08_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_07
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }
+
+# bwm_conduit_shipyard_09 = {
+	# entity = "bwm_megastructure_conduit_shipyard_phase_09_entity"
+	# construction_entity = "bwm_megastructure_conduit_shipyard_phase_09_construction_entity"
+	# portrait = "GFX_megastructure_construction_background"
+	# place_entity_on_planet_plane = no
+	# entity_offset = { x = @entity_x y = @entity_y }
+	# upgrade_from = {
+		# bwm_conduit_shipyard_08
+	# }
+	# build_time = 1800
+	# build_cost = {
+		# minerals = 5000
+	# }
+
+	# maintenance = {
+		# energy = 8
+	# }
+
+	# possible = {
+		# from = { has_ascension_perk = ap_galactic_wonders }
+	# }
+# }

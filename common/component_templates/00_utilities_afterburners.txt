@@ -1,0 +1,307 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+
+#############
+#	POWER	#
+#############
+@power_ab_corvette = -10
+@power_ab_destroyer = -20
+@power_ab_cruiser = -30
+@power_ab_battleship = -60
+@power_ab2_corvette = -12.5
+@power_ab2_destroyer = -25
+@power_ab2_cruiser = -50
+@power_ab2_battleship = -70
+          
+#############
+#	COST	#
+#############
+@cost_ab_corvette = 2.5
+@cost_ab_destroyer = 5
+@cost_ab_cruiser = 13.5
+@cost_ab_battleship = 27 
+@cost_ab2_corvette = 5
+@cost_ab2_destroyer = 10
+@cost_ab2_cruiser = 27
+@cost_ab2_battleship = 54
+
+#############
+#	AFTERBURNER	#
+#############
+@afterburner_L1 = 0.25
+@afterburner_L2 = 0.50
+
+#############
+# UTILITIES #
+#############
+
+# Afterburners
+utility_component_template = {
+	key = "AFTERBURNER_1"
+	size = aux
+	icon = "GFX_ship_part_afterburner_1"
+	icon_frame = 1
+	
+	power = @power_ab_corvette
+	cost = @cost_ab_corvette
+		
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L1		
+		ship_evasion_add = 5
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport }
+	size_restriction = { constructor colonizer science_ship transport }
+	prerequisites = { "tech_afterburners_1" }
+	component_set = "AFTERBURNER_1"
+	upgrades_to = "AFTERBURNER_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+utility_component_template = {
+	key = "AFTERBURNER_CORVETTE_1"
+	size = aux
+	icon = "GFX_ship_part_afterburner_1"
+	icon_frame = 1
+	
+	power = @power_ab_corvette
+	cost = @cost_ab_corvette
+		
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L1		
+		ship_evasion_add = 5
+	}
+	
+	size_restriction = { corvette }
+	prerequisites = { "tech_afterburners_1" }
+	component_set = "AFTERBURNER_CORVETTE_1"
+	upgrades_to = "AFTERBURNER_CORVETTE_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+	
+utility_component_template = {
+	key = "AFTERBURNER_DESTROYER_1"
+	size = aux
+	icon = "GFX_ship_part_afterburner_1"
+	icon_frame = 1
+	
+	power = @power_ab_destroyer
+	cost = @cost_ab_destroyer
+		
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L1	
+		ship_evasion_add = 4
+	}
+	
+	size_restriction = { destroyer }
+	prerequisites = { "tech_afterburners_1" }
+	component_set = "AFTERBURNER_DESTROYER_1"
+	upgrades_to = "AFTERBURNER_DESTROYER_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+utility_component_template = {
+	key = "AFTERBURNER_CRUISER_1"
+	size = aux
+	icon = "GFX_ship_part_afterburner_1"
+	icon_frame = 1
+	
+	power = @power_ab_cruiser
+	cost = @cost_ab_cruiser
+		
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L1			
+		ship_evasion_add = 3
+	}
+	
+	size_restriction = { cruiser }
+	prerequisites = { "tech_afterburners_1" }
+	component_set = "AFTERBURNER_CRUISER_1"
+	upgrades_to = "AFTERBURNER_CRUISER_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+
+utility_component_template = {
+	key = "AFTERBURNER_BATTLESHIP_1"
+	size = aux
+	icon = "GFX_ship_part_afterburner_1"
+	icon_frame = 1
+	
+	power = @power_ab_battleship
+	cost = @cost_ab_battleship
+		
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L1			
+		ship_evasion_add = 2
+	}
+	
+	size_restriction = { battleship }
+	prerequisites = { "tech_afterburners_1" }
+	component_set = "AFTERBURNER_BATTLESHIP_1"
+	upgrades_to = "AFTERBURNER_BATTLESHIP_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+utility_component_template = {
+	key = "AFTERBURNER_2"
+	size = aux
+	icon = "GFX_ship_part_afterburner_2"
+	icon_frame = 1
+	power = @power_ab2_corvette
+	cost = @cost_ab2_corvette	
+	
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L2			
+		ship_evasion_add = 10
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport }
+	prerequisites = { "tech_afterburners_2" }
+	component_set = "AFTERBURNER_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = kinetic
+		}
+	}
+}
+
+utility_component_template = {
+	key = "AFTERBURNER_CORVETTE_2"
+	size = aux
+	icon = "GFX_ship_part_afterburner_2"
+	icon_frame = 1
+	power = @power_ab2_corvette
+	cost = @cost_ab2_corvette	
+	
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L2			
+		ship_evasion_add = 10
+	}
+	
+	size_restriction = { corvette }
+	prerequisites = { "tech_afterburners_2" }
+	component_set = "AFTERBURNER_CORVETTE_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = kinetic
+		}
+	}
+}
+
+utility_component_template = {
+	key = "AFTERBURNER_DESTROYER_2"
+	size = aux
+	icon = "GFX_ship_part_afterburner_2"
+	icon_frame = 1
+	power = @power_ab2_destroyer
+	cost = @cost_ab2_destroyer	
+	
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L2			
+		ship_evasion_add = 8
+	}
+	size_restriction = { destroyer }
+	prerequisites = { "tech_afterburners_2" }
+	component_set = "AFTERBURNER_DESTROYER_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = kinetic
+		}
+	}
+}
+
+
+utility_component_template = {
+	key = "AFTERBURNER_CRUISER_2"
+	size = aux
+	icon = "GFX_ship_part_afterburner_2"
+	icon_frame = 1
+	power = @power_ab2_cruiser
+	cost = @cost_ab2_cruiser	
+	
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L2	
+		ship_evasion_add = 6
+	}
+	size_restriction = { cruiser }
+	prerequisites = { "tech_afterburners_2" }
+	component_set = "AFTERBURNER_CRUISER_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = kinetic
+		}
+	}
+}
+
+utility_component_template = {
+	key = "AFTERBURNER_BATTLESHIP_2"
+	size = aux
+	icon = "GFX_ship_part_afterburner_2"
+	icon_frame = 1
+	power = @power_ab2_battleship
+	cost = @cost_ab2_battleship	
+	
+	modifier = {
+		ship_combat_speed_mult = @afterburner_L2	
+		ship_evasion_add = 4
+	}
+	size_restriction = { battleship }
+	prerequisites = { "tech_afterburners_2" }
+	component_set = "AFTERBURNER_BATTLESHIP_2"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = kinetic
+		}
+	}
+}

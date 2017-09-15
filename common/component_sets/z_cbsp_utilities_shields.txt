@@ -1,0 +1,28 @@
+component_set = {
+	key = "SHIELD_RECHARGER_CORVETTE"
+	
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "SHIELD_RECHARGER_DESTROYER"
+	
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "SHIELD_RECHARGER_CRUISER"
+	
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "SHIELD_RECHARGER_BATTLESHIP"
+	
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1	
+}
+

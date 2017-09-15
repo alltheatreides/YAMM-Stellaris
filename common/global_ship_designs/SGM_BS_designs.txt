@@ -1,0 +1,181 @@
+#------------------------------------------------------------------------
+# Vanilla ships
+#------------------------------------------------------------------------
+ship_design = {
+	name = "Wrecked Corvette"
+	ship_size = corvette
+	section = {
+		template = "CORVETTE_MID_M1S1"
+		slot = "mid"
+	}
+	required_component="WARP_DRIVE_CORVETTE_1"
+	required_component="SHIP_THRUSTER_CORVETTE_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked Destroyer"
+	ship_size = destroyer
+	section = {
+		template = "DESTROYER_BOW_M1S2"
+		slot = "bow"		
+	}
+	section = {
+		template = "DESTROYER_STERN_S2"
+		slot = "stern"
+	}
+	required_component="WARP_DRIVE_DESTROYER_1"
+	required_component="SHIP_THRUSTER_DESTROYER_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked Cruiser"
+	ship_size = cruiser
+	section = {
+		template = "CRUISER_BOW_L1"
+		slot = "bow"		
+	}
+	section = {
+		template = "CRUISER_MID_S2HB"
+		slot = "mid"		
+	}
+	section = {
+		template = "CRUISER_STERN_M1"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_CRUISER_1"
+	required_component="SHIP_THRUSTER_CRUISER_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked Battleship"
+	ship_size = battleship
+	section = {
+		template = "BATTLESHIP_BOW_L1M1S2"
+		slot = "bow"		
+	}
+	section = {
+		template = "BATTLESHIP_MID_L2M2"
+		slot = "mid"		
+	}
+	section = {
+		template = "BATTLESHIP_STERN_L1"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_BATTLESHIP_1"
+	required_component="SHIP_THRUSTER_BATTLESHIP_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+#------------------------------------------------------------------------
+# New Ship Classes and More
+#------------------------------------------------------------------------
+ship_design = {
+	name = "Wrecked Frigate"
+	ship_size = Frigate
+	section = {
+		template = "Frigate_BOW_M1S2"
+		slot = "bow"		
+	}
+	section = {
+		template = "Frigate_STERN_M1"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_1"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked LightCarrier"
+	ship_size = LightCarrier
+	section = {
+		template = "LightCarrier_BOW_M1S2_1"
+		slot = "bow"		
+	}
+	section = {
+		template = "LightCarrier_MID1_S2HB_1"
+		slot = "mid1"		
+	}
+	section = {
+		template = "LightCarrier_MID2_S2HB_1"
+		slot = "mid2"		
+	}
+	section = {
+		template = "LightCarrier_STERN_S2"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_1"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked StrikeCruiser"
+	ship_size = StrikeCruiser
+	section = {
+		template = "StrikeCruiser_BOW_M1S2_1"
+		slot = "bow"		
+	}
+	section = {
+		template = "StrikeCruiser_MID_M3_1"
+		slot = "mid"		
+	}
+	section = {
+		template = "StrikeCruiser_STERN_M1_1"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_1"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked Battlecruiser"
+	ship_size = Battlecruiser
+	section = {
+		template = "Battlecruiser_BOW_L1_1"
+		slot = "bow"		
+	}
+	section = {
+		template = "Battlecruiser_MID1_L1M1_1"
+		slot = "mid1"		
+	}
+	section = {
+		template = "Battlecruiser_MID2_L1M1_1"
+		slot = "mid2"		
+	}
+	section = {
+		template = "Battlecruiser_STERN_M1_1"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_1"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SHIP_SENSOR_1"
+}
+
+ship_design = {
+	name = "Wrecked Carrier"
+	ship_size = Carrier
+	section = {
+		template = "Carrier_BOW_M2S4_1"
+		slot = "bow"		
+	}
+	section = {
+		template = "Carrier_MID1_L2S4_1"
+		slot = "mid1"		
+	}
+	section = {
+		template = "Carrier_MID2_L2S4_2"
+		slot = "mid2"		
+	}
+	section = {
+		template = "Carrier_STERN_M1S2_2"
+		slot = "stern"		
+	}
+	required_component="WARP_DRIVE_1"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SHIP_SENSOR_1"
+}

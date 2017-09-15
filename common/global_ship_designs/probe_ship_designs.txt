@@ -1,0 +1,12 @@
+# This file configures pre-scripted designs the game will use. 
+
+# Space Probe
+ship_design = {
+	name = "FTL Probe"
+	ship_size = scout_probe
+
+	section = {
+		template = "scout_probe_section"
+		slot = "mid"
+	}
+}

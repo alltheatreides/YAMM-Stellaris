@@ -1,0 +1,371 @@
+namespace = bwm_ancient
+
+country_event = {
+	id = bwm_ancient.0
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROMFROM = {
+			OR = {
+				is_ship_size = bwm_ancient_combat_drone
+				is_ship_size = bwm_ancient_control_drone
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				FROMFROM = {
+					is_ship_size = bwm_ancient_combat_drone
+				}
+			}
+			every_owned_ship = {
+				limit = {
+					exists = this
+					OR = {
+						is_ship_size = bwm_ancient_combat_drone
+						is_ship_size = bwm_ancient_control_drone
+					}
+				}
+				if = {
+					limit = {
+						is_ship_size = bwm_ancient_combat_drone
+					}
+					random_list = {
+						75 = {
+							add_modifier = {
+								modifier = "bwm_artifact_drone_bonus_1"
+								days = 60
+							}
+						}
+						25 = {
+							add_modifier = {
+								modifier = "bwm_artifact_drone_bonus_2"
+								days = 60
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_ship_size = bwm_ancient_control_drone
+					}
+					random_list = {
+						25 = {
+							add_modifier = {
+								modifier = "bwm_artifact_drone_bonus_1"
+								days = 60
+							}
+						}
+						75 = {
+							add_modifier = {
+								modifier = "bwm_artifact_drone_bonus_2"
+								days = 60
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_modifier = bwm_artifact_drone_malus
+						}
+					}
+					repair_ship = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROMFROM = {
+					is_ship_size = bwm_ancient_control_drone
+				}
+			}
+			every_owned_ship = {
+				limit = {
+					exists = this
+					OR = {
+						is_ship_size = bwm_ancient_combat_drone
+						is_ship_size = bwm_ancient_control_drone
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_modifier = bwm_artifact_drone_bonus_1
+							has_modifier = bwm_artifact_drone_bonus_2
+						}
+					}
+					while = {
+						limit = {
+							OR = {
+								has_modifier = bwm_artifact_drone_bonus_1
+								has_modifier = bwm_artifact_drone_bonus_2
+							}
+						}
+						if = {
+							limit = {
+								has_modifier = bwm_artifact_drone_bonus_1
+							}
+							remove_modifier = "bwm_artifact_drone_bonus_1"
+						}
+						if = {
+							limit = {
+								has_modifier = bwm_artifact_drone_bonus_2
+							}
+							remove_modifier = "bwm_artifact_drone_bonus_2"
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_modifier = bwm_artifact_drone_malus
+						}
+					}
+					add_modifier = {
+						modifier = "bwm_artifact_drone_malus"
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = bwm_ancient.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = bwm_ancient_weapon_nova_cd
+		}
+		FROMFROM = {
+			is_ship_size = bwm_ancient_weapon
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				check_variable = { 
+					which = "bwm_ragnarok_burst" 
+					value < 1
+				}
+			}
+			set_variable = {
+				which = "bwm_ragnarok_burst"
+				value = 1
+			}
+			else = {
+				change_variable = {
+					which = "bwm_ragnarok_burst"
+					value = 1
+				}
+				if = {
+					limit ={
+						check_variable = {
+							which = "bwm_ragnarok_burst"
+							value > 10
+						}
+					}
+					set_variable = {
+						which = "bwm_ragnarok_burst"
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = "bwm_ragnarok_burst"
+							value = 10
+						}
+					}
+					if = {
+						limit = {
+							FROMFROM = {
+								has_modifier = bwm_ancient_weapon_charge
+							}
+						}
+						FROMFROM = {
+							remove_modifier = "bwm_ancient_weapon_charge"
+							set_disabled = yes
+							owner = {
+								save_event_target_as = bwm_ancient_weapon_1_owner
+							}
+							save_event_target_as = bwm_ancient_nova_1_loc
+							create_fleet = {
+							name = "Gravitational Anomaly"
+								settings = {
+									spawn_debris = no 
+									is_boss = yes
+								}
+								effect = {
+									set_owner = event_target:bwm_ancient_weapon_1_owner
+									create_ship = {
+										name = "Hagalaz"
+										design = "Ginnungagap-II"
+										prefix = no
+									}
+									set_location = event_target:bwm_ancient_nova_1_loc
+
+									fleet_event = { id = bwm_ancient.2 days = 1 }
+									
+									set_event_locked = yes
+								}
+							}
+							set_disabled = no
+							solar_system = {
+								every_system_planet = {
+									if = {
+										limit = {
+											exists = this
+											OR = {
+												habitable_planet = yes
+												habitable_structure = yes
+											}
+											NOT = {
+												has_modifier = bwm_ancient_weapon_planet_debuff
+											}
+										}
+										add_modifier = {
+											modifier = "bwm_ancient_weapon_planet_debuff"
+											days = 10
+										}
+									}
+								}
+							}
+						}
+						else = {
+							random_list = {
+								50 = {
+									FROMFROM = {
+										set_disabled = yes
+										owner = {
+											save_event_target_as = bwm_ancient_weapon_2_owner
+										}
+										save_event_target_as = bwm_ancient_nova_2_loc
+										create_fleet = {
+										name = "Gravitational Anomaly"
+											settings = {
+												spawn_debris = no 
+												is_boss = yes
+											}
+											effect = {
+												set_owner = event_target:bwm_ancient_weapon_2_owner
+												create_ship = {
+													name = "Kaunaz"
+													design = "Ginnungagap-I"
+													prefix = no
+												}
+												set_location = event_target:bwm_ancient_nova_2_loc
+
+												fleet_event = { id = bwm_ancient.2 days = 1 }
+												
+												set_event_locked = yes
+											}
+										}
+										set_disabled = no
+										solar_system = {
+											every_system_planet = {
+												if = {
+													limit = {
+														exists = this
+														OR = {
+															habitable_planet = yes
+															habitable_structure = yes
+														}
+														NOT = {
+															has_modifier = bwm_ancient_weapon_planet_debuff
+														}
+													}
+													add_modifier = {
+														modifier = "bwm_ancient_weapon_planet_debuff"
+														days = 10
+													}
+												}
+											}
+										}
+									}
+								}
+								50 = {
+									FROMFROM = {
+										set_disabled = yes
+										save_event_target_as = bwm_ancient_weapon_buff_loc
+										set_disabled = no
+										add_modifier = {
+											modifier = "bwm_ancient_weapon_charge"
+											days = -1
+										}
+									}
+								}
+							}
+						}
+					}
+					change_variable = {
+						which = "bwm_ragnarok_burst"
+						value = -10
+					}
+					set_timed_country_flag = {
+						flag = bwm_ancient_weapon_nova_cd  days = 30 
+					}
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = bwm_ancient.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		solar_system = {
+			save_event_target_as = bwm_ancient_nova_debuff_loc
+		}
+		owner = {
+			every_owned_ship = {
+				if = {
+					limit = {
+						exists = this
+						is_ship_size = bwm_ancient_weapon
+					}
+					fleet = {
+						save_event_target_as = bwm_ancient_weapon_fleet_loc
+					}
+				}
+			}
+		}
+		destroy_fleet = THIS
+		event_target:bwm_ancient_nova_debuff_loc = {
+			if = {
+				limit = {
+					any_ship_in_system = {
+						exists = this
+						is_ship_size = bwm_ancient_weapon
+					}
+				}
+				every_fleet_in_system = {
+					if = {
+						limit = {
+							NOT = {
+								is_same_value = event_target:bwm_ancient_weapon_fleet_loc
+							}
+						}
+						add_modifier = {
+							modifier = "bwm_ancient_weapon_burst_debuff"
+							days = 10
+						}
+					}
+				}
+			}
+		}
+	}
+}

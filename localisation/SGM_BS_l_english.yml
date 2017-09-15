@@ -1,0 +1,8 @@
+﻿l_english:
+
+edict_BS_superior_50_percent:0 "Battle Survivors Option 1"
+edict_BS_superior_50_percent_desc:0 "Activate to change the mechanics of 'SGM Battle Survivors': Ships of the inferior party survive with a fix chance of 66%. Ships of the superior party survive with a fix chance of 33%. This choice affects all empires and can only be made once (other options will no longer be available). The new rule activates at 01.01. of the next year."
+
+edict_BS_superior_equal:0 "Battle Survivors Option 2"
+edict_BS_superior_equal_desc:0 "Activate to change the mechanics of 'SGM Battle Survivors': The relative power of the combatants is not considered. Ships survive with a fix chance of 40%. This choice affects all empires and can only be made once (other options will no longer be available). The new rule activates at 01.01. of the next year."
+

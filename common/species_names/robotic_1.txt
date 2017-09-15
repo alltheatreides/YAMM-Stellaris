@@ -1,0 +1,168 @@
+# Generated species derive their names from here
+# Rule of thumb: at least one of each culture for each species, except mammalian and humanoid which gets at least ~4 per each
+
+### MAMMALIANS
+
+MAM = {
+	wogdek = {
+		name = Wogdekite
+		plural = Wogdekites
+		home_planet = Wogdek
+		home_system = "Itom Braig"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	lifepulse = {
+		name = Poztim
+		plural = Poztim
+		home_planet = "Life Pulse"
+		home_system = "Central Hub"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	tasroh = {
+		name = Tasrean
+		plural = Tasreans
+		home_planet = Tasroh
+		home_system = Edreih
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### FUNGOID
+
+FUN = {
+	icroop = {
+		name = Icroopid
+		plural = Icroopids
+		home_planet = Icroop
+		home_system = Neys'Hop 
+		name_list = "cybrxkhan_robotic_1"
+	}
+	drus = {
+		name = Drusian
+		plural = Drusians
+		home_planet = Drus
+		home_system = Plazzef 
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### ARTHROPOID
+
+ART = {
+	unifiednetwork = {
+		name = Zlep
+		plural = Zlep
+		home_planet = "Unified Network"
+		home_system = "Code of the Stars"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	tenteuc = {
+		name = Tenticoid
+		plural = Tenticoids
+		home_planet = Tenteuc
+		home_system = Crubluh
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### REPTILIAN
+
+REP = {
+	koltazi = {
+		name = Iclaa  
+		plural = Iclaa
+		home_planet = "Kolt Azi"
+		home_system = "Kolt Qaon"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	dreggeox = {
+		name = Dreggish  
+		plural = Dreggish
+		home_planet = Dreggeox
+		home_system = Aklamits
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### AVIAN 
+
+AVI = {
+	pleecro = {
+		name = Plee 
+		plural = Plee
+		home_planet = Pleecro
+		home_system = Ecursekt
+		name_list = "cybrxkhan_robotic_1"
+	}
+	ucan = {
+		name = Ucanian 
+		plural = Ucanians
+		home_planet = Ucan
+		home_system = Ucan
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### MOLLUSCOID
+
+MOL = {
+	thoughtprocess = {
+		name = Haa-Qua
+		plural = Haa-Qua
+		home_planet = "Thought Process"
+		home_system = "Grand Experiment"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	phuakus = {
+		name = Phuakoid
+		plural = Phuakoids
+		home_planet = Phuakus
+		home_system = Prusruats
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### PLANTOID
+
+PLANT = {
+	dotoftheheavens = {
+		name = Kruggut
+		plural = Kruggut
+		home_planet = "Dot of the Heavens"
+		home_system = "Nean Vrebbig"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	breuyemict = {
+		name = Brimicoid
+		plural = Brimicoids
+		home_planet = Breuy'Emict
+		home_system = Emict
+		name_list = "cybrxkhan_robotic_1"
+	}
+}
+
+### HUMANOIDS
+
+HUM = {
+	fleeplab = {
+		name = E'Pla
+		plural = E'Pla
+		home_planet = Flee'Plab
+		home_system = Sree'Plaab
+		name_list = "cybrxkhan_robotic_1"
+	}
+	theastrus = {
+		name = Theastrian
+		plural = Theastrians
+		home_planet = Theastrus
+		home_system = "Sha Kliar's Mind"
+		name_list = "cybrxkhan_robotic_1"
+	}
+	kliar = {
+		name = Kliarite
+		plural = Kliarites
+		home_planet = Kliar
+		home_system = Cromih
+		name_list = "cybrxkhan_robotic_1"
+	}
+}

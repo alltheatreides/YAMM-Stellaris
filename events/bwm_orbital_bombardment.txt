@@ -1,0 +1,480 @@
+namespace = bwm_orbital_bombardment
+
+# Bombardment buff when precursor ship in system
+planet_event = {
+	id = bwm_orbital_bombardment.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			is_planet_class = pc_infested
+			has_planet_flag = bwm_ancestor_world
+		}
+		FROM = {
+			is_ai = no
+			any_owned_ship = {
+				OR = {
+					is_ship_size = bwm_titan
+					is_ship_size = bwm_titan_pc
+					is_ship_size = bwm_grave_awakened_pc
+					is_ship_size = bwm_grave_awakened_pc_bound
+					is_ship_size = bwm_conduit_avatar
+					is_ship_size = bwm_conduit_avatar_bound
+					is_ship_size = bwm_ancient_weapon
+				}
+			}
+		}
+		solar_system = {
+			any_ship_in_system = { 
+				OR = {
+					is_ship_size = bwm_titan
+					is_ship_size = bwm_titan_pc
+					is_ship_size = bwm_grave_awakened_pc
+					is_ship_size = bwm_grave_awakened_pc_bound
+					is_ship_size = bwm_conduit_avatar
+					is_ship_size = bwm_conduit_avatar_bound
+					is_ship_size = bwm_ancient_weapon
+				}
+				fleet = {
+					exists = this
+					owner = {
+						is_same_value = FROM
+					}
+					orbit = {
+						is_same_value = root
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		# Kill a pop
+		random_list = {
+			25 = {
+				if = {
+					limit = {
+						count_pops = {
+							count > 1
+							limit = {
+								is_sentient = yes
+								owner = { NOT = { is_country_type = "primitive" } }
+							}
+						}
+					}
+					FROM = {
+						country_event = { id = action.23 }
+					}							
+					random_pop = {
+						limit = {
+							is_sentient = yes
+							owner = { NOT = { is_country_type = "primitive" } }
+						}
+						kill_pop = yes
+					}
+					add_threat = {
+						who = FROM
+						amount = 5
+					}
+					else = {
+						if = {
+							limit = {
+								count_pops = {
+									count = all
+									limit = {
+										OR = {
+											is_sentient = no
+											owner = { is_country_type = "primitive" }
+										}
+									}
+								}
+							}
+							random_pop = {
+								kill_pop = yes
+							}
+							add_threat = {
+								who = FROM
+								amount = 5
+							}
+						}
+					}
+				}
+			}
+			75 = {
+			}
+		}
+		# Ruin a building
+		random_list = {
+			25 = {
+				random_tile = {
+					limit = {
+						has_building = yes
+						is_ruined = no
+					}
+					set_ruined = yes
+				}
+				add_threat = {
+					who = FROM
+					amount = 5
+				}
+			}
+			75 = {
+			}
+		}
+		# Convert ruined building to tile blocker
+		random_list = {
+			25 = {
+				if = {
+					limit = {
+						planet = {
+							OR = {
+								count_pops = {
+									count > 1
+									limit = {
+										is_sentient = yes
+										owner = { NOT = { is_country_type = "primitive" } }
+									}
+								}
+								count_pops = {
+									count = all
+									limit = {
+										OR = {
+											is_sentient = no
+											owner = { is_country_type = "primitive" }
+										}
+									}
+								}
+							}
+						}
+					}
+					random_tile = {
+						limit = {
+							has_grown_pop = no
+							has_growing_pop = no 
+							has_blocker = no
+							has_building = yes
+							is_ruined = yes
+						}
+						set_blocker = "tb_bombarded_land"
+					}
+					add_threat = {
+						who = FROM
+						amount = 5
+					}
+					else = {
+						random_tile = {
+							limit = {
+								has_grown_pop = no
+								has_growing_pop = no 
+								has_blocker = no
+								has_building = yes
+								is_ruined = yes
+								OR = {
+									NOT = { exists = pop }
+									pop = {
+										OR = {
+											is_sentient = no
+											owner = { is_country_type = "primitive" }
+										}
+									}
+								}
+							}
+							set_blocker = "tb_bombarded_land"
+						}
+						add_threat = {
+							who = FROM
+							amount = 5
+						}
+					}
+				}
+			}
+			75 = {
+			}
+		}
+		# Create tile blocker
+		random_list = {
+			25 = {	
+				if = {
+					limit = {
+						planet = {
+							OR = {
+								count_pops = {
+									count > 1
+									limit = {
+										is_sentient = yes
+										owner = { NOT = { is_country_type = "primitive" } }
+									}
+								}
+								count_pops = {
+									count = all
+									limit = {
+										OR = {
+											is_sentient = no
+											owner = { is_country_type = "primitive" }
+										}
+									}
+								}
+							}
+						}
+					}
+					random_tile = {
+						limit = {
+							has_grown_pop = no
+							has_growing_pop = no 
+							has_blocker = no
+							has_building = no
+						}
+						set_blocker = "tb_bombarded_land"
+					}
+					add_threat = {
+						who = FROM
+						amount = 5
+					}
+					else = {
+						random_tile = {
+							limit = {
+								has_grown_pop = no
+								has_growing_pop = no 
+								has_blocker = no
+								has_building = no
+								OR = {
+									NOT = { exists = pop }
+									pop = {
+										OR = {
+											is_sentient = no
+											owner = { is_country_type = "primitive" }
+										}
+									}
+								}
+							}
+							set_blocker = "tb_bombarded_land"
+						}
+						add_threat = {
+							who = FROM
+							amount = 5
+						}
+					}
+				}
+			}
+			75 = {
+			}
+		}
+	}
+}
+
+# Planetkiller init
+planet_event = {
+	id = bwm_orbital_bombardment.2
+	hide_window = yes
+	
+	trigger = {
+		NOT = {
+			is_planet_class = pc_infested
+			has_planet_flag = bwm_ancestor_world
+		}
+		FROM = {
+			is_ai = no
+			any_owned_ship = {
+				OR = {
+					is_ship_size = bwm_titan
+					is_ship_size = bwm_titan_pc
+					is_ship_size = bwm_grave_awakened_pc
+					is_ship_size = bwm_grave_awakened_pc_bound
+					is_ship_size = bwm_conduit_avatar
+					is_ship_size = bwm_conduit_avatar_bound
+					is_ship_size = bwm_ancient_weapon
+				}
+			}
+		}
+		solar_system = {
+			any_ship_in_system = { 
+				OR = {
+					is_ship_size = bwm_titan
+					is_ship_size = bwm_titan_pc
+					is_ship_size = bwm_grave_awakened_pc
+					is_ship_size = bwm_grave_awakened_pc_bound
+					is_ship_size = bwm_conduit_avatar
+					is_ship_size = bwm_conduit_avatar_bound
+					is_ship_size = bwm_ancient_weapon
+				}
+				fleet = {
+					exists = this
+					owner = {
+						is_same_value = FROM
+					}
+					orbit = {
+						is_same_value = root
+					}
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		solar_system = {
+			save_event_target_as = bwm_bombardment_system_target
+		}
+		THIS  = {
+			save_event_target_as = bwm_bombardment_target
+		}
+		FROM = {
+			country_event = { id = bwm_orbital_bombardment.3 }
+		}
+	}
+}
+
+# Planetkiller fire
+country_event = {
+	id = bwm_orbital_bombardment.3
+	title = "bwm_orbital_bombardment.3"
+	desc = "bwm_orbital_bombardment.3.desc"
+	picture = GFX_evt_nuclear_explosion
+	location = event_target:bwm_bombardment_target
+	
+	trigger = {
+		is_ai = no
+		any_owned_ship = {
+			OR = {
+				is_ship_size = bwm_titan
+				is_ship_size = bwm_titan_pc
+				is_ship_size = bwm_grave_awakened_pc
+				is_ship_size = bwm_grave_awakened_pc_bound
+				is_ship_size = bwm_conduit_avatar
+				is_ship_size = bwm_conduit_avatar_bound
+				is_ship_size = bwm_ancient_weapon
+			}
+			fleet = {
+				exists = this
+				orbit = {
+					is_same_value = event_target:bwm_bombardment_target
+				}
+				solar_system = {
+					is_same_value = event_target:bwm_bombardment_system_target
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bwm_orbital_bombardment.3.a
+		custom_tooltip = bwm_orbital_bombardment.3.a.tooltip
+		allow = {
+			energy > 5000
+		}
+		add_energy = -5000
+		hidden_effect = {
+			add_threat = {
+				who = ROOT
+				amount = 10
+			}
+			every_country = {
+				limit = {
+					event_target:bwm_bombardment_target = {
+						NOT = { 
+							is_planet_class = pc_infested 
+						}
+					}
+					has_communications = ROOT
+					NOT = {
+						is_country = ROOT 
+					}
+					NOT = {
+						has_ai_personality_behaviour = purger 
+					}
+					OR = {
+						is_country_type = default
+						has_ai_personality = awakened_fallen_empire_xenophile				
+					}	
+				}
+				add_opinion_modifier = { who = ROOT modifier = opinion_genocidal }
+			}
+			event_target:bwm_bombardment_target = {
+				if = {
+					limit = {
+						owner = {
+							exists = this
+							OR = {
+								is_country_type = default
+								is_country_type = fallen_empire
+								is_country_type = awakened_fallen_empire
+							}
+							NOT = {
+								is_country = ROOT
+							}
+						}
+					}
+					owner = {
+						add_opinion_modifier = { who = ROOT modifier = bwm_planetkiller_victim }
+					}
+				}
+				bwm_effect_explosion_6_big = yes
+				random_list = {
+					25 = {
+						create_ambient_object = {
+						type = "small_debris_object"
+						location = THIS
+						}
+					}
+					25 = {
+						create_ambient_object = {
+						type = "medium_debris_01_object"
+						location = THIS
+						}
+					}
+					25 = {
+						create_ambient_object = {
+						type = "medium_debris_02_object"
+						location = THIS
+						}
+					}
+					25 = {
+						create_ambient_object = {
+						type = "large_debris_object"
+						location = THIS
+						}
+					}
+				}
+				destroy_colony = { keep_buildings = no }
+				set_planet_max_health = 0
+				if = {
+					limit = {
+						is_planet_class = pc_ringworld_habitable
+					}
+					change_pc = pc_ringworld_habitable_damaged
+					else = {
+						if = {
+							limit = {
+								is_planet_class = pc_habitat
+							}
+							remove_planet = yes 
+							else = {
+								random_list = {
+									50 = {
+										change_pc = pc_bwm_cracked
+									}
+									50 = {
+										remove_planet = yes 
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = bwm_orbital_bombardment.3.b
+		hidden_effect = {
+			add_threat = {
+				who = ROOT
+				amount = 5
+			}
+		}
+	}
+}

@@ -1,0 +1,460 @@
+#
+# Prices
+#
+
+#Shield Recharger
+@power_sr_corvette = -20
+@power_sr_destroyer = -40
+@power_sr_cruiser = -80
+@power_sr_battleship = -120
+ 
+@cost_sr_corvette = 10.5
+@cost_sr_destroyer = 21
+@cost_sr_cruiser = 69
+@cost_sr_battleship = 150
+
+#Crystal Armor
+@power_cra_corvette = 0
+@power_cra_destroyer = 0
+@power_cra_cruiser = 0
+@power_cra_battleship = 0
+@power_cra2_corvette = 0
+@power_cra2_destroyer = 0
+@power_cra2_cruiser = 0
+@power_cra2_battleship = 0
+
+@cost_cra_corvette = 2
+@cost_cra_destroyer = 4
+@cost_cra_cruiser = 10.5
+@cost_cra_battleship = 21
+@cost_cra2_corvette = 3
+@cost_cra2_destroyer = 6
+@cost_cra2_cruiser = 16.5
+@cost_cra2_battleship = 33
+
+# AUTO_REPAIR
+@power_ar_corvette = -5
+@power_ar_destroyer = -10
+@power_ar_cruiser = -20
+@power_ar_battleship = -30
+
+@cost_ar_corvette = 4
+@cost_ar_destroyer = 8
+@cost_ar_cruiser = 24.5
+@cost_ar_battleship = 55
+
+
+####################
+# Shield Recharger #
+####################
+
+utility_component_template = {
+	can_recharge_shield = yes
+	key = "SHIELD_RECHARGER"
+	size = aux
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+	power = @power_sr_corvette
+	cost = @cost_sr_corvette
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport }
+	prerequisites = { "tech_shield_rechargers_1" }
+	component_set = "SHIELD_RECHARGER"
+	
+	modifier = {
+		ship_shield_regen_mult = 0.5 #Regeneration per day
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = energy
+		}
+	}
+}
+
+
+utility_component_template = {
+	can_recharge_shield = yes
+	key = "SHIELD_RECHARGER_CORVETTE"
+	size = aux
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+	power = @power_sr_corvette
+	cost = @cost_sr_corvette
+	
+	size_restriction = { corvette }
+	prerequisites = { "tech_shield_rechargers_1" }
+	component_set = "SHIELD_RECHARGER_CORVETTE"
+	
+	modifier = {
+		ship_shield_regen_mult = 0.5 #Regeneration per day
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = energy
+		}
+	}
+}
+
+utility_component_template = {
+	can_recharge_shield = yes
+	key = "SHIELD_RECHARGER_DESTROYER"
+	size = aux
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+	power = @power_sr_destroyer
+	cost = @cost_sr_destroyer
+	
+	size_restriction = { destroyer military_station_small }
+	prerequisites = { "tech_shield_rechargers_1" }
+	component_set = "SHIELD_RECHARGER_DESTROYER"
+	
+	modifier = {
+		ship_shield_regen_mult = 0.5 #Regeneration per day
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = energy
+		}
+	}
+}
+
+utility_component_template = {
+	can_recharge_shield = yes
+	key = "SHIELD_RECHARGER_CRUISER"
+	size = aux
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+	power = @power_sr_cruiser
+	cost = @cost_sr_cruiser
+	
+	size_restriction = { cruiser military_station_medium }
+	prerequisites = { "tech_shield_rechargers_1" }
+	component_set = "SHIELD_RECHARGER_CRUISER"
+	
+	modifier = {
+		ship_shield_regen_mult = 0.5 #Regeneration per day
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = energy
+		}
+	}
+}
+
+utility_component_template = {
+	can_recharge_shield = yes
+	key = "SHIELD_RECHARGER_BATTLESHIP"
+	size = aux
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+	power = @power_sr_battleship
+	cost = @cost_sr_battleship
+	
+	size_restriction = { battleship military_station_large }
+	prerequisites = { "tech_shield_rechargers_1" }
+	component_set = "SHIELD_RECHARGER_BATTLESHIP"
+	
+	modifier = {
+		ship_shield_regen_mult = 0.5 #Regeneration per day
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = energy
+		}
+	}
+}
+
+####################
+# Crystal Plating  #
+####################
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_1"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = @power_cra_corvette
+	cost = @cost_cra_corvette
+	
+	size_restriction = { corvette }
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_1"
+	upgrades_to = "CRYSTAL_ARMOR_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_DESTROYER_1"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = @power_cra_destroyer
+	cost = @cost_cra_destroyer
+	
+	size_restriction = { destroyer military_station_small}
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_DESTROYER_1"
+	upgrades_to = "CRYSTAL_ARMOR_DESTROYER_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_CRUISER_1"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = @power_cra_cruiser
+	cost = @cost_cra_cruiser
+	
+	size_restriction = { cruiser military_station_medium }
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_CRUISER_1"
+	upgrades_to = "CRYSTAL_ARMOR_CRUISER_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_BATTLESHIP_1"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = @power_cra_battleship
+	cost = @cost_cra_battleship
+	
+	size_restriction = { battleship military_station_large}
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_BATTLESHIP_1"
+	upgrades_to = "CRYSTAL_ARMOR_BATTLESHIP_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_2"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = @power_cra2_corvette
+	cost = @cost_cra2_corvette
+	
+	size_restriction = { corvette }	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.10
+	}
+	
+	ai_weight = {
+		weight = 25
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_DESTROYER_2"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = @power_cra2_destroyer
+	cost = @cost_cra2_destroyer
+	
+	size_restriction = { destroyer military_station_small }	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_DESTROYER_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.10
+	}
+	
+	ai_weight = {
+		weight = 25
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_CRUISER_2"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = @power_cra2_cruiser
+	cost = @cost_cra2_cruiser
+	
+	size_restriction = { cruiser military_station_medium }	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_CRUISER_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.10
+	}
+	
+	ai_weight = {
+		weight = 25
+	}
+}
+
+utility_component_template = {
+	key = "CRYSTAL_ARMOR_BATTLESHIP_2"
+	size = aux
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = @power_cra2_battleship
+	cost = @cost_cra2_battleship
+	
+	size_restriction = { battleship military_station_large }	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_BATTLESHIP_2"
+	
+	modifier = {
+		ship_hitpoints_mult = 0.10
+	}
+	
+	ai_weight = {
+		weight = 25
+	}
+}
+
+#############################
+# Regenerative Hull Tissue  #
+#############################
+
+utility_component_template = {
+	key = "AUTO_REPAIR"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = @power_ar_corvette
+	cost = @cost_ar_corvette
+
+	modifier = {
+		ship_auto_repair_add = 0.02 # Regenerates 2% ship-health per month
+	}
+	
+	size_restriction = { corvette }
+	prerequisites = { tech_regenerative_hull_tissue }
+	component_set = "AUTO_REPAIR"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+utility_component_template = {
+	key = "AUTO_REPAIR_DESTROYER"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = @power_ar_destroyer
+	cost = @cost_ar_destroyer
+
+	modifier = {
+		ship_auto_repair_add = 0.02 # Regenerates 2% ship-health per month
+	}
+	
+	size_restriction = { destroyer military_station_small }
+	prerequisites = { tech_regenerative_hull_tissue }
+	component_set = "AUTO_REPAIR_DESTROYER"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+utility_component_template = {
+	key = "AUTO_REPAIR_CRUISER"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = @power_ar_cruiser
+	cost = @cost_ar_cruiser
+
+	modifier = {
+		ship_auto_repair_add = 0.02 # Regenerates 2% ship-health per month
+	}
+	
+	size_restriction = { cruiser military_station_medium }
+	prerequisites = { tech_regenerative_hull_tissue }
+	component_set = "AUTO_REPAIR_CRUISER"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}
+
+utility_component_template = {
+	key = "AUTO_REPAIR_BATTLESHIP"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = @power_ar_battleship
+	cost = @cost_ar_battleship
+
+	modifier = {
+		ship_auto_repair_add = 0.02 # Regenerates 2% ship-health per month
+	}
+	
+	size_restriction = { battleship military_station_large }
+	prerequisites = { tech_regenerative_hull_tissue }
+	component_set = "AUTO_REPAIR_BATTLESHIP"
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = explosive
+		}		
+	}
+}

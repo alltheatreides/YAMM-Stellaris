@@ -1,0 +1,18 @@
+﻿l_english:
+
+pc_planetary_ring: "Planetary Ring"
+pc_planetary_ring_desc:0 "An immense band encircling a planet.\nBuilt to allow for additional habitation zones along its inner span, freed from the restrictions and mundanity of planet-bound, spherical existence."
+pc_planetary_ring_tile:0 "Ring World Terrain"
+pc_planetary_ring_tile_desc:0 "Pristine terrain carefully maintained by the Ring World's internal systems."
+planet_ring_0: "Planetary Ring"
+planet_ring_0_DESC: "A Planetary Ring is an advanced space station that is equivalent to a size 16 Gaia world."
+planet_ring_0_CONSTRUCTION_INFO_DELAYED: "A Planetary Ring is an advanced space station that is equivalent to a size 16 Gaia world."
+planet_ring_0_MEGASTRUCTURE_DETAILS: "A §Y$pc_planetary_ring$§! is an advanced orbital habitat that is similar to a Ring World, but on a planetary scale."
+planet_ring_1: "Upgrade Planetary Ring"
+planet_ring_1_DESC: "The planetary ring is being upgraded to support additional living space."
+planet_ring_1_CONSTRUCTION_INFO_DELAYED: "A §Y$pc_planetary_ring$§! can be upgraded to host a full 25 tiles of living space."
+planet_ring_1_MEGASTRUCTURE_DETAILS: "Upgrade a planetary ring with another ring, raising its livable space to 25 tiles."
+requires_planetary_ringworld: "$TRIGGER_FAIL$Must be built on a planetary ringworld."
+planet_ring_already_upgraded: "$TRIGGER_FAIL$This planetary ring has already been upgraded."
+tech_planet_ring_engineering:0 "Advanced Planetary Ring Design"
+tech_planet_ring_engineering_desc:0 "Furthering our understanding of the construction of small-scale ringworlds will allow us to build larger planetary rings."

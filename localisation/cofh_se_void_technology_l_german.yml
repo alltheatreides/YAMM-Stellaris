@@ -1,0 +1,47 @@
+﻿l_german:
+
+# Technology - Non-Repeatable
+
+# Engineering
+
+tech_cofh_se_auxiliary_ships:0 "Hilfsschiffe"
+tech_cofh_se_auxiliary_ships_desc:0 "Die Entwicklung von speziellen Hilfsschiffen ermöglicht längere Flottenoperationen im Weltraum."
+
+tech_cofh_se_corvettes_adv:0 "Verbesserte Korvetten"
+tech_cofh_se_corvettes_adv_desc:0 "Die Anwendung neuer Maschinenbau-Techniken für Schiffe der Korvetten-Klasse, ermöglicht den Bau von weiter vorgeschrittenen Varianten."
+
+tech_cofh_se_destroyers_adv:0 "Verbesserte Zerstörer"
+tech_cofh_se_destroyers_adv_desc:0 "Die Anwendung neuer Maschinenbau-Techniken für Schiffe der Zerstörer-Klasse, ermöglicht den Bau von weiter vorgeschrittenen Varianten."
+
+tech_cofh_se_cruisers_adv:0 "Verbesserte Kreuzer"
+tech_cofh_se_cruisers_adv_desc:0 "Die Anwendung neuer Maschinenbau-Techniken für Schiffe der Kreuzer-Klasse, ermöglicht den Bau von weiter vorgeschrittenen Varianten."
+
+tech_cofh_se_battleships_adv:0 "Verbesserte Schlachtschiffe"
+tech_cofh_se_battleships_adv_desc:0 "Die Anwendung neuer Maschinenbau-Techniken für Schiffe der Schlachtschiff-Klasse, ermöglicht den Bau von weiter vorgeschrittenen Varianten."
+
+COFH_SE_TECH_UNLOCK_CORVETTES_HVY_TITLE:0 "§HNeuer Schiffstyp:§! Schwere Korvette"
+COFH_SE_TECH_UNLOCK_CORVETTES_HVY_DESC:0 "§HSchwere Korvette§!\nEine verbesserte Version des grundlegenden militärischen Schiffes, dafür gedacht, Schiffe von ähnlicher Größe anzugreifen"
+
+COFH_SE_TECH_UNLOCK_CORVETTES_SUP_TITLE:0 "§HNeuer Schiffstyp:§! Logistik Korvette"
+COFH_SE_TECH_UNLOCK_CORVETTES_SUP_DESC:0 "§HLogistik Korvette§!\nEin leicht bewaffnetes Schiff, das Kampf und logistische Unterstützung bieten kann."
+
+COFH_SE_TECH_UNLOCK_DESTROYERS_HVY_TITLE:0 "§HNeuer Schiffstyp:§! Schwerer Zerstörer"
+COFH_SE_TECH_UNLOCK_DESTROYERS_HVY_DESC:0 "§HSchwerer Zerstörer§!\nEine Variante des Zerstörers, die für den Kampf an der Front bestimmt ist."
+
+COFH_SE_TECH_UNLOCK_DESTROYERS_SUP_TITLE:0 "§HNeuer Schiffstyp:§! Taktischer Zerstörer"
+COFH_SE_TECH_UNLOCK_DESTROYERS_SUP_DESC:0 "§HTaktischer Zerstörer§!\nEin robustes Schiff, das Unterstützung an vorderster Front bietet."
+
+COFH_SE_TECH_UNLOCK_CRUISERS_HVY_TITLE:0 "§HNeuer Schiffstyp:§! Schwerer Kreuzer"
+COFH_SE_TECH_UNLOCK_CRUISERS_HVY_DESC:0 "§HSchwerer Kreuzer§!\nEin schwer gepanzertes Kriegsschiff, gedacht für eine Vielzahl von Gefechtsdistanzen."
+
+COFH_SE_TECH_UNLOCK_CRUISERS_SUP_TITLE:0 "§HNeuer Schiffstyp:§! Kommando Kreuzer"
+COFH_SE_TECH_UNLOCK_CRUISERS_SUP_DESC:0 "§HKommando Kreuzer§!\nEin schwer gepanzertes Schiff, das einer Flotte Kampf und logistische Unterstützung bieten kann."
+
+COFH_SE_TECH_UNLOCK_BATTLESHIPS_HVY_TITLE:0 "§HNeuer Schiffstyp:§! Schweres Schlachtschiff"
+COFH_SE_TECH_UNLOCK_BATTLESHIPS_HVY_DESC:0 "§HSchweres Schlachtschiff§!\nEin schwer gepanzertes Kriegsschiff, das auf große Reichweite spezialisiert ist."
+
+COFH_SE_TECH_UNLOCK_BATTLESHIPS_SUP_TITLE:0 "§HNeuer Schiffstyp:§! Gebieter Schlachtschiff"
+COFH_SE_TECH_UNLOCK_BATTLESHIPS_SUP_DESC:0 "§HGebieter Schlachtschiff§!\nEine stabile Unterstützungsplattform, die eine beträchtliche Kontrolle auf dem Schlachtfeld ermöglicht."
+
+COFH_SE_TECH_UNLOCK_AUXILIARY_TENDER_TITLE:0 "§HNeuer Schiffstyp:§! Begleitschiff"
+COFH_SE_TECH_UNLOCK_AUXILIARY_TENDER_DESC:0 "§HBegleitschiff§!\nEin unbewaffnetes Unterstützungsschiff, das routinemäßige Wartung und Instandhaltung für eine Flotte bietet."

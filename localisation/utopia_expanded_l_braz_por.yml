@@ -1,0 +1,123 @@
+﻿l_braz_por:
+
+ ### RINGWORLD TYPES AND DESCRIPTIONS
+ pc_ringworld_habitable:0 "Hábitat de mundo anillo"
+ pc_ringworld_tech:0 "Superestructura de mundo anillo"
+ pc_ringworld_seam:0 "Conducto de mundo anillo"
+ pc_ringworld_habitable_damaged:0 "Hábitat de mundo anillo en ruinas"
+ pc_ringworld_tech_damaged:0 "Superestructura de mundo anillo en ruinas"
+ pc_ringworld_seam_damaged:0 "Conducto de mundo anillo en ruinas"
+ pc_ringworld_habitable_desc:0 "Un segmento completo y habitable de un mundo anillo, compuesto por zonas habitables artificiales a lo largo de su lado interior, liberado de las restricciones y banalidad de la existencia sobre superficies planetarias esféricas."
+ pc_ringworld_tech_desc:0 "Un segmento de la superestructura de un mundo anillo. Incorpora todos los sistemas internos necesarios para la habitabilidad de un mundo anillo."
+ pc_ringworld_seam_desc:0 "Un segmento de conductos de un mundo anillo, construido para permitir el intercambio de recursos a través de la superestructura."
+ pc_ringworld_habitable_damaged_desc:0 "Segmento habitable de un mundo anillo.\n\nParece estar severamente dañado."
+ pc_ringworld_tech_damaged_desc:0 "Segmento de la superestructura de un mundo anillo.\n\nParece estar severamente dañado."
+ pc_ringworld_seam_damaged_desc:0 "Segmento de conductos de un mundo anillo.\n\nParece estar severamente dañado."
+ 
+ ### RINGWORLD TILES
+ pc_ringworld_habitable_tile:0 "Terreno de mundo anillo"
+ pc_ringworld_habitable_tile_desc:0 "Un ecosistema artificial y prístino, perfectamente mantenido por los complejos sistemas internos de un mundo anillo."
+
+ ### RINGWORLD RESTORATION TECHS
+ tech_superstructure_theory:0 "Teoría de Superestructura"
+ tech_superstructure_theory_desc:0 "Dado nuestro entendimiento actual de la construcción de mundos anillo, deberíamos poder restaurar cualquiera ya existente a su antigua gloria con un poco de ingenio."
+ tech_advanced_megastructure_engineering:0 "Ingeniería Avanzada en Megaestructuras"
+ tech_advanced_megastructure_engineering_desc:0 "Los hábitats de mundo anillo son la joya de nuestro imperio. Nuestra maestría tecnológica nos debería permitir efectuar los cambios necesarios en nuestros mundos anillo para que estos puedan albergar más hábitats."
+ tech_repeatable_ascension_perks:0 "Teoría de la Ascensión"
+ tech_repeatable_ascension_perks_desc:0 "A medida que nos esforzamos en alcanzar la Utopía, los mecanismos del universo se revelan."
+
+ ### TECH FEATURES
+ utopia_expanded_tech_unlock_feature:0 "§HDesbloquea la función:§!"
+ utopia_expanded_tech_requires_feature:0 "§RRequiere:§!"
+ utopia_expanded_repair_damaged_title:0 "$utopia_expanded_tech_unlock_feature$ Reparación de mundos anillo"
+ utopia_expanded_repair_damaged_desc:0 "§HRingworld Repair§!\nPermite la restauración de segmentos de mundo anillo existentes a un estado plenamente operativo."
+ utopia_expanded_advanced_ringworlds_title:0 "$utopia_expanded_tech_unlock_feature$ Construcción avanzada de mundos anillo"
+ utopia_expanded_advanced_ringworlds_desc:0 "§HConstrucción y ensamblado de mundos anillo§!\nAllows our existing ringworlds to support more habitats."
+ 
+ # TIER VI TECH VERSIONS
+ new_building_autonomous_fabricators:1 "Fabricadores Autónomos"
+ new_building_autonomous_fabricators_desc:1 "§LBasados en diseños antiquísimos, los mecanismos de este complejo fabril autónomo son apenas comprensibles.§!"
+ new_building_dark_matter_power_plant:0 "Planta de Energía de Materia Oscura"
+ new_building_dark_matter_power_plant_desc:0 "§LAprovechando las propiedades de la Materia Oscura, esta planta genera cantidades tremendas de energía.§!"
+ new_building_agri_processing_complex:0 "Complejo de Agri-Procesamiento"
+ new_building_agri_processing_complex_desc:0 "§LCultivos hidropónicos condensados operados por sistemas enteramente autónomos permiten la producción de vastas cantidades de comida.§!"
+
+ # OTHER TEXT
+ fe_buildings_unlock_feature:0 "§HDesbloquea el edificio:§!"
+ fe_buildings_requires_feature:0 "§RRequiere:§!"
+ requires_energy_upgrade:0 "$fe_buildings_requires_feature$ investigar Conductos de Energía Superenfriados."
+ requires_minerals_upgrade:0 "$fe_buildings_requires_feature$ investigar Automatización Industrial Superescalada."
+ requires_food_upgrade:0 "$fe_buildings_requires_feature$ investigar Control Ambiental Artificial."
+ 
+ # TECHNOLOGIES - TIER VI POWER PLANT UPGRADE
+ tech_supercooled_energy_conduits:0 "Conductos de Energía Superenfriados"
+ tech_supercooled_energy_conduits_desc:0 "Para generar de forma segura gran cantidad de energía, una forma de transferencia sin pérdidas es necesaria."
+ fe_buildings_tiervi_energy_upgrade_title:0 "$fe_buildings_unlock_feature$ Mejora de Planta de Energía de Materia Oscura"
+ fe_buildings_tiervi_energy_upgrade_desc:0 "§HDark Matter Power Plant Upgrade§!\nPara poder emplear Plantas de Energía de Materia Oscura sin sacrificar eficiencia, necesitamos instalar enormes relés automatizados de energía a lo largo de las redes eléctricas coloniales."
+ 
+ # TIER VI MINING NETWORK UPGRADE
+ tech_superscale_industrial_automation:0 "Automatización Industrial Superescalada"
+ tech_superscale_industrial_automation_desc:0 "La sincronización de una IA central, cientos de trabajadores androides, y las mismas máquinas de fabricación nos permitirán alcanzar un nivel de eficiencia sin precedentes."
+ fe_buildings_tiervi_minerals_upgrade_title:0 "$fe_buildings_unlock_feature$ Mejora de Fabricador Autónomo"
+ fe_buildings_tiervi_minerals_upgrade_desc:0 "§HMejora de Fabricador Autónomo§!\nLos Fabricadores Autónomos demandarán un sistema extremadamente sofisticado de automatización para operar a plena capacidad."
+ 
+ # TIER VI HYDROPONICS UPGRADE
+ tech_artificial_environment_control:0  "Control Ambiental Artificial"
+ tech_artificial_environment_control_desc:0  "Utilizando nuestro conocimiento de restauración ambiental, nuestros biólogos creen que es posible controlar completamente todos los aspectos de un ecosistema para alcanzar condiciones óptimas para el crecimiento de cultivos."
+ fe_buildings_tiervi_food_upgrade_title:0  "$fe_buildings_unlock_feature$ Mejora de Complejo de Agri-Procesamiento"
+ fe_buildings_tiervi_food_upgrade_desc:0  "§HMejora de Complejo de Agri-Procesamiento§!\nLos complejos de Agri-Procesamiento no sólo requieren altos niveles de automatización, pero también sistemas de control ambiental impecables para maximizar rindes."
+ 
+ # UTOPIA EXPANDED ASCENSION PERKS
+ ap_master_of_the_heavens:0 "Amo de los Cielos"
+ ap_master_of_the_heavens_desc:0 "La galaxia le pertenece a quienes la tomen. Con nuestra maestría tecnológica, podemos moldear las mismas estrellas como nos convenga."
+ requires_ascension_perks_4:1 "$TRIGGER_FAIL$Requiere tener otras cuatro Ventajas de Ascensión para desbloquear."
+ allow_advanced_ringworlds:0 "Permite construir más Hábitats en un mundo anillo existente."
+ 
+# UTOPIA EXPANDED MEGASTRUCTURES
+ requires_no_colonised_planets:1 "$TRIGGER_FAIL$No se puede construir en sistemas con planetas colonizados o megaestructuras."
+ dyson_ring_1_MEGASTRUCTURE_DETAILS:1 "Un §YAnillo de Dyson§! combina Hábitats de mundo anillo con el núcleo de una Esfera de Dyson, canibalizando todos los demás planetas en el sistema en procura de materiales."
+ dyson_ring_1_CONSTRUCTION_INFO_DELAYED:1 "§EActualizaciones:\n\n$ring_world_2_intermediate$\nCoste: £minerals §Y20000§! £time §H4800§!\n\n$ring_world_3_intermediate$\nCoste: £minerals §Y20000§! £time §H3600§!\n\nUn mundo anillo completo consiste en 4 $ring_world_3_intermediate$s, cada uno equivalente a un mundo Gaia de 25 espacios.§!"
+ dyson_ring_1:0 "Emplazamiento para Anillo de Dyson"
+ dyson_ring_1_DESC:0 "Este complejo servirá a modo de punto de partida, depósito de materiales y vivienda para los cientos de miles de trabajadores involucrados en la construcción del Anillo de Dyson."
+ dyson_ring_2_intermediate:0 "Armazón de mundo anillo"
+ dyson_ring_2_intermediate_DESC:0 "Este armazón inicial circunda el sol del sistema, y sirve como la plataforma en la que eventualmente construiremos secciones perfectamente habitables."
+ dyson_ring_2:0 "Parte de armazón de mundo anillo"
+ dyson_ring_2_DESC:0 "Esta parte equivale a grandes rasgos a un cuarto del área superficial del mundo anillo una vez terminado. El trabajo en la sección habitable todavía no ha sido completado."
+ dyson_ring_3_intermediate:0 "Sección de mundo anillo terminada"
+ dyson_ring_3_intermediate_DESC:0 "Un sector perfectamente habitable de mundo anillo, completo con una biósfera activa y listo para recibir colonos."
+ #dyson_sphere_0_MEGASTRUCTURE_DETAILS:1 "A §Y$dyson_sphere_5$§! fully envelops a given star, converting all solar output directly to £energy  Energy Credits."
+ #dyson_sphere_0_CONSTRUCTION_INFO_DELAYED:1 "§EUpgrades to:\n\n$dyson_sphere_1$\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_2$\nProduces £energy  §G100§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_3$\nProduces £energy  §G200§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_4$\nProduces £energy  §G300§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\n$dyson_sphere_5$\nProduces £energy  §G400§!\nCost: £minerals  §Y40000§! £time  §H3600§!\n\nA $dyson_sphere_5$ will blot out the sun, turning all planets in the system into Barren or Frozen Worlds.§!"
+ dyson_ring_4:0 "Andamiaje de Esfera de Dyson"
+ dyson_ring_4_DESC:0 "Este andamiaje es la base de la futura Esfera de Dyson, y no produce energía."
+ dyson_ring_5:0 "Esfera de Dyson en construcción"
+ dyson_ring_5_DESC:0 "Una Esfera de Dyson parcialmente terminada - §Y25%§! de rendimiento proyectado."
+ dyson_ring_6:0 "Esfera de Dyson en construcción"
+ dyson_ring_6_DESC:0 "Una Esfera de Dyson parcialmente terminada - §Y50%§! de rendimiento proyectado."
+ dyson_ring_7:0 "Esfera de Dyson en construcción"
+ dyson_ring_7_DESC:0 "Una Esfera de Dyson parcialmente terminada- §Y75%§! de rendimiento proyectado."
+ dyson_ring_8:0 "Esfera de Dyson"
+ dyson_ring_8_DESC:0 "Una Esfera de Dyson completamente terminada - §G100%§! de rendimiento proyectado." 
+ 
+ # UTOPIA EXPANDED EVENTS
+ ue.1.name:0 "Construcción de Anillo de Dyson"
+ ue.1.desc:0 "Ya estamos listos para empezar la construcción del más ambicioso proyecto de megaestructuras hasta la fecha: un anillo de Dyson alrededor de la la estrella primaria del sistema [From.From.GetName].\n\nUsar el núcleo Dyson alrededor de la estrella para generar energía y aún así poder sustentar cuatro Hábitats con la misma estrella no es nada menos que impresionante. La cantidad de recursos y materiales necesarios para construir esta superestructura serán inmensos, y cientos de miles de nuestros mejores ingenierosestán listos para empezar el proceso de desmantelamiento de los cuerpos planetarios del sistema solar para proveerse de materia a usar en su confección."
+ ue.1.a:0 "En verdad, somos amos de los cielos."
+ ue.3.name:0 "Proyecto de Anillo de Dyson"
+ ue.3.desc.a:0 "Nos han llegado noticias: [From.GetName] ha iniciado un colosal proyecto de construcción de en el sistema [dyson_ring_system.GetName]. Planean construir un fenomenal Anillo de Dyson alrededor de la estrella primaria del sistema, y como primer paso han comenzado a convertir la materia de todos los cuerpos celestes próximos en un andamiaje metálico inicial para la superestructura."
+ ue.3.desc.b:0 "Un reporte de inteligencia nos ha alertado: [From.GetName] está por comenzar la construcción de otro Anillo de Dyson, esta vez en el sistema [dyson_ring_system.GetName]! Como antes, sus ingenieros están abocados al desmantelamiento de los cuerpos planetarios del sistema solar para utilizar la materia prima resultante en la construcción del Anillo."
+ ue.3.a:0 "¿Será tan increíble como el nuestro?"
+ ue.3.b:0 "Un proyecto impresionante... si es que alguna vez es completado."
+ ue.4.name:0 "Andamiaje de Anillo de Dyson finalizado"
+ ue.4.desc:0 "El andamiaje inicial del imponente Anillo de Dyson que estamos edificando en el sistema [From.From.GetName] finalmente ha sido completado. Aunque aún hay mucho por hacer, el mero hecho de haber finalizado esta construcción, de una circunferencia próxima al billón de kilómetros, debe ser considerada una increíble hazaña de ingeniería.\n\nEstamos ya listos para iniciar los trabajos en los Hábitats propiamente dichos, y en la construcción del núcleo Dyson."
+ ue.4.a:0 "Inmensas labores nos esperan."
+ ue.5.name:0 "Anillo de Dyson: Hábitats terminados"
+ ue.5.desc:0 "Hemos finalizado los trabajos en las secciones habitables del Anillo de Dyson que hemos edificado en el sistema [From.From.GetName]. Nuestros ingenieros y ecólogos han hecho realidad lo imposible.\n\n[Root.GetName] debe ahora verdaderamente ser considerado uno de los mayores constructores en la historia de la galaxia entera."
+ ue.5.a:0 "Este es un gran día."
+ ue.6.name:0 "Anillo de Dyson: Paneles del núcleo instalados"
+ ue.6.desc:0 "Aunque aún no está completado, con la instalación de avanzados colectores solares hemos empezado a cosechar los beneficios del núcleo del Anillo de Dyson en construcción en el sistema [From.From.GetName].\n\nEl potencial energético será aún más grande a medida que la construcción continúe, eventualmente alcanzando la capacidad plena proyectada cuando el núcleo sea terminado."
+ ue.6.a:0 "Excelente. Prosigamos."
+ ue.7.name:0 "Núcleo del Anillo de Dyson en [From.From.GetName] terminado"
+ ue.7.desc:0 "La estrella primaria del sistema [From.From.GetName] está ahora completamente encapsulada por el [Root.GetAdj] núcleo del Anillo de Dyson.\n\nNuestros ingenieros celebran esto como un gran triunfo, y con toda razón. Hemos logrado lo que muy contadas civilizaciones estelares en la historia de la galaxia imaginaron alguna vez: dominación y control total de la producción energética de una estrella."
+ ue.7.a:0 "El potencial energético excede las proyecciones."
+ 
+ 

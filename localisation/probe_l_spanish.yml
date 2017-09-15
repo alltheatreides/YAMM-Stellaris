@@ -1,0 +1,16 @@
+﻿l_spanish:
+
+ SCOUT_PROBE:0 "Sonda"
+ scout_probe:0 "Sonda"
+ scout_probe_plural:0 "Sondas"
+ scout_probe_section:0 "Núcleo de la sonda"
+ PROBE_SENSOR_1:0 "$OBSERVATORY_1$ de sonda"
+ PROBE_SENSOR_1_DESC:0 "$OBSERVATORY_1_DESC$"
+ PROBE_SENSOR_2:0 "$OBSERVATORY_2$ de sonda"
+ PROBE_SENSOR_2_DESC:0 "$OBSERVATORY_2_DESC$"
+ PROBE_SENSOR_3:0 "$OBSERVATORY_3$ de sonda"
+ PROBE_SENSOR_3_DESC:0 "$OBSERVATORY_3_DESC$"
+ PROBE_SENSOR_4:0 "$OBSERVATORY_4$ de sonda"
+ PROBE_SENSOR_4_DESC:0 "$OBSERVATORY_4_DESC$"
+ ship_sensor_components:0 "Sensores"
+ ship_sensor_components_DESC:0 "Los sensores muestran los detalles de cualquier sistema o flota que se encuentre a su alcance."

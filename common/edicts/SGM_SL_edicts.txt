@@ -1,0 +1,304 @@
+##########################################################################
+# Planet edicts
+##########################################################################
+
+# Variables:
+#  name, the name of the edict, also serves as localisation key.
+#  influence_cost, the base influence cost of activating the edict.
+#  potential, planet or country trigger to decide whether the edict should be shown.
+#  allow, planet or country trigger to decide if whether this edict can be activated.
+#  effect, an effect that is executed when this trigger activates.
+#  prerequisites, tech requirements for this trigger.
+#  ai_will_do, determines AI scoring for edict
+#  modifier, a list of modifiers
+#  length, number of days the trigger is active.
+
+
+@SL_rebase_cost = 10
+
+country_edict = {
+	name = "SL_deactivate_for_AI"	
+	influence_cost = 0
+	potential = {is_ai=no}		
+	allow = {}	
+	ai_weight = {weight = 0}
+}
+
+#Bug Testing: Technosphere blows up from monthy wear and tear
+#I suspect a bug in reduce_hp_percent that causes an overflow
+#Bug bandait fix: Do not use reduce_hp_percent for ships with more than 25000 HP (limit could be 2^15=32768)
+# planet_edict = {
+	# name = "SL_technosphere_test"
+	# influence_cost = 0
+	# length = 0
+	# potential = {}
+	# effect={	
+		# owner={save_event_target_as=sphereOwner}
+		# create_fleet = {
+			# effect = {
+				# set_owner = event_target:sphereOwner
+				# create_ship = {name = random design = "NSC Infinity Machine" }
+				# set_location = {target = root distance = 10 angle = random}
+				# set_fleet_stance = passive
+			# }
+		# }
+	# }
+	# ai_weight={weight=0}
+# }
+
+planet_edict = {
+	name = "SL_hide_edicts"
+	influence_cost = 0
+	length = 0
+	potential = {has_spaceport = yes}
+	effect={
+		controller={
+			if={limit={has_country_flag=SL_hide_edicts}
+				remove_country_flag  = SL_hide_edicts
+			else={
+				set_country_flag = SL_hide_edicts
+			}}
+		}		
+	}
+	ai_weight={weight=0}
+}
+
+planet_edict = {
+	name = "SL_01_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_01_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_01_base_fixed every_controlled_planet={remove_planet_flag = SL_01_base}} set_planet_flag = SL_01_base}
+}
+
+planet_edict = {
+	name = "SL_02_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_02_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_02_base_fixed every_controlled_planet={remove_planet_flag = SL_02_base}} set_planet_flag = SL_02_base}
+}
+
+planet_edict = {
+	name = "SL_03_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_03_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_03_base_fixed every_controlled_planet={remove_planet_flag = SL_03_base}} set_planet_flag = SL_03_base}
+}
+
+planet_edict = {
+	name = "SL_04_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_04_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_04_base_fixed every_controlled_planet={remove_planet_flag = SL_04_base}} set_planet_flag = SL_04_base}
+}
+
+planet_edict = {
+	name = "SL_05_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_05_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_05_base_fixed every_controlled_planet={remove_planet_flag = SL_05_base}} set_planet_flag = SL_05_base}
+}
+
+planet_edict = {
+	name = "SL_06_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_06_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_06_base_fixed every_controlled_planet={remove_planet_flag = SL_06_base}} set_planet_flag = SL_06_base}
+}
+
+planet_edict = {
+	name = "SL_07_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_07_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_07_base_fixed every_controlled_planet={remove_planet_flag = SL_07_base}} set_planet_flag = SL_07_base}
+}
+
+planet_edict = {
+	name = "SL_08_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_08_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_08_base_fixed every_controlled_planet={remove_planet_flag = SL_08_base}} set_planet_flag = SL_08_base}
+}
+
+planet_edict = {
+	name = "SL_09_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_09_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_09_base_fixed every_controlled_planet={remove_planet_flag = SL_09_base}} set_planet_flag = SL_09_base}
+}
+
+planet_edict = {
+	name = "SL_10_base_set"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts}} NOT={has_planet_flag=SL_10_base} has_spaceport = yes}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=-1
+	effect={controller={set_country_flag=SL_10_base_fixed every_controlled_planet={remove_planet_flag = SL_10_base}} set_planet_flag = SL_10_base}
+}
+
+planet_edict = {
+	name = "SL_01_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_01_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_01_base_fixed every_controlled_planet={remove_planet_flag = SL_01_base}}}
+}
+
+planet_edict = {
+	name = "SL_02_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_02_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_02_base_fixed every_controlled_planet={remove_planet_flag = SL_02_base}}}
+}
+
+planet_edict = {
+	name = "SL_03_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_03_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_03_base_fixed every_controlled_planet={remove_planet_flag = SL_03_base}}}
+}
+
+planet_edict = {
+	name = "SL_04_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_04_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_04_base_fixed every_controlled_planet={remove_planet_flag = SL_04_base}}}
+}
+
+planet_edict = {
+	name = "SL_05_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_05_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_05_base_fixed every_controlled_planet={remove_planet_flag = SL_05_base}}}
+}
+
+planet_edict = {
+	name = "SL_06_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_06_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_06_base_fixed every_controlled_planet={remove_planet_flag = SL_06_base}}}
+}
+
+planet_edict = {
+	name = "SL_07_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_07_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_07_base_fixed every_controlled_planet={remove_planet_flag = SL_07_base}}}
+}
+
+planet_edict = {
+	name = "SL_08_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_08_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_08_base_fixed every_controlled_planet={remove_planet_flag = SL_08_base}}}
+}
+
+planet_edict = {
+	name = "SL_09_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_09_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_09_base_fixed every_controlled_planet={remove_planet_flag = SL_09_base}}}
+}
+
+planet_edict = {
+	name = "SL_10_base_remove"
+	influence_cost = @SL_rebase_cost	
+	potential={controller={NOT={has_country_flag=SL_hide_edicts} any_controlled_planet={has_planet_flag = SL_10_base}}}	
+	allow={}
+	prerequisites={}
+	ai_weight={weight=0}
+	modifier={}
+	length=0
+	effect={controller={remove_country_flag=SL_10_base_fixed every_controlled_planet={remove_planet_flag = SL_10_base}}}
+}

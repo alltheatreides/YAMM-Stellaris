@@ -1,0 +1,36 @@
+scout_probe = {
+	graphical_culture = no
+	entity = probe_entity
+	formation_priority = 5	#if this somehow ends up in a fleet it should be at the back
+	max_speed = 7.5
+	rotation_speed = 0.2
+	combat_max_speed = 3
+	combat_rotation_speed = 0.08
+	collision_radius = 1.0
+	acceleration = 0.35
+	modifier = {
+		ship_evasion_mult = 0.5
+		ship_evasion_add = 10
+		ship_armor_add = 1
+		ship_upkeep_mult = -0.5
+	}
+	max_hitpoints = 50
+	size_multiplier = 1
+	fleet_slot_size = 2
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	icon_frame = 6
+	base_buildtime = 15
+	is_space_station = no
+	
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	prerequisites = { "tech_space_construction" }
+	is_civilian = yes
+	is_designable = yes
+	is_space_object = no
+	class = shipclass_explorer
+	required_component_set = "ftl_components"
+	required_component_set = "ai_behaviour"  #adds ai module for behaviour
+	required_component_set = "thruster_components"
+	required_component_set = "probe_sensor_components"
+}

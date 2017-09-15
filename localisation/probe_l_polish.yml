@@ -1,0 +1,16 @@
+﻿l_polish:
+
+ SCOUT_PROBE:0 "Sonda"
+ scout_probe:0 "Sonda"
+ scout_probe_plural:0 "Sondy"
+ scout_probe_section:0 "Rdzeń Sondy"
+ PROBE_SENSOR_1:0 "Sonda-zamontowana na $OBSERVATORY_1$"
+ PROBE_SENSOR_1_DESC:0 "$OBSERVATORY_1_DESC$"
+ PROBE_SENSOR_2:0 "Sonda-zamontowana na $OBSERVATORY_2$"
+ PROBE_SENSOR_2_DESC:0 "$OBSERVATORY_2_DESC$"
+ PROBE_SENSOR_3:0 "Sonda-zamontowana na $OBSERVATORY_3$"
+ PROBE_SENSOR_3_DESC:0 "$OBSERVATORY_3_DESC$"
+ PROBE_SENSOR_4:0 "Sonda-zamontowana na $OBSERVATORY_4$"
+ PROBE_SENSOR_4_DESC:0 "$OBSERVATORY_4_DESC$"
+ probe_sensor_components:0 "Czujniki"
+ probe_sensor_components_DESC:0 "Czujniki ujawnią informacje o wszystkich układach i flotach znajdujących się w ich zasięgu."

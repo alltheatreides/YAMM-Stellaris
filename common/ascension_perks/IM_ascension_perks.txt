@@ -1,0 +1,53 @@
+# See traditions/README.txt for format
+
+
+
+ap_master_builders = {
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_voidborn_OR_ap_galactic_wonders"
+			OR = {
+				has_ascension_perk = ap_voidborn
+				has_ascension_perk = ap_galactic_wonders
+			}
+		}
+	}
+	on_enabled = {
+		hidden_effect = {
+
+add_research_option = tech_mega_engineering
+add_tech_progress = 
+	{
+	tech = tech_mega_engineering
+	progress = 0.05
+	}
+				}
+
+			}
+	modifier = {
+		megastructure_build_speed_mult = 1
+	}
+	
+	potential = {
+		NOT = {
+			has_ascension_perk = ap_master_builders
+		}
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+}
+

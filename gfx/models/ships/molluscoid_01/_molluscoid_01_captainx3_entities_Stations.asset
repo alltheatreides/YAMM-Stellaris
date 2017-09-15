@@ -1,0 +1,31 @@
+
+
+
+##################         	 DRYDOCK            ########################
+
+entity = {
+	name = "molluscoid_01_Drydock_entity"
+	pdxmesh = "molluscoid_01_drydock_mesh"
+	
+	locator = { name = "part1" }
+	
+	scale = 0.5
+
+}
+
+entity = {
+	name = "molluscoid_01_Drydock_section_entity"
+	pdxmesh = "molluscoid_01_drydock_mesh"
+	
+	locator = { name = "part1" }
+	
+	scale = 0.0
+
+}
+
+
+entity = {
+	name = "molluscoid_01_Drydock_construction_entity"
+	pdxmesh = "molluscoid_01_drydock_mesh"
+	scale = 0.5
+}

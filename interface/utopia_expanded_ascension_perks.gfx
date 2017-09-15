@@ -1,0 +1,12 @@
+spriteTypes = {
+	
+	############################
+	### ASCENSION PERK ICONS ###
+	############################
+	
+	spriteType = {
+		name = "GFX_ap_master_of_the_heavens"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_master_of_the_heavens.dds"
+		alwaystransparent = yes
+	}
+}

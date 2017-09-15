@@ -1,0 +1,26 @@
+create_supply_corps_with_random_ftl={
+	create_country = {
+		name = "Supply Corps"
+		type = SGM_supply_corps
+		#name_list = "PRT1"
+		species = this
+		#ftl = this
+		#weapon = this				
+		flag = {
+			icon= {
+				category = "blocky"
+				file = "flag_blocky_13.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+	}
+}

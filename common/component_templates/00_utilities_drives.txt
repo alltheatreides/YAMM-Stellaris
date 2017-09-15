@@ -1,0 +1,1078 @@
+# Icons set here are the ones show in the actual slot. 
+
+@ftl1_corvette = 5
+@ftl2_corvette = 6
+@ftl3_corvette = 7
+@ftl4_corvette = 8
+@ftl5_corvette = 9
+@ftl1_destroyer = 10
+@ftl2_destroyer = 12
+@ftl3_destroyer = 14
+@ftl4_destroyer = 16
+@ftl5_destroyer = 18
+@ftl1_cruiser = 33.5
+@ftl2_cruiser = 39.5
+@ftl3_cruiser = 46.5
+@ftl4_cruiser = 51.5
+@ftl5_cruiser = 57.5
+@ftl1_battleship = 67
+@ftl2_battleship = 79
+@ftl3_battleship = 93
+@ftl4_battleship = 108
+@ftl5_battleship = 120
+@cost_wh_corvette = 2.5
+@cost_wh_destroyer = 5
+@cost_wh_cruiser = 14
+@cost_wh_battleship = 34
+
+@ftl1 = 5
+@ftl2 = 10
+@ftl3 = 15
+@ftl4 = 20
+
+
+@power1_corvette = -5
+@power2_corvette = -6
+@power3_corvette = -7
+@power4_corvette = -8
+@power5_corvette = -9
+@power1_destroyer = -10
+@power2_destroyer = -12
+@power3_destroyer = -14
+@power4_destroyer = -16
+@power5_destroyer = -18
+@power1_cruiser = -15
+@power2_cruiser = -17.5
+@power3_cruiser = -20
+@power4_cruiser = -22.5
+@power5_cruiser = -25
+@power1_battleship = -20
+@power2_battleship = -22.5
+@power3_battleship = -25
+@power4_battleship = -27.5
+@power5_battleship = -30
+@power_wh_corvette = -5
+@power_wh_destroyer = -10
+@power_wh_cruiser = -20
+@power_wh_battleship = -40
+
+
+@power1 = -5
+@power2 = -7.5
+@power3 = -10
+@power4 = -10
+
+#############
+# UTILITIES #
+#############
+
+### NON-FTL DRIVE
+utility_component_template = {
+	key = "EMPTY_DRIVE"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	cost = 0
+	should_ai_use = no
+	
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport }
+	component_set = "ftl_components"
+}
+	
+###### 
+#
+# Civilian Ships
+#
+######
+
+### WORM HOLE DRIVES
+utility_component_template = {
+	key = "WORMHOLE_DRIVE"
+	size = small
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+	power = 0
+	cost = 0
+	ftl = wormhole
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_wormhole_generation_1" }
+	component_set = "ftl_components"
+}
+
+### WARP DRIVES
+utility_component_template = {
+	key = "WARP_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_warp_drive_1"
+	icon_frame = 1
+	power = @power1
+	cost = @ftl1
+	ftl = warp
+	
+	ai_weight = {
+		weight = 1
+	}
+
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_warp_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_2"
+}
+
+
+utility_component_template = {
+	key = "WARP_DRIVE_2"
+	size = small
+	icon = "GFX_ship_part_warp_drive_2"
+	icon_frame = 1
+	power = @power2
+	cost = @ftl2
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_warp_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_3"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_3"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = @power3
+	cost = @ftl3
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.8
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_warp_drive_3" }
+	component_set = "ftl_components"
+}
+
+### HYPER DRIVES
+utility_component_template = {
+	key = "HYPER_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_1"
+	icon_frame = 1
+	power = @power1
+	cost = @ftl1
+	ftl = hyperdrive
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_hyper_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_2"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_2"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_2"
+	icon_frame = 1
+	power = @power2
+	cost = @ftl2
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.25
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_hyper_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_3"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_3"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = @power3
+	cost = @ftl3
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.5
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+	
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_hyper_drive_3" }
+	component_set = "ftl_components"
+}
+
+### Jump drives
+utility_component_template = {
+	key = "JUMP_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_jump_drive_1"
+	icon_frame = 1
+	power = @power4
+	cost = @ftl4
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 4
+	}
+
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_jump_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "PSI_JUMP_DRIVE_1"
+}
+
+### Jump drives
+utility_component_template = {
+	key = "PSI_JUMP_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_1"
+	icon_frame = 1
+	power = @power4
+	cost = @ftl4
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 5
+	}
+	
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.50
+	}
+
+	class_restriction = { shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport  }
+	prerequisites = { "tech_psi_jump_drive_1" }
+	component_set = "ftl_components"
+}
+
+###### 
+#
+# Military Ships
+#
+######
+
+### WORM HOLE DRIVES
+
+### CORVETTES
+
+utility_component_template = {
+	key = "WORMHOLE_DRIVE_CORVETTE"
+	size = small
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+	power = @power_wh_corvette
+	cost = @cost_wh_corvette
+	ftl = wormhole
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_wormhole_generation_1" }
+	component_set = "ftl_components"
+}
+
+### DESTROYER
+
+utility_component_template = {
+	key = "WORMHOLE_DRIVE_DESTROYER"
+	size = small
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+	power = @power_wh_destroyer
+	cost = @cost_wh_destroyer
+	ftl = wormhole
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_wormhole_generation_1" }
+	component_set = "ftl_components"
+}
+
+### CRUISER
+
+utility_component_template = {
+	key = "WORMHOLE_DRIVE_CRUISER"
+	size = small
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+	power = @power_wh_cruiser
+	cost = @cost_wh_cruiser
+	ftl = wormhole
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_wormhole_generation_1" }
+	component_set = "ftl_components"
+}
+
+### BATTLESHIP
+
+utility_component_template = {
+	key = "WORMHOLE_DRIVE_BATTLESHIP"
+	size = small
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+	power = @power_wh_battleship
+	cost = @cost_wh_battleship
+	ftl = wormhole
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_wormhole_generation_1" }
+	component_set = "ftl_components"
+}
+
+
+### WARP DRIVES
+
+### CORVETTES
+utility_component_template = {
+	key = "WARP_DRIVE_CORVETTE_1"
+	size = small
+	icon = "GFX_ship_part_warp_drive_1"
+	icon_frame = 1
+	power = @power1_corvette
+	cost = @ftl1_corvette
+	ftl = warp
+	
+	ai_weight = {
+		weight = 1
+	}
+
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_warp_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_CORVETTE_2"
+}
+
+
+
+utility_component_template = {
+	key = "WARP_DRIVE_CORVETTE_2"
+	size = small
+	icon = "GFX_ship_part_warp_drive_2"
+	icon_frame = 1
+	power = @power2_corvette
+	cost = @ftl2_corvette
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_warp_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_CORVETTE_3"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_CORVETTE_3"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = @power3_corvette
+	cost = @ftl3_corvette
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.8
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_warp_drive_3" }
+	component_set = "ftl_components"
+}
+
+
+### DESTROYER
+utility_component_template = {
+	key = "WARP_DRIVE_DESTROYER_1"
+	size = small
+	icon = "GFX_ship_part_warp_drive_1"
+	icon_frame = 1
+	power = @power1_destroyer
+	cost = @ftl1_destroyer
+	ftl = warp
+	
+	ai_weight = {
+		weight = 1
+	}
+
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_warp_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_DESTROYER_2"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_DESTROYER_2"
+	size = small
+	icon = "GFX_ship_part_warp_drive_2"
+	icon_frame = 1
+	power = @power2_destroyer
+	cost = @ftl2_destroyer
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_warp_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_DESTROYER_3"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_DESTROYER_3"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = @power3_destroyer
+	cost = @ftl3_destroyer
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.8
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_warp_drive_3" }
+	component_set = "ftl_components"
+}
+
+
+### CRUISER
+utility_component_template = {
+	key = "WARP_DRIVE_CRUISER_1"
+	size = small
+	icon = "GFX_ship_part_warp_drive_1"
+	icon_frame = 1
+	power = @power1_cruiser
+	cost = @ftl1_cruiser
+	ftl = warp
+	
+	ai_weight = {
+		weight = 1
+	}
+
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_warp_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_CRUISER_2"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_CRUISER_2"
+	size = small
+	icon = "GFX_ship_part_warp_drive_2"
+	icon_frame = 1
+	power = @power2_cruiser
+	cost = @ftl2_cruiser
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_warp_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_CRUISER_3"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_CRUISER_3"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = @power3_cruiser
+	cost = @ftl3_cruiser
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.8
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_warp_drive_3" }
+	component_set = "ftl_components"
+}
+
+### BATTLESHIP
+utility_component_template = {
+	key = "WARP_DRIVE_BATTLESHIP_1"
+	size = small
+	icon = "GFX_ship_part_warp_drive_1"
+	icon_frame = 1
+	power = @power1_battleship
+	cost = @ftl1_battleship
+	ftl = warp
+	
+	ai_weight = {
+		weight = 1
+	}
+
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_warp_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_BATTLESHIP_2"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_BATTLESHIP_2"
+	size = small
+	icon = "GFX_ship_part_warp_drive_2"
+	icon_frame = 1
+	power = @power2_battleship
+	cost = @ftl2_battleship
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.4
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_warp_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "WARP_DRIVE_BATTLESHIP_3"
+}
+
+utility_component_template = {
+	key = "WARP_DRIVE_BATTLESHIP_3"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = @power3_battleship
+	cost = @ftl3_battleship
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 0.8
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_warp_drive_3" }
+	component_set = "ftl_components"
+}
+
+### HYPER DRIVES
+
+### CORVETTE
+utility_component_template = {
+	key = "HYPER_DRIVE_CORVETTE_1"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_1"
+	icon_frame = 1
+	power = @power1_corvette
+	cost = @ftl1_corvette
+	ftl = hyperdrive
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_hyper_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_CORVETTE_2"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_CORVETTE_2"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_2"
+	icon_frame = 1
+	power = @power2_corvette
+	cost = @ftl2_corvette
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.25
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+	
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_hyper_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_CORVETTE_3"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_CORVETTE_3"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = @power3_corvette
+	cost = @ftl3_corvette
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.5
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+	
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_hyper_drive_3" }
+	component_set = "ftl_components"
+}
+
+### DESTROYER
+utility_component_template = {
+	key = "HYPER_DRIVE_DESTROYER_1"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_1"
+	icon_frame = 1
+	power = @power1_destroyer
+	cost = @ftl1_destroyer
+	ftl = hyperdrive
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_hyper_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_DESTROYER_2"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_DESTROYER_2"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_2"
+	icon_frame = 1
+	power = @power2_destroyer
+	cost = @ftl2_destroyer
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.25
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+	
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_hyper_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_DESTROYER_3"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_DESTROYER_3"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = @power3_destroyer
+	cost = @ftl3_destroyer
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.5
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+	
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_hyper_drive_3" }
+	component_set = "ftl_components"
+}
+
+
+### CRUISER
+utility_component_template = {
+	key = "HYPER_DRIVE_CRUISER_1"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_1"
+	icon_frame = 1
+	power = @power1_cruiser
+	cost = @ftl1_cruiser
+	ftl = hyperdrive
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_hyper_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_CRUISER_2"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_CRUISER_2"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_2"
+	icon_frame = 1
+	power = @power2_cruiser
+	cost = @ftl2_cruiser
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.25
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+	
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_hyper_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_CRUISER_3"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_CRUISER_3"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = @power3_cruiser
+	cost = @ftl3_cruiser
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.5
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+	
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_hyper_drive_3" }
+	component_set = "ftl_components"
+}
+
+
+### BATTLESHIP
+utility_component_template = {
+	key = "HYPER_DRIVE_BATTLESHIP_1"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_1"
+	icon_frame = 1
+	power = @power1_battleship
+	cost = @ftl1_battleship
+	ftl = hyperdrive
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_hyper_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_BATTLESHIP_2"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_BATTLESHIP_2"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_2"
+	icon_frame = 1
+	power = @power2_battleship
+	cost = @ftl2_battleship
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.25
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+	
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_hyper_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "HYPER_DRIVE_BATTLESHIP_3"
+}
+
+utility_component_template = {
+	key = "HYPER_DRIVE_BATTLESHIP_3"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = @power3_battleship
+	cost = @ftl3_battleship
+	ftl = hyperdrive
+	ship_modifier = {
+		ship_windup_mult = -0.5
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+	
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_hyper_drive_3" }
+	component_set = "ftl_components"
+}
+
+
+
+### Jump drives
+
+### CORVETTE
+utility_component_template = {
+	key = "JUMP_DRIVE_CORVETTE_1"
+	size = small
+	icon = "GFX_ship_part_jump_drive_1"
+	icon_frame = 1
+	power = @power4_corvette
+	cost = @ftl4_corvette
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 4
+	}
+
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_jump_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "PSI_JUMP_DRIVE_CORVETTE_1"
+}
+
+utility_component_template = {
+	key = "PSI_JUMP_DRIVE_CORVETTE_1"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_1"
+	icon_frame = 1
+	power = @power5_corvette
+	cost = @ftl5_corvette
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 5
+	}
+	
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.50
+	}
+
+	size_restriction = { corvette SGM_scout SGM_corvette cofh_se_corvette_hvy cofh_se_corvette_sup scout_probe }
+	prerequisites = { "tech_psi_jump_drive_1" }
+	component_set = "ftl_components"
+}
+
+### DESTROYER
+utility_component_template = {
+	key = "JUMP_DRIVE_DESTROYER_1"
+	size = small
+	icon = "GFX_ship_part_jump_drive_1"
+	icon_frame = 1
+	power = @power4_destroyer
+	cost = @ftl4_destroyer
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 4
+	}
+
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_jump_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "PSI_JUMP_DRIVE_DESTROYER_1"
+}
+
+utility_component_template = {
+	key = "PSI_JUMP_DRIVE_DESTROYER_1"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_1"
+	icon_frame = 1
+	power = @power5_destroyer
+	cost = @ftl5_destroyer
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 5
+	}
+	
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.50
+	}
+
+	size_restriction = { destroyer SGM_destroyer SGM_light_transport cofh_se_auxiliary_tender cofh_se_destroyer_hvy cofh_se_destroyer_sup }
+	prerequisites = { "tech_psi_jump_drive_1" }
+	component_set = "ftl_components"
+}
+
+
+### CRUISER
+utility_component_template = {
+	key = "JUMP_DRIVE_CRUISER_1"
+	size = small
+	icon = "GFX_ship_part_jump_drive_1"
+	icon_frame = 1
+	power = @power4_cruiser
+	cost = @ftl4_cruiser
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 4
+	}
+
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_jump_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "PSI_JUMP_DRIVE_CRUISER_1"
+}
+
+utility_component_template = {
+	key = "PSI_JUMP_DRIVE_CRUISER_1"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_1"
+	icon_frame = 1
+	power = @power5_cruiser
+	cost = @ftl5_cruiser
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 5
+	}
+	
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.50
+	}
+
+	size_restriction = { cruiser SGM_cruiser SGM_crew_transport cofh_se_cruiser_hvy cofh_se_cruiser_sup }
+	prerequisites = { "tech_psi_jump_drive_1" }
+	component_set = "ftl_components"
+}
+
+
+### BATTLESHIP
+utility_component_template = {
+	key = "JUMP_DRIVE_BATTLESHIP_1"
+	size = small
+	icon = "GFX_ship_part_jump_drive_1"
+	icon_frame = 1
+	power = @power4_battleship
+	cost = @ftl4_battleship
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 4
+	}
+
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_jump_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "PSI_JUMP_DRIVE_BATTLESHIP_1"
+}
+
+utility_component_template = {
+	key = "PSI_JUMP_DRIVE_BATTLESHIP_1"
+	size = small
+	icon = "GFX_ship_part_psi_jump_drive_1"
+	icon_frame = 1
+	power = @power5_battleship
+	cost = @ftl5_battleship
+	ftl = jumpdrive
+	
+	ai_weight = {
+		weight = 5
+	}
+	
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.50
+	}
+
+	size_restriction = { battleship SGM_battleship SGM_cargo_transport SGM_tanker cofh_se_battleship_hvy cofh_se_battleship_sup }
+	prerequisites = { "tech_psi_jump_drive_1" }
+	component_set = "ftl_components"
+}
+
+### NOMAD
+utility_component_template = {
+	key = "NOMAD_WARP_DRIVE"
+	hidden = yes
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = @power3
+	cost = @ftl3
+	ftl = warp
+	ship_modifier = {
+		ship_ftl_warp_range_mult = 1.0
+		ship_interstellar_speed_mult = 0.10
+		ship_winddown_mult = -3
+	}
+	
+	ai_weight = {
+		weight = 3
+	}
+
+	class_restriction = { shipclass_military shipclass_constructor shipclass_colonizer shipclass_science_ship shipclass_transport }
+	#prerequisites = { "tech_warp_drive_3" }
+	component_set = "ftl_components"
+}

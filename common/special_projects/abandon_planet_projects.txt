@@ -1,0 +1,167 @@
+special_project = {
+	key = "ABANDON_PLANET_EVACUATE"
+	cost = 0
+	days_to_research = 365
+	tech_department = society_technology
+	timelimit = 120
+	
+	picture = GFX_evt_colony_settlement
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_colonizer = 1
+	}
+	
+	on_success = {
+		FROM = {
+			remove_planet_flag = decomissioning_planet
+			remove_modifier = condemed_colony
+			planet_event = { id = colony.90003 }
+		}
+	}
+	
+	on_fail = {
+		FROM = {
+			remove_planet_flag = decomissioning_planet
+			remove_modifier = condemed_colony
+		}
+	}
+}
+
+special_project = {
+	key = "ABANDON_PLANET_ELIMINATE"
+	cost = 0
+	days_to_research = 30
+	tech_department = society_technology
+	timelimit = 120
+	
+	icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
+	picture = GFX_evt_ground_combat
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 1
+		leader = general
+		skill > 2
+	}
+	
+	on_success = {
+		FROM = { 
+			remove_planet_flag = decomissioning_planet 
+			remove_modifier = condemed_colony
+			planet_event = { id = colony.90002 }
+		}
+	}
+	
+	on_fail = {
+		FROM = {
+			remove_planet_flag = decomissioning_planet
+			remove_modifier = condemed_colony
+		}
+	}
+}
+
+special_project = {
+	key = "ABANDON_PLANET_CURSE"
+	cost = 0
+	days_to_research = 120
+	tech_department = society_technology
+	timelimit = 120
+	
+	icon = "gfx/interface/icons/situation_log/situation_log_society.dds"
+	picture = GFX_evt_cursed_planet
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 2
+	}
+	
+	on_success = {
+		FROM = { 
+			remove_planet_flag = decomissioning_planet 
+			remove_modifier = condemed_colony
+			planet_event = { id = colony.90006 }
+		}
+	}
+	
+	on_fail = {
+		FROM = {
+			remove_planet_flag = decomissioning_planet
+			remove_modifier = condemed_colony
+		}
+	}
+}
+
+special_project = {
+	key = "ABANDON_PLANET_DISASTER"
+	cost = 0
+	days_to_research = 120
+	tech_department = physics_technology
+	timelimit = 120
+	
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	picture = GFX_evt_asteroid_approaching_planet
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill > 2
+	}
+	
+	on_success = {
+		FROM = { 
+			remove_planet_flag = decomissioning_planet 
+			remove_modifier = condemed_colony
+			planet_event = { id = colony.90004 }
+		}
+	}
+	
+	on_fail = {
+		FROM = {
+			remove_planet_flag = decomissioning_planet
+			remove_modifier = condemed_colony
+		}
+	}
+}
+
+special_project = {
+	key = "ABANDON_PLANET_NUKE"
+	cost = 0
+	days_to_research = 5
+	tech_department = society_technology
+	timelimit = 120
+	
+	icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
+	picture = GFX_evt_fleet_in_orbit
+	
+	event_scope = ship_event
+	
+	requirements = {
+		fleet_power > 1999
+		leader = admiral
+		skill > 2
+	}
+	
+	on_success = {
+		FROM = { 
+			remove_planet_flag = decomissioning_planet 
+			remove_modifier = condemed_colony
+			planet_event = { id = colony.90005 }
+		}
+	}
+	
+	on_fail = {
+		FROM = {
+			remove_planet_flag = decomissioning_planet
+			remove_modifier = condemed_colony
+		}
+	}
+}

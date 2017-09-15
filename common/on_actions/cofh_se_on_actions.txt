@@ -1,0 +1,27 @@
+# CoFH - Stellar Expansion
+# On Actions
+# Author: King Lemming
+
+on_entering_battle = {
+	events = {
+		cofh_se.100
+		cofh_se.200
+		cofh_se.300
+		cofh_se.400
+	}
+}
+
+on_ship_destroyed_perp = {
+	events = {
+		cofh_se.105
+		cofh_se.205
+		cofh_se.305
+		cofh_se.405
+	}
+}
+
+on_tech_increased = {
+	events = {
+
+	}
+}

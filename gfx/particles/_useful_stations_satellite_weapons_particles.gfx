@@ -1,0 +1,54 @@
+objectTypes = {
+
+####################
+#	WINDUP
+####################
+
+	pdxparticle = {
+		name = "useful_stations_satellite_laser_windup_effect"
+		type = "useful_stations_satellite_laser_windup_effect"
+		
+		scale = 1.5
+	}
+	
+	pdxparticle = {
+		name = "useful_stations_satellite_laser_muzzle_windup_effect"
+		type = "useful_stations_satellite_laser_muzzle_windup_effect"
+		
+		scale = 1.5
+	}
+	
+####################
+#	MUZZLE FLASHES
+####################
+	
+	pdxparticle = {
+		name = "useful_stations_satellite_laser_muzzle_particle"
+		type = "useful_stations_satellite_laser_muzzle_file"
+		
+		scale = 1.0
+	}
+	
+####################
+#	HIT EFFECTS
+####################
+
+	pdxparticle = {
+		name = "useful_stations_satellite_laser_hit_effect"
+		type = "useful_stations_satellite_laser_hit_effect"
+		
+		scale = 3.0
+	}
+	
+####################
+#	SHIELD HIT EFFECTS
+####################	
+	
+	pdxparticle = {
+		name = "useful_stations_satellite_laser_shield_hit_effect"
+		type = "useful_stations_satellite_laser_shield_hit_effect"
+		
+		scale = 1.0
+	}
+	
+}

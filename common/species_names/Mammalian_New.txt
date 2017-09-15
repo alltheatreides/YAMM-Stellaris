@@ -1,0 +1,249 @@
+#For existing Mammalian namelists
+
+MAM = {
+	pathival = {
+		name = Pathian
+		plural = Pathians
+		home_planet = Pathival
+		home_system = Coldir
+		name_list = "MAM1"
+	}
+	rodthir = {
+		name = Rodthiran
+		plural = Rodthirans
+		home_planet = Rodthir
+		home_system = Leonro
+		name_list = "MAM1"
+	}
+	mithorn = {
+		name = Míthornese
+		plural = Míthornese
+		home_planet = Míthorn
+		home_system = "Míthorn Var"
+		name_list = "MAM1"
+	}
+	uilasta = {
+		name = Uilastan
+		plural = Uilastans
+		home_planet = Uilasta
+		home_system = Rabríar
+		name_list = "MAM1"
+	}
+	dardir = {
+		name = Dardirid
+		plural = Dardirids
+		home_planet = Dardir
+		home_system = "Gollo Hatek"
+		name_list = "MAM1"
+	}
+	rimorak = {
+		name = Sar
+		plural = Sar
+		home_planet = Rimorak
+		home_system = Finga-Veronak
+		name_list = "MAM1"
+	}
+	vahir = {
+		name = Jaddro
+		plural = Jaddro
+		home_planet = Va'hir
+		home_system = Mai'hir
+		name_list = "MAM1"
+	}
+	rofra = {
+		name = Rofrid
+		plural = Rofrids
+		home_planet = Rofra
+		home_system = "Barazil Zirni"
+		name_list = "MAM1"
+	}
+	nidme = {
+		name = Nidmean
+		plural = Nidmeans
+		home_planet = Nidme
+		home_system = Ervid
+		name_list = "MAM1"
+	}
+	torko = {
+		name = Torkid
+		plural = Torkids
+		home_planet = Torko
+		home_system = "Zafa Ze"
+		name_list = "MAM1"
+	}
+	dadandak = {
+		name = Irog
+		plural = Irog
+		home_planet = Dadan-dak
+		home_system = Rihocik
+		name_list = "MAM1"
+	}
+	lenat = {
+		name = Lenatian
+		plural = Lenatians
+		home_planet = Lenat
+		home_system = "Vom Sirbo"
+		name_list = "MAM1"
+	}
+	nilanham = {
+		name = Nilanese
+		plural = Nilanese
+		home_planet = "Nilan Ham"
+		home_system = Nilan
+		name_list = "MAM1"
+	}
+	hembera = {
+		name = Hemberan
+		plural = Hemberans
+		home_planet = Hembera
+		home_system = Yaldethera
+		name_list = "MAM2"
+	}
+	ithia = {
+		name = Ithian
+		plural = Ithians
+		home_planet = Ithia
+		home_system = Barion
+		name_list = "MAM2"
+	}
+	pathival = {
+		name = Pathian
+		plural = Pathians
+		home_planet = Pathival
+		home_system = Coldir
+		name_list = "MAM2"
+	}
+	ganduria = {
+		name = Gandite
+		plural = Gandites
+		home_planet = Ganduria
+		home_system = Lakanduria
+		name_list = "MAM2"
+	}
+	tolar = {
+		name = Tolarese
+		plural = Tolarese
+		home_planet = Tolar
+		home_system = Pilduria
+		name_list = "MAM2"
+	}
+	bekondur = {
+		name = Bekondian
+		plural = Bekondians
+		home_planet = Bekond
+		home_system = Jargion
+		name_list = "MAM2"
+	}
+	jorim = {
+		name = Jorimese
+		plural = Jorimese
+		home_planet = Jorim
+		home_system = "Nidir Mak"
+		name_list = "MAM2"
+	}
+	nastarr = {
+		name = Nastarri
+		plural = Nastarris
+		home_planet = Nastarr
+		home_system = "Barig Ithis"
+		name_list = "MAM2"
+	}
+	kadrama = {
+		name = Kadraman
+		plural = Kadramans
+		home_planet = Kadrama
+		home_system = Cennergima
+		name_list = "MAM2"
+	}
+	winicallam = {
+		name = Valdirm
+		plural = Valdirm
+		home_planet = "Wini Callam"
+		home_system = "Wini Jallam"
+		name_list = "MAM2"
+	}
+	athisar = {
+		name = Athisarid
+		plural = Athisarids
+		home_planet = Athisar
+		home_system = Beselan
+		name_list = "MAM2"
+	}
+	ceruth = {
+		name = Ceruthian
+		plural = Ceruthians
+		home_planet = Ceruth
+		home_system = "Calen Gales"
+		name_list = "MAM3"
+	}
+	nossundrol = {
+		name = Nossunese
+		plural = Nossunese
+		home_planet = Nossundrol
+		home_system = Belod
+		name_list = "MAM3"
+	}
+	essundem = {
+		name = Sadol
+		plural = Sadol
+		home_planet = Essundem
+		home_system = Essundrog
+		name_list = "MAM3"
+	}
+	merom = {
+		name = Meromite
+		plural = Meromites
+		home_planet = Merom
+		home_system = Sassel
+		name_list = "MAM3"
+	}
+	drogen = {
+		name = Drogenite
+		plural = Drogenites
+		home_planet = Drogen
+		home_system = Suclienoc
+		name_list = "MAM3"
+	}
+	cumel = {
+		name = Cumelan
+		plural = Cumelans
+		home_planet = "Cran Cumel"
+		home_system = Curena
+		name_list = "MAM3"
+	}
+	seife = {
+		name = Seifish
+		plural = Seifish
+		home_planet = Seife
+		home_system = "Saco Pendalon"
+		name_list = "MAM3"
+	}
+	penddalor = {
+		name = Dalori
+		plural = Daloris
+		home_planet = Pend-Dalor
+		home_system = Pend-Huvend
+		name_list = "MAM3"
+	}
+	anglerum = {
+		name = Angleruman
+		plural = Anglerumans
+		home_planet = Anglerum
+		home_system = Angleruthar
+		name_list = "MAM3"
+	}
+	sagreth = {
+		name = Sagrian
+		plural = Sagrians
+		home_planet = Sagreth
+		home_system = Pendrogena
+		name_list = "MAM3"
+	}
+	salafor = {
+		name = Salaforan
+		plural = Salaforans
+		home_planet = Salafor
+		home_system = "Tuleth Sala"
+		name_list = "MAM3"
+	}
+}

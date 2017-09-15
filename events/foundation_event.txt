@@ -1,0 +1,42 @@
+namespace = mega_foundation;
+
+planet_event = {
+	id = mega_foundation.1
+	title = "mega_foundation.name"
+	desc = "mega_foundation.desc"
+	picture = GFX_evt_drilling_for_gas
+
+	trigger = {
+		has_edict = foundation_point_survey
+		NOT = {
+			has_planet_flag = mega_foundation_success
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 220
+	}
+
+	option = {
+		name = mega_foundation.a
+		random_tile = {
+			limit = {
+				num_adjacent_tiles = 4
+				NOT = {
+					OR = {
+						has_building = "building_capital_1"
+						has_building = "building_capital_2"
+						has_building = "building_capital_3"
+					}
+				}
+			}
+		add_deposit = d_foundation_deposit
+		}
+		set_planet_flag = mega_foundation_success
+	}
+	
+	option = {
+		name = mega_foundation.b
+	}
+	
+}

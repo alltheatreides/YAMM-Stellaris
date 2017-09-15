@@ -1,0 +1,144 @@
+#For existing humanoid namelist
+
+HUM = {
+	yalakkun = {
+		name = Yalakese
+		plural = Yalakese
+		home_planet = Yalak-Kun
+		home_system = Larchak-Idugi
+		name_list = "HUM1"
+	}
+	diugas = {
+		name = Diugasid
+		plural = Diugasids
+		home_planet = Diugas
+		home_system = Jashama
+		name_list = "HUM1"
+	}
+	olyra = {
+		name = Olyrian
+		plural = Olyrians
+		home_planet = Olyra
+		home_system = "Pesh u Shothar"
+		name_list = "HUM1"
+	}
+	fohessa = {
+		name = Fossian
+		plural = Fossians
+		home_planet = Fohessa
+		home_system = Sysion
+		name_list = "HUM1"
+	}
+	rhelkram = {
+		name = Gev
+		plural = Gev
+		home_planet = Rhelkram
+		home_system = Cunvakon
+		name_list = "HUM1"
+	}
+	lorrack = {
+		name = Lorrackish
+		plural = Lorrackish
+		home_planet = Lorrack
+		home_system = "Khuss Har"
+		name_list = "HUM1"
+	}
+	theghill = {
+		name = Thegillid
+		plural = Theghillids
+		home_planet = Theghill
+		home_system = Onabol
+		name_list = "HUM1"
+	}
+	falarak = {
+		name = Falarakite
+		plural = Falarakites
+		home_planet = "Falarak Tyar"
+		home_system = Falarak
+		name_list = "HUM1"
+	}
+	hedral = {
+		name = Hedralite
+		plural = Hedralites
+		home_planet = Hedral
+		home_system = Khok
+		name_list = "HUM1"
+	}
+	narlim = {
+		name = Narlimian
+		plural = Narlimians
+		home_planet = Narlim
+		home_system = Gadull
+		name_list = "HUM1"
+	}	
+	esdurk = {
+		name = Vald
+		plural = Vald
+		home_planet = Es-Durk
+		home_system = Glagak
+		name_list = "HUM2"
+	}		
+	deram = {
+		name = Deramite
+		plural = Deramites
+		home_planet = Deram
+		home_system = Trukkav
+		name_list = "HUM2"
+	}		
+	malkils = {
+		name = Malkilese
+		plural = Malkilese
+		home_planet = Malkils
+		home_system = "Tidre Gumeng"
+		name_list = "HUM2"
+	}		
+	virrom = {
+		name = Virromi
+		plural = Virromis
+		home_planet = Virrom
+		home_system = "Sellor ra-Tash"
+		name_list = "HUM2"
+	}		
+	fongzul = {
+		name = Fongzul
+		plural = Fongzul
+		home_planet = "Fongzul Homeland"
+		home_system = "Purme Lorsh"
+		name_list = "HUM2"
+	}		
+	virsk = {
+		name = Virskian
+		plural = Virskians
+		home_planet = Virsk
+		home_system = Kummator
+		name_list = "HUM2"
+	}		
+	narrollam = {
+		name = Narranid
+		plural = Narranids
+		home_planet = Narrollam
+		home_system = "Nartrami Gella"
+		name_list = "HUM2"
+	}		
+	vimdeg = {
+		name = Vimian
+		plural = Vimians
+		home_planet = Vimdeg
+		home_system = "Yoff Fiam"
+		name_list = "HUM2"
+	}		
+	kunselim = {
+		name = Feruggi
+		plural = Feruggi
+		home_planet = Kun-Selim
+		home_system = Gellok-Ka
+		name_list = "HUM2"
+	}		
+	nili = {
+		name = Nilian
+		plural = Nilians
+		home_planet = Nili
+		home_system = "Ni Lassa"
+		name_list = "HUM2"
+	}		
+}

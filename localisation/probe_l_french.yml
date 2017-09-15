@@ -1,0 +1,16 @@
+﻿l_french:
+
+ SCOUT_PROBE:0 "Sonde"
+ scout_probe:0 "Sonde"
+ scout_probe_plural:0 "Sondes"
+ scout_probe_section:0 "Noyau de sonde"
+ PROBE_SENSOR_1:0 "$OBSERVATORY_1$ monté sur une sonde"
+ PROBE_SENSOR_1_DESC:0 "$OBSERVATORY_1_DESC$"
+ PROBE_SENSOR_2:0 "$OBSERVATORY_2$ monté sur une sonde"
+ PROBE_SENSOR_2_DESC:0 "$OBSERVATORY_2_DESC$"
+ PROBE_SENSOR_3:0 "$OBSERVATORY_3$ monté sur une sonde"
+ PROBE_SENSOR_3_DESC:0 "$OBSERVATORY_3_DESC$"
+ PROBE_SENSOR_4:0 "$OBSERVATORY_4$ monté sur une sonde"
+ PROBE_SENSOR_4_DESC:0 "$OBSERVATORY_4_DESC$"
+ probe_sensor_components:0 "Senseurs"
+ probe_sensor_components_DESC:0 "Les senseurs révèlent les détails de tous les systèmes et flottes se trouvant à leur portée."

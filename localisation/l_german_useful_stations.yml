@@ -1,0 +1,104 @@
+﻿l_german:
+ 
+########################
+#  Station Sections    #
+########################
+
+MILITARY_STATION_XS_SATELLITE_SECTION:0 "Satellitenhülle"
+
+MILITARY_STATION_XL_LARGE:0 "Große Waffensektion"
+MILITARY_STATION_XL_HANGAR:0 "Hangarsektion"
+MILITARY_STATION_XL_MEDIUM:0 "Medium Waffensektion"
+MILITARY_STATION_XL_TORPEDO:0 "Torpedosektion"
+MILITARY_STATION_XL_MIXED:0 "Gemischte Waffensektion"
+MILITARY_STATION_XL_SMALL:0 "Kleine Waffensektion"
+
+MILITARY_STATION_XXL_LARGE:0 "Große Waffensektion"
+MILITARY_STATION_XXL_HANGAR:0 "Hangarsektion"
+MILITARY_STATION_XXL_MEDIUM:0 "Medium Waffensektion"
+MILITARY_STATION_XXL_TORPEDO:0 "Torpedosektion"
+MILITARY_STATION_XXL_MIXED:0 "Gemischte Waffensektion"
+MILITARY_STATION_XXL_SMALL:0 "Kleine Waffensektion"
+MILITARY_STATION_XXL_POINT_DEFENSE:0 "Verteidigungssektion"
+
+TORPEDO_MILITARY_STATION_SECTION:0 "Torpedosektion"
+TORPEDO_LARGE_MILITARY_STATION_SECTION:0 "Torpedosektion"
+ 
+########################
+#  Defense Stations    #
+########################
+ 
+military_station_xs_satellite:0 "Verteidigungssatellit"
+military_station_xs_satellite_plural:0 "Verteidigungssatelliten"
+ 
+military_station_xl_bulwark:0 "Bulwark" 
+military_station_xl_bulwark_plural:0 "Bulwarks"
+
+military_station_xxl_citadel:0 "Zitadelle"
+military_station_xxl_citadel_plural:0 "Zitadellen"
+ 
+####################
+#  Technologies    #
+####################
+
+tech_defensive_tech_miniaturization:0 "Verteidiguns Technologie verkleinerung"
+tech_defensive_tech_miniaturization_desc:0 "Diese Technologie ist eine Voraussetzung für Verteidigungssatelliten."
+TECH_UNLOCK_MINIATURIZATION_TITLE:0 "Diese Technologie ist eine Voraussetzung für Verteidigungssatelliten."
+TECH_UNLOCK_MINIATURIZATION_DESC:0 "Diese Technologie ist eine Voraussetzung für Verteidigungssatelliten."
+
+tech_military_station_xs_satellite:0 "Verteidigungssatellit"
+tech_military_station_xs_satellite_desc:0 ""
+TECH_UNLOCK_DEFENSIVE_SATELLITE_TITLE:0 "§HErmöglicht die Station:§! Verteidigungssatellit"
+TECH_UNLOCK_DEFENSIVE_SATELLITE_DESC:0 "§HVerteidigungssatelliten§!\nDiese kleinen und beweglichen Satelliten sind perfeckt für Waffen mit sehr großer Reichweite."
+
+tech_military_station_xl_bulwark:0 "Bulwark"
+tech_military_station_xl_bulwark_desc:0 ""
+TECH_UNLOCK_BULWARK_TITLE:0 "§HErmöglicht die Station:§! Bulwark"
+TECH_UNLOCK_BULWARK_DESC:0 "§HBulwarks§!\nDiese gigantische Station wird alle Feinde am passieren hindern."
+
+tech_military_station_xxl_citadel:0 "Zitadelle"
+tech_military_station_xxl_citadel_desc:0 ""
+TECH_UNLOCK_CITADEL_TITLE:0 "§HErmöglicht die Station:§! Zitadelle"
+TECH_UNLOCK_CITADEL_DESC:0 "§HZitadellen§!\nDer Höhepunkt von Verteidigungstechnologie. Mögen unsere Feinde beim Anblick dieser gewaltigen Stationen erzittern."
+
+tech_doctrine_trained_repair_crew:0 "Doktrin: Trainierte Reperaturcrew"
+tech_doctrine_trained_repair_crew_desc:0 ""
+
+tech_spaceport_battle_simulations: "Kampfsimulationen für Raumstationen"
+tech_spaceport_battle_simulations_desc:0 "Mittels unserer künstlichen Intelligenz und ausreichender Rechenkapazität können wir den Ausgang ablaufender Schlachten simulieren und unsere Strategien innerhalb von Millisekunden anpassen."
+
+tech_useful_automated_assembly_yards:0 "Automatisierte Produktionsanlagen"
+tech_useful_automated_assembly_yards_desc:0 ""
+
+#########################
+#   Spaceport Modules   #  
+#########################
+
+sm_reinforced_plating:0 "Verstärkte Beschichtung"
+sm_battle_simulations:0 "Kampfsimulationen"
+sm_orbital_antimatter_collection:0 "Orbitale Antimateriesammler"
+sm_trained_repair_crew:0 "Trainierte Reperaturcrew"
+sm_useful_automated_assembly_yards:0 "Automatisierte Produktionsanlagen"
+
+##################
+#   Components   #  
+##################
+
+MILITARY_STATION_XS_SATELLITE_WEAPON:0 "Satelliten Energiestrahl"
+MILITARY_STATION_XS_SATELLITE_WEAPON_DESC:0 "Eine schlagkräftige Waffe mit sehr hoher Reichweite die speciell für Verteidigungssatelliten entwickelt wurde."
+MILITARY_STATION_XS_SATELLITE_COMPONENTS_EMPTY:0 "Leerer Slot"
+MILITARY_STATION_XS_SATELLITE_COMPONENTS:0 "Satelliten Kernkomponenten"
+military_station_xs_satellite_components:0 "Satelliten Kernkomponenten"
+military_station_xs_satellite_components_DESC:0 ""
+
+#############
+#   Auras   #
+#############
+
+MILITARY_STATION_XXL_CITADEL_SNARE_AURA_EMPTY:0 "Leerer Slot"
+MILITARY_STATION_XXL_CITADEL_AURA_EMPTY:0 "Leerer Slot"
+MILITARY_STATION_XXL_CITADEL_AURA_NANOBOT_CLOUD:0 "Nanobot-Wolke - Zitadelle"
+MILITARY_STATION_XXL_CITADEL_AURA_SHIELD_RECHARGER:0 "Kondensatorfelder - Zitadelle"
+MILITARY_STATION_XXL_CITADEL_AURA_SUBSPACE_SNARE:0 "Hyperraumfalle - Zitadelle"
+MILITARY_STATION_XXL_CITADEL_AURA_SHIELD_DAMPENER:0 "Schilddämpfer - Zitadelle"
+MILITARY_STATION_XXL_CITADEL_AURA_QUANTUM_DESTABILIZER:0 "Quantendestabilisator - Zitadelle"

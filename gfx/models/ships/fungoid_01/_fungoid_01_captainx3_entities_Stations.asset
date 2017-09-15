@@ -1,0 +1,29 @@
+
+##################         	 DRYDOCK            ########################
+
+entity = {
+	name = "fungoid_01_Drydock_entity"
+	pdxmesh = "fungoid_01_drydock_mesh"
+	
+	locator = { name = "part1" }
+	
+	scale = 0.5
+
+}
+
+entity = {
+	name = "fungoid_01_Drydock_section_entity"
+	pdxmesh = "fungoid_01_drydock_mesh"
+	
+	locator = { name = "part1" }
+	
+	scale = 0.0
+
+}
+
+
+entity = {
+	name = "fungoid_01_Drydock_construction_entity"
+	pdxmesh = "fungoid_01_drydock_mesh"
+	scale = 0.5
+}

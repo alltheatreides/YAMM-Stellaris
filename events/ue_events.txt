@@ -1,0 +1,199 @@
+namespace = ue
+
+### DYSON RING
+
+# Initial Dyson Ring Built
+country_event = {
+	id = ue.1 #2000
+	title = "ue.1.name"
+	desc = "ue.1.desc"
+	picture = GFX_evt_unknown_ships
+	show_sound = event_ringworld_build_start
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = dyson_ring_1 }
+	}
+	
+	option = {
+		name = "ue.1.a"
+	}
+}
+
+# Building Skeletal Frame Notification (HIDDEN)
+country_event = {
+	id = ue.2 #2001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = dyson_ring_2 }
+	}
+	
+	immediate = {
+		FROMFROM = { save_event_target_as = dyson_ring_system }
+		every_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = ROOT }
+			}
+			country_event = { id = ue.3 }
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = started_first_dyson_ring }
+			}
+			set_country_flag = started_first_dyson_ring
+			break = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = started_first_dyson_ring
+			}
+			set_country_flag = started_first_dyson_ring_2
+		}
+	}
+}
+
+# Building Skeletal Frame Notification
+country_event = {
+	id = ue.3 #2002
+	title = "ue.3.name"
+	desc = {
+		text = ue.3.desc.a
+		trigger = {
+			FROM = { 
+				has_country_flag = started_first_dyson_ring 
+				NOT = { has_country_flag = started_first_dyson_ring_2 }
+			}
+		}
+	}
+	desc = {
+		text = ue.3.desc.b
+		trigger = {
+			FROM = { 
+				has_country_flag = started_first_dyson_ring_2
+			}
+		}
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_mega_structure_other_empire_build_start
+	location = event_target:dyson_ring_system
+	
+	is_triggered_only = yes
+	
+	option = { # has built own Dyson Ring
+		trigger = {
+			OR = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = dyson_ring_1
+						is_megastructure_type = dyson_ring_2
+					}
+				}
+				has_country_flag = finished_dyson_ring
+			}
+		}
+		name = "ue.3.a"
+	}
+	option = { # has no Dyson Ring
+		trigger = {
+			NOT = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = dyson_ring_1
+						is_megastructure_type = dyson_ring_2
+					}
+				}
+			}
+			NOT = { has_country_flag = finished_dyson_ring }
+		}
+		name = "ue.3.b"
+	}
+}
+
+# Skeletal Frame Built - Dyson Core Frame completed
+country_event = {
+	id = ue.4 #2003
+	title = "ue.4.name"
+	desc = "ue.4.desc"
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_upgrade
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = dyson_ring_2_intermediate }
+	}
+	
+	option = {
+		name = "ue.4.a"
+	}
+}
+
+# Ring World of Dyson Ring Completed
+country_event = {
+	id = ue.5 #2004
+	title = "ue.5.name"
+	desc = "ue.5.desc"
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = dyson_ring_3_intermediate }
+	}
+	
+	option = {
+		name = "ue.5.a"
+	}
+}
+
+# Dyson Core partially completed
+country_event = {
+	id = ue.6 #4004
+	title = ue.6.name
+	desc = ue.6.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = dyson_ring_5 }
+	}
+	
+	option = {
+		name = ue.6.a
+	}
+}
+
+# Dyson Core completed
+country_event = {
+	id = ue.7 #4005
+	title = ue.7.name
+	desc = ue.7.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_complete
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_megastructure_type = dyson_ring_8 }
+	}
+	
+	option = {
+		name = ue.7.a
+	}
+}

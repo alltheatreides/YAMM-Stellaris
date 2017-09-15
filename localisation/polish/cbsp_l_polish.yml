@@ -1,0 +1,102 @@
+﻿l_polish:
+  
+ SHIP_THRUSTER_CORVETTE_1:0 "Chemiczne silniki manewrowe"
+ SHIP_THRUSTER_DESTROYER_1:0 "Chemiczne silniki manewrowe"
+ SHIP_THRUSTER_CRUISER_1:0 "Chemiczne silniki manewrowe" 
+ SHIP_THRUSTER_BATTLESHIP_1:0 "Chemiczne silniki manewrowe"
+
+ SHIP_THRUSTER_CORVETTE_2:0 "Jonowe silniki manewrowe"
+ SHIP_THRUSTER_DESTROYER_2:0 "Jonowe silniki manewrowe"
+ SHIP_THRUSTER_CRUISER_2:0 "Jonowe silniki manewrowe"
+ SHIP_THRUSTER_BATTLESHIP_2:0 "Jonowe silniki manewrowe"
+ 
+ SHIP_THRUSTER_CORVETTE_3:0 "Plazmowe silniki manewrowe"
+ SHIP_THRUSTER_DESTROYER_3:0 "Plazmowe silniki manewrowe"
+ SHIP_THRUSTER_CRUISER_3:0 "Plazmowe silniki manewrowe"
+ SHIP_THRUSTER_BATTLESHIP_3:0 "Plazmowe silniki manewrowe"
+ 
+ SHIP_THRUSTER_CORVETTE_4:0 "Impulsowe silniki manewrowe"
+ SHIP_THRUSTER_DESTROYER_4:0 "Impulsowe silniki manewrowe"
+ SHIP_THRUSTER_CRUISER_4:0 "Impulsowe silniki manewrowe"
+ SHIP_THRUSTER_BATTLESHIP_4:0 "Impulsowe silniki manewrowe"
+ 
+ AFTERBURNER_CORVETTE_1:0 "Dopalacze"
+ AFTERBURNER_DESTROYER_1:0 "Dopalacze"
+ AFTERBURNER_CRUISER_1:0 "Dopalacze"
+ AFTERBURNER_BATTLESHIP_1:0 "Dopalacze"
+ 
+ AFTERBURNER_CORVETTE_2:0 "Zaawansowane dopalacze" 
+ AFTERBURNER_DESTROYER_2:0 "Zaawansowane dopalacze"
+ AFTERBURNER_CRUISER_2:0 "Zaawansowane dopalacze"
+ AFTERBURNER_BATTLESHIP_2:0 "Zaawansowane dopalacze"
+
+ WORMHOLE_DRIVE_CORVETTE:0 "Napęd czasoprzestrzenny"
+ WORMHOLE_DRIVE_DESTROYER:0 "Napęd czasoprzestrzenny"
+ WORMHOLE_DRIVE_CRUISER:0 "Napęd czasoprzestrzenny"
+ WORMHOLE_DRIVE_BATTLESHIP:0 "Napęd czasoprzestrzenny"
+ 
+ WARP_DRIVE_CORVETTE_1:0 "Napęd zakrzywiający I"
+ WARP_DRIVE_CORVETTE_2:0 "Napęd zakrzywiający II"
+ WARP_DRIVE_CORVETTE_3:0 "Napęd zakrzywiający III"
+ 
+ WARP_DRIVE_DESTROYER_1:0 "Napęd zakrzywiający I"
+ WARP_DRIVE_DESTROYER_2:0 "Napęd zakrzywiający II"
+ WARP_DRIVE_DESTROYER_3:0 "Napęd zakrzywiający III"
+ 
+ WARP_DRIVE_CRUISER_1:0 "Napęd zakrzywiający I"
+ WARP_DRIVE_CRUISER_2:0 "Napęd zakrzywiający II"
+ WARP_DRIVE_CRUISER_3:0 "Napęd zakrzywiający III"
+ 
+ WARP_DRIVE_BATTLESHIP_1:0 "Napęd zakrzywiający I"
+ WARP_DRIVE_BATTLESHIP_2:0 "Napęd zakrzywiający II"
+ WARP_DRIVE_BATTLESHIP_3:0 "Warp-Antrieb III"
+ 
+ HYPER_DRIVE_CORVETTE_1:0 "Hipernapęd I" 
+ HYPER_DRIVE_CORVETTE_2:0 "Hipernapęd II"
+ HYPER_DRIVE_CORVETTE_3:0 "Hipernapęd III"
+ 
+ HYPER_DRIVE_DESTROYER_1:0 "Hipernapęd I"
+ HYPER_DRIVE_DESTROYER_2:0 "Hipernapęd II"
+ HYPER_DRIVE_DESTROYER_3:0 "Hipernapęd III"
+ 
+ HYPER_DRIVE_CRUISER_1:0 "Hipernapęd I"
+ HYPER_DRIVE_CRUISER_2:0 "Hipernapęd II"
+ HYPER_DRIVE_CRUISER_3:0 "Hipernapęd III"
+ 
+ HYPER_DRIVE_BATTLESHIP_1:0 "Hipernapęd I"
+ HYPER_DRIVE_BATTLESHIP_2:0 "Hipernapęd II"
+ HYPER_DRIVE_BATTLESHIP_3:0 "Hipernapęd III"
+ 
+ JUMP_DRIVE_CORVETTE_1:0 "Napęd skokowy I"
+ PSI_JUMP_DRIVE_CORVETTE_1:0 "Psioniczny napęd skokowy I"
+ 
+ JUMP_DRIVE_DESTROYER_1:0 "Napęd skokowy I"
+ PSI_JUMP_DRIVE_DESTROYER_1:0 "Psioniczny napęd skokowy I"
+
+ JUMP_DRIVE_CRUISER_1:0 "Napęd skokowy I"
+ PSI_JUMP_DRIVE_CRUISER_1:0 "Psioniczny napęd skokowy I"
+
+ JUMP_DRIVE_BATTLESHIP_1:0 "Napęd skokowy I"
+ PSI_JUMP_DRIVE_BATTLESHIP_1:0 "Psioniczny napęd skokowy I"
+ 
+ SHIELD_RECHARGER_CORVETTE:0 "Kondensator osłon"
+ SHIELD_RECHARGER_DESTROYER:0 "Kondensator osłon"
+ SHIELD_RECHARGER_CRUISER:0 "Kondensator osłon"
+ SHIELD_RECHARGER_BATTLESHIP:0 "Kondensator osłon"
+ 
+ CRYSTAL_ARMOR_CORVETTE_1:0 "Pancerz nasycony kryształami"
+ CRYSTAL_ARMOR_DESTROYER_1:0 "Pancerz nasycony kryształami"
+ CRYSTAL_ARMOR_CRUISER_1:0 "Pancerz nasycony kryształami"
+ CRYSTAL_ARMOR_BATTLESHIP_1:0 "Pancerz nasycony kryształami"
+ 
+ CRYSTAL_ARMOR_CORVETTE_2:0 "Pancerz okuty kryształami" 
+ CRYSTAL_ARMOR_DESTROYER_2:0 "Pancerz okuty kryształami"
+ CRYSTAL_ARMOR_CRUISER_2:0 "Pancerz okuty kryształami"
+ CRYSTAL_ARMOR_BATTLESHIP_2:0 "Pancerz okuty kryształami"
+ 
+ AUTO_REPAIR_CORVETTE:0 "Regenerująca się tkanka kadłubowa"
+ AUTO_REPAIR_DESTROYER:0 "Regenerująca się tkanka kadłubowa"
+ AUTO_REPAIR_CRUISER:0 "Regenerująca się tkanka kadłubowa"
+ AUTO_REPAIR_BATTLESHIP:0 "Regenerująca się tkanka kadłubowa"
+ 
+ 

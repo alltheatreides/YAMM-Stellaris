@@ -1,0 +1,16 @@
+﻿l_german:
+
+ SCOUT_PROBE:0 "Sonde"
+ scout_probe:0 "Sonde"
+ scout_probe_plural:0 "Sonden"
+ scout_probe_section:0 "Sondenkern"
+ PROBE_SENSOR_1:0 "$OBSERVATORY_1$ (Sonde)"
+ PROBE_SENSOR_1_DESC:0 "$OBSERVATORY_1_DESC$"
+ PROBE_SENSOR_2:0 "$OBSERVATORY_2$ (Sonde)"
+ PROBE_SENSOR_2_DESC:0 "$OBSERVATORY_2_DESC$"
+ PROBE_SENSOR_3:0 "$OBSERVATORY_3$ (Sonde)"
+ PROBE_SENSOR_3_DESC:0 "$OBSERVATORY_3_DESC$"
+ PROBE_SENSOR_4:0 "$OBSERVATORY_4$ (Sonde)"
+ PROBE_SENSOR_4_DESC:0 "$OBSERVATORY_4_DESC$"
+ probe_sensor_components:0 "Sensoren"
+ probe_sensor_components_DESC:0 "Sensoren decken die Einzelheiten aller Systeme und Flotten in ihrer Reichweite auf."

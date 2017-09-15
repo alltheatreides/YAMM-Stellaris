@@ -1,0 +1,330 @@
+#########################
+#	Defense Station		#
+#########################
+
+tech_military_station_xs_satellite = {
+	cost = 4000
+	area = engineering
+	tier = 3
+	category = { voidcraft }	
+	prerequisites = { "tech_defensive_tech_miniaturization" }
+	weight = 30
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			has_technology = tech_spaceport_6
+		}		
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_DEFENSIVE_SATELLITE_TITLE"
+			desc = "TECH_UNLOCK_DEFENSIVE_SATELLITE_DESC"
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}	
+}
+
+tech_military_station_xl_bulwark = {
+	cost = 5000
+	area = engineering
+	tier = 3
+	category = { voidcraft }	
+	prerequisites = { "tech_space_defense_station_3" }
+	weight = 30
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			has_technology = tech_spaceport_6
+		}		
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_BULWARK_TITLE"
+			desc = "TECH_UNLOCK_BULWARK_DESC"
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}	
+}
+
+tech_military_station_xxl_citadel = {
+	cost = 6500
+	area = engineering
+	tier = 3
+	category = { voidcraft }	
+	prerequisites = { "tech_military_station_xl_bulwark" }
+	weight = 25
+	is_rare = yes
+	
+	weight_modifier = {
+		modifier = {
+			factor = 5
+			has_technology = tech_spaceport_6
+		}		
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_CITADEL_TITLE"
+			desc = "TECH_UNLOCK_CITADEL_DESC"
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}	
+}
+#########################
+### Spaceport Modules ###
+#########################
+
+tech_doctrine_trained_repair_crew = {
+	cost = 3500
+	area = society
+	tier = 3
+	category = { military_theory }
+	prerequisites = { "tech_doctrine_fleet_support" "tech_spaceport_4" }
+	weight = 50
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.65
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 0.8
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 0.65
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 0.8
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+}
+
+tech_spaceport_battle_simulations = {
+	area = physics
+	tier = 3
+	cost = 4500
+	category = { computing }
+	ai_update_type = military		
+	prerequisites = { "tech_administrative_ai" "tech_spaceport_6" }
+	weight = 40
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.50
+			NOR = {
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_curator"
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_ethic = ethic_pacifist
+		}
+		modifier = {
+			factor = 0.65
+			has_ethic = ethic_fanatic_pacifist
+		}
+		modifier = {
+			factor = 1.10
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.20
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}	
+}
+
+tech_useful_automated_assembly_yards = {
+	cost = 3000
+	area = engineering
+	tier = 3
+	category = { voidcraft }	
+	prerequisites = { "tech_battleship_yard" }
+	weight = 40
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+############
+### Misc ###
+############
+
+tech_defensive_tech_miniaturization = {
+	cost = 2500
+	area = engineering
+	tier = 2
+	category = { voidcraft }	
+	prerequisites = { "tech_space_defense_station_2" }
+	weight = 45
+	is_rare = yes
+	
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_MINIATURIZATION_TITLE"
+			desc = "TECH_UNLOCK_MINIATURIZATION_DESC"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+
+
+#planet_edict = {
+#	name = "foundation_point_survey"
+#	influence_cost = @standardEdictCost
+#	modifier = {
+#	}
+#	
+#	potential = {
+#		owner = {
+#			has_technology = tech_megastructure_resource
+#		}
+#		NOT = {
+#			OR = {
+#				has_planet_flag = mega_foundation_success
+#				has_planet_modifier = unstable_tectonics
+#				planet_size < 12
+#			}
+#		}
+#	}
+#	
+#	length = 720
+#	
+#	allow = {
+#		NOT = {
+#			has_planet_flag = mega_foundation_success
+#		}
+#	}
+#	
+#	ai_weight = {
+#		weight = 0
+#	}	
+#}

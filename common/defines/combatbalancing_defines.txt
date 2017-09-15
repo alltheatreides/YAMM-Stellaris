@@ -1,0 +1,21 @@
+﻿	NGameplay = {
+
+		NAVY_SIZE_BASE 										= 20	# Base value of Naval Capacity
+		NAVY_SIZE_POP_MULT									= 0.1	# Mult value of Naval Capaicty for each Pop
+		NAVY_SIZE_HABITAT_ADD								= 50	# Per habitat
+		
+	}
+
+	NShip = {
+
+		ENERGY_MAINTENANCE_MUL				= 0.005		# Ship Maintenance Multiplier Percentage of the cost of the ship
+		MINERAL_MAINTENANCE_MUL				= 0.004		# Ship Maintenance Multiplier Percentage of the cost of the ship
+	}
+
+	NEconomy = {
+		FLEET_UPGRADE_TIME_COST_MULT		= 0.75		# Upgrade fleet cost
+		FLEET_UPGRADE_MINERAL_COST_BASE		= 6.0		# mineral cost to upgrade a ship is always at least this regardless of relative design cost
+		FLEET_UPGRADE_MINERAL_COST_MULT		= 3			# mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
+	}
+
+	

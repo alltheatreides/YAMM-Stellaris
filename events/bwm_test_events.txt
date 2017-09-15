@@ -1,0 +1,1613 @@
+namespace = bwm_test_event
+
+# Test Events
+# Code by Frog
+
+country_event = {
+	id = bwm_test_event.99
+	hide_window = yes
+	is_triggered_only = yes
+	location = root
+	
+	immediate = {
+		give_technology = { tech = tech_bwm_ancient_weapon }
+	}
+}
+
+country_event = {
+	id = bwm_test_event.0
+	hide_window = yes
+	is_triggered_only = yes
+	location = root
+	
+	immediate = {
+		give_technology = { tech = tech_bwm_ancient_weapon }
+		give_technology = { tech = tech_bwm_solar_envoy  }
+		give_technology = { tech = tech_bwm_gravekeeper  }
+		give_technology = { tech = tech_bwm_magma_diver   }
+		give_technology = { tech = tech_bwm_lex_artifact }
+		give_technology = { tech = tech_bwm_lex_armor }
+		give_technology = { tech = tech_bwm_lex_shield }
+		give_technology = { tech = tech_bwm_lex_power }
+		give_technology = { tech = tech_bwm_lex_cpu }
+		give_technology = { tech = tech_bwm_lex_thruster }
+		give_technology = { tech = tech_bwm_lex_drive }
+		give_technology = { tech = tech_bwm_lex_sensor }
+		give_technology = { tech = tech_bwm_lex_hull_repair }
+		give_technology = { tech = tech_bwm_lex_shield_repair }
+		give_technology = { tech = tech_bwm_lex_lab }
+	}
+}
+
+country_event = {
+	id = bwm_test_event.1
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Solar Envoy"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Kether"
+					}
+					create_ship = {
+						name = "Metatron"
+						design = last_created_design
+						graphical_culture = "fallen_empire_02"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.2
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancient Warform"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Geburah"
+					}
+					create_ship = {
+						name = "Chamuel"
+						design = last_created_design
+						graphical_culture = "fallen_empire_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.3
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Gravekeeper"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Semias"
+					}
+					create_ship = {
+						name = "Murias"
+						design = last_created_design
+						graphical_culture = "fallen_empire_04"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.4
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Bound Gravekeeper"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Fessus"
+					}
+					create_ship = {
+						name = "Finias"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.5
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Awakened Gravekeeper"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Uscias"
+					}
+					create_ship = {
+						name = "Finias"
+						design = last_created_design
+						graphical_culture = "fallen_empire_04"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.6
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Providence"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Matet"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.7
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "The Conduit"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Kheru'ur"
+					}
+					create_ship = {
+						name = "Bulwark"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.8
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "The Conduit"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Nephtys"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.9
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "The Conduit"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Seth"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.10
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "The Conduit"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Osiris"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.11
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Providence"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Seqtet"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.12
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Anchor Station"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Aten"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.13
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Persipnei I"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.14
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Persipnei II"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.15
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Persipnei III"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.16
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Persipnei IV"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.17
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Tinia I"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.18
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Tinia II"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.19
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	capital_scope = {
+		    create_fleet = {
+			    name = "Ancestor"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Tmia"
+					}
+					create_ship = {
+						name = "Ascendant"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.20
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara I"
+					}
+					create_ship = {
+						name = "Ti'Mira"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_1
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.21
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara I"
+					}
+					create_ship = {
+						name = "Ak'tu"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_2
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.22
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara I"
+					}
+					create_ship = {
+						name = "T'vac"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_3
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.201
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara I"
+					}
+					create_ship = {
+						name = "Ti'Mira"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_1_locked
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.211
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara I"
+					}
+					create_ship = {
+						name = "Ak'tu"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_2_locked
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.221
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara I"
+					}
+					create_ship = {
+						name = "T'vac"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_3_locked
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.23
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Cipher"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "Amb'Ara II"
+					}
+					create_ship = {
+						name = "T'vac"
+						design = last_created_design
+						prefix = no
+						
+						effect = {
+							set_disable_at_health = 0.05
+							set_ship_flag = bwm_artifact_cipher_4
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.24
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_freki"
+					}
+					create_ship = {
+						name = "Drone 1"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.25
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_geri"
+					}
+					create_ship = {
+						name = "Drone 2"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.26
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_fenrir"
+					}
+					create_ship = {
+						name = "Ship S"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.27
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_sleipnir"
+					}
+					create_ship = {
+						name = "Ship L"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.271
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_garmr"
+					}
+					create_ship = {
+						name = "Prototype Laguz"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+						
+						effect = {
+							set_ship_flag = bwm_artifact_prototype
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.28
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+			create_fleet = {
+				name = "Skidbladnir"
+				settings = {
+					spawn_debris = no 
+					is_boss = yes
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_ragnarok"
+					}
+					create_ship = {
+						name = "Gungnir"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+						
+						effect = {
+							# set_disable_at_health = 0.05	
+							# set_ship_flag = bwm_ancient_weapon_loc
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.29
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_utgard"
+					}
+					create_ship = {
+						name = "Station S"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+country_event = {
+	id = bwm_test_event.30
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+				create_fleet = {
+					name = "Ancient"
+					settings = {
+					spawn_debris = no 
+				}
+			    effect = {
+					set_owner = ROOT
+					create_ship_design = {
+						design = "NAME_bwm_midgard"
+					}
+					create_ship = {
+						name = "Station L"
+						design = last_created_design
+						graphical_culture = "bwm_ancient_01"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}
+
+planet_event = {
+	id = bwm_test_event.100
+	title = "bwm_test_event.100.name"
+	desc = "bwm_test_event.100.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_ringworld
+		}
+	}
+	
+	option = { name = "bwm_test_event.100.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.200
+	title = "bwm_test_event.200.name"
+	desc = "bwm_test_event.200.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_graveyard
+		}
+	}
+	
+	option = { name = "bwm_test_event.200.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.300
+	title = "bwm_test_event.300.name"
+	desc = "bwm_test_event.300.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_garden
+		}
+	}
+	
+	option = { name = "bwm_test_event.300.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.400
+	title = "bwm_test_event.400.name"
+	desc = "bwm_test_event.400.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_prison
+		}
+	}
+	
+	option = { name = "bwm_test_event.400.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.500
+	title = "bwm_test_event.500.name"
+	desc = "bwm_test_event.500.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_gate
+		}
+	}
+	
+	option = { name = "bwm_test_event.500.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.600
+	title = "bwm_test_event.600.name"
+	desc = "bwm_test_event.600.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_cipher_1
+		}
+	}
+	
+	option = { name = "bwm_test_event.600.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.700
+	title = "bwm_test_event.700.name"
+	desc = "bwm_test_event.700.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_cipher_2
+		}
+	}
+	
+	option = { name = "bwm_test_event.700.a" }
+}
+
+planet_event = {
+	id = bwm_test_event.800
+	title = "bwm_test_event.800.name"
+	desc = "bwm_test_event.800.desc"
+	picture = GFX_evt_space_station
+	is_triggered_only = yes
+	
+	immediate = { 
+		spawn_system = {
+			min_distance = 10
+			max_distance = 50
+			initializer = bwm_cipher_3
+		}
+	}
+	
+	option = { name = "bwm_test_event.800.a" }
+}
+
+country_event = {
+	id = bwm_test_event.999
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+immediate = {
+	create_country = {
+		name = "Test Garden"
+		type = bwm_conduit_guardian
+		flag = {
+			icon = {
+				category = "spherical"
+				file = "flag_spherical_20.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			 colors={
+					"dark_brown"
+					"dark_brown"
+					"null"
+					"null"
+			}
+		}
+	}
+	last_created_country = {
+	save_event_target_as = bwm_test_country
+	set_country_flag = bwm_conduit_country
+	set_graphical_culture = fallen_empire_03
+	guardian_difficulty = yes
+	}
+	capital_scope = {
+		    create_fleet = {
+			    name = "The Conduit"
+				settings = {
+				spawn_debris = no 
+				}
+			    effect = {
+					set_owner = event_target:bwm_test_country
+					create_ship_design = {
+						design = "Matet"
+					}
+					create_ship = {
+						name = "Conduit"
+						design = last_created_design
+						graphical_culture = "fallen_empire_03"
+						prefix = no
+					}
+					set_location = {
+						target = PREV
+						distance = 45
+						angle = random 
+					}
+				}
+			}
+		}	
+    }
+}

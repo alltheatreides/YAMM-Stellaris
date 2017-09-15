@@ -1,0 +1,102 @@
+﻿l_english:
+ 
+ SHIP_THRUSTER_CORVETTE_1:0 "Chemical Thrusters"
+ SHIP_THRUSTER_DESTROYER_1:0 "Chemical Thrusters"
+ SHIP_THRUSTER_CRUISER_1:0 "Chemical Thrusters" 
+ SHIP_THRUSTER_BATTLESHIP_1:0 "Chemical Thrusters"
+
+ SHIP_THRUSTER_CORVETTE_2:0 "Ion Thrusters"
+ SHIP_THRUSTER_DESTROYER_2:0 "Ion Thrusters"
+ SHIP_THRUSTER_CRUISER_2:0 "Ion Thrusters"
+ SHIP_THRUSTER_BATTLESHIP_2:0 "Ion Thrusters"
+ 
+ SHIP_THRUSTER_CORVETTE_3:0 "Plasma Thrusters"
+ SHIP_THRUSTER_DESTROYER_3:0 "Plasma Thrusters"
+ SHIP_THRUSTER_CRUISER_3:0 "Plasma Thrusters"
+ SHIP_THRUSTER_BATTLESHIP_3:0 "Plasma Thrusters"
+ 
+ SHIP_THRUSTER_CORVETTE_4:0 "Impulse Thrusters"
+ SHIP_THRUSTER_DESTROYER_4:0 "Impulse Thrusters"
+ SHIP_THRUSTER_CRUISER_4:0 "Impulse Thrusters"
+ SHIP_THRUSTER_BATTLESHIP_4:0 "Impulse Thrusters"
+ 
+ AFTERBURNER_CORVETTE_1:0 "Afterburners"
+ AFTERBURNER_DESTROYER_1:0 "Afterburners"
+ AFTERBURNER_CRUISER_1:0 "Afterburners"
+ AFTERBURNER_BATTLESHIP_1:0 "Afterburners"
+ 
+ AFTERBURNER_CORVETTE_2:0 "Advanced Afterburners" 
+ AFTERBURNER_DESTROYER_2:0 "Advanced Afterburners"
+ AFTERBURNER_CRUISER_2:0 ""Advanced Afterburners"
+ AFTERBURNER_BATTLESHIP_2:0 "Advanced Afterburners"
+
+ WORMHOLE_DRIVE_CORVETTE:0 "Wormhole Modulator"
+ WORMHOLE_DRIVE_DESTROYER:0 "Wormhole Modulator"
+ WORMHOLE_DRIVE_CRUISER:0 "Wormhole Modulator"
+ WORMHOLE_DRIVE_BATTLESHIP:0 "Wormhole Modulator"
+ 
+ WARP_DRIVE_CORVETTE_1:0 "Warp Drive I"
+ WARP_DRIVE_CORVETTE_2:0 "Warp Drive II"
+ WARP_DRIVE_CORVETTE_3:0 "Warp Drive III"
+ 
+ WARP_DRIVE_DESTROYER_1:0 "Warp Drive I"
+ WARP_DRIVE_DESTROYER_2:0 "Warp Drive II"
+ WARP_DRIVE_DESTROYER_3:0 "Warp Drive III"
+ 
+ WARP_DRIVE_CRUISER_1:0 "Warp Drive I"
+ WARP_DRIVE_CRUISER_2:0 "Warp Drive II"
+ WARP_DRIVE_CRUISER_3:0 "Warp Drive III"
+ 
+ WARP_DRIVE_BATTLESHIP_1:0 "Warp Drive I"
+ WARP_DRIVE_BATTLESHIP_2:0 "Warp Drive II"
+ WARP_DRIVE_BATTLESHIP_3:0 "Warp Drive III"
+ 
+ HYPER_DRIVE_CORVETTE_1:0 "Hyper Drive I" 
+ HYPER_DRIVE_CORVETTE_2:0 "Hyper Drive II"
+ HYPER_DRIVE_CORVETTE_3:0 "Hyper Drive III"
+ 
+ HYPER_DRIVE_DESTROYER_1:0 "Hyper Drive I"
+ HYPER_DRIVE_DESTROYER_2:0 "Hyper Drive II"
+ HYPER_DRIVE_DESTROYER_3:0 "Hyper Drive III"
+ 
+ HYPER_DRIVE_CRUISER_1:0 "Hyper Drive I"
+ HYPER_DRIVE_CRUISER_2:0 "Hyper Drive II"
+ HYPER_DRIVE_CRUISER_3:0 "Hyper Drive III"
+ 
+ HYPER_DRIVE_BATTLESHIP_1:0 "Hyper Drive I"
+ HYPER_DRIVE_BATTLESHIP_2:0 "Hyper Drive II"
+ HYPER_DRIVE_BATTLESHIP_3:0 "Hyper Drive III"
+ 
+ JUMP_DRIVE_CORVETTE_1:0 "Jump Drive"
+ PSI_JUMP_DRIVE_CORVETTE_1:0 "Psi Jump Drive"
+ 
+ JUMP_DRIVE_DESTROYER_1:0 "Jump Drive"
+ PSI_JUMP_DRIVE_DESTROYER_1:0 "Psi Jump Drive"
+
+ JUMP_DRIVE_CRUISER_1:0 "Jump Drive"
+ PSI_JUMP_DRIVE_CRUISER_1:0 "Psi Jump Drive"
+
+ JUMP_DRIVE_BATTLESHIP_1:0 "Jump Drive"
+ PSI_JUMP_DRIVE_BATTLESHIP_1:0 "Psi Jump Drive"
+ 
+ SHIELD_RECHARGER_CORVETTE:0 "Shield Capacitor"
+ SHIELD_RECHARGER_DESTROYER:0 "Shield Capacitor"
+ SHIELD_RECHARGER_CRUISER:0 "Shield Capacitor"
+ SHIELD_RECHARGER_BATTLESHIP:0 "Shield Capacitor"
+ 
+ CRYSTAL_ARMOR_CORVETTE_1:0 "Crystal-Infused Plating"
+ CRYSTAL_ARMOR_DESTROYER_1:0 "Crystal-Infused Plating"
+ CRYSTAL_ARMOR_CRUISER_1:0 "Crystal-Infused Plating"
+ CRYSTAL_ARMOR_BATTLESHIP_1:0 "Crystal-Infused Plating"
+ 
+ CRYSTAL_ARMOR_CORVETTE_2:0 "Crystal-Forged Plating" 
+ CRYSTAL_ARMOR_DESTROYER_2:0 "Crystal-Forged Plating"
+ CRYSTAL_ARMOR_CRUISER_2:0 "Crystal-Forged Plating"
+ CRYSTAL_ARMOR_BATTLESHIP_2:0 "Crystal-Forged Plating"
+ 
+ AUTO_REPAIR_CORVETTE:0 "Regenerative Hull Tissue"
+ AUTO_REPAIR_DESTROYER:0 "Regenerative Hull Tissue"
+ AUTO_REPAIR_CRUISER:0 "Regenerative Hull Tissue"
+ AUTO_REPAIR_BATTLESHIP:0 "Regenerative Hull Tissue"
+
+ 

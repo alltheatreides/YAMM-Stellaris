@@ -1,0 +1,48 @@
+##############
+### Weapon ###
+##############
+
+weapon_component_template = {
+	key = "MILITARY_STATION_XS_SATELLITE_WEAPON"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	prerequisites = { "tech_military_station_xs_satellite" }
+	class_restriction = { shipclass_military_station }
+	size_restriction = { military_station_xs_satellite }
+	icon = "GFX_ship_part_military_station_xs_satellite_energy_lance"
+	icon_frame = 1
+	
+	cost = 0
+	power = -5
+	damage = { min = 200.0 max = 300.0 }
+	windup = { min = 30.0 max = 30.0 }
+	accuracy = 0.95
+	tracking = 0.0
+	range = 300
+	total_fire_time = 60
+	shield_damage = 0.80
+	shield_penetration = 0.0
+	armor_penetration = 0.75
+	
+	firing_arc = 25.0
+	static_rotation = yes
+	use_ship_kill_target = no
+	
+	component_set = "MILITARY_STATION_XS_SATELLITE_WEAPON"
+	#projectile_gfx = "titan_laser"
+	projectile_gfx = "useful_stations_satellite_laser"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_long_range }
+	
+	target_weights = {
+		npc_warship_01 = 5000
+		space_dragon_baby = 5000	
+		massive_ship_fallen_empire = 5000
+		large_ship_fallen_empire = 5000	
+		battleship = 5000
+		cruiser = 2500
+		destroyer = 1000
+		small_ship_fallen_empire = 1000	
+	}
+}

@@ -1,0 +1,112 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+
+@tier4cost1 = 10000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+
+@tier4weight1 = 30
+
+
+
+# ##################
+# Megastructures
+# ##################
+
+tech_mega_engineering = {
+	area = engineering
+	cost = @tier4cost1
+	tier = 4
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "tech_space_defense_station_3" "tech_spaceport_6" "tech_zero_point_power" }
+	weight = @tier4weight1
+	is_rare = yes
+	
+	modifier = {
+		max_minerals = 20000
+		planet_building_build_speed_mult = 0.5
+	}
+	
+	weight_modifier = {
+		factor = 0.1
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 5
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+			}
+		}
+
+		modifier = {
+			factor = 20
+			any_system_within_border = {
+				OR = {
+					has_megastructure = spy_orb_1
+					has_megastructure = spy_orb_2
+					has_megastructure = spy_orb_3
+					has_megastructure = spy_orb_4
+					has_megastructure = think_tank_1
+					has_megastructure = think_tank_2
+					has_megastructure = think_tank_3
+					has_megastructure = think_tank_4
+					has_megastructure = dyson_sphere_1
+					has_megastructure = dyson_sphere_2
+					has_megastructure = dyson_sphere_3
+					has_megastructure = dyson_sphere_4
+					has_megastructure = dyson_sphere_5	
+					has_megastructure = ring_world_2_intermediate
+					any_planet = {
+						OR = {
+							is_planet_class = pc_ringworld_habitable
+							is_planet_class = pc_ringworld_habitable_damaged					
+							is_planet_class = pc_ringworld_seam
+							is_planet_class = pc_ringworld_seam_damaged
+							is_planet_class = pc_ringworld_tech
+							is_planet_class = pc_ringworld_tech_damaged
+						}
+					}						
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { host_has_dlc = "Utopia" }
+		}
+	}
+	
+	ai_weight = {
+		factor = 1.25 #important component
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+

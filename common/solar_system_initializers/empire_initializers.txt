@@ -1,0 +1,5368 @@
+##########################################										
+#  Randomly Generated Starting Systems  #
+#										
+#########################################
+
+@distance = 50
+@planet_min_size = 10
+@planet_max_size = 25
+@base_moon_distance = 6
+@moon_min_size = 6
+@moon_max_size = 10
+
+### STARTING SYSTEMS
+
+# Empire Initializer I = Typical Earth like arrangement
+random_empire_init_01 = {
+	class = sc_g
+	asteroids_distance = 113
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_toxic"
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 15 max = 22 }
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 18
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 10 max = 22 }
+		flags = { can_terraform }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	change_orbit = 22
+
+	Planet = {
+		count = { min = 3 max = 4 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren_cold
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren_cold
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren_cold
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren_cold
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren_cold
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren_cold
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren_cold
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer II = Asteroids in place of extreme barren
+random_empire_init_02 = {
+	class = sc_g
+	asteroids_distance = 53
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	change_orbit = 18
+
+	Planet = {
+		count = 1
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 18
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 13 max = 22 }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_distance = 22
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 10 max = 22 }
+		flags = { can_terraform }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 18
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 18
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren_cold
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer III = No asteroids, more moons
+random_empire_init_03 = {
+	class = sc_g
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_molten
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 11 max = 17 }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 18
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 20
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 12 max = 18 }
+		flags = { can_terraform }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+		moon = {
+			count = { min = 1 max = 2 }
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 22
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 10 max = 15 }
+		flags = { can_terraform }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+		moon = {
+			count = { min = 1 max = 2 }
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer IV= no asteroids, hot gas giant
+random_empire_init_04 = {
+	class = sc_g
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 16
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 40
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = ideal_planet_class
+			orbit_distance = 6
+			home_planet = yes
+			orbit_angle = { min = 30 max = 270 }
+			size = { min = 25 max = 25 }
+			tile_blockers = none
+			modifiers = none
+			
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		
+			init_effect = {
+				random_tile = {
+					limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 2
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_mining_network_1"
+						add_resource = {
+							resource = minerals
+							amount = 2
+							replace = yes
+						}						
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_basic_science_lab_1"
+					random_list = {
+						33 = { 
+							add_resource = {
+								resource = engineering_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = physics_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = society_research
+								amount = 1
+								replace = yes
+							}						
+						}					
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = engineering_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = society_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = physics_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}				
+				}			
+			}		
+
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 40
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 10 max = 15 }
+		flags = { can_terraform }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer V= asteroids, gas giant
+random_empire_init_05 = {
+	class = sc_g
+	asteroids_distance = 111
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 16
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 40
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 13
+		}
+		moon = {
+			count = 1
+			class = ideal_planet_class
+			orbit_distance = 6
+			home_planet = yes
+			orbit_angle = { min = 30 max = 270 }
+			size = { min = 25 max = 25 }
+			tile_blockers = none
+			modifiers = none
+			
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		
+			init_effect = {
+				random_tile = {
+					limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 2
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_mining_network_1"
+						add_resource = {
+							resource = minerals
+							amount = 2
+							replace = yes
+						}						
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_basic_science_lab_1"
+					random_list = {
+						33 = { 
+							add_resource = {
+								resource = engineering_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = physics_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = society_research
+								amount = 1
+								replace = yes
+							}						
+						}					
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = engineering_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = society_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = physics_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}				
+				}			
+			}		
+
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+	}
+
+	change_orbit = 40
+
+	Planet = {
+		count = { min = 2 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer VI = two II start
+random_empire_init_06 = {
+	class = sc_g
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 30
+
+	Planet = {
+		count = 1
+		class = "pc_toxic"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 15 max = 22 }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 1 max = 2 }
+			class = "pc_barren"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 24
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 15
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 12 max = 18 }
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 15
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 12 max = 18 }
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 16
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 10 max = 15 }
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 40
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer VII = two II, warm giant start
+random_empire_init_07 = {
+	class = sc_g
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 30
+
+	Planet = {
+		count = 1
+		class = "pc_toxic"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 15 max = 22 }
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 2 max = 3 }
+			class = "pc_barren"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 24
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 45
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 13
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 45
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+			
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		
+			init_effect = {
+				random_tile = {
+					limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 2
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_mining_network_1"
+						add_resource = {
+							resource = minerals
+							amount = 2
+							replace = yes
+						}						
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_basic_science_lab_1"
+					random_list = {
+						33 = { 
+							add_resource = {
+								resource = engineering_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = physics_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = society_research
+								amount = 1
+								replace = yes
+							}						
+						}					
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = engineering_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = society_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = physics_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}				
+				}			
+			}		
+
+		}
+		moon = {
+			count = 1
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 46
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer VIII = F class Puff Giant start
+#Puff Giant, Ideal, Warm Giant, barren_cold, icy_greenhouse, cold_moon_giant, 2-3 ice giants, kuiper
+random_empire_init_08 = {
+	class = sc_f
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 36
+		has_ring = no
+	}
+
+	change_orbit = 35
+
+	Planet = {
+		count = 1
+		class = "pc_gas_giant"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 26 max = 27 }
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 30
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_barren_cold"
+		orbit_distance = 28
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 15 max = 22 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer IX = K Normal Terran, High Mass warm giant
+random_empire_init_09 = {
+	class = sc_k
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 24
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 24
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 25 max = 25 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+
+
+		change_orbit = 6
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 13
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer X = K High mass warm giant start
+random_empire_init_10 = {
+	class = sc_k
+	asteroids_distance = 115
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 35
+		has_ring = no
+	}
+
+	change_orbit = 12
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 8 max = 14 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = 27
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = ideal_planet_class
+			orbit_distance = 6
+			home_planet = yes
+			orbit_angle = { min = 30 max = 270 }
+			size = { min = 25 max = 25 }
+			tile_blockers = none
+			modifiers = none
+			
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		
+			init_effect = {
+				random_tile = {
+					limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 2
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_mining_network_1"
+						add_resource = {
+							resource = minerals
+							amount = 2
+							replace = yes
+						}						
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_basic_science_lab_1"
+					random_list = {
+						33 = { 
+							add_resource = {
+								resource = engineering_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = physics_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = society_research
+								amount = 1
+								replace = yes
+							}						
+						}					
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = engineering_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = society_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = physics_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}				
+				}			
+			}		
+
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 13
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+	}
+
+	change_orbit = 44
+
+	Planet = {
+		count = { min = 2 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+# Empire Initializer XI = Red-Brown semi-binary start
+random_empire_init_11 = {
+	class = sc_m
+	asteroids_distance = 130
+	usage = empire_init
+	usage_odds = 9.1
+	usage = empire_init
+	
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 32
+		has_ring = no
+	}
+
+	change_orbit = 58
+
+	Planet = {
+		count = 1
+		class = "pc_gas_giant"
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 28 max = 30 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = pc_toxic
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 16
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = ideal_planet_class
+			orbit_distance = 6
+			home_planet = yes
+			orbit_angle = { min = 30 max = 270 }
+			size = { min = 25 max = 25 }
+			tile_blockers = none
+			modifiers = none
+			
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		
+			init_effect = {
+				random_tile = {
+					limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 2
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_hydroponics_farm_1"
+						add_resource = {
+							resource = food
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_power_plant_1"
+						add_resource = {
+							resource = energy
+							amount = 1
+							replace = yes
+						}						
+					}
+					random_neighboring_tile = {
+						limit = { has_blocker = no has_building = no }
+						set_building = "building_mining_network_1"
+						add_resource = {
+							resource = minerals
+							amount = 2
+							replace = yes
+						}						
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_basic_science_lab_1"
+					random_list = {
+						33 = { 
+							add_resource = {
+								resource = engineering_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = physics_research
+								amount = 1
+								replace = yes
+							}						
+						}
+						33 = { 
+							add_resource = {
+								resource = society_research
+								amount = 1
+								replace = yes
+							}						
+						}					
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}						
+				}				
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = engineering_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = society_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_failing_infrastructure"
+					add_resource = {
+						resource = physics_research
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}					
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_blocker = "tb_decrepit_dwellings"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}				
+				}
+				random_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 2
+						replace = yes
+					}				
+				}			
+			}		
+
+		}
+		moon = {
+			count = 1
+			class = pc_toxic
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 16
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 13
+		}
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+			flags = { can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	change_orbit = 57
+
+	Planet = {
+		count = { min = 2 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = 1
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_barren
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 45
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 24 max = 26 }
+		change_orbit = 11
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = pc_frozen
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_frozen
+		orbit_distance = 46
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 19 max = 22 }
+		change_orbit = 11
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 10
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 6
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = pc_barren
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
