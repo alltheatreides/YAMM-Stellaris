@@ -162,7 +162,7 @@ utility_component_template = {
 	power = @power_sr_battleship
 	cost = @cost_sr_battleship
 	
-	size_restriction = { battleship military_station_large }
+	size_restriction = { battleship military_station_large titant military_station_citadel }
 	prerequisites = { "tech_shield_rechargers_1" }
 	component_set = "SHIELD_RECHARGER_BATTLESHIP"
 	
@@ -257,7 +257,7 @@ utility_component_template = {
 	power = @power_cra_battleship
 	cost = @cost_cra_battleship
 	
-	size_restriction = { battleship military_station_large}
+	size_restriction = { battleship military_station_large titant military_station_citadel}
 	prerequisites = { "tech_crystal_armor_1" }
 	component_set = "CRYSTAL_ARMOR_BATTLESHIP_1"
 	upgrades_to = "CRYSTAL_ARMOR_BATTLESHIP_2"
@@ -342,7 +342,7 @@ utility_component_template = {
 	power = @power_cra2_battleship
 	cost = @cost_cra2_battleship
 	
-	size_restriction = { battleship military_station_large }	
+	size_restriction = { battleship military_station_large titant military_station_citadel }	
 	prerequisites = { "tech_crystal_armor_2" }
 	component_set = "CRYSTAL_ARMOR_BATTLESHIP_2"
 	
@@ -446,7 +446,7 @@ utility_component_template = {
 		ship_auto_repair_add = 0.02 # Regenerates 2% ship-health per month
 	}
 	
-	size_restriction = { battleship military_station_large }
+	size_restriction = { battleship military_station_large titant military_station_citadel }
 	prerequisites = { tech_regenerative_hull_tissue }
 	component_set = "AUTO_REPAIR_BATTLESHIP"
 	

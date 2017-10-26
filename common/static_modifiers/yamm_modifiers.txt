@@ -1,0 +1,22 @@
+
+communication_close_modifier = {	
+	tile_resource_minerals_mult = -0.2
+	tile_resource_food_mult = -0.2
+	tile_resource_energy_mult = -0.2
+	tile_resource_physics_research_mult = -0.2
+	tile_resource_society_research_mult = -0.2
+	tile_resource_engineering_research_mult = -0.2
+	
+	# icon = "gfx/interface/icons/planet_modifiers/pm_weak_magnetic_field.dds"
+	icon_frame = 3
+}
+
+pollution_0 = {	
+	pop_environment_tolerance = -0.10
+	
+	# icon = "gfx/interface/icons/planet_modifiers/pm_weak_magnetic_field.dds"
+	icon_frame = 3
+}
+
+
+

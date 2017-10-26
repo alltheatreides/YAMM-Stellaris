@@ -1,3 +1,0 @@
-﻿	NEconomy = {
-		MILITARY_STATION_MAINTENANCE_MUL	= -0.25		# Monthly military station maintenance reduction
-	}

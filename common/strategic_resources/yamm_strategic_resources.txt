@@ -1,0 +1,37 @@
+### System Resources
+# accumulative = yes					- 
+# collect_if_wrong_building = yes/no	- 
+# accumulated_by_sectors = yes/no		- 
+# tradable = yes/no						- 
+# is_rare = yes/no						- Rare resources are shown in strategic resources view.
+# is_global = yes/no					- On orbital tiles only. Collected with station. Can have country modifiers. Aren't necessarily consumed. Can't be planet_local.
+# is_planet_local = yes/no				- On planet tiles only. Collected with building. Are consumed. Can't be global.
+# modifier = {}							- Global resource country modifiers.
+# prerequisites = {}					- Must be fulfilled before resource is shown.
+# modifier_prerequisites = {}			- Must be fulfilled before resource can be used.
+#
+
+time = {
+}
+
+#################
+#   MODDED R    #
+#################
+
+#Mineral resources
+
+sr_raw_materials = {
+	accumulative = yes
+	accumulated_by_sectors = yes
+	AI_category = minerals
+	collect_if_wrong_building = no
+	tradable = yes
+	is_rare = yes
+}
+
+#Administrative resources
+sr_admin_capacity = {
+	accumulative = yes
+	collect_if_wrong_building = no
+	tradable = no
+}

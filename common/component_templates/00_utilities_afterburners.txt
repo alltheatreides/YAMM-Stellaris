@@ -107,7 +107,7 @@ utility_component_template = {
 		ship_evasion_add = 4
 	}
 	
-	size_restriction = { destroyer }
+	size_restriction = { destroyer escort }
 	prerequisites = { "tech_afterburners_1" }
 	component_set = "AFTERBURNER_DESTROYER_1"
 	upgrades_to = "AFTERBURNER_DESTROYER_2"
@@ -135,7 +135,7 @@ utility_component_template = {
 		ship_evasion_add = 3
 	}
 	
-	size_restriction = { cruiser }
+	size_restriction = { cruiser battlecruiser }
 	prerequisites = { "tech_afterburners_1" }
 	component_set = "AFTERBURNER_CRUISER_1"
 	upgrades_to = "AFTERBURNER_CRUISER_2"
@@ -164,7 +164,7 @@ utility_component_template = {
 		ship_evasion_add = 2
 	}
 	
-	size_restriction = { battleship }
+	size_restriction = { battleship titant }
 	prerequisites = { "tech_afterburners_1" }
 	component_set = "AFTERBURNER_BATTLESHIP_1"
 	upgrades_to = "AFTERBURNER_BATTLESHIP_2"
@@ -242,7 +242,7 @@ utility_component_template = {
 		ship_combat_speed_mult = @afterburner_L2			
 		ship_evasion_add = 8
 	}
-	size_restriction = { destroyer }
+	size_restriction = { destroyer escort }
 	prerequisites = { "tech_afterburners_2" }
 	component_set = "AFTERBURNER_DESTROYER_2"
 	
@@ -268,7 +268,7 @@ utility_component_template = {
 		ship_combat_speed_mult = @afterburner_L2	
 		ship_evasion_add = 6
 	}
-	size_restriction = { cruiser }
+	size_restriction = { cruiser battlecruiser }
 	prerequisites = { "tech_afterburners_2" }
 	component_set = "AFTERBURNER_CRUISER_2"
 	
@@ -293,7 +293,7 @@ utility_component_template = {
 		ship_combat_speed_mult = @afterburner_L2	
 		ship_evasion_add = 4
 	}
-	size_restriction = { battleship }
+	size_restriction = { battleship titant }
 	prerequisites = { "tech_afterburners_2" }
 	component_set = "AFTERBURNER_BATTLESHIP_2"
 	

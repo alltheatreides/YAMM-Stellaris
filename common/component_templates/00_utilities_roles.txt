@@ -149,9 +149,9 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_SENTIENT"
+	key = "COMBAT_COMPUTER_SAPIENT"
 	size = small
-	icon = "GFX_ship_part_computer_sentient"
+	icon = "GFX_ship_part_computer_sapient"
 	icon_frame = 1
 	power = @power_4
 	cost = @cost_4
@@ -169,6 +169,13 @@ utility_component_template = {
 	modifier = {
 		ship_evasion_add = 8
 		ship_combat_speed_mult = 0.10
+	}
+	
+	valid_for_country = {
+		modifier = {
+			factor = 0
+			has_policy_flag = ai_outlawed
+		}
 	}
 	
 	ai_weight = {

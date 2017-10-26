@@ -1,0 +1,55 @@
+#Communication Events
+
+namespace = communication
+
+#First event
+country_event = {
+	id = communication.1
+	title = "communication.1"
+	desc = "communication.1.desc"
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		exists = capital_scope
+		any_owned_planet = {
+			NOT = { has_modifier = communication_close_modifier }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = communication_start
+		capital_scope = { save_event_target_as = capital }
+		capital_scope = { solar_system = { save_event_target_as = capital_system } }
+
+		random_system = {
+			limit = {
+				distance = {
+					source = event_target:capital
+					max_distance = 5
+					min_distance = 1
+				}
+				any_planet = { has_owner = yes }
+				is_owned_by = ROOT
+			}
+			random_system_planet = {
+				limit = { is_owned_by = ROOT }
+				# save_event_target_as = pirate_home
+				add_modifier = {
+					modifier = "communication_close_modifier"
+					days = -1
+				}
+			}
+		}
+
+	}
+	
+	option = {
+		name = communication.a
+	}
+
+
+
+}

@@ -1,0 +1,60 @@
+﻿l_english:
+ 
+ sr_raw_materials:0 "Raw Materials"
+ sr_raw_materials_desc:0 "Various metals and components used in almost all modern manufacturing processes."
+ sr_admin_capacity:0 "Administrative Capacity"
+ 
+ ####################################
+ # BUILDINGS
+ ####################################
+ # 
+ # INDUSTRIAL BUILDINGS
+ # 
+ building_basic_mine_desc:1 "Mining Networks extract crucial Raw Materials from the planet's crust to feed the industry."
+ 
+ building_infrastructure_industry:0 "Industrial Cluster"
+ building_infrastructure_industry_desc:0 "A vast area zoned and planned for the purpose of industrial development where enough resources and competences have reached a critical threshold, giving it a key competitive advantage over other places, or even a world supremacy in that field benefitting other industries."
+ tile_building_resource_sr_raw_materials_add:0 "Raw Materials Output"
+ 
+ 
+ building_basic_heavy_industry:0 "Basic Heavy Industry Complex"
+ building_basic_heavy_industry_desc:0 "A Heavy Industry Complex refines Raw Materials to produce Minerals necessary for a civilization's needs. "
+ building_heavy_industry_1:0 "Heavy Industry Complex I"
+ building_heavy_industry_1_desc:0 "$building_basic_heavy_industry_desc$"
+ building_heavy_industry_2:0 "Heavy Industry Complex II"
+ building_heavy_industry_2_desc:0 "$building_basic_heavy_industry_desc$"
+ building_heavy_industry_3:0 "Heavy Industry Complex III"
+ building_heavy_industry_3_desc:0 "$building_basic_heavy_industry_desc$"
+ building_heavy_industry_4:0 "Heavy Industry Complex IV"
+ building_heavy_industry_4_desc:0 "$building_basic_heavy_industry_desc$"
+ building_heavy_industry_5:0 "Heavy Industry Complex V"
+ building_heavy_industry_5_desc:0 "$building_basic_heavy_industry_desc$"
+ 
+ building_basicshipyard:0 "Shipyard Complex"
+ building_basicshipyard_desc:0 "A huge sector dedicated to the building of ship hulls to be assembled on the planetary spaceport."
+ building_advancedshipyard:0 "Advanced Shipyard Complex"
+ building_advancedshipyard_desc:0 "$building_basicshipyard_desc$"
+ 
+ building_space_elevator:0 "Space Elevator"
+ building_space_elevator_desc:0 "An immense structure stretching from a city-sized anchoring point into low orbit, where it meets a captured local asteroid. The access to local space that this provides, benefits planetary industry."
+ 
+ # 
+ # PUBLIC HEALTH BUILDINGS
+ # 
+ 
+ building_infrastructure_public_health:0 "Health Care Cluster"
+ building_infrastructure_public_health_desc:0 "A vast area zoned and planned for the purpose of health care development where enough resources and competences have reached a critical threshold, giving it a key competitive advantage over other places, or even a world supremacy in that field benefitting other industries."
+ 
+ 
+ building_basic_hospital:0 "Basic Health Care Facilities"
+ building_basic_hospital_desc:0 "A vast area covered by facilities providing patient treatment with specialized medical nursing staff and medical equipment"
+ building_clinic:0 "Health Care Facilities"
+ building_clinic_desc:0 "A vast area covered by facilities providing patient treatment with specialized medical nursing staff and medical equipment"
+ 
+ 
+ ####################################
+ # Building requirement custom descs
+ ####################################
+ requires_building_infrastructure_industrial:0 "§RRequires §Y$building_infrastructure_industry$§! on planet.§!"
+ requires_sr_raw_materials:0 "§RRequires §Y$sr_raw_materials$§! on tile.§!"
+ requires_building_infrastructure_public_health:0 "§RRequires §Y$building_infrastructure_public_health$§! on planet.§!"

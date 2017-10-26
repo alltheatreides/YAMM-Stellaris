@@ -1,6 +1,0 @@
-
-
-NGameplay = {
-		NAVY_SIZE_POP_MULT = 0.1	
-		NAVY_SIZE_SPACEPORT_LEVEL = { 2 3 5 7 9 12 } 
-}

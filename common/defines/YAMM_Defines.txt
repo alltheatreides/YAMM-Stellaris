@@ -1,23 +1,101 @@
-NGameplay = {
-    DOCKED_FLEET_MAINTENANCE_REDUCTION = 0.7
-	SHIP_SUBLIGHT_SPEED_MULT = 2.5
-	SET_DEFENDER_WAR_DEMANDS_TIME_LIMIT = 1825
-	TECH_COST_MULT_NUM_COLONIES = 0
-	TECH_COST_MULT_NUM_POPS = 0.014
+﻿NCamera = {
+
+	ZOOM_STEPS_SYSTEM_PERCENTAGES = { 0.009 0.03 0.08 0.2 0.3 0.5 2.5 } # System zoom steps in percent relative to the system size
+	#SYSTEM_FOCUS_PLANET_STEP 		= 6 #2 # Controls which zoom step to planet zoom to in a system
+	#FOCUS_PLANET_DBLCLICK_X_OFFSET 	= 30.0 #10.0
+
+	SYSTEM_SPACE_SCALE_MULT 	= 30.0
+	
+	#SYSTEM_HOVER_RANGE 			= 0.001 #0.005
+	
+	#DEFAULT_ACCELERATION 		= 0.8
+	#FOCUS_ACCELERATION 			= 1.6
+	
+	SYSTEM_SLIDE_RADIUS_FACTOR = 0.5 #4.0
+	SYSTEM_SLIDE_SPEED = 100.0
 }
 
-NEconomy = {
-	SCIENCE_SHIP_MAINTENANCE = 0.5
-	CONSTRUCTION_SHIP_MAINTENANCE = 0.5
+NGraphics = {
+	DEFAULT_PLANET_PLANE = -150.0
+	MOON_SCALE = 0.5
+	ASTEROID_PLANE = -90.0
+	SHIP_RANDOM_HEIGHT_OFFSET = 30.0
+}
+
+NGameplay = {
+
+	NAVY_SIZE_BASE 										= 10	# Base value of Naval Capacity
+	NAVY_SIZE_POP_MULT									= 0.1	# Mult value of Naval Capaicty for each Pop
+	NAVY_SIZE_SPACEPORT_LEVEL							= { 3 6 10 15 21 27 } # Naval Capacity per spaceport level
+	NAVY_SIZE_HABITAT_ADD								= 18	# Per habitat
+	
+	DEBRIS_ANALYZED_AREA_POINTS			= 40	# Points * Level given for each component analyzed
+	DEBRIS_ANALYZED_TECH_PROGRESS		= 0		# Tech progress added when analyzing component that require tech you don't have
+	GARRISON_SIZE_BASE					= 1		# Planet always spawns this number of garrisons
+	GARRISON_SIZE_MULT					= 0.5		# Per pop over 1
+
+	PLANET_FORTIFICATION_BASE			= 700		# Planet always has this much fortification health
+	PLANET_FORTIFICATION_MULT			= 300		# Per pop over 1
+	PLANET_FORTIFICATION_DEFENSE_BONUS	= 1.65		# At 100% fortification, divide damage to defending armies by this
+	PLANET_FORTIFICATION_DEFENSE_MIN	= 0.905		# At 0% fortification, divide damage to defending armies by this
+	PLANET_FORTIFICATION_REPAIR 		= 0.01	# Each day
+	PLANET_FORTIFICATION_REPAIR_DELAY 	= 60	# Days since being bombarded before repairs to fortifications start
+	MAX_BOMBARD_FLEET_SIZE				= 200	# Fleet size over this won't be counted for how fast planetary defenses are bombed down
+
+	GROUND_SUPPORT_SOFT_DMG					= 0.07 # Multiplier to fortification damage
+	GROUND_SUPPORT_LIMITED_DMG				= 0.15 # Multiplier to fortification damage
+	GROUND_SUPPORT_FULL_DMG					= 0.40 # Multiplier to fortification damage
+	GROUND_SUPPORT_ARMAGEDDON_DMG			= 0.55 # Multiplier to fortification damage
+	
+	PLANET_ORBIT_DISTANCE 	= 3.0 #10.0				# how far from the planet ships will orbit
+	PLANET_STATION_ORBIT_DISTANCE = 3.0 #6.0		# how far from the planet orbital stations will be
+}
+
+NArmy = {
+
+	BASE_MAINTENANCE_FACTOR 		= 0.8				# global base maintenance cost
+	REINFORCE_MAINTENANCE_FACTOR 	= 3				# 50% increase of maintenance cost
+	MONTHLY_REINFORCE 				= 0.1				# Monthly health percentage reinforcement of armies
+
+	BASE_HEALTH						= 500.0			# Base health
+	BASE_DAMAGE_MIN					= 1.0				# Base min damage
+	BASE_DAMAGE_MAX					= 4.0				# Base max damage
+
+	BASE_MORALE						= 500.0			# Base morale
+	MORALE_DAMAGE_MULT				= 1.0				# Morale Damage Multiplier how much of damage is also dealt to morale.
+	MONTHLY_MORALE_REGENERATION		= 0.3				# How much morale this unit regenerates each month percentage of max value.
+
+	EXP_EXPERIENCED					= 150				# Amount of exp to reach experienced rank
+	EXP_VETERAN						= 1300				# Amount of exp to reach veteran rank
+	EXP_ELITE						= 12000			# Amount of exp to reach elite rank
+
+	NUM_DAYS_BEFORE_RETREAT			= 14				# How many days that need to pass before we can retreat.
+
+	ATTACHMENT_SLOTS				= 1
+
+}
+
+NCombat = {
+	COMBAT_DETECT_RANGE_MULT				= 0.70 #1.05	# Range to engage in combat with other ships is <fleets max attack range> * COMBAT_DETECT_RANGE_MULT
+	#COMBAT_DETECT_RANGE_MIN					= 3 #10
+	COMBAT_AREA_MIN_ATTACK_RADIUS			= 0.07 #0.2
 }
 
 NShip = {
-    WARP_WINDUP = 2
-    WARP_WINDDOWN_OUTSIDE_BORDER = 0
-    WARP_INTERSTELLAR_TRAVEL_SPEED = 0.05
-    HYPERLANE_WINDUP = 300
-    HYPERLANE_WINDUP_OUTSIDE_BORDER = 0
-    HYPERDRIVE_INTERSTELLAR_TRAVEL_SPEED = 0.06
-    JUMPDRIVE_WINDUP = 300
+	FLEET_BASE_FORMATION_SCALE = 1.5
+	ENERGY_MAINTENANCE_MUL				= 0.005		# Ship Maintenance Multiplier Percentage of the cost of the ship
+	MINERAL_MAINTENANCE_MUL				= 0.004		# Ship Maintenance Multiplier Percentage of the cost of the ship
 }
 
+NEconomy = {
+	FLEET_UPGRADE_TIME_COST_MULT		= 0.75		# Upgrade fleet cost
+	FLEET_UPGRADE_MINERAL_COST_BASE		= 6.0		# mineral cost to upgrade a ship is always at least this regardless of relative design cost
+	FLEET_UPGRADE_MINERAL_COST_MULT		= 3.5			# mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
+}
+
+NAi = {
+	MAX_ARMY_MAINTENANCE = 55	
+	TRANSPORT_FLEET_SIZE = 30						# AI will have transport fleets of this size
+	ARSENAL_FLEET_SIZE = 300
+	ENEMY_ARMY_POWER_MULT = 1.05			# AI will need the the military power of the enemy multiplied by this value to land armies on planet
+}

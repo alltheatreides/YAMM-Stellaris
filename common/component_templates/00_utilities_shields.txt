@@ -8,21 +8,21 @@
 @power_M1 = -5
 @power_L1 = -10
              
-@power_S2 = -3.1
-@power_M2 = -6.3
-@power_L2 = -12.5
+@power_S2 = -3.14
+@power_M2 = -6.31
+@power_L2 = -12.77
              
-@power_S3 = -3.8
-@power_M3 = -7.8
-@power_L3 = -15.4
+@power_S3 = -3.96
+@power_M3 = -7.9
+@power_L3 = -16.11
              
-@power_S4 = -4.6
-@power_M4 = -9.5
-@power_L4 = -18.8
+@power_S4 = -4.92
+@power_M4 = -9.79
+@power_L4 = -20.6
             
-@power_S5 = -5.5
-@power_M5 = -11
-@power_L5 = -22.7
+@power_S5 = -6.02
+@power_M5 = -11.99
+@power_L5 = -24.69
 
 #############
 #	COST	#
@@ -32,21 +32,21 @@
 @cost_M1 = 5
 @cost_L1 = 10
            
-@cost_S2 = 3.1
-@cost_M2 = 6.3
-@cost_L2 = 12.5
+@cost_S2 = 3.14
+@cost_M2 = 6.31
+@cost_L2 = 12.77
            
-@cost_S3 = 3.8
-@cost_M3 = 7.8
-@cost_L3 = 15.4
+@cost_S3 = 3.96
+@cost_M3 = 7.9
+@cost_L3 = 16.11
            
-@cost_S4 = 4.6
-@cost_M4 = 9.5
-@cost_L4 = 18.8
+@cost_S4 = 4.92
+@cost_M4 = 9.79
+@cost_L4 = 20.6
            
-@cost_S5 = 5.5
-@cost_M5 = 11
-@cost_L5 = 22.7
+@cost_S5 = 6.02
+@cost_M5 = 11.99
+@cost_L5 = 24.69
 
 #############
 #	SHIELD	#
@@ -86,15 +86,15 @@
 
 @shield_reg_S3 = 0.46
 @shield_reg_M3 = 1
-@shield_reg_L3 = 2.11
+@shield_reg_L3 = 2.09
 
 @shield_reg_S4 = 0.62
-@shield_reg_M4 = 1.39
-@shield_reg_L4 = 2.96
+@shield_reg_M4 = 1.38
+@shield_reg_L4 = 2.93
 
 @shield_reg_S5 = 0.82
-@shield_reg_M5 = 1.89
-@shield_reg_L5 = 4.09
+@shield_reg_M5 = 1.88
+@shield_reg_L5 = 4.03
 
 
 #############
@@ -370,11 +370,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_psi_shield"
 	icon_frame = 1
-	power = -12
-	cost = 9
+	power = -8.42
+	cost = 8.42
 	modifier = {
-		ship_shield_hp_add = 150
-		ship_shield_regen_add = 1.5 #Regeneration per day
+		ship_shield_hp_add = 148
+		ship_shield_regen_add = 1.12 #Regeneration per day
 	}
 	prerequisites = { "tech_psionic_shield" }
 	component_set = "PSI_SHIELD"
@@ -385,11 +385,11 @@ utility_component_template = {
 	size = medium
 	icon = "GFX_ship_part_psi_shield"
 	icon_frame = 1
-	power = -24
-	cost = 18
+	power = -16.96
+	cost = 16.96
 	modifier = {
-		ship_shield_hp_add = 400
-		ship_shield_regen_add = 4 #Regeneration per day
+		ship_shield_hp_add = 380
+		ship_shield_regen_add = 2.86 #Regeneration per day
 	}
 	prerequisites = { "tech_psionic_shield" }
 	component_set = "PSI_SHIELD"
@@ -400,11 +400,11 @@ utility_component_template = {
 	size = large
 	icon = "GFX_ship_part_psi_shield"
 	icon_frame = 1
-	power = -36
-	cost = 36
+	power = -35.7
+	cost = 35.7
 	modifier = {
-		ship_shield_hp_add = 1200
-		ship_shield_regen_add = 12 #Regeneration per day
+		ship_shield_hp_add = 967
+		ship_shield_regen_add = 6.9 #Regeneration per day
 	}
 	prerequisites = { "tech_psionic_shield" }
 	component_set = "PSI_SHIELD"

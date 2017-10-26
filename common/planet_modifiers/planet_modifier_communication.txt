@@ -1,0 +1,3 @@
+pm_communication_close = {
+	modifier = "communication_close_modifier"
+}

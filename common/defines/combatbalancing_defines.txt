@@ -1,8 +1,12 @@
 ﻿	NGameplay = {
 
-		NAVY_SIZE_BASE 										= 20	# Base value of Naval Capacity
+		NAVY_SIZE_BASE 										= 10	# Base value of Naval Capacity
 		NAVY_SIZE_POP_MULT									= 0.1	# Mult value of Naval Capaicty for each Pop
-		NAVY_SIZE_HABITAT_ADD								= 50	# Per habitat
+		NAVY_SIZE_SPACEPORT_LEVEL							= { 3 6 10 15 21 27 } # Naval Capacity per spaceport level
+		NAVY_SIZE_HABITAT_ADD								= 18	# Per habitat
+		
+		DEBRIS_ANALYZED_AREA_POINTS			= 40	# Points * Level given for each component analyzed
+		DEBRIS_ANALYZED_TECH_PROGRESS		= 0		# Tech progress added when analyzing component that require tech you don't have
 		
 	}
 
@@ -15,7 +19,7 @@
 	NEconomy = {
 		FLEET_UPGRADE_TIME_COST_MULT		= 0.75		# Upgrade fleet cost
 		FLEET_UPGRADE_MINERAL_COST_BASE		= 6.0		# mineral cost to upgrade a ship is always at least this regardless of relative design cost
-		FLEET_UPGRADE_MINERAL_COST_MULT		= 3			# mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
+		FLEET_UPGRADE_MINERAL_COST_MULT		= 3.5			# mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
 	}
 
 	

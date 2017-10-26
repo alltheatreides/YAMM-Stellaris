@@ -1,6 +1,0 @@
-component_set = {
-	key = "MILITARY_STATION_XS_SATELLITE_WEAPON"
-	
-	icon = "GFX_ship_part_military_station_xs_satellite_energy_lance"
-	icon_frame = 1	
-}

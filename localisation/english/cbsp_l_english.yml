@@ -21,14 +21,23 @@
  SHIP_THRUSTER_BATTLESHIP_4:0 "Impulse Thrusters"
  
  AFTERBURNER_CORVETTE_1:0 "Afterburners"
+ AFTERBURNER_CORVETTE_1_DESC:0 "Afterburners provide additional combat speed for the ship."
  AFTERBURNER_DESTROYER_1:0 "Afterburners"
+ AFTERBURNER_DESTROYER_1_DESC:0 "Afterburners provide additional combat speed for the ship."
  AFTERBURNER_CRUISER_1:0 "Afterburners"
+ AFTERBURNER_DESTROYER_1_DESC:0 "Afterburners provide additional combat speed for the ship."
  AFTERBURNER_BATTLESHIP_1:0 "Afterburners"
+ AFTERBURNER_DESTROYER_1_DESC:0 "Afterburners provide additional combat speed for the ship." 
+ 
  
  AFTERBURNER_CORVETTE_2:0 "Advanced Afterburners" 
+ AFTERBURNER_CORVETTE_2_DESC:0 "These improved afterburners provide even more combat speed for the ship."
  AFTERBURNER_DESTROYER_2:0 "Advanced Afterburners"
+ AFTERBURNER_DESTROYER_2_DESC:0 "These improved afterburners provide even more combat speed for the ship."
  AFTERBURNER_CRUISER_2:0 ""Advanced Afterburners"
+ AFTERBURNER_DESTROYER_2_DESC:0 "These improved afterburners provide even more combat speed for the ship."
  AFTERBURNER_BATTLESHIP_2:0 "Advanced Afterburners"
+ AFTERBURNER_DESTROYER_1_DESC:0 "These improved afterburners provide even more combat speed for the ship."
 
  WORMHOLE_DRIVE_CORVETTE:0 "Wormhole Modulator"
  WORMHOLE_DRIVE_DESTROYER:0 "Wormhole Modulator"
