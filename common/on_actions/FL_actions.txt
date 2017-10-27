@@ -1,0 +1,6 @@
+
+on_monthly_pulse = {
+	events = {
+		FL_event.1
+	}
+}

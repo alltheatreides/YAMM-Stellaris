@@ -1,0 +1,19 @@
+is_monster_spawner_enabled = {
+	NOT = {
+		any_country = {
+			is_country_type = default
+			is_ai = no
+			has_edict = disable_monster_expansion
+		}
+	}
+}
+
+has_ff_strategic_resource = {
+	OR = {
+		has_resource = sr_natural_plutonium
+		has_resource = sr_adaptive_flora
+		has_resource = sr_fibrous_flora
+		has_resource = sr_silicate_microbes
+		has_resource = sr_pet_rocks
+	}
+}

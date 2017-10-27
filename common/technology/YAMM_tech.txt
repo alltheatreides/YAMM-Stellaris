@@ -1,0 +1,177 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+
+@tier4cost1 = 10000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+
+@tier4weight1 = 30
+
+
+
+
+###################
+# Megastructures  #
+###################
+
+tech_mega_engineering = {
+	area = engineering
+	cost = @tier4cost1
+	tier = 4
+	category = { voidcraft }
+	ai_update_type = all
+	prerequisites = { "tech_space_defense_station_3" "tech_spaceport_6" "tech_zero_point_power" }
+	weight = @tier4weight1
+	is_rare = yes
+	
+	feature_flags = {
+		megaengineering
+	}
+	
+	modifier = {
+		max_minerals = 20000
+	}
+	
+	weight_modifier = {
+		factor = 0.25
+		modifier = {
+			factor = 0.5
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_maniacal"
+				}				
+			}
+		}
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 5
+			has_ascension_perk = ap_voidborn
+		}		
+		modifier = {
+			factor = 50
+			has_ascension_perk = ap_master_builders
+		}
+		modifier = {
+			factor = 50
+			has_any_megastructure_in_empire = yes
+		}
+	}
+	
+	ai_weight = {
+		factor = 1.25 #important component
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+
+###################
+# Ship Numbers    #
+###################
+
+ship_numbers_tech = {
+	cost = 0
+	area = engineering
+	start_tech = no
+	category = {industry}
+	tier = 0
+	
+	modifier = {
+	ship_hitpoints_mult = 0.55
+	ship_shield_hp_mult = 0.60
+	ship_armor_mult = 0.05
+	spaceport_ship_build_cost_mult = 0.6
+	spaceport_ship_build_time_mult = 1.0
+	shipsize_colonizer_build_cost_mult = -0.3
+	ship_upkeep_mult = 0.85
+	shipsize_mining_station_build_cost_mult = -0.2
+	shipsize_research_station_build_cost_mult = -0.2
+	ship_weapon_damage = 0.1
+	shipclass_military_station_hit_points_mult = 0.15
+	shipclass_military_station_build_cost_mult = 0.5
+	shipclass_military_station_upkeep_mult = 0.85
+	shipclass_military_station_damage_mult = 0.4
+	}
+}
+
+####################
+# New World Techs
+####################
+
+tech_ff_high_gravity_colonization = {
+	cost = @tier1cost3
+	area = physics
+	category = { new_worlds }
+	prerequisites = { "tech_ff_biogenesis" }
+	tier = 1
+	weight = @tier1weight1
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			#NOT = {
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+			#}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+####################
+#  Asteroid Tech   #
+####################
+
+#Extraplanetary biomes
+tech_colonization_0 = {
+	cost = 0
+	area = society
+	tier = 0
+	start_tech = yes
+	category = { new_worlds }
+	
+	modifier = {
+		pc_asteroid_habitability = 0.2
+		pc_asteroid_c_habitability = 0.2
+		pc_asteroid_s_habitability = 0.2
+		pc_asteroid_m_habitability = 0.2
+	}
+	
+}

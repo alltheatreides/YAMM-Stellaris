@@ -26,17 +26,18 @@ NGameplay = {
 
 	NAVY_SIZE_BASE 										= 10	# Base value of Naval Capacity
 	NAVY_SIZE_POP_MULT									= 0.1	# Mult value of Naval Capaicty for each Pop
-	NAVY_SIZE_SPACEPORT_LEVEL							= { 3 6 10 15 21 27 } # Naval Capacity per spaceport level
-	NAVY_SIZE_HABITAT_ADD								= 18	# Per habitat
+	NAVY_SIZE_SPACEPORT_LEVEL							= { 2 3 5 7 9 11 } # Naval Capacity per spaceport level
+	NAVY_SIZE_HABITAT_ADD								= 9	# Per habitat
 	
 	DEBRIS_ANALYZED_AREA_POINTS			= 40	# Points * Level given for each component analyzed
 	DEBRIS_ANALYZED_TECH_PROGRESS		= 0		# Tech progress added when analyzing component that require tech you don't have
 	GARRISON_SIZE_BASE					= 1		# Planet always spawns this number of garrisons
-	GARRISON_SIZE_MULT					= 0.5		# Per pop over 1
+	GARRISON_SIZE_MULT					= 0.6		# Per pop over 1
+	PLANET_ARMIES_LIMIT = 30
 
 	PLANET_FORTIFICATION_BASE			= 700		# Planet always has this much fortification health
 	PLANET_FORTIFICATION_MULT			= 300		# Per pop over 1
-	PLANET_FORTIFICATION_DEFENSE_BONUS	= 1.65		# At 100% fortification, divide damage to defending armies by this
+	PLANET_FORTIFICATION_DEFENSE_BONUS	= 2	# At 100% fortification, divide damage to defending armies by this
 	PLANET_FORTIFICATION_DEFENSE_MIN	= 0.905		# At 0% fortification, divide damage to defending armies by this
 	PLANET_FORTIFICATION_REPAIR 		= 0.01	# Each day
 	PLANET_FORTIFICATION_REPAIR_DELAY 	= 60	# Days since being bombarded before repairs to fortifications start
@@ -49,11 +50,33 @@ NGameplay = {
 	
 	PLANET_ORBIT_DISTANCE 	= 3.0 #10.0				# how far from the planet ships will orbit
 	PLANET_STATION_ORBIT_DISTANCE = 3.0 #6.0		# how far from the planet orbital stations will be
+	
+	TRUCE_YEARS							= 5 	#10 Truce last for X years
+	MIN_RIVAL_YEARS						= 3 	#10 Years before you can remove an empire as a rival
+	SET_DEFENDER_WAR_DEMANDS_TIME_LIMIT = 720 	#360 Days defender have to set war demands after war started.	
+	# War-score from fleet-battles = WAR_SCORE_SHIP_KILL_MUL * (WAR_SCORE_FLEET_COMBAT_WIN_BASE + ((loser_fleet_value_lost / loser_fleet_value_total) * (1 - ((winner_fleet_value_lost * WAR_SCORE_SHIP_KILL_WINNER_MUL) / winner_fleet_value_total))))
+	WAR_SCORE_SHIP_KILL_MUL				= 0.30  #0.25 Warscore for killing entire enemy fleet without losses
+	WAR_SCORE_SHIP_KILL_WINNER_MUL 		= 0.95  #0.75 Warscore for the looser of a battle in terms of WS reduction for the winner
+	WAR_SCORE_FLEET_COMBAT_WIN_BASE 	= 0.005 #0.0 WS for winning a battle
+	WAR_SCORE_PLANET_BASE				= 10	#10 Relative warscore value of a planet
+	WAR_SCORE_PLANET_POP				= 0.5	# Relative warscore value of a planet for every Pop
+	WAR_SCORE_OCCUPATION_MUL			= 2.0 	#1.5 warscore gained from completely occupying the opponents
+	WAR_SCORE_PLANET_MIN				= 10 	# Warscore from 1 planet will never be less than this
+	WAR_SCORE_WARGOAL_MULT				= 1.25	# Wargoal planets are worth this much more
+	WAR_SCORE_MAJOR_WAR_MULT			= 0.5	# All warscore gains are multiplied by this in a major war
+	
+	DOCKED_FLEET_MAINTENANCE_REDUCTION = 0.7
+	SHIP_SUBLIGHT_SPEED_MULT = 2.5
+	TECH_COST_MULT_NUM_COLONIES = 0
+	TECH_COST_MULT_NUM_POPS = 0.014
+	BORDER_BASE_RADIUS				= 10
+	CORE_SECTOR_SYSTEM_CAP = 1
+	SECTOR_CAP = 4
 }
 
 NArmy = {
 
-	BASE_MAINTENANCE_FACTOR 		= 0.8				# global base maintenance cost
+	BASE_MAINTENANCE_FACTOR 		= 1				# global base maintenance cost
 	REINFORCE_MAINTENANCE_FACTOR 	= 3				# 50% increase of maintenance cost
 	MONTHLY_REINFORCE 				= 0.1				# Monthly health percentage reinforcement of armies
 
@@ -71,7 +94,7 @@ NArmy = {
 
 	NUM_DAYS_BEFORE_RETREAT			= 14				# How many days that need to pass before we can retreat.
 
-	ATTACHMENT_SLOTS				= 1
+	ATTACHMENT_SLOTS				= 2
 
 }
 
@@ -85,12 +108,24 @@ NShip = {
 	FLEET_BASE_FORMATION_SCALE = 1.5
 	ENERGY_MAINTENANCE_MUL				= 0.005		# Ship Maintenance Multiplier Percentage of the cost of the ship
 	MINERAL_MAINTENANCE_MUL				= 0.004		# Ship Maintenance Multiplier Percentage of the cost of the ship
+	
+	WARP_WINDUP = 2
+    WARP_WINDDOWN_OUTSIDE_BORDER = 0
+    WARP_INTERSTELLAR_TRAVEL_SPEED = 0.05
+    HYPERLANE_WINDUP = 300
+    HYPERLANE_WINDUP_OUTSIDE_BORDER = 0
+    HYPERDRIVE_INTERSTELLAR_TRAVEL_SPEED = 0.06
+    JUMPDRIVE_WINDUP = 300
 }
 
 NEconomy = {
 	FLEET_UPGRADE_TIME_COST_MULT		= 0.75		# Upgrade fleet cost
 	FLEET_UPGRADE_MINERAL_COST_BASE		= 6.0		# mineral cost to upgrade a ship is always at least this regardless of relative design cost
 	FLEET_UPGRADE_MINERAL_COST_MULT		= 3.5			# mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
+	SCIENCE_SHIP_MAINTENANCE = 0.5
+	CONSTRUCTION_SHIP_MAINTENANCE = 0.5
+	COLONY_MONTHLY_GROWTH				= 0.9	# How much the colonization pop grows every month.
+	
 }
 
 NAi = {

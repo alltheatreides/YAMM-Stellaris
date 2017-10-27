@@ -1,0 +1,202 @@
+@largecrystalsship = 0.7
+@largecrystalshipeffect = 15
+
+entity = {
+	name = "crystal_ship_large_onyx_entity"
+	pdxmesh = "crystal_ship_large_onyx_mesh"
+	locator = { name = "light_pos" }
+	
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle"
+		#event = { time = 0 node = "light_pos" light = "crystal_ship_light" }
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "crystal_ship_large_idle" } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = root2 particle = "crystal_ship_exhaust_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" animation = "death" looping = no	
+		event = { time = 2.0 node = root particle = "large_crystal_ship_onyx_death_effect" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "crystal_ship_large_death" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_crystal_ship_large_death" } }
+	}
+	
+	game_data = {
+		size = @largecrystalshipeffect
+		emissive_recolor_crunch = 0.0
+	}
+	
+	scale = @largecrystalsship
+}
+
+entity = {
+	name = "crystal_ship_large_onyx_elite_entity"
+	pdxmesh = "crystal_ship_large_onyx_elite_mesh"
+	locator = { name = "light_pos" }
+	
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle"
+		#event = { time = 0 node = "light_pos" light = "crystal_ship_light" }
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "crystal_ship_large_idle" } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = root2 particle = "crystal_ship_exhaust_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" animation = "death" looping = no	
+		event = { time = 2.0 node = root particle = "large_crystal_ship_onyx_death_effect" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "crystal_ship_large_death" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_crystal_ship_large_death" } }
+	}
+	
+	game_data = {
+		size = @largecrystalshipeffect
+		emissive_recolor_crunch = 0.0
+	}
+	
+	scale = @largecrystalsship
+}
+
+
+@mediumcrystalship = 0.9
+@mediumcrystalshipeffect = 10
+
+#onyx
+entity = {
+	name = "crystal_ship_onyx_entity"
+	pdxmesh = "crystal_ship_onyx_mesh"
+	locator = { name = "light_pos" }
+	
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle"
+		#event = { time = 0 node = "light_pos" light = "crystal_ship_light" }
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "crystal_ship_idle" } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = root2 particle = "crystal_ship_exhaust_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" animation = "death" looping = no	
+		event = { time = 2.0 node = root particle = "medium_crystal_ship_onyx_death_effect" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "crystal_ship_death" } }
+	}
+	
+	game_data = {
+		size = @mediumcrystalshipeffect
+		emissive_recolor_crunch = 0.0
+	}
+	
+	scale = @mediumcrystalship
+}
+
+entity = {
+	name = "crystal_ship_onyx_elite_entity"
+	pdxmesh = "crystal_ship_onyx_elite_mesh"
+	locator = { name = "light_pos" }
+	
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle"
+		#event = { time = 0 node = "light_pos" light = "crystal_ship_light" }
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "crystal_ship_idle" } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = root2 particle = "crystal_ship_exhaust_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" animation = "death" looping = no	
+		event = { time = 2.0 node = root particle = "medium_crystal_ship_onyx_death_effect" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "crystal_ship_death" } }
+	}
+	
+	game_data = {
+		size = @mediumcrystalshipeffect
+		emissive_recolor_crunch = 0.0
+	}
+	
+	scale = @mediumcrystalship
+}
+
+
+
+@smallcrystalship = 1.1
+@smallcrystalshipeffect = 10
+
+
+#small onyx
+entity = {
+	name = "crystal_ship_small_onyx_entity"
+	pdxmesh = "crystal_ship_small_onyx_mesh"
+	locator = { name = "light_pos"			position = { 0  0 	0 	} }
+	
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle"
+		#event = { time = 0 node = "light_pos" light = "crystal_ship_light" }
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "crystal_ship_idle" } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = root2 particle = "crystal_ship_exhaust_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" animation = "death" looping = no	
+		event = { time = 2.0 node = root particle = "crystal_ship_onyx_death_effect" trigger_once = yes keep_particle = yes }
+	}
+	
+	game_data = {
+		size = @smallcrystalshipeffect
+		emissive_recolor_crunch = 0.0
+	}
+	
+	scale = @smallcrystalship
+}
+
+#small onyx elite
+entity = {
+	name = "crystal_ship_small_onyx_elite_entity"
+	pdxmesh = "crystal_ship_small_onyx_elite_mesh"
+	locator = { name = "light_pos"			position = { 0  0 	0 	} }
+	
+	default_state = "idle" 
+	state = { name = "idle" animation = "idle"
+		#event = { time = 0 node = "light_pos" light = "crystal_ship_light" }
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "crystal_ship_idle" } }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = root2 particle = "crystal_ship_center_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = root2 particle = "crystal_ship_exhaust_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" animation = "death" looping = no	
+		event = { time = 2.0 node = root particle = "crystal_ship_onyx_death_effect" trigger_once = yes keep_particle = yes }
+	}
+	
+	game_data = {
+		size = @smallcrystalshipeffect
+		emissive_recolor_crunch = 0.0
+	}
+	
+	scale = @smallcrystalship
+}
+
+
+
+#crystal station
+
+entity = {
+	name = "crystal_station_onyx_entity"
+	pdxmesh = "crystal_station_onyx_mesh"
+	
+	game_data = {
+		emissive_recolor_crunch = 0.0
+	}
+	scale = 1.0
+}
+
+
+
+
+

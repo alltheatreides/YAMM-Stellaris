@@ -1,0 +1,10 @@
+objectTypes = {
+	pdxmesh = {
+		name = "onyx_crystal_projectile_mesh"
+		file = "gfx/models/ships/other/crystal_projectile.mesh"
+		scale = 1.0
+		meshsettings = {
+			texture_diffuse = "onyx_crystal_projectile_diffuse.dds"
+		}
+	}
+}

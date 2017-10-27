@@ -1,0 +1,22 @@
+objectTypes = {
+	pdxparticle = {
+		name = "onyx_crystal_muzzle_flash_effect"
+		type = "onyx_crystal_muzzle_flash_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "onyx_crystal_projectile_exhaust_effect"
+		type = "onyx_crystal_projectile_exhaust_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "onyx_crystal_hit_particle"
+		type = "onyx_crystal_hit_effect"
+		
+		scale = 1.0
+	}
+}

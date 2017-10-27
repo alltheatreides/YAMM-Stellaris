@@ -1,0 +1,26 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_evt_terraform_candidate_icon"
+		texturefile = "gfx/event_pictures/drilling_for_gas.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_silicate_microbes"
+		texturefile = "gfx/event_pictures/silicate_microbes.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_pet_rocks"
+		texturefile = "gfx/event_pictures/pet_rocks.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_pick_seasons"
+		texturefile = "gfx/event_pictures/seasons_picker.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

@@ -1,0 +1,30 @@
+@largecrystalshipdeath = 3.5
+@mediumcrystalshipdeath = 2.0
+@crystalshipdeath = 1
+
+objectTypes = {
+
+	pdxparticle = {
+		name = "large_crystal_ship_onyx_death_effect"
+		type = "crystal_ship_onyx_death_effect"
+		
+		scale = @largecrystalshipdeath
+	}
+	pdxparticle = {
+		name = "medium_crystal_ship_onyx_death_effect"
+		type = "crystal_ship_onyx_death_effect"
+		
+		scale = @mediumcrystalshipdeath
+	}
+	pdxparticle = {
+		name = "crystal_ship_onyx_death_effect"
+		type = "crystal_ship_onyx_death_effect"
+		
+		scale = @crystalshipdeath
+	}
+	pdxparticle = {
+		name = "o_class_star_particle"
+		type = "o_class_star_file"
+		scale = 1.0
+	}
+}

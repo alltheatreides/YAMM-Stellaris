@@ -1,0 +1,1967 @@
+sol_system_initializer = {
+	class = sc_g
+	asteroids_distance = 113
+	usage = custom_empire
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+
+
+
+	flags = { empire_home_system sol_system sol }
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		name = "Sol"
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	Planet = {
+		name = "Mercury"
+		class = "pc_extreme_barren"
+		entity = "barren_planet_09_entity"
+		orbit_angle = 15
+		size = 10
+		flags = { first }
+	}
+
+	Planet = {
+		name = "Venus"
+		class = "pc_greenhouse_hot"
+		orbit_distance = 18
+		orbit_angle = 125
+		size = 18
+		flags = { second }
+	}
+
+	Planet = {
+		name = "Earth"
+		class = "pc_continental"
+		entity = "continental_planet_earth_entity"
+		orbit_distance = 18
+		orbit_angle = 120
+		size = 19
+		flags = { Planet Earth }
+				starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			generate_start_buildings_and_blockers = yes	
+		}
+
+
+
+		change_orbit = 8
+		moon = {
+			name = "Luna"
+			class = "pc_barren"
+			entity = "continental_planet_earth_entity"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { first can_terraform }
+		}
+	}
+
+	Planet = {
+		name = "Mars"
+		class = "pc_semi_barren"
+		entity = "fringe_planet_01_entity"
+		orbit_distance = 20
+		orbit_angle = 60
+		size = 15
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		name = "1 Ceres"
+		class = "pc_dwarf_planet_c_asteroid"
+		entity = "cold_barren_planet_10_entity"
+		orbit_distance = 22
+		orbit_angle = 20
+		size = 6
+	}
+
+	Planet = {
+		name = "2 Pallas"
+		class = "pc_asteroid_c"
+		orbit_distance = 0
+		orbit_angle = 160
+		size = 4
+	}
+
+	Planet = {
+		name = "3 Juno"
+		class = "pc_asteroid_c"
+		orbit_distance = 0
+		orbit_angle = 80
+		size = 3
+	}
+
+	Planet = {
+		name = "4 Vesta"
+		class = "pc_asteroid_m"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+	}
+
+	Planet = {
+		name = "5 Hygiea"
+		class = "pc_asteroid_c"
+		orbit_distance = 0
+		orbit_angle = 200
+		size = 4
+	}
+
+	Planet = {
+		name = "6 Interamnia"
+		class = "pc_asteroid_c"
+		orbit_distance = 0
+		orbit_angle = -35
+		size = 4
+	}
+
+	Planet = {
+		name = "Jupiter"
+		class = "pc_gas_giant"
+		entity = "gas_giant_jupiter_entity"
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		size = 26
+		change_orbit = 17
+		moon = {
+			name = "Io"
+			class = "pc_molten"
+			entity = "gas_giant_jupiter_entity"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { first }
+		}
+		moon = {
+			name = "Europa"
+			class = "pc_iced_ocean"
+			entity = "gas_giant_jupiter_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { second }
+		}
+		moon = {
+			name = "Ganymede"
+			class = "pc_iced_ocean"
+			entity = "gas_giant_jupiter_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 9
+		}
+		moon = {
+			name = "Callisto"
+			class = "pc_frozen"
+			entity = "gas_giant_jupiter_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		name = "Saturn"
+		class = "pc_ringed_gas_giant"
+		entity = "gas_giant_08_entity"
+		orbit_distance = 56
+		orbit_angle = 170
+		size = 29
+		change_orbit = 17
+		moon = {
+			name = "Dione"
+			class = "pc_barren_cold"
+			entity = "gas_giant_08_entity"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 3
+			flags = { first }
+		}
+		moon = {
+			name = "Rhea"
+			class = "pc_barren_cold"
+			entity = "gas_giant_08_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 4
+			flags = { second }
+		}
+		moon = {
+			name = "Titan"
+			class = "pc_greenhouse_icy"
+			entity = "gas_giant_08_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+		}
+		moon = {
+			name = "Iapetus"
+			class = "pc_barren_cold"
+			entity = "gas_giant_08_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 4
+		}
+	}
+
+	Planet = {
+		name = "Uranus"
+		class = "pc_ringed_ice_giant"
+		entity = "ice_giant_02_entity"
+		orbit_distance = 56
+		orbit_angle = 125
+		size = 22
+		change_orbit = 17
+		moon = {
+			name = "Umbriel"
+			class = "pc_frozen"
+			entity = "ice_giant_02_entity"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 3
+			flags = { first }
+		}
+		moon = {
+			name = "Titania"
+			class = "pc_frozen"
+			entity = "ice_giant_02_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 4
+			flags = { second }
+		}
+		moon = {
+			name = "Oberon"
+			class = "pc_barren_cold"
+			entity = "ice_giant_02_entity"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 4
+		}
+	}
+
+	Planet = {
+		name = "Neptune"
+		class = "pc_ice_giant"
+		entity = "ice_giant_01_entity"
+		orbit_distance = 56
+		orbit_angle = 125
+		size = 22
+		change_orbit = 17
+		moon = {
+			name = "Triton"
+			class = "pc_frozen"
+			entity = "ice_giant_01_entity"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { first }
+		}
+	}
+
+	Planet = {
+		name = "Pluto"
+		class = "pc_frozen_dwarf"
+		entity = "pluto_entity"
+		orbit_distance = 56
+		orbit_angle = -210
+		size = 6
+		change_orbit = 8
+		moon = {
+			name = "Charon"
+			class = "pc_frozen_dwarf"
+			entity = "pluto_entity"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 4
+			flags = { first }
+		}
+	}
+
+	Planet = {
+		name = "Haumea"
+		class = "pc_frozen_dwarf"
+		orbit_distance = 56
+		orbit_angle = 190
+		size = 3
+	}
+
+	Planet = {
+		name = "Makemake"
+		class = "pc_frozen_dwarf"
+		orbit_distance = 5
+		orbit_angle = 160
+		size = 3
+	}
+
+	Planet = {
+		name = "Eris"
+		class = "pc_frozen"
+		orbit_distance = 54
+		orbit_angle = 30
+		size = 7
+	}
+
+
+	neighbor_system = {
+		distance = { min = 4 max = 6 }
+		initializer = "proxima_centauri"
+	}
+
+	neighbor_system = {
+		distance = { min = 30 max = 50 }
+		initializer = "chara"
+	}
+}
+
+proxima_centauri = {
+	class = sc_m
+	asteroids_distance = 113
+
+
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 27
+		name = "Proxima Centuari"
+		has_ring = no
+	}
+
+	change_orbit = 18
+
+	Planet = {
+		name = "Proxima b"
+		class = "pc_greenhouse_warm"
+		orbit_angle = 130
+		size = 17
+		flags = { first }
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_barren"
+		orbit_distance = 16
+		orbit_angle = 330
+		size = 9
+		flags = { second }
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_semi_barren"
+		orbit_distance = 20
+		orbit_angle = 290
+		size = 18
+		flags = { can_terraform }
+	}
+
+	change_orbit = 44
+
+	Planet = {
+		count = { min = 3 max = 5 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = 225
+		size = 23
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_greenhouse_icy"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_frozen"
+		orbit_distance = 56
+		orbit_angle = 120
+		size = 14
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { first }
+		}
+	}
+
+}
+
+epsilon_erandi = {
+	class = sc_k
+	asteroids_distance = 118
+
+
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		name = "Epsilon Erandi"
+		has_ring = no
+	}
+
+	change_orbit = 15
+
+	Planet = {
+		count = 1
+		class = "pc_extreme_barren"
+		orbit_angle = 15
+		size = 10
+		flags = { first }
+	}
+
+	Planet = {
+		name = "Epsilon Erandi B"
+		class = rl_ff_warm_gas_giants
+		orbit_distance = 44
+		orbit_angle = 218
+		size = 33
+		flags = { second }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_cool_habitable_worlds
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 23
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { second can_terraform }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_semi_barren"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { can_terraform }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { can_terraform }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 8
+			flags = { can_terraform }
+		}
+	}
+
+	change_orbit = 44
+
+	Planet = {
+		count = { min = 2 max = 4 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_gas_giants
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_cold_moon_gas_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+
+	neighbor_system = {
+		distance = { min = 40 max = 60 }
+		initializer = "mu_arae"
+	}
+}
+
+chara = {
+	class = sc_g
+
+
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		name = "Chara"
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	Planet = {
+		count = 1
+		class = "pc_extreme_barren"
+		orbit_angle = { min = 30 max = 270 }
+		flags = { first }
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_hot_planets
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		flags = { second }
+		change_orbit = 8
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_temperate_habitable_worlds
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = 1
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_cool_planets
+		orbit_distance = 20
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+		change_orbit = 8
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first can_terraform }
+		}
+		moon = {
+			count = { min = 1 max = 2 }
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_cold_planets
+		orbit_distance = 22
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+		change_orbit = 8
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first can_terraform }
+		}
+		moon = {
+			count = { min = 1 max = 2 }
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second can_terraform }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_gas_giants
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_cold_moon_gas_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+
+	neighbor_system = {
+		distance = { min = 100 max = 200 }
+		initializer = "deneb_system"
+	}
+}
+
+mu_arae = {
+	class = sc_g
+	asteroids_distance = 172
+
+
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		name = "Mu_Arae"
+		has_ring = no
+	}
+
+	change_orbit = 24
+
+	Planet = {
+		name = "Dulcinea"
+		class = "pc_greenhouse_hot"
+		orbit_angle = 25
+		size = 25
+		flags = { first }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_extreme_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { first }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = "pc_toxic"
+		orbit_distance = 10
+		orbit_angle = 200
+		size = 14
+		flags = { second }
+	}
+
+	Planet = {
+		name = "Rocinante"
+		class = rl_ff_warm_gas_giants
+		orbit_distance = 44
+		orbit_angle = 40
+		size = 28
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_continental"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 16
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		name = "Quijote"
+		class = rl_ff_warm_gas_giants
+		orbit_distance = 44
+		orbit_angle = 40
+		size = 28
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_greenhouse_cool"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 20
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_semi_barren"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 12
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 15
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 5
+		}
+	}
+
+	change_orbit = 35
+
+	Planet = {
+		count = { min = 3 max = 7 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		name = "Sancho"
+		class = rl_ff_gas_giants
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_cold_moon_gas_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		count = 1
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+
+deneb_system = {
+	class = sc_a
+	usage = custom_empire
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+
+
+
+	flags = { deneb_system }
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 33
+		name = "Deneb"
+		has_ring = no
+	}
+
+	change_orbit = 18
+
+	Planet = {
+		name = "Scorcher"
+		class = "pc_extreme_barren"
+		orbit_angle = { min = 30 max = 270 }
+		flags = { first }
+	}
+
+	Planet = {
+		name = "New Venus"
+		class = "pc_greenhouse_hot"
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		flags = { second }
+	}
+
+	Planet = {
+		name = "Tumbleweed"
+		class = "pc_barren"
+		orbit_distance = 18
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		count = 1
+		class = ideal_planet_class
+		orbit_distance = 18
+		home_planet = yes
+		orbit_angle = { min = 30 max = 270 }
+		size = { min = 18 max = 20 }
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			generate_start_buildings_and_blockers = yes		
+		}
+
+
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { can_terraform }
+		}
+	}
+
+	Planet = {
+		name = "Sage"
+		class = "pc_semi_barren"
+		orbit_distance = 20
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+		change_orbit = 8
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first can_terraform }
+		}
+		moon = {
+			count = 1
+			class = "pc_barren_cold"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second can_terraform }
+		}
+	}
+
+	Planet = {
+		name = "Anise"
+		class = rl_ff_cool_planets
+		orbit_distance = 22
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		name = "Anneke"
+		class = rl_ff_cold_planets
+		orbit_distance = 20
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first can_terraform }
+		}
+	}
+
+	Planet = {
+		name = "Pawn"
+		class = rl_ff_cold_planets
+		orbit_distance = 22
+		orbit_angle = { min = 30 max = 270 }
+		flags = { can_terraform }
+	}
+
+	Planet = {
+		name = "Olympus"
+		class = rl_ff_gas_giants
+		orbit_distance = 44
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			name = "Inferno"
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		name = "Hyperion"
+		class = rl_ff_gas_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_molten"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		name = "Endymion"
+		class = rl_ff_cold_moon_gas_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = 1
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = rl_ff_giant_cold_moons
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		name = "Mandylion"
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		name = "Rutten I"
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		name = "Rutten II"
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 17
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_large"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+		}
+	}
+
+	Planet = {
+		name = "Jackson's Planet"
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		name = "Boeijen"
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+		change_orbit = 8
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			flags = { first }
+		}
+		moon = {
+			count = { min = 0 max = 1 }
+			class = "pc_frozen_dwarf"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			flags = { second }
+		}
+	}
+
+}
+
+vultaumar_system = {
+	class = sc_k
+
+
+
+	planet = {
+		count = 1:
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		name = "Vultaumar"
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	Planet = {
+		name = "VultaumarPrime"
+		class = "pc_extreme_barren"
+		orbit_angle = { min = 30 max = 270 }
+		flags = { first }
+	}
+
+	Planet = {
+		name = "VultaumarII"
+		class = "pc_barren"
+		entity = "barren_planet_01_destroyed_entity"
+		anomaly = "VULTAUMAR"
+		orbit_distance = 18
+		orbit_angle = 76
+		size = 25
+		flags = { vultaum_homeworld second }
+				init_effect = {
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = THIS
+			}
+		}
+
+
+		change_orbit = 8
+		moon = {
+			name = "Vultaumar_IIa"
+			class = "pc_barren"
+			entity = "barren_planet_01_destroyed_entity"
+			anomaly = "VULTAUMAR"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+			flags = { first }
+		}
+		moon = {
+			name = "Vultaumar IIb"
+			class = "pc_barren"
+			entity = "barren_planet_01_destroyed_entity"
+			anomaly = "VULTAUMAR"
+			orbit_distance = 4
+			orbit_angle = { min = 30 max = 270 }
+			size = 5
+			flags = { second }
+		}
+	}
+
+	Planet = {
+		name = "VultaumarIII"
+		class = "pc_toxic"
+		orbit_distance = 18
+		orbit_angle = 210
+		size = 5
+	}
+
+	Planet = {
+		name = "VultaumarIV"
+		class = "pc_barren_cold"
+		orbit_distance = 20
+		orbit_angle = 110
+		size = 13
+		flags = { can_terraform }
+		change_orbit = 8
+		moon = {
+			name = "Vultaumar_IVa"
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+			flags = { first can_terraform }
+		}
+	}
+
+	Planet = {
+		name = "Vultaumar_V"
+		class = rl_ff_gas_giants
+		orbit_distance = 44
+		orbit_angle = 125
+		size = 30
+		change_orbit = 17
+		moon = {
+			name = "Vultaumar Va"
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 5
+			flags = { first }
+		}
+		moon = {
+			name = "Vultaumar Vb"
+			class = "pc_iced_ocean"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 16
+			flags = { second }
+		}
+		moon = {
+			name = "Vultaumar Vc"
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+		}
+	}
+
+	Planet = {
+		name = "Vultaumar_VI"
+		class = rl_ff_cold_moon_gas_giants
+		orbit_distance = 56
+		orbit_angle = 125
+		size = 30
+		change_orbit = 17
+		moon = {
+			name = "Vultaumar VIa"
+			class = "pc_barren_cold"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+			flags = { first }
+		}
+		moon = {
+			name = "Vultaumar VIb"
+			class = "pc_greenhouse_icy"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 14
+			flags = { second }
+		}
+		moon = {
+			name = "Vultaumar VIc"
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+		}
+		moon = {
+			name = "Vultaumar VId"
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 9
+		}
+	}
+
+	Planet = {
+		name = "Vultaumar_VII"
+		class = rl_ff_ice_giants
+		orbit_distance = 56
+		orbit_angle = 125
+		size = 24
+		change_orbit = 17
+		moon = {
+			name = "Vultaumar VIIa"
+			class = "pc_frozen_large"
+			orbit_distance = 0
+			orbit_angle = { min = 30 max = 270 }
+			size = 14
+			flags = { first }
+		}
+		moon = {
+			name = "Vultaumar VIIb"
+			class = "pc_barren_cold"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 7
+			flags = { second }
+		}
+		moon = {
+			name = "Vultaumar VIIc"
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 30 max = 270 }
+			size = 6
+		}
+	}
+
+	Planet = {
+		name = "Vultaumar VIII"
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+	Planet = {
+		name = "Vultaumar IX"
+		class = rl_ff_kuiper_objects
+		orbit_distance = 56
+		orbit_angle = { min = 30 max = 270 }
+	}
+
+}
+

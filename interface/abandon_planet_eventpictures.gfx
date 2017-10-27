@@ -1,0 +1,30 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_evt_orbital_bombardment"
+		texturefile = "gfx/event_pictures/orbital_bombardment.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_fleet_in_orbit"
+		texturefile = "gfx/event_pictures/fleet_in_orbit.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_cursed_planet"
+		texturefile = "gfx/event_pictures/cursed_planet.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_evt_church_interior"
+		texturefile = "gfx/event_pictures/church_interior.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+}

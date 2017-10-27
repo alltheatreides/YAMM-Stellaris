@@ -1,0 +1,99 @@
+objectTypes = {
+	
+
+#onyx
+	pdxmesh = {
+		name = "crystal_ship_onyx_mesh"
+		file = "gfx/models/ships/other/crystal_ship.mesh"
+		scale = 1.0
+
+	meshsettings = {
+	texture_diffuse = "crystal_ship_onyx_diffuse.dds"
+	}
+
+		animation = { id = "idle"			type = "crystal_ship_idle_animation" }
+		animation = { id = "death"			type = "crystal_ship_death_animation" }
+
+	}
+
+	pdxmesh = {
+		name = "crystal_ship_large_onyx_mesh"
+		file = "gfx/models/ships/other/crystal_large_ship.mesh"
+		scale = 1.0
+
+	meshsettings = {
+	texture_diffuse = "crystal_ship_onyx_diffuse.dds"
+	}
+
+		animation = { id = "idle"			type = "crystal_ship_idle_animation" }
+		animation = { id = "death"			type = "crystal_ship_death_animation" }
+
+	}	
+	
+	
+	pdxmesh = {
+		name = "crystal_ship_onyx_elite_mesh"
+		file = "gfx/models/ships/other/crystal_ship.mesh"
+		scale = 1.0
+	
+	meshsettings = {
+	texture_diffuse = "crystal_ship_onyx_elite_diffuse.dds"
+	}
+
+		animation = { id = "idle"			type = "crystal_ship_idle_animation" }
+		animation = { id = "death"			type = "crystal_ship_death_animation" }
+
+	}
+
+	pdxmesh = {
+		name = "crystal_ship_large_onyx_elite_mesh"
+		file = "gfx/models/ships/other/crystal_large_ship.mesh"
+		scale = 1.0
+	
+	meshsettings = {
+	texture_diffuse = "crystal_ship_onyx_elite_diffuse.dds"
+	}
+
+		animation = { id = "idle"			type = "crystal_ship_idle_animation" }
+		animation = { id = "death"			type = "crystal_ship_death_animation" }
+
+	}
+	
+	pdxmesh = {
+		name = "crystal_ship_small_onyx_mesh"
+		file = "gfx/models/ships/other/crystal_ship_small.mesh"
+		scale = 1.0
+	
+		meshsettings = {
+		texture_diffuse = "crystal_ship_onyx_diffuse.dds"
+		}
+		
+		animation = { id = "idle"			type = "crystal_ship_idle_animation" }
+		animation = { id = "death"			type = "crystal_ship_death_animation" }
+	}
+
+		pdxmesh = {
+		name = "crystal_ship_small_onyx_elite_mesh"
+		file = "gfx/models/ships/other/crystal_ship_small.mesh"
+		scale = 1.0
+	
+		meshsettings = {
+		texture_diffuse = "crystal_ship_onyx_elite_diffuse.dds"
+		}
+		
+		animation = { id = "idle"			type = "crystal_ship_idle_animation" }
+		animation = { id = "death"			type = "crystal_ship_death_animation" }
+	}
+
+	
+	pdxmesh = {
+		name = "crystal_station_onyx_mesh"
+		file = "gfx/models/ships/other/crystal_station.mesh"
+		scale = 1.0
+		
+			meshsettings = {
+		texture_diffuse = "crystal_ship_onyx_elite_diffuse.dds"
+		}
+		
+	}
+}

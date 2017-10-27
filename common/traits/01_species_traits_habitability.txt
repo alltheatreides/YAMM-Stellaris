@@ -844,3 +844,34 @@ trait_pc_machine_preference = {
 		weight = 0
 	}
 }
+
+trait_pc_asteroid_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	allowed_archetypes = { MACHINE }
+	modifier = {
+		pc_asteroid_habitability = 0.7
+	}
+}
+trait_pc_asteroid_c_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	allowed_archetypes = { MACHINE }
+	modifier = {
+		pc_asteroid_c_habitability = 0.7
+	}
+}
+
+trait_pc_asteroid_m_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	allowed_archetypes = { MACHINE }
+	modifier = {
+		pc_asteroid_m_habitability = 0.7
+	}
+}
+
+trait_pc_asteroid_s_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_ring_preference.dds"
+	allowed_archetypes = { MACHINE }
+	modifier = {
+		pc_asteroid_s_habitability = 0.7
+	}
+}

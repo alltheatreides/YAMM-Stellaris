@@ -1,0 +1,49 @@
+# Sets the edict-cost for all edicts with this variable
+@standardEdictCost = 150
+
+planet_edict = {
+	name = "decomission_colony"
+	influence_cost = 300
+	length = 0
+	potential = {
+		owner = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			#NOT = { has_ethic = ethic_fanatic_egalitarian }
+			#NOT = { has_ethic = ethic_egalitarian }
+			#NOT = { has_authority = auth_democratic }
+		}
+	}
+	allow = { 
+		NOT = { num_pops > 2 }
+		NOT = { is_capital = yes }
+		NOT = { has_planet_flag = decomissioning_planet }
+	}
+	
+	modifier = {
+	}
+	
+	effect = {
+		owner = {
+			if = { 
+				limit = {
+					NOT = {
+						OR = {
+							has_ethic = ethic_fanatic_authoritarian
+							has_ethic = ethic_authoritarian
+						}
+					}
+				}
+			}
+		}
+		
+		planet_event = { id = colony.90001 }
+		add_modifier = {
+			modifier = condemed_colony
+			days = -1
+		}		
+		set_planet_flag = decomissioning_planet
+	}
+	ai_weight = {
+		weight = 0
+	}
+}

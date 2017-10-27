@@ -1,0 +1,274 @@
+@SL_GUIDANCE_INTERVAL = 4 			#Sets timed_flag "SL_guidance_inactive" to skip game rate event trigger.
+@SL_GUIDANCE_SAME_SYSTEM = 3 		#Multiplier for SL_GUIDANCE_INTERVAL
+@SL_GUIDANCE_MULT_HYPER_WARP = 5 	#Multiplier for SL_GUIDANCE_INTERVAL
+@SL_GUIDANCE_MULT_WORMHOLE = 6		#Multiplier for SL_GUIDANCE_INTERVAL
+@SL_GUIDANCE_MULT_RETURNING = 7 	#Multiplier for SL_GUIDANCE_INTERVAL
+@SL_DISEMBARKING_INTERVAL = 30		#Determines how long the supply ship stays with the consumer
+
+namespace = SGM_SL_event
+
+#Consumer/supplier localization
+#Triggered on game update rate. Calls are skipped depending on timed_flag "SL_guidance_inactive". This code is performance critical.
+country_event = {
+	id = SGM_SL_event.2
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag=SL_ENABLE		
+		NOT={has_country_flag=SL_guidance_inactive}
+	}
+	
+	immediate = {
+		set_timed_country_flag={flag=SL_guidance_inactive days=@SL_GUIDANCE_INTERVAL}
+		save_event_target_as = SL_country
+		SGM_country2corps=yes
+		
+		#Get consumer pointers
+		#this: regarded as consumer
+		every_owned_fleet = {
+			limit = {has_fleet_flag = SL_consumer}
+			switch = {
+				trigger = has_fleet_flag
+				#MARKER:SUPPLY_LINE_NUMBER
+				SL_01_consumer = {save_event_target_as=SL_01_consumer}
+				SL_02_consumer = {save_event_target_as=SL_02_consumer}
+				SL_03_consumer = {save_event_target_as=SL_03_consumer}
+				SL_04_consumer = {save_event_target_as=SL_04_consumer}
+				SL_05_consumer = {save_event_target_as=SL_05_consumer}
+				SL_06_consumer = {save_event_target_as=SL_06_consumer}
+				SL_07_consumer = {save_event_target_as=SL_07_consumer}
+				SL_08_consumer = {save_event_target_as=SL_08_consumer}
+				SL_09_consumer = {save_event_target_as=SL_09_consumer}
+				SL_10_consumer = {save_event_target_as=SL_10_consumer}
+				default = { } #default case is not working properly!
+			}
+		}			
+		
+		event_target:SL_corps={
+			#Find supply fleets
+			#this: regarded as supply fleets
+			every_owned_fleet = {
+				limit={has_fleet_flag = SL_fleet}
+				#Neat trick: use event_target two times to map different consumers to SL_consumer, depending on which one is active
+				#Destroy supply ships for non existent consumers			
+				switch = {
+					trigger = has_fleet_flag
+					#MARKER:SUPPLY_LINE_NUMBER
+					SL_01 = {if={limit={exists=event_target:SL_01_consumer} event_target:SL_01_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21} else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 1"
+					SL_02 = {if={limit={exists=event_target:SL_02_consumer} event_target:SL_02_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 2"
+					SL_03 = {if={limit={exists=event_target:SL_03_consumer} event_target:SL_03_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 3"
+					SL_04 = {if={limit={exists=event_target:SL_04_consumer} event_target:SL_04_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 4"
+					SL_05 = {if={limit={exists=event_target:SL_05_consumer} event_target:SL_05_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 5" 
+					SL_06 = {if={limit={exists=event_target:SL_06_consumer} event_target:SL_06_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 6"
+					SL_07 = {if={limit={exists=event_target:SL_07_consumer} event_target:SL_07_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 7"
+					SL_08 = {if={limit={exists=event_target:SL_08_consumer} event_target:SL_08_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 8"
+					SL_09 = {if={limit={exists=event_target:SL_09_consumer} event_target:SL_09_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 9"
+					SL_10 = {if={limit={exists=event_target:SL_10_consumer} event_target:SL_10_consumer={save_event_target_as=SL_consumer} fleet_event = {id = SGM_SL_event.21}	else={ fleet_event={id=SGM_SL_event.70} destroy_fleet = this}}} #log="[This.GetName]-[Owner.GetName] ERROR: no consumer 10"
+				}
+			}
+		}
+	}
+}
+		
+#Supply fleet guidance
+#this: supply fleet
+#Triggerd by SGM_SL_event.2 on @SL_GUIDANCE_INTERVAL. This code is performance critical.
+fleet_event = {
+    id = SGM_SL_event.21
+    hide_window = yes
+    is_triggered_only = yes
+
+	immediate = {
+		#------------------------------------------------------------------------------------------------------
+		#We have the correct target in SL_consumer and we are scoped on a supply fleet
+		#------------------------------------------------------------------------------------------------------
+		
+	
+		#Check if the consumer is currently in transit. I havent found a way to determine
+		#a trajectory to a fleet which is in transit, probably because the location is
+		#not set. The effect is that the follower fleet goes missing.
+		event_target:SL_consumer={
+			if={limit={exists = solar_system}
+				solar_system={
+					save_event_target_as=SL_consumer_system
+					#log="[Prev.GetName] current system is [This.GetName]"
+				}
+			else={
+				root={set_timed_fleet_flag={flag=SL_relative_position_undetermined days=1}}
+				#log="[This.GetName] current system could not be determined"
+			}}
+		}
+
+		#Check if the supplier is currently in transit.
+		if={limit={exists = solar_system}
+			solar_system={
+				save_event_target_as=SL_supplier_system
+				#log="[Prev.GetName] current system is [This.GetName]"
+			}
+		else={
+			set_timed_fleet_flag={flag=SL_relative_position_undetermined days=1}
+			#log="[This.GetName] current system could not be determined"
+		}}
+			
+		#If the trajectory shall be recalculated, disrupt the current movement order by cancelling all actions		
+		if={limit={
+				check_variable={which=SL_delay_traj_calc value<1}
+				NOT={has_fleet_flag=SL_relative_position_undetermined}
+			}
+			
+			clear_fleet_actions = this
+			set_variable={which=SL_delay_traj_calc value=0}	#reset to 0 in case we could not execute as planned			
+			
+			#--------------------------------
+			#If we are tracking the consumer
+			#--------------------------------
+			if={limit={has_fleet_flag = SL_status_tracking_consumer}
+				#log="[This.GetName]-[Owner.GetName] tracking consumer"				
+				queue_actions = {
+					move_to = event_target:SL_consumer
+				}				
+				#If we are in different star systems: delay the next recalculation
+				if={limit={NOT={event_target:SL_supplier_system={is_same_value = event_target:SL_consumer_system}}}
+					if={limit={event_target:SL_country={has_technology="tech_wormhole_generation_1"}}
+						set_variable={which=SL_delay_traj_calc value=@SL_GUIDANCE_MULT_WORMHOLE}
+					else={
+						set_variable={which=SL_delay_traj_calc value=@SL_GUIDANCE_MULT_HYPER_WARP}
+					}}
+				#if we are in the same star system	
+				else={									
+					if={limit ={distance = {source = event_target:SL_consumer min_distance = 0 max_distance = 150}}
+						#Note: distance seems to return distance in galatic units GDU when in different systems
+						#      and in system units SDU when in the same system. This can create problems when checking
+						#      against a static value, without knowing which case is at hand...
+						#If we are sufficiently close to the consumer double check, because in some systems
+#						it says we are close if truly we are not!
+						if={limit ={distance = {source = event_target:SL_consumer min_distance = 0 max_distance = 25}}
+							if={limit ={has_fleet_flag=SL_distance_close_1}
+								remove_fleet_flag = SL_distance_close_1
+								remove_fleet_flag = SL_status_tracking_consumer
+								set_fleet_flag = SL_status_reached_consumer
+								set_timed_fleet_flag={flag=SL_status_disembarking days=@SL_DISEMBARKING_INTERVAL}
+								event_target:SL_consumer={fleet_event={id=SGM_SL_event.211}} #Apply arrival effects
+							else={
+								set_fleet_flag=SL_distance_close_1
+							}}							
+						}									
+					else={
+						set_variable={which=SL_delay_traj_calc value=@SL_GUIDANCE_SAME_SYSTEM}
+					}}										
+				}}
+			}
+			
+			#-----------------------------
+			#While disembarking the cargo
+			#-----------------------------
+			if={limit={has_fleet_flag = SL_status_disembarking}
+				queue_actions = {
+					move_to = event_target:SL_consumer
+				}
+			}
+			
+			#------------------------------
+			#When disembarking is finished
+			#------------------------------
+			if={limit={
+					has_fleet_flag = SL_status_reached_consumer
+					NOT={has_fleet_flag = SL_status_disembarking}
+				}
+				remove_fleet_flag = SL_status_reached_consumer
+				set_fleet_flag = SL_status_returning
+				event_target:SL_consumer={fleet_event={id=SGM_SL_event.212}} #Apply departure effects
+			}
+			
+			#-----------------------
+			#Returning home
+			#-----------------------
+			if={limit={has_fleet_flag = SL_status_returning}
+			
+				# Check for home base:
+				# If fixed
+				# 	If unknown
+				#		search
+				# 	Resave line specific base as SL_home_planet
+				# If free
+				#	search
+				# Command move
+				#MARKER:SUPPLY_LINE_NUMBER
+				switch = {
+					trigger = has_fleet_flag
+					SL_01={if={limit={event_target:SL_country={has_country_flag=SL_01_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_01_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_01_base} save_event_target_as = SL_01_base}}}
+								event_target:SL_01_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_02={if={limit={event_target:SL_country={has_country_flag=SL_02_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_02_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_02_base} save_event_target_as = SL_02_base}}}
+								event_target:SL_02_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_03={if={limit={event_target:SL_country={has_country_flag=SL_03_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_03_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_03_base} save_event_target_as = SL_03_base}}}
+								event_target:SL_03_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_04={if={limit={event_target:SL_country={has_country_flag=SL_04_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_04_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_04_base} save_event_target_as = SL_04_base}}}
+								event_target:SL_04_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_05={if={limit={event_target:SL_country={has_country_flag=SL_05_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_05_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_05_base} save_event_target_as = SL_05_base}}}
+								event_target:SL_05_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_06={if={limit={event_target:SL_country={has_country_flag=SL_06_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_06_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_06_base} save_event_target_as = SL_06_base}}}
+								event_target:SL_06_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_07={if={limit={event_target:SL_country={has_country_flag=SL_07_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_07_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_07_base} save_event_target_as = SL_07_base}}}
+								event_target:SL_07_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_08={if={limit={event_target:SL_country={has_country_flag=SL_08_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_08_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_08_base} save_event_target_as = SL_08_base}}}
+								event_target:SL_08_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_09={if={limit={event_target:SL_country={has_country_flag=SL_09_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_09_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_09_base} save_event_target_as = SL_09_base}}}
+								event_target:SL_09_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+					SL_10={if={limit={event_target:SL_country={has_country_flag=SL_10_base_fixed}}
+								if={limit={NOT={exists=event_target:SL_10_base}} event_target:SL_country={random_controlled_planet={limit={has_spaceport = yes has_planet_flag = SL_10_base} save_event_target_as = SL_10_base}}}
+								event_target:SL_10_base={save_event_target_as=SL_home_planet}									
+							else={set_fleet_flag=SL_search_closest_spaceport}}}
+				}				
+				if={limit={has_fleet_flag=SL_search_closest_spaceport}
+					#Determine the closest space port as return point.
+					event_target:SL_country={capital_scope={save_event_target_as = SL_home_planet}}
+					closest_system={
+						limit={any_planet={exists = controller controller = { is_same_value = event_target:SL_country }	has_spaceport = yes}} #log="Return: [Root.GetName] auto close system [This.GetName]" #save_event_target_as = SL_home_system
+						random_system_planet={
+							limit={exists = controller controller={is_same_value = event_target:SL_country}	has_spaceport = yes} #log="Return: [Root.GetName] auto close planet [This.GetName]"
+							save_event_target_as = SL_home_planet
+						}
+					}
+					remove_fleet_flag=SL_search_closest_spaceport
+				}			
+				queue_actions = {
+					move_to = event_target:SL_home_planet					
+					wait = 5
+					
+					effect = {
+						id = "SGM_SL_event.4.trigger.1"
+						#log="[This.GetName]-[Owner.GetName] reached home and is decommissioned"
+						#destroy_fleet = this
+						fleet_event={id=SGM_SL_event.70}
+						destroy_fleet = this
+					}
+				}
+				#Base is not moving, so we only update the tajectory rarely
+				set_variable={which=SL_delay_traj_calc value=@SL_GUIDANCE_MULT_RETURNING}
+			}			
+		else={
+			#If supplier and consumer are not in the same system we cannot refresh the move order every other day,
+			#because that interrupts the instellar travel warm up. Count down the delay before the guidance step.
+			#log="[This.GetName]-[Owner.GetName] guidance counting down delay..."
+			change_variable={which=SL_delay_traj_calc value= -1}
+		}}
+	}		
+}

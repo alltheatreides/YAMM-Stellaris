@@ -1,0 +1,49 @@
+entity = {
+	name = "onyx_crystal_projectile_muzzle_flash_entity"
+	cull_radius = 1
+	
+	default_state = "idle" 
+	state = { name = "idle" state_time = 7 looping = no
+		event = { time = 0 particle = "onyx_crystal_muzzle_flash_effect" trigger_once = yes keep_particle = yes sound = { soundeffect = "crystal_projectile_fire" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_crystal_projectile_fire" } }
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "onyx_crystal_projectile_entity"
+	pdxmesh = "onyx_crystal_projectile_mesh"
+	
+	default_state = "idle" 
+	state = { name = "idle"
+		event = { time = 0 particle = "onyx_crystal_projectile_exhaust_effect" keep_particle = yes }
+	}
+	state = { name = "stop"
+		looping = no
+		#state_time = 2.0
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "onyx_crystal_hit_entity"
+	cull_radius = 1
+	default_state = "explode_med_hp"
+	state = { name = "explode_med_hp" state_time = 5 looping = no
+		event = { time = 0 particle = "onyx_crystal_hit_particle" trigger_once = yes keep_particle = yes sound = { soundeffect = "crystal_projectile_hit" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_crystal_projectile_hit" } }
+	}
+	scale = 1.0
+}
+
+entity = {
+	name = "onyx_crystal_shield_hit_entity"
+	cull_radius = 1
+	default_state = "explode_med_hp"
+	state = { name = "explode_med_hp" state_time = 5 looping = no
+		event = { time = 0 particle = "onyx_crystal_hit_particle" trigger_once = yes keep_particle = yes sound = { soundeffect = shield_hit } }
+		event = { time = 0 particle = "projectile_medium_shield_hit_effect" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "distance_shield_hit" } } 
+	}
+	scale = 1.0
+}

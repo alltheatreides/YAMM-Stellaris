@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_spaceport_module_seedlife"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_ff_seedlife_farms.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_spaceport_module_biopower"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_ff_biopower_farms.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_spaceport_module_smf"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_ff_smf.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_onyx_crystal_weapon_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_onyx_crystal_weapon_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ff_mod_size"
+		texturefile = "gfx/interface/icons/modifiers/planet_size_icon.dds"
+	}
+}

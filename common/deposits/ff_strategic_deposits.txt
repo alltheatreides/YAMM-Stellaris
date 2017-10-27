@@ -1,0 +1,351 @@
+d_plutonium_deposit = {
+	resources = { 
+		sr_natural_plutonium = 1
+		physics_research = 1
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 0.5
+			planet = {
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+				}
+			}
+		}
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_class = pc_continental_large
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+					is_planet_class = pc_savannah_large
+				}
+			}
+		}
+		modifier = {
+			weight = 6
+			planet = {
+				OR = {
+					is_planet_class = pc_exo_barren
+					# SOMEHOW FIX THIS LATER
+					#AND = {
+					#	solar_system = {
+					#		every_system_planet = {
+					#			limit = {
+					#				is_star = yes
+					#			}
+					#			OR = {
+					#				is_star_class = sc_neutron_star
+					#				is_star_class = sc_pulsar
+					#			}
+					#		}
+					#	}
+					#	is_planet_class = pc_barren_cold
+					#}
+				}
+			}
+		}
+		modifier = {
+			weight = 10
+			planet = {
+				OR = {
+					is_planet_class = pc_exotoxic
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_strategic_resource = yes
+					has_ff_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_adaptive_flora = {
+	resources = { 
+		sr_adaptive_flora = 1
+		food = 1
+		society_research = 1
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 40
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_savannah
+					
+				}
+			}
+		}
+		modifier = {
+			weight = 3
+			planet = {
+				OR = {
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+				}
+			}
+		}
+		modifier = {
+			weight = 5
+			planet = {
+				OR = {
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					
+					is_planet_class = pc_continental_large
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_savannah_large
+				}
+			}
+		}
+		modifier = {
+			weight = 7
+			planet = {
+				OR = {
+					
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+				}
+			}
+		}
+		modifier = {
+			weight = 9
+			planet = {
+				OR = {
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_strategic_resource = yes
+					has_ff_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_fibrous_flora = {
+	resources = { 
+		sr_fibrous_flora = 1
+		society_research = 2
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 40
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 9
+			planet = {
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_savannah
+					
+				}
+			}
+		}
+		modifier = {
+			weight = 7
+			planet = {
+				OR = {
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+				}
+			}
+		}
+		modifier = {
+			weight = 5
+			planet = {
+				OR = {
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					
+					is_planet_class = pc_continental_large
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_savannah_large
+				}
+			}
+		}
+		modifier = {
+			weight = 3
+			planet = {
+				OR = {
+					
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+				}
+			}
+		}
+		modifier = {
+			weight = 1
+			planet = {
+				OR = {
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_strategic_resource = yes
+					has_ff_strategic_resource = yes
+				}
+			}
+		}
+	}
+}
+
+d_silicate_microbes = {
+	resources = { 
+		sr_silicate_microbes = 1
+		society_research = 3
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 4
+			planet = {
+				OR = {
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			weight = 5
+			planet = {
+				AND = {
+					is_greenhouse_class = yes
+					is_terraformable_planet_class = yes
+					NOT = { is_planet_class = pc_greenhouse_cold }
+					NOT = { is_planet_class = pc_greenhouse_cold_large }
+					NOT = { is_planet_class = pc_toxic }
+					NOT = { is_planet_class = pc_toxic_large }
+				}
+			}
+		}
+		modifier = {
+			weight = 6
+			planet = {
+				OR = {
+					is_planet_class = pc_toxic
+					is_planet_class = pc_toxic_large
+				}
+			}
+		}
+	}
+}
+
+d_pet_rocks = {
+	resources = { 
+		sr_pet_rocks = 1
+		society_research = 4
+	}
+	
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 50
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			weight = 3
+			planet = {
+				AND = {
+					is_greenhouse_class = yes
+					is_terraformable_planet_class = yes
+					NOT = { is_planet_class = pc_greenhouse_cold }
+					NOT = { is_planet_class = pc_greenhouse_cold_large }
+					NOT = { is_planet_class = pc_toxic }
+					NOT = { is_planet_class = pc_toxic_large }
+				}
+			}
+		}
+		modifier = {
+			weight = 4
+			planet = {
+				OR = {
+					is_planet_class = pc_toxic
+					is_planet_class = pc_toxic_large
+				}
+			}
+		}
+	}
+}

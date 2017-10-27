@@ -1,0 +1,198 @@
+namespace = SGM_BS_event
+
+@DELAY_MIN    = 90
+@DELAY_RANDOM = 60
+
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+#on_ship_destroyed_victim 
+event = {
+	id = SGM_BS_event.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger={
+		is_country_type = default
+		fromfrom={is_ship_class = shipclass_military}
+		NOT={fromfrom={has_ship_flag=BS_recently_wrecked}}
+		exists = from
+		#from={OR={
+		#		is_country_type = fallen_empire 
+		#		is_country_type = awakened_fallen_empire
+		#		is_country_type = default
+		#		is_country_type = swarm
+		#	}		
+		#}
+	}
+	
+	immediate = {	
+		
+		#-------------------------------------------------------------
+		# If both parties should get ships back at equal rate
+		#-------------------------------------------------------------		
+		if={limit={has_global_flag=BS_superior_equal}
+			set_variable = {which=BS_ratio value=0.4}
+		else={	
+			#-------------------------------------------------------------
+			# If inferior should get back more compare galactic fleet power
+			#-------------------------------------------------------------
+			save_event_target_as = SGM_result_scope
+			SGM_fleet_get_fleet_power  = yes #fleet power of the country owning the destroyed ship
+			set_variable         = {which=BS_ratio value=SGM_fleet_power}
+			
+			from={SGM_fleet_get_fleet_power = yes} #fleet power of the country of the shooter						
+			divide_variable = {which=BS_ratio value=SGM_fleet_power}
+			
+			#if={limit={check_variable={which=BS_ratio value<0.001}}
+			#	log="Fleet power ratio: ([This.GetName])/([From.GetName])~0"
+			#else={
+			#	log="Fleet power ratio: ([This.GetName])/([From.GetName])=[This.BS_ratio]"
+			#}}
+			
+			#-------------------------------------------------------------
+			# If superior should get ships back at 50% rate of inferior
+			#-------------------------------------------------------------
+			if={limit={has_global_flag=BS_superior_50_percent}
+				if={limit={check_variable={which=BS_ratio value<1}}
+					set_variable = {which=BS_ratio value=0.33} #inferior
+				else={
+					set_variable = {which=BS_ratio value=0.66} #superior
+				}}
+			}
+		}}
+		
+		if={limit={check_variable={which=BS_ratio value<1}}
+		
+			#---------------------------------------------------------
+			# Determine Escape
+			#---------------------------------------------------------
+			if={limit={check_variable={which=BS_ratio value<0.19}}
+				set_variable = {which=BS_ratio value=0.19}
+			}			
+			random_list = {
+				9 = {set_variable={which=BS_rand value=0.0}}
+				9 = {set_variable={which=BS_rand value=0.1}}
+				9 = {set_variable={which=BS_rand value=0.2}}
+				9 = {set_variable={which=BS_rand value=0.3}}
+				9 = {set_variable={which=BS_rand value=0.4}}
+				9 = {set_variable={which=BS_rand value=0.5}}
+				9 = {set_variable={which=BS_rand value=0.6}}
+				9 = {set_variable={which=BS_rand value=0.7}}
+				9 = {set_variable={which=BS_rand value=0.8}}
+				9 = {set_variable={which=BS_rand value=0.9}}
+				9 = {set_variable={which=BS_rand value=1.0}}				
+			}
+			
+			if={limit={check_variable={which=BS_rand value>BS_ratio}}
+			
+				#---------------------------------------------------------
+				# Determine Survivor Ship Type and fire delayed event
+				#---------------------------------------------------------	
+				fromfrom = {
+					switch={
+						trigger = is_ship_size
+						"corvette"  		={owner={country_event={id=SGM_BS_event.2 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"destroyer" 		={owner={country_event={id=SGM_BS_event.3 days=@DELAY_MIN random=@DELAY_RANDOM}}}						
+						"cruiser"   		={owner={country_event={id=SGM_BS_event.4 days=@DELAY_MIN random=@DELAY_RANDOM}}}					
+						"battleship"		={owner={country_event={id=SGM_BS_event.5 days=@DELAY_MIN random=@DELAY_RANDOM}}}					
+						# New Ship Classes and More
+						"Frigate" 			={owner={country_event={id=SGM_BS_event.6 days=@DELAY_MIN random=@DELAY_RANDOM}}}			
+						"LightCarrier" 		={owner={country_event={id=SGM_BS_event.7 days=@DELAY_MIN random=@DELAY_RANDOM}}}			
+						"StrikeCruiser" 	={owner={country_event={id=SGM_BS_event.8 days=@DELAY_MIN random=@DELAY_RANDOM}}}			
+						"Battlecruiser" 	={owner={country_event={id=SGM_BS_event.9 days=@DELAY_MIN random=@DELAY_RANDOM}}}		
+						"Carrier" 			={owner={country_event={id=SGM_BS_event.10 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"Dreadnought" 		={owner={country_event={id=SGM_BS_event.11 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"Superdreadnought"	={owner={country_event={id=SGM_BS_event.12 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"Flagship" 			={owner={country_event={id=SGM_BS_event.13 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						# ISB
+						"titan" 			={owner={country_event={id=SGM_BS_event.14 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"titan_ship_fallen_empire" ={owner={country_event={id=SGM_BS_event.15 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"leviathan" 		={owner={country_event={id=SGM_BS_event.16 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"sun_crusher" 		={owner={country_event={id=SGM_BS_event.17 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"avatar" 			={owner={country_event={id=SGM_BS_event.18 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"erebus" 			={owner={country_event={id=SGM_BS_event.19 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"ragnarok" 			={owner={country_event={id=SGM_BS_event.20 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						# SCX
+						"SCX_Carrier" 			={owner={country_event={id=SGM_BS_event.21 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"SCX_Dreadnought" 		={owner={country_event={id=SGM_BS_event.22 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"SCX_Superdreadnought" 	={owner={country_event={id=SGM_BS_event.23 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						# realistic ships
+						"rs_battlecruiser" 				={owner={country_event={id=SGM_BS_event.24 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_dreadnought" 				={owner={country_event={id=SGM_BS_event.25 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_ea_cruiser" 				={owner={country_event={id=SGM_BS_event.26 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_support_cruiser" 			={owner={country_event={id=SGM_BS_event.27 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_a" 	={owner={country_event={id=SGM_BS_event.28 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_b" 	={owner={country_event={id=SGM_BS_event.29 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_c" 	={owner={country_event={id=SGM_BS_event.30 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_d" 	={owner={country_event={id=SGM_BS_event.31 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_e" 	={owner={country_event={id=SGM_BS_event.32 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_f" 	={owner={country_event={id=SGM_BS_event.33 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+						"rs_heavy_dreadnought_type_g" 	={owner={country_event={id=SGM_BS_event.34 days=@DELAY_MIN random=@DELAY_RANDOM}}}
+					}
+				}				
+			}
+		}
+	}	
+}
+
+country_event = {id=SGM_BS_event.2  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="corvette"                 name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.3  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="destroyer"                name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.4  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="cruiser"                  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.5  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="battleship"               name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+# New Ship Classes and More
+country_event = {id=SGM_BS_event.6  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="Frigate"                  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.7  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="LightCarrier"             name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.8  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="StrikeCruiser"            name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.9  hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="Battlecruiser"            name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.10 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="Carrier"                  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.11 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="Dreadnought"              name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.12 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="Superdreadnought"         name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.13 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="Flagship"                 name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+# ISB
+country_event = {id=SGM_BS_event.14 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="titan"                    name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.15 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="titan_ship_fallen_empire" name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.16 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="leviathan"                name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.17 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="sun_crusher"              name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.18 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="avatar"                   name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.19 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="erebus"                   name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.20 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="ragnarok"                 name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+# SCX
+country_event = {id=SGM_BS_event.21 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="SCX_Carrier"              name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.22 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="SCX_Dreadnought"          name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.23 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="SCX_Superdreadnought"     name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+# realistic ships
+country_event = {id=SGM_BS_event.24 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_battlecruiser"         name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.25 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_dreadnought"           name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.26 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_ea_cruiser"            name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.27 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_support_cruiser"       name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.28 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_a"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.29 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_b"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.30 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_c"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.31 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_d"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.32 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_e"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.33 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_f"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+country_event = {id=SGM_BS_event.34 hide_window=yes is_triggered_only=yes immediate={BS_check_spawn_survivor_fleet=yes event_target:BS_fleet={create_ship={random_existing_design="rs_heavy_dreadnought_type_g"  name = random graphical_culture = root}} BS_apply_ship_properties=yes}}
+
+# on_yearly_pulse
+# No scope, like on_game_start
+event = {
+	id = SGM_BS_event.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger={
+		NOT={has_global_flag=BS_superior_50_percent}
+		NOT={has_global_flag=BS_superior_equal}
+	}
+	
+	immediate = {	
+		if={limit={any_country={has_country_edict=BS_superior_50_percent}}
+			set_global_flag=BS_superior_50_percent
+		}
+		if={limit={any_country={has_country_edict=BS_superior_equal}}
+			set_global_flag=BS_superior_equal
+		}
+	}
+}

@@ -1,0 +1,109 @@
+#YAMM Events
+
+namespace = yamm
+
+#First event
+country_event = {
+	id = yamm.1
+	title = "yamm.1.t"
+	desc = yamm.1.desc
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		exists = capital_scope
+		any_owned_planet = {
+			NOT = { has_modifier = yamm_close_modifier }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = yamm_start
+		capital_scope = { save_event_target_as = capital }
+		capital_scope = { solar_system = { save_event_target_as = capital_system } }
+
+		random_system = {
+			limit = {
+				distance = {
+					source = event_target:capital
+					max_distance = 5
+					min_distance = 1
+				}
+				any_planet = { has_owner = yes }
+				is_owned_by = ROOT
+			}
+			random_system_planet = {
+				limit = { is_owned_by = ROOT }
+				# save_event_target_as = pirate_home
+				add_modifier = {
+					modifier = "yamm_close_modifier"
+					days = -1
+				}
+			}
+		}
+
+	}
+	
+	option = {
+		name = yamm.a
+		random_system = {
+			limit = {
+				distance = {
+					source = event_target:capital
+					max_distance = 5
+					min_distance = 1
+				}
+				any_planet = { has_owner = yes }
+				is_owned_by = ROOT
+			}
+			random_system_planet = {
+				limit = { is_owned_by = ROOT }
+				# save_event_target_as = pirate_home
+				add_modifier = {
+					modifier = "yamm_close_modifier"
+					days = -1
+				}
+			}
+		}
+	}
+
+}
+
+# This fires when the game starts up
+event = {
+	id = yamm.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+			is_country_type = default
+					not = {
+					has_technology = "ship_numbers_tech"
+				}
+			}
+			give_technology =  { tech = "ship_numbers_tech" message = no }
+		}
+	}
+}
+
+# This fires every time a country researches anything,
+# because I could not find an event that fires when
+# either a primitive colony advances to space age or
+# other random empires suddenly pop in to existence.
+
+country_event = {
+	id = yamm.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = default
+		NOT = { has_technology = "ship_numbers_tech" }
+	}
+	immediate = {
+		 give_technology = { tech = "ship_numbers_tech" message = no }
+	}
+}

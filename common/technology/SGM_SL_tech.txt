@@ -1,0 +1,15 @@
+tech_supply_ships = {
+	cost = 0
+	area = engineering
+	start_tech = no
+	category = { voidcraft }
+	tier = 0
+	prerequisites = { }	
+	
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = {
+		factor = 0		
+	}
+}

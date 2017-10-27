@@ -1,0 +1,585 @@
+d_rich_mineral_energy_deposit = {
+	resources = {
+		energy = 1
+		sr_raw_materials = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+					#is_planet_class = pc_atlantean
+					#is_planet_class = pc_chaparralean
+					#is_planet_class = pc_boreal
+					#is_planet_class = pc_elysian
+					is_planet_class = pc_greenhouse_hot
+					is_planet_class = pc_greenhouse
+					is_planet_class = pc_greenhouse_warm
+					is_planet_class = pc_greenhouse_cool
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_greenhouse_extreme
+					is_planet_class = pc_fringe_extreme
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_large
+					is_planet_class = pc_greenhouse_warm_large
+					is_planet_class = pc_greenhouse_cool_large
+					is_planet_class = pc_greenhouse_ocean_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_greenhouse_hot_large
+					is_planet_class = pc_greenhouse_extreme_large
+	
+					is_planet_class = pc_toxic
+
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_hot_ocean
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_semi_barren
+					is_planet_class = pc_fringe_icy
+					is_planet_class = pc_fringe_dry
+					is_planet_class = pc_fringe_wet
+					is_planet_class = pc_fringe_hot
+					is_planet_class = pc_extreme_barren
+					is_planet_class = pc_exo_barren
+
+					is_planet_class = pc_dwarf_planet_asteroid
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			planet = {
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_toxic
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_gaia
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_ocean_large
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.6
+			planet = {
+				OR = {
+					is_planet_class = pc_tundra
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_desert_large
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			planet = {
+				is_planet_class = pc_greenhouse
+			}
+		}
+	}
+}
+
+d_rich_energy_mineral_deposit = {
+	resources = {
+		energy = 2
+		sr_raw_materials = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+					#is_planet_class = pc_atlantean
+					#is_planet_class = pc_chaparralean
+					#is_planet_class = pc_boreal
+					#is_planet_class = pc_elysian
+					is_planet_class = pc_greenhouse_hot
+					is_planet_class = pc_greenhouse
+					is_planet_class = pc_greenhouse_warm
+					is_planet_class = pc_greenhouse_cool
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_greenhouse_extreme
+					is_planet_class = pc_fringe_extreme
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_large
+					is_planet_class = pc_greenhouse_warm_large
+					is_planet_class = pc_greenhouse_cool_large
+					is_planet_class = pc_greenhouse_ocean_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_greenhouse_hot_large
+					is_planet_class = pc_greenhouse_extreme_large
+	
+					is_planet_class = pc_toxic
+
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_hot_ocean
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_semi_barren
+					is_planet_class = pc_fringe_icy
+					is_planet_class = pc_fringe_dry
+					is_planet_class = pc_fringe_wet
+					is_planet_class = pc_fringe_hot
+					is_planet_class = pc_extreme_barren
+					is_planet_class = pc_exo_barren
+
+					is_planet_class = pc_dwarf_planet_asteroid
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			planet = {
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_toxic
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_gaia
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.6
+			planet = {
+				OR = {
+					is_planet_class = pc_tundra
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_desert_large
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			planet = {
+				is_planet_class = pc_greenhouse
+			}
+		}
+	}
+}
+
+d_food_energy_deposit = {
+	resources = {
+		energy = 1
+		food = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 6
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+					#is_planet_class = pc_atlantean
+					#is_planet_class = pc_chaparralean
+					#is_planet_class = pc_boreal
+					#is_planet_class = pc_elysian
+					is_planet_class = pc_greenhouse_hot
+					is_planet_class = pc_greenhouse
+					is_planet_class = pc_greenhouse_warm
+					is_planet_class = pc_greenhouse_cool
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_greenhouse_extreme
+					is_planet_class = pc_fringe_extreme
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_large
+					is_planet_class = pc_greenhouse_warm_large
+					is_planet_class = pc_greenhouse_cool_large
+					is_planet_class = pc_greenhouse_ocean_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_greenhouse_hot_large
+					is_planet_class = pc_greenhouse_extreme_large
+	
+					is_planet_class = pc_toxic
+
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_hot_ocean
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_semi_barren
+					is_planet_class = pc_fringe_icy
+					is_planet_class = pc_fringe_dry
+					is_planet_class = pc_fringe_wet
+					is_planet_class = pc_fringe_hot
+					is_planet_class = pc_extreme_barren
+					is_planet_class = pc_exo_barren
+
+					is_planet_class = pc_dwarf_planet_asteroid
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			planet = {
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_toxic
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_gaia
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_ocean_large
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.6
+			planet = {
+				OR = {
+					is_planet_class = pc_savannah
+					is_planet_class = pc_ocean
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_ocean_large
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			planet = {
+				is_planet_class = pc_greenhouse
+			}
+		}
+	}
+}
+
+d_rich_food_energy_deposit = {
+	resources = {
+		energy = 1
+		food = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+					#is_planet_class = pc_atlantean
+					#is_planet_class = pc_chaparralean
+					#is_planet_class = pc_boreal
+					#is_planet_class = pc_elysian
+					is_planet_class = pc_greenhouse_hot
+					is_planet_class = pc_greenhouse
+					is_planet_class = pc_greenhouse_warm
+					is_planet_class = pc_greenhouse_cool
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_greenhouse_extreme
+					is_planet_class = pc_fringe_extreme
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_large
+					is_planet_class = pc_greenhouse_warm_large
+					is_planet_class = pc_greenhouse_cool_large
+					is_planet_class = pc_greenhouse_ocean_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_greenhouse_hot_large
+					is_planet_class = pc_greenhouse_extreme_large
+	
+					is_planet_class = pc_toxic
+
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_hot_ocean
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_semi_barren
+					is_planet_class = pc_fringe_icy
+					is_planet_class = pc_fringe_dry
+					is_planet_class = pc_fringe_wet
+					is_planet_class = pc_fringe_hot
+					is_planet_class = pc_extreme_barren
+					is_planet_class = pc_exo_barren
+
+					is_planet_class = pc_dwarf_planet_asteroid
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			planet = {
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_toxic
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_gaia
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.6
+			planet = {
+				OR = {
+					is_planet_class = pc_savannah
+					is_planet_class = pc_ocean
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_ocean_large
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			planet = {
+				is_planet_class = pc_greenhouse
+			}
+		}
+	}
+}
+
+d_rich_energy_food_deposit = {
+	resources = {
+		energy = 2
+		food = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 20
+	}
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_continental
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_machine
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+					#is_planet_class = pc_atlantean
+					#is_planet_class = pc_chaparralean
+					#is_planet_class = pc_boreal
+					#is_planet_class = pc_elysian
+					is_planet_class = pc_greenhouse_hot
+					is_planet_class = pc_greenhouse
+					is_planet_class = pc_greenhouse_warm
+					is_planet_class = pc_greenhouse_cool
+					is_planet_class = pc_greenhouse_ocean
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_greenhouse_extreme
+					is_planet_class = pc_fringe_extreme
+					is_planet_class = pc_ocean_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_desert_large
+					is_planet_class = pc_tundra_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_alpine_large
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_large
+					is_planet_class = pc_greenhouse_warm_large
+					is_planet_class = pc_greenhouse_cool_large
+					is_planet_class = pc_greenhouse_ocean_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_greenhouse_hot_large
+					is_planet_class = pc_greenhouse_extreme_large
+	
+					is_planet_class = pc_toxic
+
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_hot_ocean
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_semi_barren
+					is_planet_class = pc_fringe_icy
+					is_planet_class = pc_fringe_dry
+					is_planet_class = pc_fringe_wet
+					is_planet_class = pc_fringe_hot
+					is_planet_class = pc_extreme_barren
+					is_planet_class = pc_exo_barren
+
+					is_planet_class = pc_dwarf_planet_asteroid
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			planet = {
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tropical_large
+					is_planet_class = pc_arctic_large
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_toxic
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_gaia
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.6
+			planet = {
+				OR = {
+					is_planet_class = pc_savannah
+					is_planet_class = pc_ocean
+					is_planet_class = pc_savannah_large
+					is_planet_class = pc_ocean_large
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			planet = {
+				is_planet_class = pc_greenhouse
+			}
+		}
+	}
+}
+

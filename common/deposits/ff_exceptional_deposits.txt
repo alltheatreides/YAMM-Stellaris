@@ -1,0 +1,454 @@
+# Possible Deposit Variables
+# modifier - weight, will replace the weight value
+# modifier - factor, will multiply the weight value
+# resources, resource and amount
+# station = station class in orbit to gather
+# if you mix resources that are not supposed to be collected by an orbital station remember to put is_orbital_slot = no
+
+######## EXCEPTIONAL PLANET RESOURCES ########
+
+d_exotoxic_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 2
+		energy = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_rich_exotoxic_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 3
+		energy = 1
+		society_research = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 200
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_vast_exotoxic_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 4
+		energy = 2
+		society_research = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 35
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_immense_exotoxic_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 6
+		energy = 3
+		physics_research = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_carbon_planet_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 1
+		energy = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_rich_carbon_planet_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 1
+		energy = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 200
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_vast_carbon_planet_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 2
+		energy = 2
+		physics_research = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 35
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_immense_carbon_planet_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 1
+		energy = 3
+		physics_research = 1
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_enormous_carbon_planet_orbital_deposit = {
+	resources = {
+		sr_raw_materials = 2
+		energy = 3
+		physics_research = 2
+	}
+	station = shipclass_mining_station
+	orbital_weight = {
+		weight = 30
+	}
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 15
+			planet = {
+				is_planet_class = pc_exotoxic
+			}
+		}
+	}
+}
+
+d_immense_food_deposit = {
+	resources = { food = 4 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = { 
+					is_planet_class = pc_toxic
+				}
+			}
+		}
+	}
+}
+
+#d_asteroid_metal_uranium_deposit = {
+#	resources = {
+#		sr_raw_materials = 1
+#		energy = 1
+#	}
+#	station = shipclass_mining_station
+#	orbital_weight = {
+#		weight = 30
+#	}
+#	drop_weight = {
+#		weight = 0
+#		modifier = {
+#			weight = 30
+#			planet = {
+#				OR = { 
+#					is_planet_class = pc_iced_ocean
+#					is_planet_class = pc_waterworld
+#					is_planet_class = pc_fringe_ocean
+#					is_planet_class = pc_hot_ocean
+#				}
+#			}
+#		}
+#	}
+#}
+
+#d_asteroid_rich_metal_uranium_deposit = {
+#	resources = {
+#		sr_raw_materials = 2
+#		energy = 1
+#	}
+#	station = shipclass_mining_station
+#	orbital_weight = {
+#		weight = 30
+#	}
+#	drop_weight = {
+#		weight = 0
+#		modifier = {
+#			weight = 10
+#			planet = {
+#				OR = { 
+#					is_planet_class = pc_iced_ocean
+#					is_planet_class = pc_waterworld
+#					is_planet_class = pc_fringe_ocean
+#					is_planet_class = pc_hot_ocean
+#				}
+#			}
+#		}
+#	}
+#}
+
+#d_asteroid_vast_metal_uranium_deposit = {
+#	resources = {
+#		sr_raw_materials = 2
+#		energy = 2
+#	}
+#	station = shipclass_mining_station
+#	orbital_weight = {
+#		weight = 30
+#	}
+#	drop_weight = {
+#		weight = 0
+#		modifier = {
+#			weight = 4
+#			planet = {
+#				OR = { 
+#					is_planet_class = pc_waterworld
+#				}
+#			}
+#		}
+#	}
+#}
+
+d_planet_only_society_deposit = {
+	resources = { society_research = 1 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 21
+			planet = {
+				OR = { 
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_hot_ocean
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_rich_society_deposit = {
+	resources = { society_research = 2 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 9
+			planet = {
+				OR = {
+					is_planet_class = pc_iced_ocean 
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_hot_ocean
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_vast_society_deposit = {
+	resources = { society_research = 3 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			planet = {
+				OR = { 
+					is_planet_class = pc_iced_ocean
+					is_planet_class = pc_waterworld
+					is_planet_class = pc_fringe_ocean
+					is_planet_class = pc_hot_ocean
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_engineering_deposit = {
+	resources = { society_research = 1 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 21
+			planet = {
+				OR = { 
+					is_planet_class = pc_barren
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_rich_engineering_deposit = {
+	resources = { society_research = 2 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 9
+			planet = {
+				OR = { 
+					is_planet_class = pc_barren
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_vast_engineering_deposit = {
+	resources = { society_research = 3 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			planet = {
+				OR = { 
+					is_planet_class = pc_barren
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_physics_deposit = {
+	resources = { society_research = 1 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 21
+			planet = {
+				OR = { 
+					is_planet_class = pc_barren_cold
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_rich_physics_deposit = {
+	resources = { society_research = 2 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 9
+			planet = {
+				OR = { 
+					is_planet_class = pc_barren_cold
+				}
+			}
+		}
+	}
+}
+
+d_planet_only_vast_physics_deposit = {
+	resources = { society_research = 3 }
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			planet = {
+				OR = { 
+					is_planet_class = pc_barren_cold
+				}
+			}
+		}
+	}
+}

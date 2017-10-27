@@ -1,0 +1,116 @@
+objectTypes = {
+
+	#pdxmesh = {
+	#	name = "asteroid_03_mesh"
+	#	file = "gfx/models/planets/asteroid_03.mesh"
+	#	cull_distance = 999999999.0f
+	#}
+
+	#pdxmesh = {
+	#	name = "asteroid_07_mesh"
+	#	file = "gfx/models/planets/asteroid_7.mesh"
+	#	cull_distance = 999999999.0f
+	#}
+	
+	#pdxmesh = {
+	#	name = "asteroid_08_mesh"
+	#	file = "gfx/models/planets/asteroid_7c.mesh"
+	#	cull_distance = 999999999.0f
+	#}
+	
+	pdxmesh = {
+		name = "asteroid_01c_mesh"
+		file = "gfx/models/planets/asteroid_01c.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_01m_mesh"
+		file = "gfx/models/planets/asteroid_01m.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_01s_mesh"
+		file = "gfx/models/planets/asteroid_01s.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_20_mesh"
+		file = "gfx/models/planets/asteroid_7.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_21_mesh"
+		file = "gfx/models/planets/asteroid_7c.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_09_mesh"
+		file = "gfx/models/planets/asteroid_7m.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_10_mesh"
+		file = "gfx/models/planets/asteroid_7x.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_11_mesh"
+		file = "gfx/models/planets/asteroid_6c.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_12_mesh"
+		file = "gfx/models/planets/asteroid_6m.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_13_mesh"
+		file = "gfx/models/planets/asteroid_6x.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_14_mesh"
+		file = "gfx/models/planets/asteroid_5c.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_15_mesh"
+		file = "gfx/models/planets/asteroid_5m.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_16_mesh"
+		file = "gfx/models/planets/asteroid_5x.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_17_mesh"
+		file = "gfx/models/planets/asteroid_4c.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_18_mesh"
+		file = "gfx/models/planets/asteroid_4m.mesh"
+		cull_distance = 999999999.0f
+	}
+	
+	pdxmesh = {
+		name = "asteroid_19_mesh"
+		file = "gfx/models/planets/asteroid_4x.mesh"
+		cull_distance = 999999999.0f
+	}
+}

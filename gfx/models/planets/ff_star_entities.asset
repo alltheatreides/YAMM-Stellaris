@@ -1,0 +1,32 @@
+#####    Stars    ######
+
+
+entity = { # O
+	name = "o_star_class_star_entity"
+	pdxmesh = "star_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0.0 node = "planet" particle = "o_class_star_particle"  keep_particle = no trigger_once = yes sound = { soundeffect = "amb_star_fusion" } }
+		event = { trigger_once = yes sound = { soundeffect = "space_ambient" } }  
+		event = { trigger_once = yes sound = { soundeffect = "falling_star" } }
+		event = { trigger_once = yes sound = { soundeffect = "space_ambient_layer_02" } }
+	 }
+	scale = 1.6
+}
+
+
+#entity = { 
+#	name = "black_hole_entity"
+#	pdxmesh = "black_hole_mesh"
+#	
+#	default_state = "idle"
+#	state = { name = "idle" animation = "idle"	animation_speed = 0.2 
+#		event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+#		event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+#	}
+#	scale = 20.0
+#	game_data = {
+#		size = 170.0
+#	}
+#}
