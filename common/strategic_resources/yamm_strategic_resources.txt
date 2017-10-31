@@ -22,11 +22,13 @@ time = {
 
 sr_raw_materials = {
 	accumulative = yes
-	accumulated_by_sectors = yes
-	AI_category = minerals
 	collect_if_wrong_building = no
+	accumulated_by_sectors = yes
 	tradable = yes
+	AI_category = minerals
 	is_rare = yes
+	# max = 5000
+	# base_income = 5
 }
 
 #Administrative resources

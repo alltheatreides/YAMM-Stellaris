@@ -19,6 +19,21 @@ tb_unbuilt_habitat = {
 
 }
 
+tb_unbuilt_low_orbit_habitat = {
+	time = 180
+	cost = {
+		energy = 50
+		minerals = 250
+	}
+	
+	spawn_chance = {
+		modifier = {
+			add = 0
+		}
+	}
+
+}
+
 tb_unbuilt_photosphere = {
 	time = 500
 	cost = {

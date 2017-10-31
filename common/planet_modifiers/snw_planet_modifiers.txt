@@ -1,0 +1,195 @@
+### Planet Modifiers
+
+pm_artificial_environment = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			is_planet_class = "pc_asteroid_s"
+			is_planet_class = "pc_asteroid_m"
+			is_planet_class = "pc_barren"
+			is_planet_class = "pc_barren_cold"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_artificial_environment"
+		}
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "artificial_environment"
+}
+
+pm_brutal_heat = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			is_planet_class = "pc_desert"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_tropical"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_brutal_heat"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_savage_heat"
+		}
+		modifier = {
+			factor = 2
+			has_planet_modifier = "pm_lush"
+		}
+		
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "brutal_heat"
+}
+
+pm_savage_heat = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			is_planet_class = "pc_desert"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_tropical"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_savage_heat"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_brutal_heat"
+		}
+		modifier = {
+			factor = 2
+			has_planet_modifier = "pm_lush"
+		}
+		
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "savage_heat"
+}
+
+pm_brutal_cold = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			is_planet_class = "pc_arctic"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_tundra"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_brutal_cold"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_savage_cold"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_lush"
+		}
+		
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "brutal_cold"
+}
+
+pm_savage_cold = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			is_planet_class = "pc_arctic"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_tundra"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_brutal_cold"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_savage_cold"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_lush"
+		}
+		
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "savage_cold"
+}
+
+pm_dangerous_microbes = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			is_planet_class = "pc_desert"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_tropical"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_arid"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_continental"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_ocean"
+		}
+		modifier = {
+			add = 10
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			factor = 2
+			has_planet_modifier = "pm_lush"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_dangerous_microbes"
+		}
+		
+		modifier = {
+			factor = 0
+			num_modifiers > 1
+		}
+	}
+	
+	modifier = "dangerous_microbes"
+}

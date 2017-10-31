@@ -23,7 +23,8 @@ tb_mountain_range = {
 						is_planet_class = pc_asteroid 
 						is_planet_class = pc_asteroid_c 
 						is_planet_class = pc_asteroid_m 
-						is_planet_class = pc_asteroid_s 
+						is_planet_class = pc_asteroid_s
+						is_planet_class = pc_dwarf_planet_c_asteroid
 					} 
 				}
 				
@@ -40,7 +41,7 @@ tb_mountain_range = {
 			planet = {
 				is_colonizable = yes
 				is_planet_class = pc_continental
-				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 				
 			}
 		}
@@ -48,7 +49,7 @@ tb_mountain_range = {
 				factor = 0.25
 				planet = {
 					has_modifier = "titanic_life"
-					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 				}
 		}
 	}
@@ -70,7 +71,7 @@ tb_active_volcano = {
 				is_colonizable = yes
 				NOT = { is_planet_class = pc_ocean }
 				NOT = { is_planet_class = pc_continental }
-				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 				
 			}
 		}
@@ -79,7 +80,7 @@ tb_active_volcano = {
 			planet = {
 				is_colonizable = yes
 				is_planet_class = pc_continental
-				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 			}
 		}
 		modifier = {
@@ -87,14 +88,14 @@ tb_active_volcano = {
 			planet = {
 				is_colonizable = yes
 				is_planet_class = pc_ocean
-				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 			}
 		}
 		modifier = {
 				factor = 0.25
 				planet = {
 					has_modifier = "titanic_life"
-					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 				}
 		}
 	}
@@ -115,7 +116,7 @@ tb_dangerous_wildlife = {
 			planet = {
 				is_colonizable = yes
 				NOT = { is_planet_class = pc_continental }
-				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 			}
 		}
 		modifier = {
@@ -123,23 +124,23 @@ tb_dangerous_wildlife = {
 			planet = {
 				is_colonizable = yes
 				is_planet_class = pc_continental
-				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+				NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 			}
 		}
 		modifier = {
 				factor = 2
 				planet = {
 					has_modifier = "dangerous_wildlife"
-					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 				}
 			}
 		modifier = {
 				factor = 0
 				planet = {
 					has_modifier = "titanic_life"
-					OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s }
+					OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid }
 					is_planet_class = pc_hollowed_asteroid
-					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s } }
+					NOT = { OR = { is_planet_class = pc_asteroid is_planet_class = pc_asteroid_c is_planet_class = pc_asteroid_m is_planet_class = pc_asteroid_s is_planet_class = pc_dwarf_planet_c_asteroid } }
 				}
 		}
 	}

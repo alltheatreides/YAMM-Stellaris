@@ -1,13 +1,25 @@
-
+#COMMUNICATION MODIFIERS
 communication_close_modifier = {	
 	tile_resource_minerals_mult = -0.2
-	tile_resource_food_mult = -0.2
-	tile_resource_energy_mult = -0.2
-	tile_resource_physics_research_mult = -0.2
-	tile_resource_society_research_mult = -0.2
-	tile_resource_engineering_research_mult = -0.2
+	# tile_resource_food_mult = -0.2
+	tile_resource_energy_mult = -0.25
+	tile_resource_physics_research_mult = -0.25
+	tile_resource_society_research_mult = -0.25
+	tile_resource_engineering_research_mult = -0.25
 	
-	# icon = "gfx/interface/icons/planet_modifiers/pm_weak_magnetic_field.dds"
+	icon = "gfx/interface/icons/planet_modifiers/communication_far_modifier.dds"
+	icon_frame = 2
+}
+
+communication_far_modifier = {	
+	tile_resource_minerals_mult = -0.5
+	# tile_resource_food_mult = -0.5
+	tile_resource_energy_mult = -0.5
+	tile_resource_physics_research_mult = -0.5
+	tile_resource_society_research_mult = -0.5
+	tile_resource_engineering_research_mult = -0.5
+	
+	icon = "gfx/interface/icons/planet_modifiers/communication_far_modifier.dds"
 	icon_frame = 3
 }
 
@@ -18,5 +30,55 @@ pollution_0 = {
 	icon_frame = 3
 }
 
+
+#ORBITAL MODIFIERS
+orbital_facilities_0 = {
+	icon = "gfx/interface/icons/planet_modifiers/orbital_facilities_0.dds"
+	icon_frame = 1
+}
+
+orbital_facilities_1 = {
+
+	icon = "gfx/interface/icons/planet_modifiers/orbital_facilities.dds"
+	
+	tile_resource_minerals_mult = 0.15
+	planet_building_cost_mult = -0.30
+	spaceport_ship_build_time_mult = -0.25
+	spaceport_module_cost_mult = -0.25
+	shipsize_orbital_station_build_cost_mult = -0.25
+	icon_frame = 1
+}
+
+orbital_facilities_2 = {
+
+	icon = "gfx/interface/icons/planet_modifiers/orbital_facilities.dds"
+	
+	tile_resource_minerals_mult = 0.15
+	planet_building_cost_mult = -0.30
+	spaceport_ship_build_time_mult = -0.35
+	spaceport_module_cost_mult = -0.35
+	shipsize_orbital_station_build_cost_mult = -0.35
+	icon_frame = 1
+}
+
+orbital_facilities_3 = {
+
+	icon = "gfx/interface/icons/planet_modifiers/orbital_facilities.dds"
+	
+	tile_resource_minerals_mult = 0.15
+	planet_building_cost_mult = -0.30
+	spaceport_ship_build_time_mult = -0.25
+	spaceport_module_cost_mult = -0.25
+	shipsize_orbital_station_build_cost_mult = -0.25
+	icon_frame = 1
+}
+
+
+# SECTORS
+sector_capital = {
+	pop_government_ethic_attraction = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/capital.dds"
+	icon_frame = 4
+}
 
 

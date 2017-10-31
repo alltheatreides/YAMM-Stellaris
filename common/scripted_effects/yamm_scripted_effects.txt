@@ -141,3 +141,10 @@ generate_start_buildings_and_blockers = {
 	}	
 }
 
+# SOLAR SYSTEM
+generate_moon_resource = {
+	random_tile = {
+		limit = { has_blocker = no has_building = no }
+		set_deposit = sr_raw_materials					
+	}
+}

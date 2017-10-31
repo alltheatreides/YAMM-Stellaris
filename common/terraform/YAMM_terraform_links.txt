@@ -1,0 +1,51 @@
+terraform_link = {
+	from = pc_dwarf_planet_c_asteroid
+	to = pc_habitat
+	
+	minerals = 2000
+	energy = 2000
+	duration = 1800
+
+	condition = {
+		has_ascension_perk = ap_voidborn
+	}
+}
+
+terraform_link = {
+	from = pc_asteroid_s
+	to = pc_habitat
+	
+	minerals = 2000
+	energy = 2000
+	duration = 1800
+
+	condition = {
+		has_ascension_perk = ap_voidborn
+	}
+}
+
+terraform_link = {
+	from = pc_asteroid_c
+	to = pc_habitat
+	
+	minerals = 2000
+	energy = 2000
+	duration = 1800
+
+	condition = {
+		has_ascension_perk = ap_voidborn
+	}
+}
+
+terraform_link = {
+	from = pc_asteroid_m
+	to = pc_habitat
+	
+	minerals = 2000
+	energy = 2000
+	duration = 1800
+
+	condition = {
+		has_ascension_perk = ap_voidborn
+	}
+}

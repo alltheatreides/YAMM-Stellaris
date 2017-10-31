@@ -1,0 +1,59 @@
+# trait_industrious = {
+	# cost = 2
+	# allowed_archetypes = { BIOLOGICAL }
+	# modifier = {
+		# tile_resource_minerals_mult = 0.15
+	# }
+# }
+
+# trait_very_strong = {
+	# cost = 3
+	# opposites = { "trait_weak" "trait_strong" }
+	# allowed_archetypes = { BIOLOGICAL }
+	# modifier = {
+		# army_damage_mult = 0.40
+		# tile_resource_minerals_mult = 0.10
+	# }
+# }
+
+# trait_strong = {
+	# cost = 1
+	# opposites = { "trait_weak" "trait_very_strong" }
+	# allowed_archetypes = { BIOLOGICAL }
+	# modifier = {
+		# army_damage_mult = 0.20
+		# tile_resource_minerals_mult = 0.05
+	# }
+# }
+
+# trait_weak = {
+	# cost = -1
+	# opposites = { "trait_strong" "trait_very_strong" }
+	# allowed_archetypes = { BIOLOGICAL }
+	# modifier = {
+		# army_damage_mult = -0.20
+		# tile_resource_minerals_mult = -0.05
+	# }
+	# ai_weight = {
+		# weight = 0
+	# }
+# }
+
+# trait_nerve_stapled = {
+	# cost = 3
+	# opposites = { "trait_intelligent" "trait_erudite" "trait_natural_engineers" "trait_natural_physicists" "trait_natural_sociologists" "trait_communal" "trait_solitary" }
+	# initial = no
+	# randomized = no
+	# advanced_trait = yes
+	# forced_happiness = yes
+	# allowed_archetypes = { BIOLOGICAL }
+	# modifier = {
+		# tile_resource_minerals_mult = 0.1
+		# tile_resource_food_mult = 0.1
+		# tile_resource_unity_mult = -0.5
+		# tile_resource_energy_mult = -0.5
+		# tile_resource_physics_research_mult = -0.75
+		# tile_resource_engineering_research_mult = -0.75
+		# tile_resource_society_research_mult = -0.75
+	# }
+# }

@@ -26,7 +26,6 @@
 #############
 # Utility/Fillers
 #############
-
 pc_space = {
     entity = space_entity
 
@@ -45,7 +44,6 @@ pc_space = {
     planet_size = { min = 1 max = 1 }
     colonizable = no
 }
-
 
 # ###########
 # Support life but not habitable
@@ -741,7 +739,6 @@ pc_greenhouse_frozen = {
 	#colonization_tech = { tech_advanced_robot_colonization }
 }
 
-
 #############
 # Supersized Habitable
 #############
@@ -1031,7 +1028,6 @@ pc_alpine_large = {
 	starting_planet = no
 	colonization_tech = { "tech_ff_high_gravity_colonization" }
 }
-
 
 #############
 # Supersized Greenhouse
@@ -1358,6 +1354,8 @@ pc_dwarf_planet_c_asteroid = {
 	entity = "carbon_planet"
 	entity_scale = 2.5
 	icon_frame = 9
+	outliner_planet_type = special
+	show_city = no
 	
 	atmosphere_color 		= hsv { 0.1 0.4 0.7 }	#DONE
 	atmosphere_intensity 	= 1.0
@@ -1370,11 +1368,14 @@ pc_dwarf_planet_c_asteroid = {
 	extra_orbit_size = 0
 	extra_planet_count = 0
 	
+	can_support_spaceport = yes	
+	starting_planet = no
+	
 	chance_of_ring = 0
 	
 	planet_size = { min = @dwarf_planet_min_size max = @dwarf_planet_max_size }
 	
-	colonizable = no
+	colonizable = yes
 }
 
 pc_frozen_dwarf = {
@@ -1753,7 +1754,7 @@ pc_asteroid_s = {
 	can_be_moon = no
 	chance_of_ring = 0
 	
-	planet_size = { min = 5 max = 12 }
+	planet_size = { min = 5 max = 10 }
 	
 	starting_planet = no
 	
@@ -1780,7 +1781,7 @@ pc_asteroid_c = {
 	can_be_moon = no
 	chance_of_ring = 0
 	
-	planet_size = { min = 5 max = 12 }
+	planet_size = { min = 5 max = 10 }
 	
 	starting_planet = no
 	
@@ -1807,7 +1808,7 @@ pc_asteroid_m = {
 	can_be_moon = no
 	chance_of_ring = 0
 	
-	planet_size = { min = 5 max = 12 }
+	planet_size = { min = 5 max = 10 }
 	
 	starting_planet = no
 	
@@ -2106,8 +2107,68 @@ pc_military_base = {
 	starting_planet = no
 	orbit_lines = no
 	can_support_spaceport = yes
+	has_colonization_influence_cost = no
 }
 
+################
+### HABITATS ###
+################
+
+pc_habitat_revamp_sp = {
+	habitat = yes
+	entity = "orbital_habitat"
+	outliner_planet_type = special
+	icon_frame = 22
+	entity_scale = 1.0
+	enable_tilt = no
+	fixed_entity_scale = yes
+	place_entity_on_planet_plane = no
+	entity_face_object = no #disable rotation towards sun or planet we orbit around
+	atmosphere_color 		= hsv { 0.0 0.0 1.0 }		#DONE
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 0.5
+	show_city = no
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.0
+	planet_size = 25
+	moon_size = 1
+	colonizable = yes
+	ideal = yes
+	starting_planet = no
+	orbit_lines = no
+	can_support_spaceport = yes
+	has_colonization_influence_cost = no			# applies when within own borders
+}
+
+pc_habitat_revamp = {
+	habitat = yes
+	entity = "orbital_habitat"
+	outliner_planet_type = special
+	icon_frame = 22
+	entity_scale = 1.0
+	enable_tilt = no
+	fixed_entity_scale = yes
+	place_entity_on_planet_plane = no
+	entity_face_object = no #disable rotation towards sun or planet we orbit around
+	atmosphere_color 		= hsv { 0.0 0.0 1.0 }		#DONE
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 0.5
+	show_city = no
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.0
+	planet_size = 25
+	moon_size = 1
+	colonizable = yes
+	ideal = yes
+	starting_planet = no
+	orbit_lines = no
+	can_support_spaceport = no
+	has_colonization_influence_cost = no			# applies when within own borders
+}
 
 ################
 # RANDOM LISTS #

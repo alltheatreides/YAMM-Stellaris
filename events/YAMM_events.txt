@@ -1,82 +1,126 @@
-#YAMM Events
+############################
+#
+# YAMM Events
+#
+# Written by ATREIDES
+#
+############################
 
-namespace = yamm
+namespace = YAMM
 
-#First event
+
+### Orbital Rings trigger
 country_event = {
-	id = yamm.1
-	title = "yamm.1.t"
-	desc = yamm.1.desc
+	id = YAMM.1
 	hide_window = yes
 	
-	is_triggered_only = yes
-	
 	trigger = {
-		is_country_type = default
-		exists = capital_scope
 		any_owned_planet = {
-			NOT = { has_modifier = yamm_close_modifier }
+			OR = {
+				is_planet_class = pc_habitat_revamp
+				is_planet_class = pc_habitat_revamp_sp
+			}
+			any_tile = {
+				has_grown_pop = yes
+				has_building = building_hab_orbital_ring
+			} 
+		}
+		any_owned_planet = {
+			NOT = {
+				OR = {
+					is_planet_class = pc_habitat_revamp
+					is_planet_class = pc_habitat_revamp_sp
+				}
+			}
+			has_modifier = orbital_facilities_0
 		}
 	}
 	
 	immediate = {
-		set_country_flag = yamm_start
-		capital_scope = { save_event_target_as = capital }
-		capital_scope = { solar_system = { save_event_target_as = capital_system } }
-
-		random_system = {
+		every_owned_planet = {
 			limit = {
-				distance = {
-					source = event_target:capital
-					max_distance = 5
-					min_distance = 1
-				}
-				any_planet = { has_owner = yes }
-				is_owned_by = ROOT
+				has_modifier = orbital_facilities_0
+				NOT = { has_modifier = orbital_facilities }
 			}
-			random_system_planet = {
-				limit = { is_owned_by = ROOT }
-				# save_event_target_as = pirate_home
-				add_modifier = {
-					modifier = "yamm_close_modifier"
-					days = -1
-				}
-			}
-		}
-
-	}
-	
-	option = {
-		name = yamm.a
-		random_system = {
-			limit = {
-				distance = {
-					source = event_target:capital
-					max_distance = 5
-					min_distance = 1
-				}
-				any_planet = { has_owner = yes }
-				is_owned_by = ROOT
-			}
-			random_system_planet = {
-				limit = { is_owned_by = ROOT }
-				# save_event_target_as = pirate_home
-				add_modifier = {
-					modifier = "yamm_close_modifier"
-					days = -1
-				}
+			remove_modifier = "orbital_facilities_0"
+			add_modifier = {
+				modifier = "orbital_facilities_1"
+				days = -1
 			}
 		}
 	}
-
 }
 
-# This fires when the game starts up
+### Space Elevator Rings trigger
+country_event = {
+	id = YAMM.2
+	hide_window = yes
+	
+	trigger = {
+		any_owned_planet = {
+			OR = {
+				is_planet_class = pc_habitat_revamp
+				is_planet_class = pc_habitat_revamp_sp
+			}
+			any_tile = {
+				has_grown_pop = yes
+				has_building = building_hab_space_elevator
+			} 
+		}
+	}
+	
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_modifier = orbital_facilities_1
+				NOT = { has_modifier = orbital_facilities_2 }
+			}
+			remove_modifier = "orbital_facilities_1"
+			add_modifier = {
+				modifier = "orbital_facilities_2"
+				days = -1
+			}
+		}
+	}
+}
+
+## Asteroid Life Support Building
+planet_event = {
+	id = YAMM.3
+	title = "yamm.3.name"
+	desc = "yamm.3.desc"
+	
+	hide_window = yes
+	
+	trigger = {
+		OR = { 
+			is_planet_class = pc_asteroid 
+			is_planet_class = pc_asteroid_c 
+			is_planet_class = pc_asteroid_s 
+			is_planet_class = pc_asteroid_m
+			is_planet_class = pc_dwarf_planet_c_asteroid
+		}
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_tile = {
+			limit = { 
+				has_building = "building_colony_shelter"
+			}
+			set_building = "the_belt_building_asteroid_life_support_system"
+		}
+	}
+}
+
+## Ship tech start of the game
 event = {
-	id = yamm.2
+	id = YAMM.4
+	
 	hide_window = yes
 	is_triggered_only = yes
-
+	
 	immediate = {
 		every_country = {
 			limit = {
@@ -88,22 +132,293 @@ event = {
 			give_technology =  { tech = "ship_numbers_tech" message = no }
 		}
 	}
+	
 }
 
-# This fires every time a country researches anything,
-# because I could not find an event that fires when
-# either a primitive colony advances to space age or
-# other random empires suddenly pop in to existence.
-
+## Ship event once a tech is researched
 country_event = {
-	id = yamm.3
+	id = YAMM.5
+	
 	hide_window = yes
 	is_triggered_only = yes
+	
 	trigger = {
 		is_country_type = default
 		NOT = { has_technology = "ship_numbers_tech" }
 	}
 	immediate = {
 		 give_technology = { tech = "ship_numbers_tech" message = no }
+	}
+	
+}
+
+# Communication - Monthly pulse
+event = {
+	id = YAMM.6
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = {
+			is_country_type = default
+			any_owned_planet = {
+				has_modifier = capital
+			}
+			any_owned_planet = {
+				has_owner = yes
+				# original_owner = yes
+				is_homeworld = no
+				num_pops > 0
+				is_capital = no
+			}
+		}
+	}
+	
+	immediate = {
+		every_country = {
+			country_event = { id = YAMM.7 }
+			country_event = { id = YAMM.8 }
+			country_event = { id = YAMM.9 }
+			country_event = { id = YAMM.10 }
+		}
+	}
+	
+}
+
+# Communication - Close colonies modifier
+country_event = {
+	id = YAMM.7
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		any_owned_planet = {
+			has_modifier = capital
+		}
+		any_owned_planet = {
+			has_owner = yes
+			# original_owner = yes
+			is_homeworld = no
+			num_pops > 0
+			is_capital = no
+		}
+	}
+	
+	immediate = {
+		every_planet_within_border = {
+			limit = {
+				OR = {
+					has_modifier = capital
+					has_modifier = sector_capital
+				}
+			}
+			solar_system = {
+				every_neighbor_system = {
+					every_system_planet = {
+						limit = {
+							NOT = {
+								OR = {
+									has_modifier = communication_close_modifier
+									has_modifier = communication_far_modifier
+								}
+							}
+							has_owner = yes
+							original_owner = yes
+							is_homeworld = no
+							num_pops > 0
+							is_capital = no
+						}
+						add_modifier = {
+							modifier = "communication_close_modifier"
+							days = -1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+## Communication - Far away colonies
+country_event = {
+	id = YAMM.8
+	title = "yamm.8.name"
+	id = YAMM.8
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		any_owned_planet = {
+			has_modifier = capital
+		}
+		any_owned_planet = {
+			has_owner = yes
+			# original_owner = yes
+			is_homeworld = no
+			num_pops > 0
+			is_capital = no
+		}
+	}
+	
+	immediate = {
+		every_planet_within_border = {
+			limit = {
+				NOT = {
+					has_modifier = communication_far_modifier
+					has_modifier = communication_close_modifier
+					has_modifier = capital
+					has_modifier = sector_capital
+				}
+				solar_system = {
+					any_planet = {
+						NOT = {
+							OR = {
+								has_modifier = sector_capital
+								has_modifier = capital
+							}
+						}
+					}
+					any_neighbor_system = {
+						any_planet = {
+							NOT = {
+								OR = {
+									has_modifier = sector_capital
+									has_modifier = capital
+								}
+							}
+						}
+					}
+				}
+				has_owner = yes
+				is_homeworld = no
+				num_pops > 0
+				is_capital = no
+			}
+			add_modifier = {
+				modifier = "communication_far_modifier"
+				days = -1
+			}
+		}
+		
+		# random_system_within_border = {
+			# limit = {
+				# starting_system = no
+			# }
+			# every_system_planet = {
+				# limit = {
+					# NOT = {
+						# has_modifier = communication_far_modifier
+						# has_modifier = capital
+					# }
+					# sector_controlled = no
+					# has_owner = yes
+					# original_owner = yes
+					# is_homeworld = no
+					# num_pops > 0
+					# is_capital = no
+				# }
+				# add_modifier = {
+					# modifier = "communication_far_modifier"
+					# days = -1
+				# }
+			# }
+		# }
+	}
+}
+
+## Communication - clearing up far away modifier for newly christened sector capital
+country_event = {
+	id = YAMM.9
+	title = "YAMM.9.name"
+	id = YAMM.9
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		any_owned_planet = {
+			has_modifier = communication_far_modifier
+			has_modifier = sector_capital
+		}
+	}
+	immediate = {
+		remove_modifier = communication_far_modifier
+		add_modifier = {
+			modifier = "communication_close_modifier"
+			days = -1
+		}
+	}
+}
+
+## Communication - changing far away modifier to close modifier
+country_event = {
+	id = YAMM.10
+	title = "YAMM.10.name"
+	id = YAMM.10
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = default
+		any_owned_planet = {
+			has_modifier = communication_far_modifier
+			solar_system = {
+				any_neighbor_system = {
+					any_planet = {
+						OR = {
+							has_modifier = sector_capital
+							has_modifier = capital
+						}
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = communication_far_modifier
+		add_modifier = {
+			modifier = "communication_close_modifier"
+			days = -1
+		}
+	}
+}
+
+## Military Base Building
+planet_event = {
+	id = YAMM.11
+	title = "YAMM.11.name"
+	desc = "YAMM.11.desc"
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+			is_planet_class = pc_military_base
+		}
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_tile = {
+			limit = { 
+				has_building = "building_colony_shelter"
+			}
+			set_building = "building_military_HQ"
+		}
 	}
 }

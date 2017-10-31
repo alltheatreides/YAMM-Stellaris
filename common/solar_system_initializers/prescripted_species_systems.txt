@@ -75,6 +75,9 @@ sol_system_initializer = {
 			orbit_angle = { min = 30 max = 270 }
 			size = 6
 			flags = { first can_terraform }
+			init_effect = {
+				generate_moon_resource = yes
+			}
 		}
 	}
 
@@ -94,7 +97,7 @@ sol_system_initializer = {
 		entity = "cold_barren_planet_10_entity"
 		orbit_distance = 22
 		orbit_angle = 20
-		size = 6
+		size = 7
 	}
 
 	Planet = {
@@ -102,7 +105,7 @@ sol_system_initializer = {
 		class = "pc_asteroid_c"
 		orbit_distance = 0
 		orbit_angle = 160
-		size = 4
+		size = 5
 	}
 
 	Planet = {
@@ -110,7 +113,7 @@ sol_system_initializer = {
 		class = "pc_asteroid_c"
 		orbit_distance = 0
 		orbit_angle = 80
-		size = 3
+		size = 5
 	}
 
 	Planet = {
@@ -118,7 +121,7 @@ sol_system_initializer = {
 		class = "pc_asteroid_m"
 		orbit_distance = 0
 		orbit_angle = 285
-		size = 5
+		size = 6
 	}
 
 	Planet = {
@@ -126,7 +129,7 @@ sol_system_initializer = {
 		class = "pc_asteroid_c"
 		orbit_distance = 0
 		orbit_angle = 200
-		size = 4
+		size = 5
 	}
 
 	Planet = {
@@ -134,7 +137,7 @@ sol_system_initializer = {
 		class = "pc_asteroid_c"
 		orbit_distance = 0
 		orbit_angle = -35
-		size = 4
+		size = 5
 	}
 
 	Planet = {

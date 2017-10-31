@@ -6,7 +6,7 @@ habitat_colonized = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = 7 y = -7 }
-	build_time = 360
+	build_time = 180
 	build_cost = {
 		minerals = 500
 		influence = 50
@@ -24,9 +24,9 @@ habitat_colonized = {
 		# "tech_habitat_food_1"
 	# }
 	
-	potential = {
-		NOT = {has_ascension_perk = ap_mastery_of_nature}
-	}	
+	# potential = {
+		# NOT = {has_ascension_perk = ap_mastery_of_nature}
+	# }	
 	
 	placement_rules = {
 		planet_possible = {
@@ -115,49 +115,66 @@ habitat_colonized = {
 						}
 					}
 					
-					while = {
-						limit = {
-							any_tile = { has_blocker = no }
-						}
-						random_tile = {
-							limit = { has_blocker = no }
-							set_blocker = "tb_unbuilt_habitat"
-						}
-					}
+					# while = {
+						# limit = {
+							# any_tile = { has_blocker = no }
+						# }
+						# random_tile = {
+							# limit = { has_blocker = no }
+							# set_blocker = "tb_unbuilt_habitat"
+						# }
+					# }
 					
 					random_tile = {
 						limit = {
-								not{
-									any_neighboring_tile {
-										num_adjacent_tiles < 4
-									}
+							not{
+								any_neighboring_tile {
+									num_adjacent_tiles < 4
 								}
+							}
 						}
 						
 						add_deposit =  d_atmosphere
 						set_blocker = "tb_unbuilt_atmosphere"
 
 						every_neighboring_tile = {
-							add_deposit =  d_low_orbit
+							add_deposit = d_low_orbit
+							set_blocker = "tb_unbuilt_low_orbit_habitat"
+							
+							every_neighboring_tile = {
+								limit = {
+									num_adjacent_tiles > 3
+									has_deposit = none
+								}
+								add_deposit = d_synch_orbit
+								set_blocker = "tb_unbuilt_low_orbit_habitat"
+							}
+							
 						}
+						
 					}
 					
-					random_tile = {
-						limit = { num_adjacent_tiles < 3 }
-						add_deposit = d_synch_orbit
+					# random_tile = {
+						# limit = { num_adjacent_tiles < 3 }
+						# add_deposit = d_synch_orbit
 						
-						every_neighboring_tile = {
-							add_deposit = d_synch_orbit
-						}
-					}				
+						# every_neighboring_tile = {
+							# add_deposit = d_synch_orbit
+						# }
+					# }				
 
-					random_tile = {
-						limit = { num_adjacent_tiles < 3 has_deposit = none }
-						add_deposit = d_synch_orbit
+					# random_tile = {
+						# limit = { num_adjacent_tiles < 3 has_deposit = none }
+						# add_deposit = d_synch_orbit
 						
-						every_neighboring_tile = {
-							add_deposit = d_synch_orbit
-						}
+						# every_neighboring_tile = {
+							# add_deposit = d_synch_orbit
+						# }
+					# }
+					
+					every_tile = {
+						limit = { has_deposit = none }
+						set_blocker = "tb_unbuilt_habitat"
 					}
 					
 					random_tile = {
@@ -167,8 +184,10 @@ habitat_colonized = {
 					
 					copy_orbital_tile = fromfrom.planet
 					set_planet_flag = megastructure
-					set_planet_flag = habitat				
-				}				
+					set_planet_flag = habitat
+					set_planet_flag = orbital_facilities
+				}
+				set_planet_flag = orbital_facilities
 			}
 			Else = {
 				spawn_planet = {
@@ -204,49 +223,48 @@ habitat_colonized = {
 							}
 						}
 						
-						while = {
-							limit = {
-								any_tile = { has_blocker = no }
-							}
-							random_tile = {
-								limit = { has_blocker = no }
-								set_blocker = "tb_unbuilt_habitat"
-							}
-						}
+						# while = {
+							# limit = {
+								# any_tile = { has_blocker = no }
+							# }
+							# random_tile = {
+								# limit = { has_blocker = no }
+								# set_blocker = "tb_unbuilt_habitat"
+							# }
+						# }
 						
 						random_tile = {
 							limit = {
-									not{
-										any_neighboring_tile {
-											num_adjacent_tiles < 4
-										}
+								not{
+									any_neighboring_tile {
+										num_adjacent_tiles < 4
 									}
+								}
 							}
 							
 							add_deposit =  d_atmosphere
 							set_blocker = "tb_unbuilt_atmosphere"
 
 							every_neighboring_tile = {
-								add_deposit =  d_low_orbit
+								add_deposit = d_low_orbit
+								set_blocker = "tb_unbuilt_low_orbit_habitat"
+								
+								every_neighboring_tile = {
+									limit = {
+										num_adjacent_tiles > 3
+										has_deposit = none
+									}
+									add_deposit = d_synch_orbit
+									set_blocker = "tb_unbuilt_low_orbit_habitat"
+								}
+								
 							}
+							
 						}
 						
-						random_tile = {
-							limit = { num_adjacent_tiles < 3 }
-							add_deposit = d_synch_orbit
-							
-							every_neighboring_tile = {
-								add_deposit = d_synch_orbit
-							}
-						}				
-
-						random_tile = {
-							limit = { num_adjacent_tiles < 3 has_deposit = none }
-							add_deposit = d_synch_orbit
-							
-							every_neighboring_tile = {
-								add_deposit = d_synch_orbit
-							}
+						every_tile = {
+							limit = { has_deposit = none }
+							set_blocker = "tb_unbuilt_habitat"
 						}
 						
 						random_tile = {
@@ -256,8 +274,10 @@ habitat_colonized = {
 						
 						copy_orbital_tile = fromfrom.planet
 						set_planet_flag = megastructure
-						set_planet_flag = habitat				
+						set_planet_flag = habitat
+						set_planet_flag = orbital_facilities
 					}				
+					set_planet_flag = orbital_facilities
 				}
 			}
 		}
@@ -265,6 +285,11 @@ habitat_colonized = {
 		
 		fromfrom.planet = {
 			set_planet_flag = has_megastructure
+			set_planet_flag = orbital_facilities
+			add_modifier = {
+				modifier = "orbital_facilities_0"
+				days = -1
+			}
 		}
 		remove_megastructure = fromfrom
 		from = { country_event =  { id = utopia.61 } }
@@ -277,7 +302,7 @@ habitat_solar = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = -14 y = -14 }
-	build_time = 360
+	build_time = 180
 	build_cost = {
 		minerals = 500
 		influence = 50
@@ -286,7 +311,7 @@ habitat_solar = {
 
 	potential = {
 		has_ascension_perk = ap_voidborn
-		NOT = {has_ascension_perk = ap_mastery_of_nature}
+		# NOT = {has_ascension_perk = ap_mastery_of_nature}
 	}
 	
 	possible = {
@@ -420,7 +445,7 @@ habitat_gas_giant = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = -7 y = -7 }
-	build_time = 360
+	build_time = 180
 	build_cost = {
 		minerals = 500
 		influence = 50
@@ -429,7 +454,7 @@ habitat_gas_giant = {
 
 	potential = {
 		has_ascension_perk = ap_voidborn
-		NOT = {has_ascension_perk = ap_mastery_of_nature}
+		# NOT = {has_ascension_perk = ap_mastery_of_nature}
 	}
 	
 	possible = {
@@ -613,7 +638,7 @@ habitat_gas_giant = {
 			# }
 			# custom_tooltip = {
 				# fail_text = "requires_no_existing_megastructure"
-				can_build_megastructure_on_planet = yes
+				# can_build_megastructure_on_planet = yes
 				# NOR = {
 					# has_planet_flag = megastructure
 					# has_planet_flag = has_megastructure

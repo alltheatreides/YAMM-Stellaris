@@ -1,0 +1,63 @@
+# All global modifiers are here.  They are applied from certain game-features.
+#
+# Effects are fully scriptable here.
+
+# The names can NOT be removed or changed since the code references them
+
+##########################################################################
+# Generated Planet Modifiers
+##########################################################################
+
+artificial_environment = {
+	pop_happiness = -0.05
+	planet_migration_all_pull = -0.25
+	planet_building_cost_mult = 0.1
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_artificial_environment.dds"
+	icon_frame = 1
+}
+
+brutal_heat = {
+	pop_environment_tolerance = -0.05
+	pop_happiness = -0.05
+	tile_resource_food_mult = 0.1
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_brutal_heat.dds"
+	icon_frame = 2
+}
+
+savage_heat = {
+	pop_environment_tolerance = -0.1
+	pop_happiness = -0.1
+	tile_resource_food_mult = 0.25
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_brutal_heat.dds"
+	icon_frame = 2
+}
+
+brutal_cold = {
+	pop_environment_tolerance = -0.05
+	pop_happiness = -0.05
+	tile_resource_food_mult = -0.1
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_brutal_cold.dds"
+	icon_frame = 2
+}
+
+savage_cold = {
+	pop_environment_tolerance = -0.05
+	pop_happiness = -0.05
+	tile_resource_food_mult = -0.1
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_brutal_cold.dds"
+	icon_frame = 2
+}
+
+dangerous_microbes = {
+	pop_environment_tolerance = -0.15
+	pop_happiness = -0.10
+	tile_resource_society_research_mult = 0.25
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_dangerous_microbes.dds"
+	icon_frame = 2
+}

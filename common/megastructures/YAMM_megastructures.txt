@@ -8,7 +8,7 @@ military_base_0 = {
 	entity_offset = { x = -7 y = -7 }
 	build_time = 730
 	build_cost = {
-		minerals = 1000
+		minerals = 500
 		influence = 25
 	}
 	construction_blocks_others = no
@@ -56,13 +56,13 @@ military_base_0 = {
 			}
 
  			# balance for habitats
-			custom_tooltip = {
-				fail_text = "requires_not_minor_planetary_body"
-				NOR = {
-					is_asteroid = yes
-					is_moon = yes
-				}
-			}
+			# custom_tooltip = {
+				# fail_text = "requires_not_minor_planetary_body"
+				# NOR = {
+					# is_asteroid = yes
+					# is_moon = yes
+				# }
+			# }
 			custom_tooltip = {
 				fail_text = "requires_not_star"
 				is_star = no

@@ -1,0 +1,13 @@
+spriteTypes = {		
+	spriteType = {
+		name = "GFX_evt_stockpile"
+		texturefile = "gfx/event_pictures/s+_industrial.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_resource_sr_raw_materials"
+		textureFile = "gfx/interface/icons/resources/sr_raw_materials.dds"
+	}
+}

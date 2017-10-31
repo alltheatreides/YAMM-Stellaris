@@ -1,0 +1,688 @@
+##### SEASONAL RANDOM #####
+pm_ice_age = {
+	modifier = "ice_age"
+}
+
+
+##### WORLD TYPE ORGANISMS #####
+
+pm_thriving_extremophiles = {
+	spawn_chance = {
+		modifier = {
+			add = 15
+			AND = {
+				has_modifier = terraforming_candidate
+				NOT = {
+					OR = {
+						is_planet_class = pc_greenhouse_warm
+						is_planet_class = pc_greenhouse_warm_large
+						is_planet_class = pc_greenhouse_ocean
+						is_planet_class = pc_greenhouse_ocean_large
+						is_planet_class = pc_greenhouse
+						is_planet_class = pc_greenhouse_large
+						is_planet_class = pc_greenhouse_cool
+						is_planet_class = pc_greenhouse_cool_large
+						is_planet_class = pc_toxic
+						is_planet_class = pc_greenhouse_cold
+						is_planet_class = pc_greenhouse_cold_large
+						is_planet_class = pc_iced_ocean
+						is_planet_class = pc_frozen_ocean
+						is_planet_class = pc_hot_ocean
+						is_planet_class = pc_fringe_icy
+						is_planet_class = pc_fringe_wet
+					}
+				}
+				is_barren_planet = no
+			}
+		}
+		modifier = {
+			add = 5
+			AND = {
+				OR = {
+					is_planet_class = pc_toxic
+					is_planet_class = pc_toxic_large
+					is_planet_class = pc_greenhouse_cold
+					is_planet_class = pc_greenhouse_cold_large
+					is_planet_class = pc_fringe_wet
+					is_planet_class = pc_frozen_ocean
+					is_planet_class = pc_fringe_icy
+					is_planet_class = pc_iced_ocean
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_thriving_extremophiles"
+		}
+	}
+	
+	modifier = "thriving_extremophiles"
+}
+
+pm_budding_life = {
+	spawn_chance = {
+		modifier = {
+			add = 15
+			is_life_possible = yes
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_budding_life"
+		}
+	}
+	
+	modifier = "budding_life"
+}
+
+pm_fossil_microbes = {
+	spawn_chance = {
+		modifier = {
+			add = 3
+			AND = {
+				has_modifier = terraforming_candidate
+				is_fringe_planet = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_fossil_microbes"
+		}
+	}
+	
+	modifier = "fossil_microbes"
+}
+
+pm_abundant_extremophiles = {
+	spawn_chance = {
+		modifier = {
+			add = 16
+			OR = {
+				is_planet_class = "pc_desert"
+				is_planet_class = "pc_desert_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_savannah"
+				is_planet_class = "pc_savannah_large"
+			}
+		}				
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_tropical"
+				is_planet_class = "pc_tropical_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_arid"
+				is_planet_class = "pc_arid_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_continental"
+				is_planet_class = "pc_continental_large"
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = "pc_ocean"
+				is_planet_class = "pc_ocean_large"
+			}
+		}
+		modifier = {
+			add = 16
+			OR = {
+				is_planet_class = "pc_tundra"
+				is_planet_class = "pc_tundra_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_alpine"
+				is_planet_class = "pc_alpine_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_arctic"
+				is_planet_class = "pc_arctic_large"
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_abundant_extremophiles"
+		}
+	}
+	
+	modifier = "abundant_extremophiles"
+}
+
+pm_extreme_biodiversity = {
+	spawn_chance = {
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = "pc_desert"
+				is_planet_class = "pc_desert_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_savannah"
+				is_planet_class = "pc_savannah_large"
+			}
+		}				
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_tropical"
+				is_planet_class = "pc_tropical_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_arid"
+				is_planet_class = "pc_arid_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_continental"
+				is_planet_class = "pc_continental_large"
+			}
+		}
+		modifier = {
+			add = 16
+			OR = {
+				is_planet_class = "pc_ocean"
+				is_planet_class = "pc_ocean_large"
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = "pc_tundra"
+				is_planet_class = "pc_tundra_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_alpine"
+				is_planet_class = "pc_alpine_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_arctic"
+				is_planet_class = "pc_arctic_large"
+			}
+		}
+		modifier = {
+			add = 35
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_extreme_biodiversity"
+		}
+	}
+	
+	modifier = "extreme_biodiversity"
+}
+
+pm_hearty_organisms = {
+	spawn_chance = {
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_desert"
+				is_planet_class = "pc_desert_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_savannah"
+				is_planet_class = "pc_savannah_large"
+			}
+		}				
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = "pc_tropical"
+				is_planet_class = "pc_tropical_large"
+			}
+		}
+		modifier = {
+			add = 16
+			OR = {
+				is_planet_class = "pc_arid"
+				is_planet_class = "pc_arid_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_continental"
+				is_planet_class = "pc_continental_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_ocean"
+				is_planet_class = "pc_ocean_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_tundra"
+				is_planet_class = "pc_tundra_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_alpine"
+				is_planet_class = "pc_alpine_large"
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = "pc_arctic"
+				is_planet_class = "pc_arctic_large"
+			}
+		}
+		modifier = {
+			add = 35
+			is_planet_class = "pc_gaia"
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_hearty_organisms"
+		}
+	}
+		
+	modifier = "hearty_organisms"
+}
+
+pm_gaia_organism = {
+	spawn_chance = {
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_desert"
+				is_planet_class = "pc_desert_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_savannah"
+				is_planet_class = "pc_savannah_large"
+			}
+		}				
+		modifier = {
+			add = 16
+			OR = {
+				is_planet_class = "pc_tropical"
+				is_planet_class = "pc_tropical_large"
+			}
+		}
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = "pc_arid"
+				is_planet_class = "pc_arid_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_continental"
+				is_planet_class = "pc_continental_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_ocean"
+				is_planet_class = "pc_ocean_large"
+			}
+		}
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = "pc_tundra"
+				is_planet_class = "pc_tundra_large"
+			}
+		}
+		modifier = {
+			add = 12
+			OR = {
+				is_planet_class = "pc_alpine"
+				is_planet_class = "pc_alpine_large"
+			}
+		}
+		modifier = {
+			add = 16
+			OR = {
+				is_planet_class = "pc_arctic"
+				is_planet_class = "pc_arctic_large"
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_gaia_organism"
+		}
+	}
+	
+	modifier = "gaia_organism"
+}
+
+
+##### OTHER RANDOM MODIFIERS #####
+
+pm_fast_rotation = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_planet_modifier = "pm_fast_rotation"
+				has_planet_modifier = "pm_slow_rotation"
+			}
+		}
+	}
+
+	modifier = "fast_rotation" 
+}
+
+pm_slow_rotation = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_planet_modifier = "pm_fast_rotation"
+				has_planet_modifier = "pm_slow_rotation"
+			}
+		}
+	}
+
+	modifier = "slow_rotation"
+}
+
+pm_sloped_orbit = {
+	spawn_chance = {
+		modifier = {
+			add = 4
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 1
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_sloped_orbit"
+		}
+		modifier = {
+			factor = 0
+			is_moon = yes
+		}
+	}
+
+	modifier = "sloped_orbit"
+}
+
+pm_eccentric_orbit = {
+	spawn_chance = {
+		modifier = {
+			add = 8
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_eccentric_orbit"
+		}
+	}
+	
+	modifier = "eccentric_orbit"
+}
+
+pm_frequent_magnetic_storms = {
+	# NOTE: This modifier spreads to other planets in system since magnetic storms are generally related to sun activity
+	spawn_chance = {
+		modifier = {
+			add = 3
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 1
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			is_inside_nebula = yes
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_frequent_magnetic_storms"
+		}
+		modifier = {
+			factor = 0
+			is_moon = yes
+		}
+	}
+
+	modifier = "frequent_magnetic_storms"
+}
+
+pm_retrograde_motion = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_retrograde_motion"
+		}
+	}
+	
+	modifier = "retrograde_motion"
+}
+
+pm_extensive_auroras = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_extensive_auroras"
+		}
+	}
+	modifier = "extensive_auroras"
+}
+
+pm_wild_fires = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			AND = {
+				OR = {
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental_large
+					is_planet_class = pc_continental
+					is_planet_class = pc_savannah
+					is_planet_class = pc_savannah_large
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_wild_fires"
+		}
+	}
+	modifier = "wild_fires"
+}
+
+pm_rich_soil = {
+	spawn_chance = {
+		modifier = {
+			add = 10
+			AND = {
+				OR = {
+					is_planet_class = pc_arid_large
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental_large
+					is_planet_class = pc_continental
+					is_planet_class = pc_savannah
+					is_planet_class = pc_savannah_large
+					
+				}
+			}
+		}
+		modifier = {
+			add = 10
+			OR = {
+				is_planet_class = pc_machine
+				is_habitable_planet = yes
+				is_large_habitable_planet = yes
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = {
+				OR = {
+					is_planet_class = pc_machine
+					is_habitable_planet = yes
+					is_large_habitable_planet = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_planet_modifier = "pm_rich_soil"
+		}
+	}
+		
+	modifier = "rich_soil"
+}
