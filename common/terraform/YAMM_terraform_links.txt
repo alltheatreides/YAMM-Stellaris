@@ -4,7 +4,7 @@ terraform_link = {
 	
 	minerals = 2000
 	energy = 2000
-	duration = 1800
+	duration = 1000
 
 	condition = {
 		has_ascension_perk = ap_voidborn
@@ -17,7 +17,7 @@ terraform_link = {
 	
 	minerals = 2000
 	energy = 2000
-	duration = 1800
+	duration = 1000
 
 	condition = {
 		has_ascension_perk = ap_voidborn
@@ -30,7 +30,7 @@ terraform_link = {
 	
 	minerals = 2000
 	energy = 2000
-	duration = 1800
+	duration = 1000
 
 	condition = {
 		has_ascension_perk = ap_voidborn
@@ -43,7 +43,7 @@ terraform_link = {
 	
 	minerals = 2000
 	energy = 2000
-	duration = 1800
+	duration = 1000
 
 	condition = {
 		has_ascension_perk = ap_voidborn

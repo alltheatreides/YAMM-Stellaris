@@ -356,6 +356,8 @@ pc_asteroid = {
 	entity = "asteroid"
 	entity_scale = 0.65
 	icon_frame = 18
+	outliner_planet_type = special
+	show_city = no
 	
 	asteroid = yes
 	
@@ -368,8 +370,11 @@ pc_asteroid = {
 	
 	planet_size = 5
 	
-	colonizable = no
+	starting_planet = no
+	colonizable = yes
 	survey_time_factor = 0.5
+	can_support_spaceport = yes
+	colonization_tech = { "tech_colonization_0" }
 }
 
 pc_molten = {

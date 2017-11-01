@@ -421,7 +421,11 @@ building_heavy_industry_1 = {
 		custom_tooltip = {
 			text = "requires_building_infrastructure_industrial"
 			planet = {
-				has_building = "building_infrastructure_industry"
+				OR = {
+					has_building = "building_infrastructure_industry"
+					has_building = "the_belt_building_asteroid_life_support_system"
+					has_building = "the_belt_building_asteroid_life_support_system_2"
+				}
 			}
 		}
 	}
@@ -674,6 +678,11 @@ building_basicshipyard = {
 					is_planet_class = pc_habitat_revamp_sp
 					is_planet_class = pc_habitat_revamp
 					is_planet_class = pc_military_base
+					is_planet_class = pc_asteroid 
+					is_planet_class = pc_asteroid_c 
+					is_planet_class = pc_asteroid_s 
+					is_planet_class = pc_asteroid_m
+					is_planet_class = pc_dwarf_planet_c_asteroid
 				}
 			}
 		}
@@ -915,6 +924,11 @@ building_recycling_center_1 = {
 					is_planet_class = pc_military_base
 					is_planet_class = pc_habitat_revamp_sp
 					is_planet_class = pc_habitat_revamp
+					is_planet_class = pc_asteroid 
+					is_planet_class = pc_asteroid_c 
+					is_planet_class = pc_asteroid_s 
+					is_planet_class = pc_asteroid_m
+					is_planet_class = pc_dwarf_planet_c_asteroid
 				}
 			}
 		}
@@ -1005,6 +1019,7 @@ building_metropolis = {
 					has_building = "building_capital_2"
 					has_building = "building_capital_3"
 					has_building = "the_belt_building_asteroid_life_support_system"
+					has_building = "the_belt_building_asteroid_life_support_system_2"
 					has_building = "building_hab_capital_revamp"
 				}
 				# NOT = {
@@ -1132,10 +1147,13 @@ building_hive_city = {
 					has_building = "building_hab_capital_revamp"
 				}
 				NOT = {
-					is_planet_class = pc_asteroid
-					is_planet_class = pc_asteroid_c
-					is_planet_class = pc_asteroid_m
-					is_planet_class = pc_asteroid_s
+					OR = {
+						is_planet_class = pc_asteroid
+						is_planet_class = pc_asteroid_c
+						is_planet_class = pc_asteroid_m
+						is_planet_class = pc_asteroid_s
+					}
+					
 				}
 			}
 		}
@@ -1254,6 +1272,10 @@ the_belt_building_asteroid_life_support_system = {
 		"tech_colonization_0"
 	}
 	
+	upgrades = {
+		the_belt_building_asteroid_life_support_system_2
+	}
+	
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -1349,6 +1371,49 @@ the_belt_building_asteroid_life_support_system_2 = {
 ########################
 ##  HABITAT BUILDINGS  #
 ########################
+
+# ORBITAL SHIPYARD
+building_orbital_shipyard = {
+	base_buildtime = 360
+	planet_unique = yes
+	
+	potential = {
+		planet = {
+			OR = {
+				is_planet_class = pc_habitat_revamp_sp
+				is_planet_class = pc_habitat_revamp
+				is_planet_class = pc_military_base
+			}
+		}
+	}
+	
+	cost = {
+		minerals = 150
+		energy = 200
+	}
+	
+	required_resources = {
+		energy = 2
+		minerals = 1
+	}
+	
+	planet_modifier = {
+		spaceport_ship_build_cost_mult = -0.15
+		spaceport_ship_build_time_mult = -0.15
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_synch_orbit"
+			tile = {
+				has_resource = {
+					type = sr_synch_orbit
+					amount > 0
+				}
+			}
+		}
+	}
+}
 
 #MANUFACTURING
 building_orbital_industry = {

@@ -114,9 +114,38 @@ planet_event = {
 	}
 }
 
+## Military Base Building
+planet_event = {
+	id = YAMM.12
+	title = "YAMM.12.name"
+	desc = "YAMM.12.desc"
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = { 
+			is_planet_class = pc_military_base
+		}
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_tile = {
+			limit = { 
+				has_building = "building_colony_shelter"
+			}
+			set_building = "building_military_HQ"
+		}
+	}
+}
+
 ## Ship tech start of the game
 event = {
 	id = YAMM.4
+	title = "yamm.4.name"
 	
 	hide_window = yes
 	is_triggered_only = yes
@@ -138,6 +167,7 @@ event = {
 ## Ship event once a tech is researched
 country_event = {
 	id = YAMM.5
+	title = "yamm.5.name"
 	
 	hide_window = yes
 	is_triggered_only = yes
@@ -155,6 +185,7 @@ country_event = {
 # Communication - Monthly pulse
 event = {
 	id = YAMM.6
+	title = "yamm.6.name"
 	
 	hide_window = yes
 	is_triggered_only = yes
@@ -177,6 +208,7 @@ event = {
 	
 	immediate = {
 		every_country = {
+			country_event = { id = YAMM.11 }
 			country_event = { id = YAMM.7 }
 			country_event = { id = YAMM.8 }
 			country_event = { id = YAMM.9 }
@@ -189,6 +221,7 @@ event = {
 # Communication - Close colonies modifier
 country_event = {
 	id = YAMM.7
+	title = "yamm.7.name"
 	
 	hide_window = yes
 	
@@ -238,6 +271,14 @@ country_event = {
 						}
 					}
 				}
+				every_system_planet = {
+					limit = {
+						NOT = {
+							has_planet_flag = no_touching
+						}
+					}
+					set_planet_flag = no_touching
+				}
 			}
 		}
 	}
@@ -247,7 +288,6 @@ country_event = {
 country_event = {
 	id = YAMM.8
 	title = "yamm.8.name"
-	id = YAMM.8
 	
 	hide_window = yes
 	
@@ -264,8 +304,13 @@ country_event = {
 			is_homeworld = no
 			num_pops > 0
 			is_capital = no
+			OR = {
+				has_modifier = communication_close_modifier
+				has_modifier = communication_far_modifier
+			}
 		}
 	}
+	
 	
 	immediate = {
 		every_planet_within_border = {
@@ -276,36 +321,75 @@ country_event = {
 					has_modifier = capital
 					has_modifier = sector_capital
 				}
-				solar_system = {
-					any_planet = {
-						NOT = {
-							OR = {
-								has_modifier = sector_capital
-								has_modifier = capital
-							}
-						}
-					}
-					any_neighbor_system = {
-						any_planet = {
-							NOT = {
-								OR = {
-									has_modifier = sector_capital
-									has_modifier = capital
-								}
-							}
-						}
-					}
-				}
 				has_owner = yes
 				is_homeworld = no
 				num_pops > 0
 				is_capital = no
 			}
-			add_modifier = {
-				modifier = "communication_far_modifier"
-				days = -1
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						NOT = {
+							has_modifier = communication_far_modifier
+							has_modifier = communication_close_modifier
+							has_modifier = capital
+							has_modifier = sector_capital
+							has_planet_flag = no_touching
+						}
+						has_owner = yes
+						is_homeworld = no
+						num_pops > 0
+						is_capital = no
+					}
+					add_modifier = {
+						modifier = "communication_far_modifier"
+						days = -1
+					}
+				}
 			}
 		}
+	}
+	
+	# immediate = {
+		# every_planet_within_border = {
+			# limit = {
+				# NOT = {
+					# has_modifier = communication_far_modifier
+					# has_modifier = communication_close_modifier
+					# has_modifier = capital
+					# has_modifier = sector_capital
+					# has_planet_flag = no_touching
+				# }
+				# solar_system = {
+					# any_planet = {
+						# NOT = {
+							# OR = {
+								# has_modifier = sector_capital
+								# has_modifier = capital
+							# }
+						# }
+					# }
+					# any_neighbor_system = {
+						# any_planet = {
+							# NOT = {
+								# OR = {
+									# has_modifier = sector_capital
+									# has_modifier = capital
+								# }
+							# }
+						# }
+					# }
+				# }
+				# has_owner = yes
+				# is_homeworld = no
+				# num_pops > 0
+				# is_capital = no
+			# }
+			# add_modifier = {
+				# modifier = "communication_far_modifier"
+				# days = -1
+			# }
+		# }
 		
 		# random_system_within_border = {
 			# limit = {
@@ -330,14 +414,13 @@ country_event = {
 				# }
 			# }
 		# }
-	}
+	# }
 }
 
 ## Communication - clearing up far away modifier for newly christened sector capital
 country_event = {
 	id = YAMM.9
 	title = "YAMM.9.name"
-	id = YAMM.9
 	
 	hide_window = yes
 	
@@ -351,10 +434,16 @@ country_event = {
 		}
 	}
 	immediate = {
-		remove_modifier = communication_far_modifier
-		add_modifier = {
-			modifier = "communication_close_modifier"
-			days = -1
+		every_owned_planet = {
+			limit = {
+				has_modifier = communication_far_modifier
+				has_modifier = sector_capital
+			}
+			remove_modifier = "communication_far_modifier"
+			add_modifier = {
+				modifier = "communication_close_modifier"
+				days = -1
+			}
 		}
 	}
 }
@@ -363,7 +452,6 @@ country_event = {
 country_event = {
 	id = YAMM.10
 	title = "YAMM.10.name"
-	id = YAMM.10
 	
 	hide_window = yes
 	
@@ -380,45 +468,67 @@ country_event = {
 							has_modifier = sector_capital
 							has_modifier = capital
 						}
-						owner = ROOT
+						is_owned_by = ROOT
 					}
 				}
 			}
 		}
 	}
 	immediate = {
-		remove_modifier = communication_far_modifier
-		add_modifier = {
-			modifier = "communication_close_modifier"
-			days = -1
-		}
-	}
-}
-
-## Military Base Building
-planet_event = {
-	id = YAMM.11
-	title = "YAMM.11.name"
-	desc = "YAMM.11.desc"
-	
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		OR = { 
-			is_planet_class = pc_military_base
-		}
-	}
-
-	is_triggered_only = yes
-	
-	immediate = {
-		random_tile = {
-			limit = { 
-				has_building = "building_colony_shelter"
+		every_owned_planet = {
+			limit = {
+				has_modifier = communication_far_modifier
+				solar_system = {
+					any_neighbor_system = {
+						any_planet = {
+							OR = {
+								has_modifier = sector_capital
+								has_modifier = capital
+							}
+							is_owned_by = ROOT
+						}
+					}
+				}
 			}
-			set_building = "building_military_HQ"
+			remove_modifier = communication_far_modifier
+			add_modifier = {
+				modifier = "communication_close_modifier"
+				days = -1
+			}
 		}
 	}
 }
+
+# country_event = {
+	# id = YAMM.11
+	# title = "yamm.11.name"
+	
+	# hide_window = yes
+	# is_triggered_only
+	
+	# trigger = {
+		# is_country_type = default
+		# any_owned_planet = {
+			# OR = {
+				# has_modifier = sector_capital
+				# has_modifier = capital
+			# }
+		# }
+	# }
+	
+	# immediate = {
+		# every_owned_planet = {
+			# limit = {
+				# OR = {
+					# has_modifier = capital
+				# }
+			# }
+			# solar_system = {
+				# every_owned_planet = {
+					# set_planet_flag = no_touching
+				# }
+			# }
+		# }
+	# }
+# }
+

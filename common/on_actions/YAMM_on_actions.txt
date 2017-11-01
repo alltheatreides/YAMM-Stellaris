@@ -39,6 +39,6 @@ on_colonization_started = {
 on_colonized = {
 	events = {
 		YAMM.3
-		YAMM.8
+		# YAMM.8
 	}
 }
